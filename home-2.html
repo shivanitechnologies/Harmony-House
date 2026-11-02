@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harmony House – Premium Music Conservatory &amp; Studio Academy</title>
+  <meta name="description" content="Experience high-calibre musical excellence. Premium conservatory training, masterclasses, and certified diploma programmes for discerning young artists and adult musicians.">
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brandpurple: { 50: '#F5F3FF', 100: '#EDE9FE', 200: '#DDD6FE', 300: '#C4B5FD', 400: '#987AF0', 500: '#6C4CE3', 600: '#5A38D4', 700: '#4B29B8', 800: '#3D2094', 900: '#2E1771', 950: '#1A0B45' },
+            brandorange: { 50: '#FFF7ED', 100: '#FFEDD5', 200: '#FED7AA', 300: '#FDBA74', 400: '#FB923C', 500: '#FF9F43', 600: '#F58022', 700: '#D6620E', 800: '#AA4A0A', 900: '#7C3408' },
+            coral: { 50: '#F5F3FF', 100: '#EDE9FE', 200: '#DDD6FE', 300: '#C4B5FD', 400: '#987AF0', 500: '#6C4CE3', 600: '#5A38D4', 700: '#4B29B8', 800: '#3D2094', 900: '#2E1771' },
+            sage: { 50: '#FFF7ED', 100: '#FFEDD5', 200: '#FED7AA', 300: '#FDBA74', 400: '#FB923C', 500: '#FF9F43', 600: '#F58022', 700: '#D6620E', 800: '#AA4A0A', 900: '#7C3408' },
+            amberbrand: { 400: '#FDBA74', 500: '#FF9F43', 600: '#F58022' },
+            charcoal: { 700: '#22242B', 750: '#1B1C22', 800: '#16171B', 850: '#111215', 900: '#0C0D0F', 950: '#08080A' }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    };
+  </script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+<body class="bg-[#F8F9FA] dark:bg-charcoal-900 text-gray-800 dark:text-gray-100 font-sans antialiased transition-colors duration-300">
+
+  <!-- Sleek Premium Navigation -->
+  <header class="sticky top-0 z-40 bg-white/95 dark:bg-charcoal-900/95 backdrop-blur-md border-b border-gray-200 dark:border-charcoal-800 transition-colors shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo (Spacious & with margin) -->
+        <a href="index.html" class="flex items-center gap-3 shrink-0 mr-4 lg:mr-8 group">
+          <div class="w-11 h-11 rounded-xl bg-[#6C4CE3] flex items-center justify-center text-[#FF9F43] shadow-md shadow-[#6C4CE3]/20 group-hover:rotate-6 transition">
+            <i data-lucide="sparkles" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <span class="font-serif font-bold text-2xl tracking-tight">
+              <span class="text-[#6C4CE3] dark:text-[#987AF0]">Harmony</span><span class="text-[#FF9F43]">House</span>
+            </span>
+            <span class="block text-[9px] font-bold tracking-[0.25em] uppercase text-[#6C4CE3] dark:text-[#987AF0]">
+              Conservatory &amp; Academy
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Nav (Hidden below xl to prevent crowding) -->
+        <nav class="hidden xl:flex items-center gap-7 text-sm font-medium">
+          <div class="relative group">
+            <button class="flex items-center gap-1 text-[#6C4CE3] dark:text-[#987AF0] font-semibold py-2">
+              <span>Home</span>
+              <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
+            </button>
+            <div class="absolute left-0 mt-1 w-52 bg-white dark:bg-charcoal-800 rounded-xl shadow-xl border border-gray-100 dark:border-charcoal-700 p-2 hidden group-hover:block transition animate-fadeIn">
+              <a href="index.html" class="flex items-center gap-2 px-3 py-2 text-xs font-medium rounded-lg hover:bg-gray-50 dark:hover:bg-charcoal-700 text-gray-700 dark:text-gray-300">
+                <i data-lucide="layout-template" class="w-4 h-4"></i> Home 1 (Classic)
+              </a>
+              <a href="home-2.html" class="flex items-center gap-2 px-3 py-2 text-xs font-semibold rounded-lg bg-coral-50 dark:bg-coral-950/40 text-coral-600 dark:text-coral-400">
+                <i data-lucide="sparkles" class="w-4 h-4 text-amberbrand-500"></i> Home 2 (Premium)
+              </a>
+            </div>
+          </div>
+
+          <!-- Courses (Direct Link) -->
+          <a href="courses.html" class="text-gray-600 dark:text-gray-300 hover:text-[#6C4CE3] dark:hover:text-[#987AF0] transition">Courses</a>
+
+          <a href="about.html" class="text-gray-600 dark:text-gray-300 hover:text-[#6C4CE3] dark:hover:text-[#987AF0] transition">Conservatory Story</a>
+          <a href="instructors.html" class="text-gray-600 dark:text-gray-300 hover:text-[#6C4CE3] dark:hover:text-[#987AF0] transition">Faculty Artists</a>
+          <a href="blog.html" class="text-gray-600 dark:text-gray-300 hover:text-[#6C4CE3] dark:hover:text-[#987AF0] transition">Journal</a>
+          <a href="contact.html" class="text-gray-600 dark:text-gray-300 hover:text-[#6C4CE3] dark:hover:text-[#987AF0] transition">Concierge</a>
+        </nav>
+
+        <!-- Right Utility Controls (Clean & Spacious) -->
+        <div class="flex items-center gap-2.5 sm:gap-3 shrink-0">
+          <button data-action="toggle-theme" class="p-2 rounded-full border border-gray-200 dark:border-charcoal-700 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-charcoal-800 transition" title="Toggle Light/Dark Theme">
+            <i data-lucide="sun" class="w-4 h-4 dark:hidden"></i>
+            <i data-lucide="moon" class="w-4 h-4 hidden dark:inline"></i>
+          </button>
+
+          <button data-action="toggle-rtl" class="px-2.5 py-1.5 text-xs font-mono font-medium rounded-full border border-gray-200 dark:border-charcoal-700 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-charcoal-800 transition" title="Toggle RTL">
+            ⇄ RTL
+          </button>
+
+          <a href="auth/login.html" class="hidden sm:flex items-center gap-1.5 px-4 py-2 rounded-full bg-purple-50 dark:bg-charcoal-800 border border-purple-200 dark:border-charcoal-700 text-[#6C4CE3] dark:text-[#987AF0] hover:border-[#6C4CE3] hover:text-[#6C4CE3] text-xs font-semibold shadow-sm transition">
+            <i data-lucide="graduation-cap" class="w-4 h-4 text-[#6C4CE3]"></i>
+            <span>Portal Login</span>
+          </a>
+
+          <!-- Mobile Hamburger -->
+          <button id="mobile-menu-btn" class="p-2 rounded-xl text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-charcoal-800 xl:hidden focus:outline-none" aria-label="Open Mobile Menu">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobile-menu-backdrop" class="fixed inset-0 bg-black/50 z-50 hidden backdrop-blur-sm transition-opacity"></div>
+  <aside id="mobile-menu-drawer" aria-label="Mobile Navigation" class="fixed top-0 right-0 bottom-0 w-80 bg-white dark:bg-charcoal-900 z-50 hidden shadow-2xl flex flex-col p-6 overflow-y-auto">
+    <div class="flex items-center justify-between pb-6 border-b border-gray-100 dark:border-charcoal-800">
+      <div class="flex items-center gap-2">
+        <div class="w-9 h-9 rounded-lg bg-[#6C4CE3] flex items-center justify-center text-[#FF9F43] font-bold">
+          <i data-lucide="music" class="w-5 h-5"></i>
+        </div>
+        <span class="font-serif font-bold text-xl"><span class="text-[#6C4CE3] dark:text-[#987AF0]">Harmony</span><span class="text-[#FF9F43]">House</span></span>
+      </div>
+      <button id="mobile-menu-close" class="p-2 rounded-lg text-gray-400 hover:text-gray-600 dark:hover:text-white">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </div>
+    <nav class="flex flex-col gap-2 py-6 text-sm font-medium">
+      <a href="index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-50">
+        <i data-lucide="home" class="w-4 h-4"></i> Home 1 (Classic)
+      </a>
+      <a href="home-2.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-coral-50 dark:bg-coral-950/40 text-coral-600 dark:text-coral-400 font-bold">
+        <i data-lucide="sparkles" class="w-4 h-4 text-amberbrand-500"></i> Home 2 (Premium)
+      </a>
+      <a href="courses.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 text-gray-700 dark:text-gray-300">
+        <i data-lucide="book-open" class="w-4 h-4"></i> Signature Programmes
+      </a>
+      <a href="instructors.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 text-gray-700 dark:text-gray-300">
+        <i data-lucide="award" class="w-4 h-4"></i> Faculty Artists
+      </a>
+      <a href="fees-batches.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 text-gray-700 dark:text-gray-300">
+        <i data-lucide="calendar" class="w-4 h-4"></i> Fees &amp; Batches
+      </a>
+      <a href="pricing.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 text-gray-700 dark:text-gray-300">
+        <i data-lucide="credit-card" class="w-4 h-4"></i> Membership Plans
+      </a>
+      <a href="contact.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 text-gray-700 dark:text-gray-300">
+        <i data-lucide="map-pin" class="w-4 h-4"></i> Concierge
+      </a>
+    </nav>
+  </aside>
+
+  <!-- Premium Hero Section (Nuvo Music School Style) -->
+  <section class="relative bg-[#F8F9FA] dark:bg-charcoal-900 py-20 lg:py-28 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Top Eyebrow -->
+      <div class="text-center max-w-3xl mx-auto space-y-4">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white dark:bg-charcoal-800 shadow-sm border border-gray-200 dark:border-charcoal-700 text-xs font-semibold text-gray-800 dark:text-gray-200">
+          <i data-lucide="award" class="w-4 h-4 text-[#FF9F43]"></i>
+          <span>Trinity College London &amp; RockSchool Premier Exam Centre</span>
+        </div>
+
+        <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold text-gray-950 dark:text-white tracking-tight leading-[1.1]">
+          Where Musical Talent <br>
+          <span class="font-serif italic font-normal text-[#6C4CE3]">
+            Becomes Mastery.
+          </span>
+        </h1>
+
+        <p class="text-base sm:text-xl text-gray-600 dark:text-gray-300 font-normal leading-relaxed pt-2">
+          Private instrument tuition, ensemble chamber halls, sound recording suites, and rigorous conservatory curricula tailored for young visionaries and adult connoisseurs.
+        </p>
+
+        <!-- CTA Cluster (Tactile 3D Buttons) -->
+        <div class="pt-6 flex flex-wrap items-center justify-center gap-4">
+          <a href="#signature-programmes" class="btn-3d-purple px-8 py-4 rounded-full font-bold text-sm tracking-wide">
+            Explore Signature Programmes
+          </a>
+          <button data-modal-target="trial-modal" class="card-3d px-8 py-4 rounded-full bg-white dark:bg-charcoal-800 border border-gray-300 dark:border-charcoal-700 text-gray-800 dark:text-white font-semibold text-sm hover:border-[#FF9F43] hover:text-[#FF9F43] transition shadow-sm flex items-center gap-2">
+            <i data-lucide="calendar" class="w-4 h-4 text-[#FF9F43]"></i>
+            Schedule VIP Audition
+          </button>
+        </div>
+      </div>
+
+      <!-- Hero Gallery Composition: Piano & String Excellence (3D Tilt Cards) -->
+      <div class="mt-16 grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+        <div class="md:col-span-4 space-y-6">
+          <div data-tilt class="card-3d relative rounded-3xl overflow-hidden shadow-xl group h-64 border border-white/50 cursor-pointer">
+            <img src="https://images.unsplash.com/photo-1520523839898-5071270505a7?auto=format&fit=crop&w=700&q=80" alt="Yamaha Grand Piano Repertoire" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
+              <span class="text-white text-xs font-bold tracking-wider uppercase">Concert Grand Acoustic Repertoire</span>
+            </div>
+          </div>
+          <div data-tilt class="card-3d p-6 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm cursor-pointer">
+            <span class="text-xs font-bold uppercase tracking-wider text-[#FF9F43]">Suzuki &amp; Kodály Framework</span>
+            <h4 class="font-serif text-lg font-bold text-gray-900 dark:text-white mt-1">Holistic Ear-First Pedagogy</h4>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">Developing pitch perfection, tempo perception, and artistic expression naturally.</p>
+          </div>
+        </div>
+
+        <div class="md:col-span-4">
+          <div data-tilt class="card-3d hero-curved-frame relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white dark:border-charcoal-800 h-96 group cursor-pointer" style="border-radius: 24px; -webkit-mask-image: -webkit-radial-gradient(white, black); isolation: isolate;">
+            <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80" alt="Master Violinist Soloist" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 rounded-[20px]" style="border-radius: 20px;">
+            <div class="absolute inset-0 bg-gradient-to-t from-charcoal-950/80 via-transparent to-transparent flex flex-col justify-end p-8 text-white rounded-[20px]">
+              <span class="text-[#FF9F43] text-xs font-bold tracking-widest uppercase">Chamber Hall Acoustics</span>
+              <h3 class="font-serif text-2xl font-bold mt-1">European Classical &amp; Modern Fusion</h3>
+              <p class="text-xs text-gray-300 mt-2">Quarterly symphonic showcases in our 250-seat acoustically tuned auditorium.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="md:col-span-4 space-y-6">
+          <div data-tilt class="card-3d p-6 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm cursor-pointer">
+            <span class="text-xs font-bold uppercase tracking-wider text-[#6C4CE3] dark:text-[#987AF0]">Digital Audio Lab</span>
+            <h4 class="font-serif text-lg font-bold text-gray-900 dark:text-white mt-1">Logic &amp; Ableton Workstations</h4>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">Every student records their original arrangements in our sound-isolated studio.</p>
+          </div>
+          <div data-tilt class="card-3d hero-curved-frame relative rounded-3xl overflow-hidden shadow-xl group h-64 border border-white/50 cursor-pointer" style="border-radius: 24px; -webkit-mask-image: -webkit-radial-gradient(white, black); isolation: isolate;">
+            <img src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=700&q=80" alt="Acoustic Guitar Rehearsal" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 rounded-[20px]" style="border-radius: 20px;">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6 rounded-[20px]">
+              <span class="text-white text-xs font-bold tracking-wider uppercase">Fretboard Harmony &amp; Fingerstyle</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Academy Achievements Counter -->
+  <section class="py-14 bg-white dark:bg-charcoal-850 border-y border-gray-100 dark:border-charcoal-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center divide-y lg:divide-y-0 lg:divide-x divide-gray-100 dark:divide-charcoal-700">
+        <div class="pt-4 lg:pt-0">
+          <div class="font-serif text-4xl sm:text-5xl font-bold text-coral-600 dark:text-coral-400">14+</div>
+          <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mt-2">Years of Musical Heritage</p>
+        </div>
+        <div class="pt-4 lg:pt-0">
+          <div class="font-serif text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white">99.4%</div>
+          <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mt-2">Distinction in Trinity Exams</p>
+        </div>
+        <div class="pt-4 lg:pt-0">
+          <div class="font-serif text-4xl sm:text-5xl font-bold text-sage-600 dark:text-sage-400">1,400+</div>
+          <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mt-2">Graduated Artists</p>
+        </div>
+        <div class="pt-4 lg:pt-0">
+          <div class="font-serif text-4xl sm:text-5xl font-bold text-amberbrand-500">100%</div>
+          <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mt-2">Accredited International Faculty</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Signature Music Programmes Section -->
+  <section id="signature-programmes" class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-coral-600">Curated Syllabi</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mt-1">
+            Signature Conservatory Programmes
+          </h2>
+        </div>
+        <p class="text-sm text-gray-500 dark:text-gray-400 max-w-md mt-2 md:mt-0">
+          Targeted paths designed for comprehensive musical literacy, technical virtuosity, and stage readiness.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Programme 1 -->
+        <div class="bg-white dark:bg-charcoal-800 rounded-3xl p-8 border border-gray-200 dark:border-charcoal-700 shadow-sm hover:shadow-xl transition relative flex flex-col justify-between">
+          <div class="space-y-4">
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-coral-100 text-coral-700 dark:bg-coral-950/60 dark:text-coral-300">
+              Young Prodigy (Ages 5-11)
+            </span>
+            <h3 class="font-serif text-2xl font-bold text-gray-900 dark:text-white">
+              The Young Virtuoso Conservatory
+            </h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+              Early childhood ear cultivation, rhythmic pulse games, and foundational technique on piano, violin, or mini acoustic guitar. Fosters cognitive focus and lifelong love for melody.
+            </p>
+            <ul class="space-y-2 text-xs text-gray-600 dark:text-gray-300 pt-3 border-t border-gray-100 dark:border-charcoal-700">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-coral-500"></i> Max 4 students per masterclass</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-coral-500"></i> Trinity Initial to Grade 2 syllabus</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-coral-500"></i> Bi-weekly instructor audio progress notes</li>
+            </ul>
+          </div>
+          <div class="mt-8 pt-4 border-t border-gray-100 dark:border-charcoal-700 flex items-center justify-between">
+            <span class="font-serif text-lg font-bold text-gray-900 dark:text-white">₹3,200<span class="text-xs font-normal text-gray-400">/mo</span></span>
+            <a href="course-details.html?course=course-piano" class="px-4 py-2 rounded-full bg-coral-500 hover:bg-coral-600 text-white text-xs font-bold">
+              View Syllabus
+            </a>
+          </div>
+        </div>
+
+        <!-- Programme 2 -->
+        <div class="bg-charcoal-850 text-white rounded-3xl p-8 border border-charcoal-700 shadow-xl relative flex flex-col justify-between">
+          <div class="absolute -top-3 right-8 px-3 py-1 bg-amberbrand-500 text-charcoal-950 rounded-full text-[10px] font-bold uppercase tracking-wider">
+            Flagship Track
+          </div>
+          <div class="space-y-4">
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-amberbrand-500/20 text-amberbrand-400">
+              Exam &amp; Diploma Track (All Ages)
+            </span>
+            <h3 class="font-serif text-2xl font-bold text-white">
+              Trinity &amp; ABRSM Honors Diploma
+            </h3>
+            <p class="text-xs text-gray-300 leading-relaxed">
+              Intensive technical mastership covering sight-reading, aural recognition, complex polyrhythms, and high-difficulty classical &amp; jazz performance grades (Grades 3 through 8 and ATCL).
+            </p>
+            <ul class="space-y-2 text-xs text-gray-300 pt-3 border-t border-charcoal-800">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amberbrand-500"></i> Dedicated 1-on-1 private lesson weekly</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amberbrand-500"></i> Official Trinity exam center registration</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amberbrand-500"></i> Mock board evaluations with external jurors</li>
+            </ul>
+          </div>
+          <div class="mt-8 pt-4 border-t border-charcoal-800 flex items-center justify-between">
+            <span class="font-serif text-lg font-bold text-white">₹4,500<span class="text-xs font-normal text-gray-400">/mo</span></span>
+            <a href="course-details.html?course=course-guitar" class="px-4 py-2 rounded-full bg-amberbrand-500 hover:bg-amber-600 text-charcoal-950 text-xs font-bold">
+              View Syllabus
+            </a>
+          </div>
+        </div>
+
+        <!-- Programme 3 -->
+        <div class="bg-white dark:bg-charcoal-800 rounded-3xl p-8 border border-gray-200 dark:border-charcoal-700 shadow-sm hover:shadow-xl transition relative flex flex-col justify-between">
+          <div class="space-y-4">
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-sage-100 text-sage-700 dark:bg-sage-950/60 dark:text-sage-300">
+              Adults &amp; Professionals
+            </span>
+            <h3 class="font-serif text-2xl font-bold text-gray-900 dark:text-white">
+              Adult Repertoire &amp; Studio Lab
+            </h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+              Created specifically for busy working adults who want to fulfill lifelong musical dreams. Flexible evening timings, relaxed atmosphere, and weekend ensemble jam sessions.
+            </p>
+            <ul class="space-y-2 text-xs text-gray-600 dark:text-gray-300 pt-3 border-t border-gray-100 dark:border-charcoal-700">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-sage-600"></i> Evening weekday slots (6:30 PM &amp; 7:30 PM)</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-sage-600"></i> Chord charts, pop ballads &amp; blues improvisation</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-sage-600"></i> Unlimited practice studio room access</li>
+            </ul>
+          </div>
+          <div class="mt-8 pt-4 border-t border-gray-100 dark:border-charcoal-700 flex items-center justify-between">
+            <span class="font-serif text-lg font-bold text-gray-900 dark:text-white">₹3,200<span class="text-xs font-normal text-gray-400">/mo</span></span>
+            <a href="course-details.html?course=course-vocals" class="px-4 py-2 rounded-full bg-sage-600 hover:bg-sage-700 text-white text-xs font-bold">
+              View Syllabus
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Audio Spotlight: Student Success Story -->
+  <section class="py-20 bg-gray-50 dark:bg-charcoal-850/60 border-y border-gray-200 dark:border-charcoal-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto bg-white dark:bg-charcoal-800 rounded-3xl p-8 sm:p-12 shadow-xl border border-gray-200 dark:border-charcoal-700">
+        
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          <div class="md:col-span-5 text-center md:text-left">
+            <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=400&q=80" alt="Student Rohan Sen" class="w-28 h-28 sm:w-36 sm:h-36 rounded-full mx-auto md:mx-0 object-cover shadow-lg border-4 border-coral-500/20">
+            <h4 class="font-serif text-xl font-bold text-gray-900 dark:text-white mt-4">Rohan Sen</h4>
+            <p class="text-xs text-coral-600 font-semibold">Guitar Mastery &bull; Level 2 Student</p>
+            <p class="text-[11px] text-gray-400 mt-1">Enrolled 8 Months &bull; 6-Day Practice Streak</p>
+          </div>
+
+          <div class="md:col-span-7 space-y-4">
+            <div class="flex items-center gap-2 text-amberbrand-500 text-sm">
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <span class="text-xs font-bold text-gray-600 dark:text-gray-300 ml-1">Student Progress Spotlight</span>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-300 italic leading-relaxed">
+              "When I joined Harmony House, I struggled to even hold a barre chord. David taught me finger relaxation techniques that eliminated fatigue. Last month, I performed our first acoustic ensemble live at the Phoenix recital!"
+            </p>
+
+            <!-- Mock Interactive Audio Clip -->
+            <div class="p-4 rounded-2xl bg-coral-50 dark:bg-charcoal-900 border border-coral-200 dark:border-charcoal-700 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <button data-audio-player class="w-10 h-10 rounded-full bg-coral-500 text-white flex items-center justify-center hover:bg-coral-600 transition" aria-label="Listen to Audio Clip">
+                  <i data-lucide="play" class="w-4 h-4 fill-current"></i>
+                </button>
+                <div>
+                  <div class="text-xs font-bold text-gray-900 dark:text-white">Rohan's Mid-Term Evaluation Take</div>
+                  <div class="text-[10px] text-gray-500">Acoustic Solo &bull; 0:48 duration</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-1">
+                <span class="w-1 h-3 bg-coral-400 rounded-full"></span>
+                <span class="w-1 h-5 bg-coral-500 rounded-full"></span>
+                <span class="w-1 h-7 bg-coral-600 rounded-full"></span>
+                <span class="w-1 h-4 bg-coral-400 rounded-full"></span>
+                <span class="w-1 h-6 bg-coral-500 rounded-full"></span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- VIP Membership Plans -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-xs font-bold uppercase tracking-wider text-sage-600">Membership Options</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mt-1">
+          Simple, Transparent Tuition
+        </h2>
+        <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
+          No hidden admission charges. All packages include sheet music, recital participation, and student portal access.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Starter Plan -->
+        <div class="p-8 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm flex flex-col justify-between">
+          <div class="space-y-4">
+            <span class="text-xs font-bold uppercase tracking-wider text-gray-500">Starter Tier</span>
+            <div class="flex items-baseline gap-1">
+              <span class="font-serif text-4xl font-bold text-gray-900 dark:text-white">₹1,800</span>
+              <span class="text-xs text-gray-500">/ month</span>
+            </div>
+            <p class="text-xs text-gray-500">Ideal for young starters beginning with weekly 45-minute lessons.</p>
+            <ul class="space-y-2.5 text-xs text-gray-600 dark:text-gray-300 pt-4 border-t border-gray-100 dark:border-charcoal-700">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-coral-500"></i> 4 classes per month (1/week)</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-coral-500"></i> Sheet music &amp; audio track downloads</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-coral-500"></i> 1 hr/week studio practice room</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-coral-500"></i> Student portal dashboard access</li>
+            </ul>
+          </div>
+          <a href="fees-batches.html" class="mt-8 w-full py-3 text-center rounded-xl border border-coral-500 text-coral-600 dark:text-coral-400 font-bold text-xs hover:bg-coral-50 dark:hover:bg-coral-950/40 transition">
+            Select Starter Plan
+          </a>
+        </div>
+
+        <!-- Harmony Plus -->
+        <div class="p-8 rounded-3xl bg-white dark:bg-charcoal-800 border-2 border-coral-500 shadow-xl relative flex flex-col justify-between">
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 bg-coral-500 text-white rounded-full text-[10px] font-bold uppercase tracking-wider shadow-md">
+            Most Popular Choice
+          </div>
+          <div class="space-y-4">
+            <span class="text-xs font-bold uppercase tracking-wider text-coral-600">Harmony Plus</span>
+            <div class="flex items-baseline gap-1">
+              <span class="font-serif text-4xl font-bold text-gray-900 dark:text-white">₹3,200</span>
+              <span class="text-xs text-gray-500">/ month</span>
+            </div>
+            <p class="text-xs text-gray-500">Accelerated learning with 2 sessions per week for steady muscle memory.</p>
+            <ul class="space-y-2.5 text-xs text-gray-600 dark:text-gray-300 pt-4 border-t border-gray-100 dark:border-charcoal-700">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-coral-500"></i> 8 classes per month (2/week)</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-coral-500"></i> Semi-private groups (Max 3 students)</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-coral-500"></i> Free 3 hrs/week studio practice rooms</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-coral-500"></i> Trinity exam preparation support</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-coral-500"></i> Personalized monthly teacher voice notes</li>
+            </ul>
+          </div>
+          <a href="fees-batches.html" class="mt-8 w-full py-3.5 text-center rounded-xl bg-coral-500 hover:bg-coral-600 text-white font-bold text-xs shadow-lg shadow-coral-500/30 transition">
+            Enroll in Harmony Plus
+          </a>
+        </div>
+
+        <!-- Ensemble Tier -->
+        <div class="p-8 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm flex flex-col justify-between">
+          <div class="space-y-4">
+            <span class="text-xs font-bold uppercase tracking-wider text-sage-600">Ensemble &amp; Master</span>
+            <div class="flex items-baseline gap-1">
+              <span class="font-serif text-4xl font-bold text-gray-900 dark:text-white">₹4,500</span>
+              <span class="text-xs text-gray-500">/ month</span>
+            </div>
+            <p class="text-xs text-gray-500">Private 1-on-1 coaching combined with weekend band jamming.</p>
+            <ul class="space-y-2.5 text-xs text-gray-600 dark:text-gray-300 pt-4 border-t border-gray-100 dark:border-charcoal-700">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sage-600"></i> 12 classes per month (1-on-1 + Band)</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sage-600"></i> Unlimited practice studio access</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sage-600"></i> Studio recording session (1 full track)</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sage-600"></i> Free instrument setup &amp; maintenance</li>
+            </ul>
+          </div>
+          <a href="fees-batches.html" class="mt-8 w-full py-3 text-center rounded-xl border border-sage-600 text-sage-700 dark:text-sage-300 font-bold text-xs hover:bg-sage-50 dark:hover:bg-sage-950/40 transition">
+            Select Ensemble Plan
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- VIP Audition & Concierge Form -->
+  <section class="py-20 bg-charcoal-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-5 space-y-4">
+          <span class="text-xs font-bold uppercase tracking-wider text-amberbrand-500">Personalized Placement</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white">
+            Schedule an Audition &amp; Studio Tour
+          </h2>
+          <p class="text-sm text-gray-300 leading-relaxed">
+            Our Senior Academic Dean personally consults with prospective students and families. We assess your musical background, recommend optimal course levels, and provide private tours of our acoustic rehearsal suites.
+          </p>
+          <div class="pt-4 space-y-3 text-xs text-gray-300">
+            <div class="flex items-center gap-3">
+              <div class="w-7 h-7 rounded-full bg-coral-500/20 text-coral-400 flex items-center justify-center shrink-0">
+                <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
+              </div>
+              <span>42 Melodic Grove, Kalyani Nagar, Pune 411006</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-7 h-7 rounded-full bg-sage-500/20 text-sage-400 flex items-center justify-center shrink-0">
+                <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+              </div>
+              <span>+91 98765 43210 &bull; Direct Dean's Office</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7">
+          <div class="p-8 rounded-3xl bg-charcoal-850 border border-charcoal-700 shadow-2xl">
+            <form data-ajax-form data-success-msg="VIP consultation request sent! Our academic coordinator will contact you shortly." class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold text-gray-300 mb-1">Your Name *</label>
+                  <input type="text" required placeholder="Full Name" class="w-full px-4 py-2.5 rounded-xl border border-charcoal-700 bg-charcoal-900 text-sm text-white focus:outline-none focus:border-coral-500">
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-gray-300 mb-1">Contact Phone *</label>
+                  <input type="tel" required placeholder="+91 98765 43210" class="w-full px-4 py-2.5 rounded-xl border border-charcoal-700 bg-charcoal-900 text-sm text-white focus:outline-none focus:border-coral-500">
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold text-gray-300 mb-1">Instrument of Interest *</label>
+                  <select required class="w-full px-4 py-2.5 rounded-xl border border-charcoal-700 bg-charcoal-900 text-sm text-white focus:outline-none focus:border-coral-500">
+                    <option value="piano">Classical / Jazz Piano</option>
+                    <option value="guitar">Acoustic &amp; Classical Guitar</option>
+                    <option value="vocals">Western Vocals &amp; Choir</option>
+                    <option value="drums">Drums &amp; Percussion</option>
+                    <option value="violin">Violin &amp; Strings</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-gray-300 mb-1">Skill Experience Level</label>
+                  <select class="w-full px-4 py-2.5 rounded-xl border border-charcoal-700 bg-charcoal-900 text-sm text-white focus:outline-none focus:border-coral-500">
+                    <option value="beginner">Complete Beginner (0-6 months)</option>
+                    <option value="intermediate">Intermediate (1-3 years)</option>
+                    <option value="advanced">Advanced (Exam / Diploma Prep)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-gray-300 mb-1">Special Aspirations or Questions</label>
+                <textarea rows="3" placeholder="Tell us about musical goals, preferred audition days, or prior training..." class="w-full px-4 py-2.5 rounded-xl border border-charcoal-700 bg-charcoal-900 text-sm text-white focus:outline-none focus:border-coral-500"></textarea>
+              </div>
+
+              <button type="submit" class="w-full py-3.5 rounded-xl bg-coral-500 hover:bg-coral-600 text-white font-bold text-sm tracking-wide shadow-lg shadow-coral-500/20 transition">
+                Request VIP Audition &amp; Tour
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-charcoal-950 text-gray-400 py-12 border-t border-charcoal-800 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="font-serif font-bold text-lg"><span class="text-[#6C4CE3] dark:text-[#987AF0]">Harmony</span><span class="text-[#FF9F43]">House</span></span>
+        <span class="opacity-50">|</span>
+        <span>Premium Music Conservatory</span>
+      </div>
+      <div>&copy; 2026 Harmony House Music Academy. All rights reserved.</div>
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="hover:text-white">Home 1 (Classic)</a>
+        <a href="auth/login.html" class="text-coral-400 hover:underline">Student Login</a>
+        <a href="admin/index.html" class="text-sage-400 hover:underline">Admin Portal</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div id="trial-modal" class="harmony-modal fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+    <div class="fixed inset-0 bg-black/60 backdrop-blur-sm" data-modal-close></div>
+    <div class="relative bg-white dark:bg-charcoal-850 rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl z-10 border border-gray-100 dark:border-charcoal-700">
+      <div class="flex items-center justify-between pb-4 border-b border-gray-100 dark:border-charcoal-700">
+        <h3 class="font-serif text-2xl font-bold text-gray-900 dark:text-white">Book VIP Consultation</h3>
+        <button data-modal-close class="p-2 text-gray-400 hover:text-gray-600"><i data-lucide="x" class="w-5 h-5"></i></button>
+      </div>
+      <form data-ajax-form data-success-msg="Trial booked successfully!" class="space-y-4 mt-6">
+        <input type="text" placeholder="Full Name" required class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-charcoal-700 bg-gray-50 dark:bg-charcoal-800 text-sm">
+        <input type="email" placeholder="Email" required class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-charcoal-700 bg-gray-50 dark:bg-charcoal-800 text-sm">
+        <input type="tel" placeholder="Phone" required class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-charcoal-700 bg-gray-50 dark:bg-charcoal-800 text-sm">
+        <button type="submit" class="w-full py-3 rounded-xl bg-coral-500 text-white font-bold text-sm">Submit Booking</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/audio-engine.js"></script>
+  <script src="assets/js/3d-engine.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+

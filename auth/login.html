@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In – Harmony House Music Academy</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/images/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brandpurple: { 50: '#F5F3FF', 100: '#EDE9FE', 200: '#DDD6FE', 300: '#C4B5FD', 400: '#987AF0', 500: '#6C4CE3', 600: '#5A38D4', 700: '#4B29B8', 800: '#3D2094', 900: '#2E1771', 950: '#1A0B45' },
+            brandorange: { 50: '#FFF7ED', 100: '#FFEDD5', 200: '#FED7AA', 300: '#FDBA74', 400: '#FB923C', 500: '#FF9F43', 600: '#F58022', 700: '#D6620E', 800: '#AA4A0A', 900: '#7C3408' },
+            lavender: { 50: '#FAF8FF', 100: '#F4F0FD', 200: '#EAE4FC', 300: '#DDD3FA', 400: '#C4B5FD', 500: '#A78BFA' },
+            charcoal: { 700: '#22242B', 750: '#1B1C22', 800: '#16171B', 850: '#111215', 900: '#0C0D0F', 950: '#08080A' }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    };
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="../assets/css/custom.css">
+
+  <style>
+    /* Soft Lilac Canvas */
+    body {
+      background-color: #EDE7FB;
+      background-image: 
+        radial-gradient(circle at 15% 25%, rgba(108, 76, 227, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 85% 75%, rgba(147, 51, 234, 0.1) 0%, transparent 45%),
+        linear-gradient(135deg, #F4EFFD 0%, #E7DDFB 50%, #F3EEFD 100%);
+      background-attachment: fixed;
+    }
+
+    .dark body {
+      background-color: #0E0A1A;
+      background-image: 
+        radial-gradient(circle at 15% 25%, rgba(108, 76, 227, 0.22) 0%, transparent 45%),
+        radial-gradient(circle at 85% 75%, rgba(147, 51, 234, 0.18) 0%, transparent 45%),
+        linear-gradient(135deg, #0A0616 0%, #150F2B 50%, #0A0616 100%);
+    }
+
+    /* 3D Vinyl Disc Behind Player */
+    .vinyl-disc-back {
+      width: 270px;
+      height: 270px;
+      border-radius: 9999px;
+      background: radial-gradient(circle, #2D1A5C 0%, #1B1038 35%, #100924 70%, #0A0517 100%);
+      box-shadow: 
+        0 20px 45px rgba(108, 76, 227, 0.35),
+        inset 0 0 0 8px #392275,
+        inset 0 0 0 20px #1B1038,
+        inset 0 0 0 34px #392275,
+        inset 0 0 0 48px #1B1038,
+        inset 0 0 0 64px #392275;
+      position: absolute;
+      top: -30px;
+      left: 10px;
+      z-index: 1;
+      transition: transform 0.5s ease;
+    }
+    .vinyl-disc-back.playing {
+      animation: spin-vinyl 9s linear infinite;
+    }
+    @keyframes spin-vinyl {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* 3D Frosted Glass Music Player Card */
+    .glass-music-player {
+      background: rgba(255, 255, 255, 0.52);
+      backdrop-filter: blur(28px);
+      -webkit-backdrop-filter: blur(28px);
+      border: 1.5px solid rgba(255, 255, 255, 0.75);
+      border-radius: 32px;
+      box-shadow: 
+        0 25px 55px -12px rgba(108, 76, 227, 0.22),
+        0 0 0 1px rgba(255, 255, 255, 0.4),
+        inset 0 0 20px rgba(255, 255, 255, 0.3);
+      position: relative;
+      z-index: 10;
+    }
+    .dark .glass-music-player {
+      background: rgba(28, 20, 52, 0.65);
+      border-color: rgba(168, 85, 247, 0.3);
+      box-shadow: 0 25px 55px -12px rgba(0, 0, 0, 0.7);
+    }
+
+    /* Floating White Sign-In Card */
+    .card-login-white {
+      background: #FFFFFF;
+      border-radius: 36px;
+      box-shadow: 
+        0 25px 60px -15px rgba(108, 76, 227, 0.16),
+        0 0 0 1px rgba(108, 76, 227, 0.05),
+        0 10px 25px -5px rgba(0, 0, 0, 0.03);
+    }
+    .dark .card-login-white {
+      background: #171229;
+      border: 1px solid rgba(168, 85, 247, 0.2);
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.65);
+    }
+
+    /* Pill-shaped Outline Inputs */
+    .pill-input {
+      background: #FAFAFD;
+      border: 1.5px solid #E5E0F2;
+      border-radius: 9999px;
+      color: #1F2937;
+      transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .pill-input:focus {
+      outline: none;
+      background: #FFFFFF;
+      border-color: #6C4CE3;
+      box-shadow: 0 0 0 4px rgba(108, 76, 227, 0.12);
+    }
+    .dark .pill-input {
+      background: #1E1933;
+      border-color: #352B58;
+      color: #FFFFFF;
+    }
+    .dark .pill-input:focus {
+      background: #231D3D;
+      border-color: #987AF0;
+      box-shadow: 0 0 0 4px rgba(152, 122, 240, 0.2);
+    }
+
+    /* 3D Purple Pill Button */
+    .btn-pill-purple {
+      background: linear-gradient(135deg, #7C3AED 0%, #6C4CE3 50%, #5B21B6 100%);
+      border-radius: 9999px;
+      color: #FFFFFF;
+      box-shadow: 0 10px 25px -5px rgba(108, 76, 227, 0.45);
+      transition: all 0.2s ease;
+    }
+    .btn-pill-purple:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px -5px rgba(108, 76, 227, 0.6);
+    }
+    .btn-pill-purple:active {
+      transform: translateY(1px);
+      box-shadow: 0 6px 15px -3px rgba(108, 76, 227, 0.4);
+    }
+
+    /* Circular Social Buttons */
+    .social-circle-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 9999px;
+      background: #FFFFFF;
+      border: 1.5px solid #EAE6F6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(108, 76, 227, 0.05);
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    .social-circle-btn:hover {
+      transform: translateY(-2px);
+      border-color: #6C4CE3;
+      box-shadow: 0 8px 18px rgba(108, 76, 227, 0.15);
+    }
+    .dark .social-circle-btn {
+      background: #1E1933;
+      border-color: #352B58;
+    }
+
+    /* Floating 3D Musical Notes */
+    @keyframes float-note-3d {
+      0% { transform: translateY(0px) rotate(0deg); opacity: 0.85; }
+      50% { transform: translateY(-12px) rotate(6deg); opacity: 1; filter: drop-shadow(0 6px 14px rgba(108, 76, 227, 0.35)); }
+      100% { transform: translateY(0px) rotate(0deg); opacity: 0.85; }
+    }
+    .note-float-1 { animation: float-note-3d 4.2s ease-in-out infinite; }
+    .note-float-2 { animation: float-note-3d 5.1s ease-in-out infinite 0.9s; }
+    .note-float-3 { animation: float-note-3d 4.6s ease-in-out infinite 1.8s; }
+  </style>
+</head>
+<body class="text-gray-800 dark:text-gray-100 font-sans min-h-screen flex flex-col justify-between selection:bg-[#6C4CE3] selection:text-white transition-colors duration-300 relative overflow-x-hidden">
+
+  <!-- Top Header Navigation & Tagline -->
+  <header class="w-full max-w-7xl mx-auto px-6 py-4 flex items-center justify-between relative z-30">
+    
+    <!-- Brand Mark (Play Button Icon + HarmonyHouse) -->
+    <a href="../index.html" class="inline-flex items-center gap-2.5 group cursor-pointer">
+      <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-[#6C4CE3] to-[#8B5CF6] text-white flex items-center justify-center shadow-lg shadow-[#6C4CE3]/30 group-hover:scale-105 transition transform">
+        <!-- Play / Wave Symbol matching reference logo -->
+        <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24">
+          <path d="M8 5.14v14.72a1 1 0 0 0 1.5.86l11.04-7.36a1 1 0 0 0 0-1.72L9.5 4.28A1 1 0 0 0 8 5.14z"/>
+        </svg>
+      </div>
+      <div>
+        <span class="font-sans font-extrabold text-2xl tracking-tight text-gray-900 dark:text-white">
+          <span class="text-[#6C4CE3]">Harmony</span><span class="text-[#FF9F43]">House</span>
+        </span>
+      </div>
+    </a>
+
+    <!-- Top-Right Actions & Tagline -->
+    <div class="flex items-center gap-4 sm:gap-6">
+      <span class="hidden md:inline text-xs font-semibold tracking-wider text-gray-500 dark:text-gray-400">
+        Listen &bull; Enjoy &bull; Feel Alive
+      </span>
+
+      <div class="flex items-center gap-2">
+        <a href="../index.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-gray-700 dark:text-gray-200 hover:text-[#6C4CE3] bg-white/80 dark:bg-charcoal-800/80 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-purple-200/60 dark:border-charcoal-700 shadow-sm transition">
+          <i data-lucide="arrow-left" class="w-3.5 h-3.5 rtl-mirror"></i>
+          <span>Academy</span>
+        </a>
+
+        <button data-action="toggle-theme" class="p-1.5 rounded-full bg-white/80 dark:bg-charcoal-800/80 backdrop-blur-md border border-purple-200/60 dark:border-charcoal-700 text-gray-700 dark:text-gray-200 shadow-sm hover:text-[#6C4CE3] transition cursor-pointer" title="Toggle Theme">
+          <i data-lucide="sun" class="w-4 h-4 dark:hidden"></i>
+          <i data-lucide="moon" class="w-4 h-4 hidden dark:inline"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Ambient Floating 3D Musical Notes across Canvas -->
+  <div class="absolute inset-0 pointer-events-none overflow-hidden -z-10">
+    <div class="absolute top-24 left-[44%] text-[#8B5CF6] text-4xl sm:text-5xl note-float-1 filter drop-shadow-[0_4px_12px_rgba(108,76,227,0.35)] opacity-85 select-none font-bold">♫</div>
+    <div class="absolute top-[32%] right-[44%] text-[#6C4CE3] text-2xl sm:text-3xl note-float-2 filter drop-shadow-[0_4px_10px_rgba(108,76,227,0.35)] opacity-80 select-none font-bold">♪</div>
+    <div class="absolute bottom-20 left-[3%] text-[#A855F7] text-3xl note-float-3 filter drop-shadow-[0_4px_10px_rgba(108,76,227,0.35)] opacity-75 select-none font-bold">♬</div>
+  </div>
+
+  <!-- Main Experience Grid -->
+  <main class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-auto py-4 relative z-20">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      
+      <!-- LEFT COLUMN: Frosted Glass Music Player Widget & 3D Vinyl Disc -->
+      <section class="lg:col-span-7 xl:col-span-7 flex flex-col justify-center items-center lg:items-start relative select-none py-6">
+        
+        <!-- Player & Vinyl Wrapper -->
+        <div class="relative w-full max-w-[500px]">
+          
+          <!-- Tilted 3D Vinyl Record peeking from behind the player -->
+          <div id="vinyl-disc" class="vinyl-disc-back hidden sm:block">
+            <!-- Center Label -->
+            <div class="absolute inset-0 m-auto w-24 h-24 rounded-full bg-[#6C4CE3] border-4 border-[#FF9F43] flex items-center justify-center text-white shadow-inner">
+              <div class="w-5 h-5 rounded-full bg-[#0A0517] border-2 border-white/50"></div>
+            </div>
+          </div>
+
+          <!-- Glassmorphic Interactive Music Player Card -->
+          <div class="glass-music-player p-6 sm:p-7 w-full shadow-2xl">
+            
+            <!-- Top Row: Album Cover Art & Song Info -->
+            <div class="flex items-center gap-4 sm:gap-5 mb-5">
+              
+              <!-- Album Artwork with Sunset Silhouette & Headphones -->
+              <div class="relative w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden shadow-lg shrink-0">
+                <img 
+                  src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=400&q=80" 
+                  alt="Better Together - Silhouette with Headphones" 
+                  class="w-full h-full object-cover"
+                >
+                <div class="absolute inset-0 bg-gradient-to-t from-purple-950/60 to-transparent"></div>
+              </div>
+
+              <!-- Song Title, Artist & Heart Icon -->
+              <div class="flex-1 flex items-start justify-between">
+                <div>
+                  <h3 class="text-xl sm:text-2xl font-extrabold text-gray-900 dark:text-white tracking-tight leading-tight">
+                    Better Together
+                  </h3>
+                  <p class="text-xs sm:text-sm font-semibold text-[#6C4CE3] dark:text-[#987AF0] mt-1">
+                    MusicWave &bull; Harmony House
+                  </p>
+                  <span class="inline-block text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-purple-100 dark:bg-purple-950/60 text-[#6C4CE3] dark:text-purple-300 mt-2">
+                    Studio 1A Acoustic
+                  </span>
+                </div>
+
+                <!-- Heart Like Button -->
+                <button 
+                  type="button" 
+                  id="player-heart-btn" 
+                  class="text-purple-400 hover:text-[#6C4CE3] transition p-1 cursor-pointer"
+                  title="Favorite Song"
+                >
+                  <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                  </svg>
+                </button>
+              </div>
+
+            </div>
+
+            <!-- Progress Bar & Timestamps -->
+            <div class="mb-5">
+              <div class="relative w-full h-2 rounded-full bg-purple-200/70 dark:bg-charcoal-700 cursor-pointer overflow-hidden" id="progress-track">
+                <div id="progress-bar" class="h-full bg-gradient-to-r from-[#6C4CE3] to-[#8B5CF6] rounded-full transition-all duration-300" style="width: 25%;"></div>
+              </div>
+              <div class="flex items-center justify-between text-[11px] font-semibold text-gray-500 dark:text-gray-400 mt-1.5">
+                <span id="time-current">00:45</span>
+                <span id="time-total">03:32</span>
+              </div>
+            </div>
+
+            <!-- Playback Controls (Shuffle, Prev, Play/Pause, Next, Repeat) -->
+            <div class="flex items-center justify-between px-2 sm:px-4">
+              
+              <!-- Shuffle -->
+              <button type="button" class="text-gray-600 dark:text-gray-300 hover:text-[#6C4CE3] p-1.5 transition cursor-pointer">
+                <i data-lucide="shuffle" class="w-4 h-4"></i>
+              </button>
+
+              <!-- Previous -->
+              <button type="button" class="text-gray-700 dark:text-gray-200 hover:text-[#6C4CE3] p-1.5 transition cursor-pointer">
+                <i data-lucide="skip-back" class="w-5 h-5 fill-current"></i>
+              </button>
+
+              <!-- Main Big Circular Play / Pause Button -->
+              <button 
+                type="button" 
+                id="main-play-btn" 
+                class="w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-gradient-to-tr from-[#6C4CE3] to-[#8B5CF6] text-white flex items-center justify-center shadow-lg shadow-[#6C4CE3]/40 hover:scale-105 active:scale-95 transition transform cursor-pointer"
+                title="Play / Pause Live Audio"
+              >
+                <i data-lucide="play" class="w-6 h-6 fill-current ml-0.5" id="play-icon"></i>
+              </button>
+
+              <!-- Next -->
+              <button type="button" class="text-gray-700 dark:text-gray-200 hover:text-[#6C4CE3] p-1.5 transition cursor-pointer">
+                <i data-lucide="skip-forward" class="w-5 h-5 fill-current"></i>
+              </button>
+
+              <!-- Repeat -->
+              <button type="button" class="text-gray-600 dark:text-gray-300 hover:text-[#6C4CE3] p-1.5 transition cursor-pointer">
+                <i data-lucide="repeat" class="w-4 h-4"></i>
+              </button>
+
+            </div>
+
+          </div>
+
+          <!-- Bottom Ribbon Accent Curve (SVG) -->
+          <div class="absolute -bottom-8 -left-8 w-64 h-24 pointer-events-none opacity-40 -z-10">
+            <svg class="w-full h-full" viewBox="0 0 300 100" fill="none">
+              <path d="M0 80 C100 10, 200 100, 300 40" stroke="#C4B5FD" stroke-width="20" stroke-linecap="round" fill="none"/>
+            </svg>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- RIGHT COLUMN: Floating Pristine White Login Card -->
+      <section class="lg:col-span-5 xl:col-span-5 flex justify-center">
+        
+        <div class="card-login-white p-7 sm:p-9 lg:p-10 w-full max-w-[420px] relative">
+          
+          <!-- Top Headphone with Soundwave Icon Badge -->
+          <div class="w-16 h-12 mx-auto mb-2 flex items-center justify-center relative">
+            <svg class="w-14 h-12" viewBox="0 0 64 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Headband Arch -->
+              <path d="M12 30 C12 12, 52 12, 52 30" stroke="url(#hp-grad)" stroke-width="5.5" stroke-linecap="round"/>
+              <!-- Left Earcup -->
+              <rect x="6" y="24" width="10" height="22" rx="5" fill="#6C4CE3" filter="drop-shadow(0 2px 4px rgba(108,76,227,0.4))"/>
+              <rect x="8.5" y="27" width="2.5" height="16" rx="1.2" fill="#DDD6FE"/>
+              <!-- Right Earcup -->
+              <rect x="48" y="24" width="10" height="22" rx="5" fill="#6C4CE3" filter="drop-shadow(0 2px 4px rgba(108,76,227,0.4))"/>
+              <rect x="53" y="27" width="2.5" height="16" rx="1.2" fill="#DDD6FE"/>
+              <!-- Equalizer Soundwave Bars in Center -->
+              <path d="M23 28 V34 M27 24 V38 M32 20 V42 M37 25 V37 M41 29 V33" stroke="url(#hp-grad)" stroke-width="2.5" stroke-linecap="round"/>
+              <defs>
+                <linearGradient id="hp-grad" x1="12" y1="12" x2="52" y2="40" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#8B5CF6"/>
+                  <stop offset="100%" stop-color="#5A38D4"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+
+          <!-- Card Header (Exact Typography from Reference) -->
+          <div class="text-center mb-5">
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight">
+              Welcome Back!
+            </h2>
+            <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-1 font-medium">
+              Sign in to continue your musical journey
+            </p>
+          </div>
+
+          <!-- Quick Demo Switcher (Student vs Director Mode) -->
+          <div class="mb-5 p-1 bg-purple-50 dark:bg-charcoal-800 rounded-full border border-purple-200/80 dark:border-charcoal-700 flex items-center gap-1 shadow-inner">
+            <button 
+              type="button" 
+              id="btn-demo-student" 
+              class="flex-1 py-1.5 px-3 rounded-full text-xs font-bold transition flex items-center justify-center gap-1.5 bg-[#6C4CE3] text-white shadow-md shadow-[#6C4CE3]/30 cursor-pointer"
+            >
+              <span>🎸 Student (Rohan)</span>
+            </button>
+            <button 
+              type="button" 
+              id="btn-demo-admin" 
+              class="flex-1 py-1.5 px-3 rounded-full text-xs font-bold transition flex items-center justify-center gap-1.5 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white cursor-pointer"
+            >
+              <span>⚡ Director (Admin)</span>
+            </button>
+          </div>
+
+          <!-- Main Login Form -->
+          <form id="login-form" class="space-y-4">
+            
+            <!-- Email / Username Field (Pill-shaped with icon) -->
+            <div class="relative">
+              <i data-lucide="user" class="w-4 h-4 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+              <input 
+                type="email" 
+                id="login-email" 
+                required 
+                value="rohan.sen@gmail.com" 
+                placeholder="Email or Username" 
+                class="pill-input w-full pl-11 pr-5 py-3.5 text-xs sm:text-sm"
+              >
+            </div>
+
+            <!-- Password Field (Pill-shaped with icon & eye toggle) -->
+            <div class="relative">
+              <i data-lucide="lock" class="w-4 h-4 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+              <input 
+                type="password" 
+                id="login-password" 
+                required 
+                value="harmony2026" 
+                placeholder="Password" 
+                class="pill-input w-full pl-11 pr-12 py-3.5 text-xs sm:text-sm"
+              >
+              <button 
+                type="button" 
+                id="toggle-pw-visibility" 
+                class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 p-1 cursor-pointer focus:outline-none transition"
+                aria-label="Toggle password visibility"
+              >
+                <i data-lucide="eye" class="w-4 h-4" id="eye-icon"></i>
+              </button>
+            </div>
+
+            <!-- Remember Me & Forgot Password -->
+            <div class="flex items-center justify-between text-xs pt-1 px-1">
+              <label class="flex items-center gap-2 cursor-pointer select-none text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition">
+                <input 
+                  type="checkbox" 
+                  checked 
+                  class="w-4 h-4 rounded border-gray-300 dark:border-charcoal-700 text-[#6C4CE3] focus:ring-0 focus:ring-offset-0 cursor-pointer"
+                >
+                <span class="font-medium">Remember Me</span>
+              </label>
+              <a href="forgot-password.html" class="text-[#6C4CE3] dark:text-[#987AF0] font-bold hover:underline transition">
+                Forgot Password?
+              </a>
+            </div>
+
+            <!-- Primary 3D Pill Button (Sign In →) -->
+            <button 
+              type="submit" 
+              id="login-submit-btn" 
+              class="btn-pill-purple w-full py-3.5 text-xs sm:text-sm font-bold tracking-wider flex items-center justify-center gap-2 cursor-pointer mt-3"
+            >
+              <span id="btn-text">Sign In &rarr;</span>
+            </button>
+
+          </form>
+
+          <!-- "or" Divider -->
+          <div class="relative flex items-center justify-center my-6">
+            <div class="border-t border-gray-200 dark:border-charcoal-700 w-full"></div>
+            <span class="bg-white dark:bg-[#171229] px-3 text-xs text-gray-400 font-medium absolute">
+              or
+            </span>
+          </div>
+
+          <!-- Circular Social Buttons (Google, Facebook, Apple) -->
+          <div class="flex items-center justify-center gap-4">
+            <!-- Google -->
+            <button 
+              type="button" 
+              onclick="HarmonyApp.showToast('Connecting with Google...', 'info'); setTimeout(()=>location.href='../student/index.html', 700);" 
+              class="social-circle-btn group" 
+              title="Sign in with Google"
+            >
+              <svg class="w-4 h-4" viewBox="0 0 24 24">
+                <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+                <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/>
+                <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+                <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+              </svg>
+            </button>
+
+            <!-- Facebook -->
+            <button 
+              type="button" 
+              onclick="HarmonyApp.showToast('Connecting with Social ID...', 'info'); setTimeout(()=>location.href='../student/index.html', 700);" 
+              class="social-circle-btn group" 
+              title="Sign in with Facebook"
+            >
+              <svg class="w-4 h-4 fill-[#1877F2]" viewBox="0 0 24 24">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </button>
+
+            <!-- Apple -->
+            <button 
+              type="button" 
+              onclick="HarmonyApp.showToast('Connecting with Apple ID...', 'info'); setTimeout(()=>location.href='../student/index.html', 700);" 
+              class="social-circle-btn group" 
+              title="Sign in with Apple ID"
+            >
+              <i data-lucide="apple" class="w-4 h-4 fill-current text-gray-900 dark:text-white"></i>
+            </button>
+          </div>
+
+          <!-- Card Footer (Don't have an account? Sign Up) -->
+          <div class="text-center pt-6 mt-6 border-t border-gray-100 dark:border-charcoal-700 text-xs text-gray-600 dark:text-gray-400 font-medium">
+            <span>Don't have an account?</span>
+            <a href="register.html" class="text-[#6C4CE3] dark:text-[#987AF0] font-bold ml-1 hover:underline">
+              Sign Up
+            </a>
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Bottom Copyright -->
+  <footer class="w-full max-w-7xl mx-auto px-6 py-4 text-center text-xs text-gray-400 relative z-20">
+    <p>&copy; 2026 Harmony House Music Academy. All rights reserved.</p>
+  </footer>
+
+  <!-- App Scripts -->
+  <script src="../assets/js/data.js"></script>
+  <script src="../assets/js/3d-engine.js"></script>
+  <script src="../assets/js/main.js"></script>
+
+  <script>
+    // Password Visibility Toggle
+    const pwInput = document.getElementById('login-password');
+    const toggleBtn = document.getElementById('toggle-pw-visibility');
+    const eyeIcon = document.getElementById('eye-icon');
+    if (toggleBtn && pwInput) {
+      toggleBtn.addEventListener('click', () => {
+        const isPw = pwInput.type === 'password';
+        pwInput.type = isPw ? 'text' : 'password';
+        eyeIcon.setAttribute('data-lucide', isPw ? 'eye-off' : 'eye');
+        if (window.lucide) window.lucide.createIcons();
+      });
+    }
+
+    // Role Switcher: Student vs Director
+    const btnStudent = document.getElementById('btn-demo-student');
+    const btnAdmin = document.getElementById('btn-demo-admin');
+    const emailInput = document.getElementById('login-email');
+    const btnText = document.getElementById('btn-text');
+
+    function setRole(role) {
+      if (role === 'student') {
+        btnStudent.className = 'flex-1 py-1.5 px-3 rounded-full text-xs font-bold transition flex items-center justify-center gap-1.5 bg-[#6C4CE3] text-white shadow-md shadow-[#6C4CE3]/30 cursor-pointer';
+        btnAdmin.className = 'flex-1 py-1.5 px-3 rounded-full text-xs font-bold transition flex items-center justify-center gap-1.5 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white cursor-pointer';
+        emailInput.value = 'rohan.sen@gmail.com';
+        pwInput.value = 'harmony2026';
+        btnText.innerHTML = 'Sign In &rarr;';
+        if (window.HarmonyApp) {
+          HarmonyApp.showToast('Student credentials loaded (Rohan Sen)!', 'info');
+        }
+      } else {
+        btnAdmin.className = 'flex-1 py-1.5 px-3 rounded-full text-xs font-bold transition flex items-center justify-center gap-1.5 bg-[#FF9F43] text-gray-950 font-extrabold shadow-md shadow-[#FF9F43]/30 cursor-pointer';
+        btnStudent.className = 'flex-1 py-1.5 px-3 rounded-full text-xs font-bold transition flex items-center justify-center gap-1.5 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white cursor-pointer';
+        emailInput.value = 'director@harmonyhousemusic.com';
+        pwInput.value = 'adminpass2026';
+        btnText.innerHTML = 'Access Director &rarr;';
+        if (window.HarmonyApp) {
+          HarmonyApp.showToast('Director credentials loaded (Academy Admin)!', 'info');
+        }
+      }
+    }
+
+    if (btnStudent) btnStudent.addEventListener('click', () => setRole('student'));
+    if (btnAdmin) btnAdmin.addEventListener('click', () => setRole('admin'));
+
+    // Form Submit Handler
+    const loginForm = document.getElementById('login-form');
+    if (loginForm) {
+      loginForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = emailInput.value.toLowerCase();
+        
+        if (window.HarmonyApp) {
+          HarmonyApp.showToast('Signing in to Harmony House...', 'info');
+        }
+        
+        setTimeout(() => {
+          if (email.includes('admin') || email.includes('director')) {
+            window.location.href = '../admin/index.html';
+          } else {
+            window.location.href = '../student/index.html';
+          }
+        }, 500);
+      });
+    }
+
+    // ==========================================
+    // Interactive Music Player & Audio Synthesizer
+    // ==========================================
+    const playBtn = document.getElementById('main-play-btn');
+    const playIcon = document.getElementById('play-icon');
+    const vinylDisc = document.getElementById('vinyl-disc');
+    const progressBar = document.getElementById('progress-bar');
+    const timeCurrent = document.getElementById('time-current');
+    const heartBtn = document.getElementById('player-heart-btn');
+
+    let isPlaying = false;
+    let playInterval = null;
+    let secondsElapsed = 45; // Start at 00:45 like the reference mockup
+
+    if (heartBtn) {
+      heartBtn.addEventListener('click', () => {
+        heartBtn.classList.toggle('text-[#FF9F43]');
+        heartBtn.classList.toggle('text-purple-400');
+        if (window.HarmonyApp) {
+          HarmonyApp.showToast('Added "Better Together" to your favorites!', 'success');
+        }
+      });
+    }
+
+    if (playBtn) {
+      playBtn.addEventListener('click', () => {
+        isPlaying = !isPlaying;
+
+        if (isPlaying) {
+          // Update Play Button Icon to Pause
+          playIcon.setAttribute('data-lucide', 'pause');
+          if (window.lucide) window.lucide.createIcons();
+
+          // Start spinning vinyl disc
+          if (vinylDisc) vinylDisc.classList.add('playing');
+
+          // Synthesize warm acoustic music chord using Web Audio API
+          try {
+            const AudioContext = window.AudioContext || window.webkitAudioContext;
+            if (AudioContext) {
+              const ctx = new AudioContext();
+              // C Major 7th chord arpeggio
+              const chord = [261.63, 329.63, 392.00, 493.88];
+              const now = ctx.currentTime;
+              chord.forEach((freq, i) => {
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(freq, now + i * 0.14);
+                gain.gain.setValueAtTime(0, now + i * 0.14);
+                gain.gain.linearRampToValueAtTime(0.18, now + i * 0.14 + 0.05);
+                gain.gain.exponentialRampToValueAtTime(0.0001, now + i * 0.14 + 1.8);
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.start(now + i * 0.14);
+                osc.stop(now + i * 0.14 + 1.9);
+              });
+            }
+          } catch(e) {}
+
+          // Progress bar timer animation
+          playInterval = setInterval(() => {
+            secondsElapsed++;
+            const pct = Math.min((secondsElapsed / 212) * 100, 100);
+            if (progressBar) progressBar.style.width = pct + '%';
+            
+            const mins = Math.floor(secondsElapsed / 60);
+            const secs = secondsElapsed % 60;
+            if (timeCurrent) {
+              timeCurrent.textContent = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+            }
+
+            if (secondsElapsed >= 212) {
+              clearInterval(playInterval);
+              isPlaying = false;
+              playIcon.setAttribute('data-lucide', 'play');
+              if (vinylDisc) vinylDisc.classList.remove('playing');
+              if (window.lucide) window.lucide.createIcons();
+            }
+          }, 1000);
+
+          if (window.HarmonyApp) {
+            HarmonyApp.showToast('Playing "Better Together" (Studio 1A Acoustic Session)', 'info');
+          }
+
+        } else {
+          // Pause
+          playIcon.setAttribute('data-lucide', 'play');
+          if (window.lucide) window.lucide.createIcons();
+          if (vinylDisc) vinylDisc.classList.remove('playing');
+          if (playInterval) clearInterval(playInterval);
+        }
+      });
+    }
+
+    if (window.lucide) {
+      window.lucide.createIcons();
+    }
+  </script>
+</body>
+</html>

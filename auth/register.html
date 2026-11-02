@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration – Harmony House Music Academy</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/images/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brandpurple: { 50: '#F5F3FF', 100: '#EDE9FE', 200: '#DDD6FE', 300: '#C4B5FD', 400: '#987AF0', 500: '#6C4CE3', 600: '#5A38D4', 700: '#4B29B8', 800: '#3D2094', 900: '#2E1771', 950: '#1A0B45' },
+            brandorange: { 50: '#FFF7ED', 100: '#FFEDD5', 200: '#FED7AA', 300: '#FDBA74', 400: '#FB923C', 500: '#FF9F43', 600: '#F58022', 700: '#D6620E', 800: '#AA4A0A', 900: '#7C3408' },
+            charcoal: { 700: '#22242B', 750: '#1B1C22', 800: '#16171B', 850: '#111215', 900: '#0C0D0F', 950: '#08080A' }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    };
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="../assets/css/custom.css">
+
+  <style>
+    body {
+      background-color: #EDE7FB;
+      background-image: 
+        radial-gradient(circle at 15% 25%, rgba(108, 76, 227, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 85% 75%, rgba(147, 51, 234, 0.1) 0%, transparent 45%),
+        linear-gradient(135deg, #F4EFFD 0%, #E7DDFB 50%, #F3EEFD 100%);
+      background-attachment: fixed;
+    }
+    .dark body {
+      background-color: #0E0A1A;
+      background-image: 
+        radial-gradient(circle at 15% 25%, rgba(108, 76, 227, 0.22) 0%, transparent 45%),
+        linear-gradient(135deg, #0A0616 0%, #150F2B 50%, #0A0616 100%);
+    }
+
+    .card-login-white {
+      background: #FFFFFF;
+      border-radius: 36px;
+      box-shadow: 
+        0 25px 60px -15px rgba(108, 76, 227, 0.16),
+        0 0 0 1px rgba(108, 76, 227, 0.05);
+    }
+    .dark .card-login-white {
+      background: #171229;
+      border: 1px solid rgba(168, 85, 247, 0.2);
+    }
+
+    .pill-input {
+      background: #FAFAFD;
+      border: 1.5px solid #E5E0F2;
+      border-radius: 9999px;
+      color: #1F2937;
+      transition: all 0.2s ease;
+    }
+    .pill-input:focus {
+      outline: none;
+      background: #FFFFFF;
+      border-color: #6C4CE3;
+      box-shadow: 0 0 0 4px rgba(108, 76, 227, 0.12);
+    }
+    .dark .pill-input {
+      background: #1E1933;
+      border-color: #352B58;
+      color: #FFFFFF;
+    }
+
+    .btn-pill-purple {
+      background: linear-gradient(135deg, #7C3AED 0%, #6C4CE3 50%, #5B21B6 100%);
+      border-radius: 9999px;
+      color: #FFFFFF;
+      box-shadow: 0 10px 25px -5px rgba(108, 76, 227, 0.45);
+      transition: all 0.2s ease;
+    }
+    .btn-pill-purple:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px -5px rgba(108, 76, 227, 0.6);
+    }
+
+    .social-circle-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 9999px;
+      background: #FFFFFF;
+      border: 1.5px solid #EAE6F6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(108, 76, 227, 0.05);
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    .social-circle-btn:hover {
+      transform: translateY(-2px);
+      border-color: #6C4CE3;
+      box-shadow: 0 8px 18px rgba(108, 76, 227, 0.15);
+    }
+    .dark .social-circle-btn {
+      background: #1E1933;
+      border-color: #352B58;
+    }
+  </style>
+</head>
+<body class="text-gray-800 dark:text-gray-100 font-sans min-h-screen flex flex-col justify-between selection:bg-[#6C4CE3] selection:text-white transition-colors duration-300">
+
+  <!-- Header -->
+  <header class="w-full max-w-7xl mx-auto px-6 py-4 flex items-center justify-between relative z-30">
+    <a href="../index.html" class="inline-flex items-center gap-2.5 group cursor-pointer">
+      <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-[#6C4CE3] to-[#8B5CF6] text-white flex items-center justify-center shadow-lg shadow-[#6C4CE3]/30">
+        <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24">
+          <path d="M8 5.14v14.72a1 1 0 0 0 1.5.86l11.04-7.36a1 1 0 0 0 0-1.72L9.5 4.28A1 1 0 0 0 8 5.14z"/>
+        </svg>
+      </div>
+      <div>
+        <span class="font-sans font-extrabold text-2xl tracking-tight text-gray-900 dark:text-white">
+          <span class="text-[#6C4CE3]">Harmony</span><span class="text-[#FF9F43]">House</span>
+        </span>
+      </div>
+    </a>
+
+    <div class="flex items-center gap-2">
+      <a href="login.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-gray-700 dark:text-gray-200 hover:text-[#6C4CE3] bg-white/80 dark:bg-charcoal-800/80 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-purple-200/60 dark:border-charcoal-700 shadow-sm transition">
+        <i data-lucide="arrow-left" class="w-3.5 h-3.5 rtl-mirror"></i>
+        <span>Sign In</span>
+      </a>
+
+      <button data-action="toggle-theme" class="p-1.5 rounded-full bg-white/80 dark:bg-charcoal-800/80 backdrop-blur-md border border-purple-200/60 dark:border-charcoal-700 text-gray-700 dark:text-gray-200 shadow-sm hover:text-[#6C4CE3] transition cursor-pointer" title="Toggle Theme">
+        <i data-lucide="sun" class="w-4 h-4 dark:hidden"></i>
+        <i data-lucide="moon" class="w-4 h-4 hidden dark:inline"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Experience Grid -->
+  <main class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-auto py-4 relative z-20">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      
+      <!-- Left Column: Student Perks -->
+      <section class="lg:col-span-7 xl:col-span-7 flex flex-col justify-center select-none py-6">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 dark:text-white tracking-tight leading-[1.12]">
+          Join the <span class="text-[#6C4CE3]">Music</span> Wave<br>
+          Live the <span class="text-[#FF9F43]">Vibe</span>
+        </h1>
+        <p class="text-sm sm:text-base text-gray-500 dark:text-gray-400 font-medium mt-3 max-w-lg leading-relaxed">
+          Learn acoustic guitar, piano, drums, violin, or vocals with certified Trinity College London mentors in acoustic sound-treated studios.
+        </p>
+
+        <div class="mt-8 space-y-3 max-w-md">
+          <div class="flex items-center gap-3 p-3 rounded-2xl bg-white/70 dark:bg-charcoal-800/70 border border-purple-100 dark:border-charcoal-700 shadow-sm">
+            <div class="w-8 h-8 rounded-xl bg-purple-100 dark:bg-purple-950 text-[#6C4CE3] flex items-center justify-center font-bold text-sm">✓</div>
+            <span class="text-xs sm:text-sm font-semibold text-gray-800 dark:text-gray-200">1-on-1 Personalized Mentorship with Trinity Mentors</span>
+          </div>
+          <div class="flex items-center gap-3 p-3 rounded-2xl bg-white/70 dark:bg-charcoal-800/70 border border-purple-100 dark:border-charcoal-700 shadow-sm">
+            <div class="w-8 h-8 rounded-xl bg-purple-100 dark:bg-purple-950 text-[#6C4CE3] flex items-center justify-center font-bold text-sm">✓</div>
+            <span class="text-xs sm:text-sm font-semibold text-gray-800 dark:text-gray-200">Flexible Weekday Evening &amp; Weekend Batch Schedules</span>
+          </div>
+          <div class="flex items-center gap-3 p-3 rounded-2xl bg-white/70 dark:bg-charcoal-800/70 border border-purple-100 dark:border-charcoal-700 shadow-sm">
+            <div class="w-8 h-8 rounded-xl bg-purple-100 dark:bg-purple-950 text-[#6C4CE3] flex items-center justify-center font-bold text-sm">✓</div>
+            <span class="text-xs sm:text-sm font-semibold text-gray-800 dark:text-gray-200">Free 45-Min Instrument Diagnostic &amp; Trial Session</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right Column: Registration Card -->
+      <section class="lg:col-span-5 xl:col-span-5 flex justify-center">
+        <div class="card-login-white p-7 sm:p-9 lg:p-10 w-full max-w-[420px] relative">
+          
+          <!-- Headphone Badge -->
+          <div class="w-16 h-12 mx-auto mb-2 flex items-center justify-center relative">
+            <svg class="w-14 h-12" viewBox="0 0 64 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 30 C12 12, 52 12, 52 30" stroke="url(#hp-grad-reg)" stroke-width="5.5" stroke-linecap="round"/>
+              <rect x="6" y="24" width="10" height="22" rx="5" fill="#6C4CE3"/>
+              <rect x="8.5" y="27" width="2.5" height="16" rx="1.2" fill="#DDD6FE"/>
+              <rect x="48" y="24" width="10" height="22" rx="5" fill="#6C4CE3"/>
+              <rect x="53" y="27" width="2.5" height="16" rx="1.2" fill="#DDD6FE"/>
+              <path d="M23 28 V34 M27 24 V38 M32 20 V42 M37 25 V37 M41 29 V33" stroke="url(#hp-grad-reg)" stroke-width="2.5" stroke-linecap="round"/>
+              <defs>
+                <linearGradient id="hp-grad-reg" x1="12" y1="12" x2="52" y2="40" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#8B5CF6"/>
+                  <stop offset="100%" stop-color="#5A38D4"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+
+          <div class="text-center mb-5">
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight">
+              Create Account
+            </h2>
+            <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-1 font-medium">
+              Join 1,200+ students on their musical journey
+            </p>
+          </div>
+
+          <!-- Social Quick Sign Up -->
+          <div class="flex items-center justify-center gap-4 mb-5">
+            <button type="button" onclick="HarmonyApp.showToast('Signing up with Google...', 'info'); setTimeout(()=>location.href='../student/index.html', 700);" class="social-circle-btn" title="Google">
+              <svg class="w-4 h-4" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/></svg>
+            </button>
+            <button type="button" onclick="HarmonyApp.showToast('Signing up with Facebook...', 'info'); setTimeout(()=>location.href='../student/index.html', 700);" class="social-circle-btn" title="Facebook">
+              <svg class="w-4 h-4 fill-[#1877F2]" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </button>
+            <button type="button" onclick="HarmonyApp.showToast('Signing up with Apple...', 'info'); setTimeout(()=>location.href='../student/index.html', 700);" class="social-circle-btn" title="Apple ID">
+              <i data-lucide="apple" class="w-4 h-4 fill-current text-gray-900 dark:text-white"></i>
+            </button>
+          </div>
+
+          <div class="relative flex items-center justify-center my-5">
+            <div class="border-t border-gray-200 dark:border-charcoal-700 w-full"></div>
+            <span class="bg-white dark:bg-[#171229] px-3 text-xs text-gray-400 font-medium absolute">or register with email</span>
+          </div>
+
+          <!-- Form -->
+          <form id="register-form" class="space-y-3.5">
+            <div class="relative">
+              <i data-lucide="user" class="w-4 h-4 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+              <input type="text" required placeholder="Full Name" class="pill-input w-full pl-11 pr-5 py-3 text-xs sm:text-sm">
+            </div>
+
+            <div class="relative">
+              <i data-lucide="mail" class="w-4 h-4 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+              <input type="email" required placeholder="Email Address" class="pill-input w-full pl-11 pr-5 py-3 text-xs sm:text-sm">
+            </div>
+
+            <div class="grid grid-cols-2 gap-2.5">
+              <select required class="pill-input w-full px-4 py-3 text-xs">
+                <option value="guitar">🎸 Guitar</option>
+                <option value="piano">🎹 Piano</option>
+                <option value="vocals">🎤 Vocals</option>
+                <option value="drums">🥁 Drums</option>
+                <option value="violin">🎻 Violin</option>
+              </select>
+              <select required class="pill-input w-full px-4 py-3 text-xs">
+                <option value="kid">Kid (5-11 yrs)</option>
+                <option value="teen">Teen (12-17)</option>
+                <option value="adult" selected>Adult (18+)</option>
+              </select>
+            </div>
+
+            <div class="relative">
+              <i data-lucide="lock" class="w-4 h-4 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+              <input type="password" required placeholder="Create Password" class="pill-input w-full pl-11 pr-5 py-3 text-xs sm:text-sm">
+            </div>
+
+            <button type="submit" class="btn-pill-purple w-full py-3.5 text-xs sm:text-sm font-bold tracking-wider flex items-center justify-center gap-2 cursor-pointer mt-3">
+              <span>Complete Registration &rarr;</span>
+            </button>
+          </form>
+
+          <div class="text-center pt-5 mt-5 border-t border-gray-100 dark:border-charcoal-700 text-xs text-gray-600 dark:text-gray-400 font-medium">
+            <span>Already have an account?</span>
+            <a href="login.html" class="text-[#6C4CE3] dark:text-[#987AF0] font-bold ml-1 hover:underline">
+              Sign In
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="w-full max-w-7xl mx-auto px-6 py-4 text-center text-xs text-gray-400 relative z-20">
+    <p>&copy; 2026 Harmony House Music Academy. All rights reserved.</p>
+  </footer>
+
+  <script src="../assets/js/data.js"></script>
+  <script src="../assets/js/3d-engine.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script>
+    document.getElementById('register-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      HarmonyApp.showToast('Student registered! Welcome to Harmony House Academy.', 'success');
+      setTimeout(() => {
+        window.location.href = '../student/index.html';
+      }, 700);
+    });
+
+    if (window.lucide) {
+      window.lucide.createIcons();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Details – Harmony House Music Academy</title>
+  <meta name="description" content="View in-depth course curriculum, learning outcomes, batch schedules, faculty mentors, and enrollment options at Harmony House.">
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brandpurple: { 50: '#F5F3FF', 100: '#EDE9FE', 200: '#DDD6FE', 300: '#C4B5FD', 400: '#987AF0', 500: '#6C4CE3', 600: '#5A38D4', 700: '#4B29B8', 800: '#3D2094', 900: '#2E1771', 950: '#1A0B45' },
+            brandorange: { 50: '#FFF7ED', 100: '#FFEDD5', 200: '#FED7AA', 300: '#FDBA74', 400: '#FB923C', 500: '#FF9F43', 600: '#F58022', 700: '#D6620E', 800: '#AA4A0A', 900: '#7C3408' },
+            coral: { 50: '#F5F3FF', 100: '#EDE9FE', 200: '#DDD6FE', 300: '#C4B5FD', 400: '#987AF0', 500: '#6C4CE3', 600: '#5A38D4', 700: '#4B29B8', 800: '#3D2094', 900: '#2E1771' },
+            sage: { 50: '#FFF7ED', 100: '#FFEDD5', 200: '#FED7AA', 300: '#FDBA74', 400: '#FB923C', 500: '#FF9F43', 600: '#F58022', 700: '#D6620E', 800: '#AA4A0A', 900: '#7C3408' },
+            amberbrand: { 400: '#FDBA74', 500: '#FF9F43', 600: '#F58022' },
+            charcoal: { 700: '#22242B', 750: '#1B1C22', 800: '#16171B', 850: '#111215', 900: '#0C0D0F', 950: '#08080A' }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    };
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+<body class="bg-[#FAFAFA] dark:bg-charcoal-900 text-gray-800 dark:text-gray-100 font-sans antialiased transition-colors duration-300">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-white/95 dark:bg-charcoal-900/95 backdrop-blur-md border-b border-gray-100 dark:border-charcoal-800 transition-colors shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <a href="index.html" class="flex items-center gap-3 shrink-0 mr-4 lg:mr-8 group">
+          <div class="w-11 h-11 rounded-xl bg-[#6C4CE3] flex items-center justify-center text-[#FF9F43] shadow-md shadow-[#6C4CE3]/20 group-hover:scale-105 transition-transform">
+            <i data-lucide="music" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <span class="font-serif font-bold text-2xl tracking-tight"><span class="text-[#6C4CE3] dark:text-[#987AF0]">Harmony</span><span class="text-[#FF9F43]">House</span></span>
+            <span class="block text-[9.5px] font-bold tracking-[0.2em] uppercase text-[#6C4CE3] dark:text-[#987AF0]">Music Academy</span>
+          </div>
+        </a>
+
+        <nav class="hidden xl:flex items-center gap-7 text-sm font-medium">
+          <div class="relative group">
+            <button class="flex items-center gap-1 text-gray-600 dark:text-gray-300 hover:text-coral-500 py-2">
+              <span>Home</span>
+              <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
+            </button>
+            <div class="absolute left-0 mt-1 w-52 bg-white dark:bg-charcoal-800 rounded-xl shadow-xl border border-gray-100 dark:border-charcoal-700 p-2 hidden group-hover:block transition-all animate-fadeIn">
+              <a href="index.html" class="flex items-center gap-2 px-3 py-2 text-xs font-medium rounded-lg hover:bg-gray-50 dark:hover:bg-charcoal-700 text-gray-700 dark:text-gray-300">
+                <i data-lucide="layout-template" class="w-4 h-4"></i> Home 1 (Classic)
+              </a>
+              <a href="home-2.html" class="flex items-center gap-2 px-3 py-2 text-xs font-medium rounded-lg hover:bg-gray-50 dark:hover:bg-charcoal-700 text-gray-700 dark:text-gray-300">
+                <i data-lucide="sparkles" class="w-4 h-4 text-amberbrand-500"></i> Home 2 (Premium)
+              </a>
+            </div>
+          </div>
+          <!-- Courses (Direct Link) -->
+          <a href="courses.html" class="text-[#6C4CE3] dark:text-[#987AF0] font-bold py-2">Courses</a>
+
+          <a href="instructors.html" class="text-gray-600 dark:text-gray-300 hover:text-[#6C4CE3] dark:hover:text-[#987AF0] transition">Instructors</a>
+          <a href="about.html" class="text-gray-600 dark:text-gray-300 hover:text-[#6C4CE3] dark:hover:text-[#987AF0] transition">About Us</a>
+          <a href="blog.html" class="text-gray-600 dark:text-gray-300 hover:text-[#6C4CE3] dark:hover:text-[#987AF0] transition">Blog</a>
+          <a href="contact.html" class="text-gray-600 dark:text-gray-300 hover:text-[#6C4CE3] dark:hover:text-[#987AF0] transition">Contact</a>
+        </nav>
+
+        <div class="flex items-center gap-2.5 sm:gap-3 shrink-0">
+          <button data-action="toggle-theme" class="p-2 rounded-full border border-gray-200 dark:border-charcoal-700 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-charcoal-800 transition" title="Toggle Light/Dark Theme">
+            <i data-lucide="sun" class="w-4 h-4 dark:hidden"></i>
+            <i data-lucide="moon" class="w-4 h-4 hidden dark:inline"></i>
+          </button>
+          <button data-action="toggle-rtl" class="px-2.5 py-1.5 text-xs font-mono font-medium rounded-full border border-gray-200 dark:border-charcoal-700 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-charcoal-800 transition" title="Toggle RTL">
+            ⇄ RTL
+          </button>
+          <a href="auth/login.html" class="hidden sm:flex items-center gap-1.5 px-4 py-2 rounded-full bg-purple-50 dark:bg-charcoal-800 border border-purple-200 dark:border-charcoal-700 text-[#6C4CE3] dark:text-[#987AF0] hover:border-[#6C4CE3] hover:text-[#6C4CE3] text-xs font-semibold shadow-sm transition">
+            <i data-lucide="graduation-cap" class="w-4 h-4 text-[#6C4CE3]"></i>
+            <span>Student Portal</span>
+          </a>
+          <button id="mobile-menu-btn" class="p-2 rounded-xl text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-charcoal-800 xl:hidden focus:outline-none" aria-label="Open Mobile Menu">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Course Hero Banner -->
+  <section class="relative bg-charcoal-900 text-white py-16 overflow-hidden">
+    <div class="absolute inset-0 opacity-25">
+      <img id="detail-banner" src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=1400&q=80" alt="Course Banner" class="w-full h-full object-cover">
+    </div>
+    <div class="absolute inset-0 bg-charcoal-950/80"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-3xl space-y-4">
+        <div class="flex flex-wrap items-center gap-2">
+          <a href="courses.html" class="text-xs text-gray-400 hover:text-white flex items-center gap-1">
+            <i data-lucide="arrow-left" class="w-3 h-3 rtl-mirror"></i> All Courses
+          </a>
+          <span class="text-gray-500">&bull;</span>
+          <span id="detail-badge" class="px-3 py-0.5 rounded-full bg-coral-500/20 text-coral-400 text-xs font-bold uppercase tracking-wider">
+            Guitar &amp; Bass
+          </span>
+          <span class="text-gray-500">&bull;</span>
+          <span class="text-xs text-amberbrand-500 font-bold flex items-center gap-1">
+            <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i> 4.9 (142 Reviews)
+          </span>
+        </div>
+
+        <h1 id="detail-title" class="font-serif text-3xl sm:text-5xl font-bold tracking-tight">
+          Acoustic &amp; Electric Guitar Mastery
+        </h1>
+
+        <p id="detail-desc" class="text-sm sm:text-base text-gray-300 leading-relaxed max-w-2xl">
+          From first strum to fluid soloing. Learn fingerpicking, rhythm techniques, chord progressions, and modern pop/rock repertoire with certified Trinity College London mentors.
+        </p>
+
+        <div class="pt-2 flex flex-wrap items-center gap-6 text-xs text-gray-300">
+          <div class="flex items-center gap-1.5"><i data-lucide="clock" class="w-4 h-4 text-coral-400"></i> <span id="detail-duration">16 Weeks / 32 Sessions</span></div>
+          <div class="flex items-center gap-1.5"><i data-lucide="users" class="w-4 h-4 text-sage-400"></i> <span id="detail-age">Kids &amp; Adults (7+ yrs)</span></div>
+          <div class="flex items-center gap-1.5"><i data-lucide="gauge" class="w-4 h-4 text-amberbrand-500"></i> <span id="detail-difficulty">Beginner to Intermediate</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Course Content & Sticky Sidebar -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- Left Content Column -->
+        <div class="lg:col-span-8 space-y-12">
+          
+          <!-- Learning Objectives -->
+          <div class="p-8 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-100 dark:border-charcoal-700 shadow-sm space-y-6">
+            <h2 class="font-serif text-2xl font-bold text-gray-900 dark:text-white">What You Will Master</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="detail-outcomes">
+              <!-- Populated via script or defaults -->
+              <div class="flex items-start gap-3">
+                <i data-lucide="check-circle-2" class="w-5 h-5 text-coral-500 shrink-0 mt-0.5"></i>
+                <span class="text-xs text-gray-600 dark:text-gray-300">Fretboard navigation and ergonomic posture</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <i data-lucide="check-circle-2" class="w-5 h-5 text-coral-500 shrink-0 mt-0.5"></i>
+                <span class="text-xs text-gray-600 dark:text-gray-300">Open chords, barre chords &amp; fingerstyle patterns</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <i data-lucide="check-circle-2" class="w-5 h-5 text-coral-500 shrink-0 mt-0.5"></i>
+                <span class="text-xs text-gray-600 dark:text-gray-300">Rhythm mastery with metronome syncopation</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <i data-lucide="check-circle-2" class="w-5 h-5 text-coral-500 shrink-0 mt-0.5"></i>
+                <span class="text-xs text-gray-600 dark:text-gray-300">Reading standard notation &amp; guitar tablature</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Module Curriculum Accordion -->
+          <div class="space-y-4">
+            <h2 class="font-serif text-2xl font-bold text-gray-900 dark:text-white">Structured Syllabus Breakdown</h2>
+            <div class="space-y-3">
+              
+              <!-- Module 1 -->
+              <div class="rounded-2xl border border-gray-200 dark:border-charcoal-700 bg-white dark:bg-charcoal-800 overflow-hidden">
+                <button class="accordion-header w-full px-6 py-4 text-left flex items-center justify-between font-serif font-bold text-base text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-charcoal-750 transition">
+                  <div class="flex items-center gap-3">
+                    <span class="w-7 h-7 rounded-lg bg-coral-100 text-coral-600 text-xs flex items-center justify-center font-sans font-bold">01</span>
+                    <span>Module 1: Foundations &amp; Ergonomic Posture</span>
+                  </div>
+                  <i data-lucide="chevron-down" class="accordion-icon w-4 h-4 text-gray-400 transition-transform"></i>
+                </button>
+                <div class="px-6 pb-5 pt-2 text-xs text-gray-600 dark:text-gray-400 space-y-2 border-t border-gray-100 dark:border-charcoal-700">
+                  <p>&bull; Tuning with clip-on and app tuners (Standard EADGBE)</p>
+                  <p>&bull; Clean open chords (Em, G, C, D, Am) with quick transition exercises</p>
+                  <p>&bull; Basic strumming mechanics: Down/Up patterns in 4/4 and 3/4 time</p>
+                  <p>&bull; Song Repertoire: 'Knockin on Heaven's Door' &amp; 'Stand By Me'</p>
+                </div>
+              </div>
+
+              <!-- Module 2 -->
+              <div class="rounded-2xl border border-gray-200 dark:border-charcoal-700 bg-white dark:bg-charcoal-800 overflow-hidden">
+                <button class="accordion-header w-full px-6 py-4 text-left flex items-center justify-between font-serif font-bold text-base text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-charcoal-750 transition">
+                  <div class="flex items-center gap-3">
+                    <span class="w-7 h-7 rounded-lg bg-sage-100 text-sage-600 text-xs flex items-center justify-center font-sans font-bold">02</span>
+                    <span>Module 2: Barre Chords &amp; Fingerstyle Articulation</span>
+                  </div>
+                  <i data-lucide="chevron-down" class="accordion-icon w-4 h-4 text-gray-400 transition-transform"></i>
+                </button>
+                <div class="px-6 pb-5 pt-2 text-xs text-gray-600 dark:text-gray-400 space-y-2 border-t border-gray-100 dark:border-charcoal-700 hidden">
+                  <p>&bull; Eliminating fret buzz: Thumb leverage and index finger rolling</p>
+                  <p>&bull; The F major and B minor conquer guide</p>
+                  <p>&bull; Travis picking and arpeggio synchronization</p>
+                  <p>&bull; Song Repertoire: Ed Sheeran fingerstyle ballads &amp; Fleetwood Mac grooves</p>
+                </div>
+              </div>
+
+              <!-- Module 3 -->
+              <div class="rounded-2xl border border-gray-200 dark:border-charcoal-700 bg-white dark:bg-charcoal-800 overflow-hidden">
+                <button class="accordion-header w-full px-6 py-4 text-left flex items-center justify-between font-serif font-bold text-base text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-charcoal-750 transition">
+                  <div class="flex items-center gap-3">
+                    <span class="w-7 h-7 rounded-lg bg-amber-100 text-amberbrand-600 text-xs flex items-center justify-center font-sans font-bold">03</span>
+                    <span>Module 3: Pentatonic Scales &amp; Blues Soloing</span>
+                  </div>
+                  <i data-lucide="chevron-down" class="accordion-icon w-4 h-4 text-gray-400 transition-transform"></i>
+                </button>
+                <div class="px-6 pb-5 pt-2 text-xs text-gray-600 dark:text-gray-400 space-y-2 border-t border-gray-100 dark:border-charcoal-700 hidden">
+                  <p>&bull; Minor and Major Pentatonic Box 1 &amp; Box 2</p>
+                  <p>&bull; String bending, vibrato, hammer-ons, and pull-offs</p>
+                  <p>&bull; Call-and-response blues phrasing over 12-bar progressions</p>
+                  <p>&bull; Jamming live with drummer and keyboard backing</p>
+                </div>
+              </div>
+
+              <!-- Module 4 -->
+              <div class="rounded-2xl border border-gray-200 dark:border-charcoal-700 bg-white dark:bg-charcoal-800 overflow-hidden">
+                <button class="accordion-header w-full px-6 py-4 text-left flex items-center justify-between font-serif font-bold text-base text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-charcoal-750 transition">
+                  <div class="flex items-center gap-3">
+                    <span class="w-7 h-7 rounded-lg bg-coral-100 text-coral-600 text-xs flex items-center justify-center font-sans font-bold">04</span>
+                    <span>Module 4: Exam Readiness &amp; Stage Recital</span>
+                  </div>
+                  <i data-lucide="chevron-down" class="accordion-icon w-4 h-4 text-gray-400 transition-transform"></i>
+                </button>
+                <div class="px-6 pb-5 pt-2 text-xs text-gray-600 dark:text-gray-400 space-y-2 border-t border-gray-100 dark:border-charcoal-700 hidden">
+                  <p>&bull; Trinity College London Grade piece preparation</p>
+                  <p>&bull; Stage presence, dynamic balancing, and amplifier EQ</p>
+                  <p>&bull; Academy live stage recital showcase recorded in 4K studio</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Instructor Profile Highlight -->
+          <div class="p-8 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-100 dark:border-charcoal-700 shadow-sm flex flex-col sm:flex-row items-center gap-6">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" alt="David Miller" class="w-24 h-24 rounded-full object-cover border-2 border-coral-500/30">
+            <div class="space-y-2 text-center sm:text-left">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-coral-600">Assigned Faculty Mentor</span>
+              <h3 class="font-serif text-xl font-bold text-gray-900 dark:text-white">David Miller (LTCL, Trinity)</h3>
+              <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                With 14+ years of performing and teaching experience, David has mentored over 700 guitarists. His patient, groove-first coaching style ensures natural finger dexterity without frustration.
+              </p>
+              <div class="pt-2 flex items-center justify-center sm:justify-start gap-4 text-xs font-semibold text-sage-600">
+                <span>720+ Students Taught</span>
+                <span>&bull;</span>
+                <span class="text-amberbrand-500">★ 4.95 Rating</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Sticky Enrollment Card -->
+        <div class="lg:col-span-4">
+          <div class="sticky top-28 p-8 rounded-3xl bg-white dark:bg-charcoal-800 border-2 border-coral-500/30 shadow-xl space-y-6">
+            <div>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-coral-600">Monthly Tuition Plan</span>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="font-serif text-4xl font-bold text-gray-900 dark:text-white" id="card-price">₹3,200</span>
+                <span class="text-xs text-gray-400">/ month (8 Classes)</span>
+              </div>
+              <p class="text-[11px] text-gray-500 mt-1">Semi-private batch (Max 3-4 students). 100% money-back guarantee after trial session.</p>
+            </div>
+
+            <!-- Batch selector -->
+            <div class="space-y-2">
+              <label class="block text-xs font-bold text-gray-700 dark:text-gray-300">Choose Preferred Batch:</label>
+              <div class="space-y-2 text-xs">
+                <label class="flex items-center gap-2 p-3 rounded-xl border border-gray-200 dark:border-charcoal-700 hover:border-coral-500 cursor-pointer transition">
+                  <input type="radio" name="batch" checked class="text-coral-500 focus:ring-0">
+                  <div>
+                    <div class="font-bold text-gray-900 dark:text-white">Adult Evening Groove</div>
+                    <div class="text-[10px] text-gray-500">Tue &amp; Thu &bull; 6:30 PM - 7:30 PM</div>
+                  </div>
+                </label>
+                <label class="flex items-center gap-2 p-3 rounded-xl border border-gray-200 dark:border-charcoal-700 hover:border-coral-500 cursor-pointer transition">
+                  <input type="radio" name="batch" class="text-coral-500 focus:ring-0">
+                  <div>
+                    <div class="font-bold text-gray-900 dark:text-white">Weekend Harmony Jam</div>
+                    <div class="text-[10px] text-gray-500">Saturday &bull; 11:00 AM - 12:30 PM</div>
+                  </div>
+                </label>
+                <label class="flex items-center gap-2 p-3 rounded-xl border border-gray-200 dark:border-charcoal-700 hover:border-coral-500 cursor-pointer transition">
+                  <input type="radio" name="batch" class="text-coral-500 focus:ring-0">
+                  <div>
+                    <div class="font-bold text-gray-900 dark:text-white">Kids Beginner Starters</div>
+                    <div class="text-[10px] text-gray-500">Mon &amp; Wed &bull; 4:00 PM - 4:45 PM</div>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <div class="space-y-3 pt-2">
+              <button data-modal-target="enroll-modal" class="btn-3d-purple w-full py-3.5 rounded-xl font-bold text-sm tracking-wide">
+                Proceed to Enrolment
+              </button>
+              <button data-modal-target="trial-modal" class="card-3d w-full py-3 rounded-xl border border-gray-200 dark:border-charcoal-700 text-gray-700 dark:text-gray-300 font-semibold text-xs hover:border-[#FF9F43] transition">
+                Book Free Trial Class First
+              </button>
+            </div>
+
+            <div class="pt-4 border-t border-gray-100 dark:border-charcoal-700 space-y-2 text-[11px] text-gray-500 dark:text-gray-400">
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-sage-600"></i> Free loaner guitars provided for first 3 classes</div>
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-sage-600"></i> Access to digital sheet music &amp; student portal</div>
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-sage-600"></i> Trinity exam certification enrollment ready</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Enrolment Modal -->
+  <div id="enroll-modal" class="harmony-modal fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+    <div class="fixed inset-0 bg-black/60 backdrop-blur-sm" data-modal-close></div>
+    <div class="relative bg-white dark:bg-charcoal-850 rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl z-10 border border-gray-100 dark:border-charcoal-700">
+      <div class="flex items-center justify-between pb-4 border-b border-gray-100 dark:border-charcoal-700">
+        <div>
+          <span class="text-[10px] font-bold uppercase tracking-wider text-coral-600">Course Admission</span>
+          <h3 class="font-serif text-2xl font-bold text-gray-900 dark:text-white">Complete Course Enrolment</h3>
+        </div>
+        <button data-modal-close class="p-2 text-gray-400"><i data-lucide="x" class="w-5 h-5"></i></button>
+      </div>
+
+      <form data-ajax-form data-success-msg="Enrolment confirmed! Welcome to Harmony House. Login credentials sent to your email." class="space-y-4 mt-6">
+        <div>
+          <label class="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-1">Student Full Name *</label>
+          <input type="text" required value="Rohan Sen" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-charcoal-700 bg-gray-50 dark:bg-charcoal-800 text-sm">
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-1">Email Address *</label>
+            <input type="email" required value="rohan.sen@gmail.com" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-charcoal-700 bg-gray-50 dark:bg-charcoal-800 text-sm">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-1">Phone Number *</label>
+            <input type="tel" required value="+91 98234 11223" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-charcoal-700 bg-gray-50 dark:bg-charcoal-800 text-sm">
+          </div>
+        </div>
+        <div class="p-3 rounded-xl bg-coral-50 dark:bg-charcoal-800 text-xs text-gray-600 dark:text-gray-300 flex items-center justify-between">
+          <span>Initial Monthly Fee:</span>
+          <span class="font-serif font-bold text-coral-600 text-base">₹3,200</span>
+        </div>
+        <button type="submit" class="w-full py-3.5 rounded-xl bg-coral-500 hover:bg-coral-600 text-white font-bold text-sm tracking-wide shadow-lg shadow-coral-500/25 transition">
+          Confirm Enrolment &amp; Create Student ID
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Trial Modal -->
+  <div id="trial-modal" class="harmony-modal fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+    <div class="fixed inset-0 bg-black/60 backdrop-blur-sm" data-modal-close></div>
+    <div class="relative bg-white dark:bg-charcoal-850 rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl z-10 border border-gray-100 dark:border-charcoal-700">
+      <div class="flex items-center justify-between pb-4 border-b border-gray-100 dark:border-charcoal-700">
+        <h3 class="font-serif text-2xl font-bold text-gray-900 dark:text-white">Book Free Trial Session</h3>
+        <button data-modal-close class="p-2 text-gray-400"><i data-lucide="x" class="w-5 h-5"></i></button>
+      </div>
+      <form data-ajax-form data-success-msg="Trial booked successfully!" class="space-y-4 mt-6">
+        <input type="text" placeholder="Full Name" required class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-charcoal-700 bg-gray-50 dark:bg-charcoal-800 text-sm">
+        <input type="email" placeholder="Email" required class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-charcoal-700 bg-gray-50 dark:bg-charcoal-800 text-sm">
+        <input type="tel" placeholder="Phone" required class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-charcoal-700 bg-gray-50 dark:bg-charcoal-800 text-sm">
+        <button type="submit" class="w-full py-3 rounded-xl bg-coral-500 text-white font-bold text-sm">Submit Booking</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 py-12 text-xs border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="font-serif font-bold text-lg"><span class="text-[#6C4CE3] dark:text-[#987AF0]">Harmony</span><span class="text-[#FF9F43]">House</span></span>
+        <span class="opacity-50">|</span>
+        <span>Music Academy</span>
+      </div>
+      <div>&copy; 2026 Harmony House Music Academy. All rights reserved.</div>
+      <div class="flex items-center gap-4">
+        <a href="courses.html" class="hover:text-white">All Courses</a>
+        <a href="fees-batches.html" class="hover:text-white">Fees &amp; Batches</a>
+        <a href="auth/login.html" class="text-coral-400 hover:underline">Student Portal</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/audio-engine.js"></script>
+  <script src="assets/js/3d-engine.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Populate course details dynamically if course param exists
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const courseId = urlParams.get('course') || 'course-guitar';
+      const course = HarmonyData.courses.find(c => c.id === courseId) || HarmonyData.courses[0];
+
+      if (course) {
+        document.title = `${course.title} – Harmony House Music Academy`;
+        const titleEl = document.getElementById('detail-title');
+        const descEl = document.getElementById('detail-desc');
+        const badgeEl = document.getElementById('detail-badge');
+        const durationEl = document.getElementById('detail-duration');
+        const ageEl = document.getElementById('detail-age');
+        const diffEl = document.getElementById('detail-difficulty');
+        const bannerEl = document.getElementById('detail-banner');
+        const priceEl = document.getElementById('card-price');
+
+        if (titleEl) titleEl.textContent = course.title;
+        if (descEl) descEl.textContent = course.description;
+        if (badgeEl) badgeEl.textContent = course.categoryBadge;
+        if (durationEl) durationEl.textContent = course.duration;
+        if (ageEl) ageEl.textContent = course.ageGroup;
+        if (diffEl) diffEl.textContent = course.difficulty;
+        if (bannerEl) bannerEl.src = course.bannerImage;
+        if (priceEl) priceEl.textContent = course.priceMonthly;
+
+        if (course.learningOutcomes && course.learningOutcomes.length > 0) {
+          const outcomesContainer = document.getElementById('detail-outcomes');
+          if (outcomesContainer) {
+            outcomesContainer.innerHTML = course.learningOutcomes.map(out => `
+              <div class="flex items-start gap-3">
+                <i data-lucide="check-circle-2" class="w-5 h-5 text-coral-500 shrink-0 mt-0.5"></i>
+                <span class="text-xs text-gray-600 dark:text-gray-300">${out}</span>
+              </div>
+            `).join('');
+            HarmonyApp.initLucide();
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
+

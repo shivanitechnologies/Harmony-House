@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Journal &amp; Guides – Harmony House Music Academy</title>
+  <meta name="description" content="Tips, pedagogical guides, instrument purchase advice, and performance insights from the Harmony House faculty.">
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brandpurple: { 50: '#F5F3FF', 100: '#EDE9FE', 200: '#DDD6FE', 300: '#C4B5FD', 400: '#987AF0', 500: '#6C4CE3', 600: '#5A38D4', 700: '#4B29B8', 800: '#3D2094', 900: '#2E1771', 950: '#1A0B45' },
+            brandorange: { 50: '#FFF7ED', 100: '#FFEDD5', 200: '#FED7AA', 300: '#FDBA74', 400: '#FB923C', 500: '#FF9F43', 600: '#F58022', 700: '#D6620E', 800: '#AA4A0A', 900: '#7C3408' },
+            coral: { 50: '#F5F3FF', 100: '#EDE9FE', 200: '#DDD6FE', 300: '#C4B5FD', 400: '#987AF0', 500: '#6C4CE3', 600: '#5A38D4', 700: '#4B29B8', 800: '#3D2094', 900: '#2E1771' },
+            sage: { 50: '#FFF7ED', 100: '#FFEDD5', 200: '#FED7AA', 300: '#FDBA74', 400: '#FB923C', 500: '#FF9F43', 600: '#F58022', 700: '#D6620E', 800: '#AA4A0A', 900: '#7C3408' },
+            amberbrand: { 400: '#FDBA74', 500: '#FF9F43', 600: '#F58022' },
+            charcoal: { 700: '#22242B', 750: '#1B1C22', 800: '#16171B', 850: '#111215', 900: '#0C0D0F', 950: '#08080A' }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    };
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+<body class="bg-[#FAFAFA] dark:bg-charcoal-900 text-gray-800 dark:text-gray-100 font-sans antialiased transition-colors duration-300">
+
+  <!-- Header -->
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-white/95 dark:bg-charcoal-900/95 backdrop-blur-md border-b border-gray-100 dark:border-charcoal-800 transition-colors shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <a href="index.html" class="flex items-center gap-3 shrink-0 mr-4 lg:mr-8 group">
+          <div class="w-11 h-11 rounded-xl bg-[#6C4CE3] flex items-center justify-center text-[#FF9F43] shadow-md shadow-[#6C4CE3]/20 group-hover:scale-105 transition-transform">
+            <i data-lucide="music" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <span class="font-serif font-bold text-2xl tracking-tight"><span class="text-[#6C4CE3] dark:text-[#987AF0]">Harmony</span><span class="text-[#FF9F43]">House</span></span>
+            <span class="block text-[9.5px] font-bold tracking-[0.2em] uppercase text-[#6C4CE3] dark:text-[#987AF0]">Music Academy</span>
+          </div>
+        </a>
+
+        <nav class="hidden xl:flex items-center gap-7 text-sm font-medium">
+          <div class="relative group">
+            <button class="flex items-center gap-1 text-gray-600 dark:text-gray-300 hover:text-coral-500 py-2">
+              <span>Home</span>
+              <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
+            </button>
+            <div class="absolute left-0 mt-1 w-52 bg-white dark:bg-charcoal-800 rounded-xl shadow-xl border border-gray-100 dark:border-charcoal-700 p-2 hidden group-hover:block transition-all animate-fadeIn">
+              <a href="index.html" class="flex items-center gap-2 px-3 py-2 text-xs font-medium rounded-lg hover:bg-gray-50 dark:hover:bg-charcoal-700 text-gray-700 dark:text-gray-300">
+                <i data-lucide="layout-template" class="w-4 h-4"></i> Home 1 (Classic)
+              </a>
+              <a href="home-2.html" class="flex items-center gap-2 px-3 py-2 text-xs font-medium rounded-lg hover:bg-gray-50 dark:hover:bg-charcoal-700 text-gray-700 dark:text-gray-300">
+                <i data-lucide="sparkles" class="w-4 h-4 text-amberbrand-500"></i> Home 2 (Premium)
+              </a>
+            </div>
+          </div>
+          <!-- Courses (Direct Link) -->
+          <a href="courses.html" class="text-gray-600 dark:text-gray-300 hover:text-[#6C4CE3] dark:hover:text-[#987AF0] transition">Courses</a>
+
+          <a href="instructors.html" class="text-gray-600 dark:text-gray-300 hover:text-[#6C4CE3] dark:hover:text-[#987AF0] transition">Instructors</a>
+          <a href="about.html" class="text-gray-600 dark:text-gray-300 hover:text-[#6C4CE3] dark:hover:text-[#987AF0] transition">About Us</a>
+          <a href="blog.html" class="text-[#6C4CE3] dark:text-[#987AF0] font-bold">Blog</a>
+          <a href="contact.html" class="text-gray-600 dark:text-gray-300 hover:text-[#6C4CE3] dark:hover:text-[#987AF0] transition">Contact</a>
+        </nav>
+
+        <div class="flex items-center gap-2.5 sm:gap-3 shrink-0">
+          <button data-action="toggle-theme" class="p-2 rounded-full border border-gray-200 dark:border-charcoal-700 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-charcoal-800 transition" title="Toggle Light/Dark Theme">
+            <i data-lucide="sun" class="w-4 h-4 dark:hidden"></i>
+            <i data-lucide="moon" class="w-4 h-4 hidden dark:inline"></i>
+          </button>
+          <button data-action="toggle-rtl" class="px-2.5 py-1.5 text-xs font-mono font-medium rounded-full border border-gray-200 dark:border-charcoal-700 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-charcoal-800 transition" title="Toggle RTL">
+            ⇄ RTL
+          </button>
+          <a href="auth/login.html" class="hidden sm:flex items-center gap-1.5 px-4 py-2 rounded-full bg-purple-50 dark:bg-charcoal-800 border border-purple-200 dark:border-charcoal-700 text-[#6C4CE3] dark:text-[#987AF0] hover:border-[#6C4CE3] hover:text-[#6C4CE3] text-xs font-semibold shadow-sm transition">
+            <i data-lucide="graduation-cap" class="w-4 h-4 text-[#6C4CE3]"></i>
+            <span>Student Portal</span>
+          </a>
+          <button id="mobile-menu-btn" class="p-2 rounded-xl text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-charcoal-800 xl:hidden focus:outline-none" aria-label="Open Mobile Menu">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero & Featured Post -->
+  <section class="bg-white dark:bg-charcoal-850 py-16 border-b border-gray-100 dark:border-charcoal-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs font-bold uppercase tracking-wider text-coral-600">Music Academy Journal</span>
+        <h1 class="font-serif text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mt-2">
+          Notes, Insights &amp; Melody
+        </h1>
+        <p class="text-sm text-gray-600 dark:text-gray-300 mt-2">
+          Practical advice from concert artists and child educators on practice habits, instrument care, and performance mindsets.
+        </p>
+
+        <!-- Search input -->
+        <div class="mt-6 max-w-md mx-auto relative">
+          <i data-lucide="search" class="w-4 h-4 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2"></i>
+          <input type="text" id="blog-search" placeholder="Search articles by keyword or instrument..." class="w-full pl-11 pr-4 py-2.5 rounded-full bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 text-xs focus:outline-none focus:border-coral-500 shadow-sm">
+        </div>
+      </div>
+
+      <!-- Featured Article Spotlight -->
+      <div class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-7 rounded-2xl overflow-hidden h-72">
+          <img src="https://images.unsplash.com/photo-1520523839898-5071270505a7?auto=format&fit=crop&w=1000&q=80" alt="Daily Piano Practice" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+        </div>
+        <div class="lg:col-span-5 space-y-4">
+          <div class="flex items-center gap-2">
+            <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-coral-100 text-coral-700">Practice Tips</span>
+            <span class="text-xs text-gray-400">&bull; 5 min read</span>
+          </div>
+          <h2 class="font-serif text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white hover:text-coral-600 transition">
+            <a href="blog-details.html">Daily 20-Minute Piano Practice: The Science of Musical Consistency</a>
+          </h2>
+          <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+            Why short, focused daily sessions outperform grueling weekend cramming sessions for neuroplasticity, finger agility, and creative joy.
+          </p>
+          <div class="flex items-center gap-3 pt-2">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&q=80" alt="Elena Rostova" class="w-10 h-10 rounded-full object-cover">
+            <div>
+              <div class="text-xs font-bold text-gray-900 dark:text-white">Elena Rostova</div>
+              <div class="text-[10px] text-gray-400">Head of Piano Studies &bull; Oct 24, 2026</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Blog Listing Grid & Sidebar -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- Articles Column -->
+        <div class="lg:col-span-8 space-y-8" id="blog-articles-container">
+          
+          <!-- Post 1 -->
+          <div class="music-card bg-white dark:bg-charcoal-800 rounded-3xl p-6 border border-gray-100 dark:border-charcoal-700 shadow-sm flex flex-col sm:flex-row gap-6 items-center">
+            <div class="w-full sm:w-48 h-44 rounded-2xl overflow-hidden shrink-0">
+              <img src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=500&q=80" alt="First Guitar Guide" class="w-full h-full object-cover">
+            </div>
+            <div class="space-y-2">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-coral-600">Instrument Guides</span>
+              <h3 class="font-serif text-xl font-bold text-gray-900 dark:text-white hover:text-coral-600 transition">
+                <a href="blog-details.html">How to Pick Your Very First Acoustic Guitar Without Breaking the Bank</a>
+              </h3>
+              <p class="text-xs text-gray-500 dark:text-gray-400 line-clamp-2 leading-relaxed">
+                Body shapes (Dreadnought vs Concert), string actions, tonewoods, and key things to test in a guitar shop before buying your first instrument.
+              </p>
+              <div class="text-[11px] text-gray-400 flex items-center gap-3 pt-2">
+                <span>By David Miller</span>
+                <span>&bull;</span>
+                <span>Oct 18, 2026</span>
+                <span>&bull;</span>
+                <span>6 min read</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Post 2 -->
+          <div class="music-card bg-white dark:bg-charcoal-800 rounded-3xl p-6 border border-gray-100 dark:border-charcoal-700 shadow-sm flex flex-col sm:flex-row gap-6 items-center">
+            <div class="w-full sm:w-48 h-44 rounded-2xl overflow-hidden shrink-0">
+              <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=500&q=80" alt="Childhood Music Benefits" class="w-full h-full object-cover">
+            </div>
+            <div class="space-y-2">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-sage-600">Child Development</span>
+              <h3 class="font-serif text-xl font-bold text-gray-900 dark:text-white hover:text-sage-600 transition">
+                <a href="blog-details.html">The Cognitive Superpower: Why Early Childhood Music Education Matters</a>
+              </h3>
+              <p class="text-xs text-gray-500 dark:text-gray-400 line-clamp-2 leading-relaxed">
+                Scientific insights into how rhythm, tempo, and pitch training enhance spatial-temporal reasoning, mathematical aptitude, and language skills in kids aged 5 to 11.
+              </p>
+              <div class="text-[11px] text-gray-400 flex items-center gap-3 pt-2">
+                <span>By Aarav Sharma</span>
+                <span>&bull;</span>
+                <span>Oct 10, 2026</span>
+                <span>&bull;</span>
+                <span>7 min read</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Post 3 -->
+          <div class="music-card bg-white dark:bg-charcoal-800 rounded-3xl p-6 border border-gray-100 dark:border-charcoal-700 shadow-sm flex flex-col sm:flex-row gap-6 items-center">
+            <div class="w-full sm:w-48 h-44 rounded-2xl overflow-hidden shrink-0">
+              <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=500&q=80" alt="Conquering Stage Fright" class="w-full h-full object-cover">
+            </div>
+            <div class="space-y-2">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-amberbrand-500">Performance</span>
+              <h3 class="font-serif text-xl font-bold text-gray-900 dark:text-white hover:text-amberbrand-500 transition">
+                <a href="blog-details.html">Conquering Stage Fright: 5 Pre-Performance Rituals of Great Musicians</a>
+              </h3>
+              <p class="text-xs text-gray-500 dark:text-gray-400 line-clamp-2 leading-relaxed">
+                Transform performance anxiety into dynamic stage charisma with breath control, mental visualization, and centering techniques.
+              </p>
+              <div class="text-[11px] text-gray-400 flex items-center gap-3 pt-2">
+                <span>By Clara Dupont</span>
+                <span>&bull;</span>
+                <span>Sep 28, 2026</span>
+                <span>&bull;</span>
+                <span>4 min read</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Sidebar -->
+        <div class="lg:col-span-4 space-y-8">
+          
+          <!-- Categories -->
+          <div class="p-6 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-100 dark:border-charcoal-700 shadow-sm space-y-4">
+            <h4 class="font-serif font-bold text-lg text-gray-900 dark:text-white">Categories</h4>
+            <ul class="space-y-2 text-xs">
+              <li><a href="#" class="flex items-center justify-between py-1.5 text-gray-600 dark:text-gray-300 hover:text-coral-500"><span>Practice Tips &amp; Routines</span> <span class="text-gray-400">14</span></a></li>
+              <li><a href="#" class="flex items-center justify-between py-1.5 text-gray-600 dark:text-gray-300 hover:text-coral-500"><span>Instrument Guides &amp; Buying</span> <span class="text-gray-400">9</span></a></li>
+              <li><a href="#" class="flex items-center justify-between py-1.5 text-gray-600 dark:text-gray-300 hover:text-coral-500"><span>Child Musical Pedagogy</span> <span class="text-gray-400">12</span></a></li>
+              <li><a href="#" class="flex items-center justify-between py-1.5 text-gray-600 dark:text-gray-300 hover:text-coral-500"><span>Performance &amp; Recitals</span> <span class="text-gray-400">8</span></a></li>
+              <li><a href="#" class="flex items-center justify-between py-1.5 text-gray-600 dark:text-gray-300 hover:text-coral-500"><span>Music Theory Simplified</span> <span class="text-gray-400">11</span></a></li>
+            </ul>
+          </div>
+
+          <!-- Free Trial Banner in Sidebar -->
+          <div class="p-6 rounded-3xl bg-gradient-to-br from-coral-500 to-coral-600 text-white space-y-4 shadow-lg shadow-coral-500/20">
+            <div class="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center font-bold">
+              <i data-lucide="music" class="w-5 h-5"></i>
+            </div>
+            <h4 class="font-serif text-xl font-bold">Experience Harmony House</h4>
+            <p class="text-xs text-white/90 leading-relaxed">
+              Try a free 30-minute trial class with our faculty mentors on your favorite instrument.
+            </p>
+            <a href="contact.html" class="block w-full py-2.5 rounded-xl bg-white text-coral-600 font-bold text-xs text-center shadow">
+              Book Free Trial
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 py-12 text-xs border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="font-serif font-bold text-lg"><span class="text-[#6C4CE3] dark:text-[#987AF0]">Harmony</span><span class="text-[#FF9F43]">House</span></span>
+        <span class="opacity-50">|</span>
+        <span>Music Academy</span>
+      </div>
+      <div>&copy; 2026 Harmony House Music Academy. All rights reserved.</div>
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="hover:text-white">Home</a>
+        <a href="courses.html" class="hover:text-white">Courses</a>
+        <a href="auth/login.html" class="text-coral-400 hover:underline">Student Portal</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/audio-engine.js"></script>
+  <script src="assets/js/3d-engine.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+

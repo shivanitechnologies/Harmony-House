@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Management Portal – Harmony House Music Academy</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/images/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brandpurple: { 50: '#F5F3FF', 100: '#EDE9FE', 200: '#DDD6FE', 300: '#C4B5FD', 400: '#987AF0', 500: '#6C4CE3', 600: '#5A38D4', 700: '#4B29B8', 800: '#3D2094', 900: '#2E1771', 950: '#1A0B45' },
+            brandorange: { 50: '#FFF7ED', 100: '#FFEDD5', 200: '#FED7AA', 300: '#FDBA74', 400: '#FB923C', 500: '#FF9F43', 600: '#F58022', 700: '#D6620E', 800: '#AA4A0A', 900: '#7C3408' },
+            coral: { 50: '#F5F3FF', 100: '#EDE9FE', 200: '#DDD6FE', 300: '#C4B5FD', 400: '#987AF0', 500: '#6C4CE3', 600: '#5A38D4', 700: '#4B29B8', 800: '#3D2094', 900: '#2E1771' },
+            sage: { 50: '#FFF7ED', 100: '#FFEDD5', 200: '#FED7AA', 300: '#FDBA74', 400: '#FB923C', 500: '#FF9F43', 600: '#F58022', 700: '#D6620E', 800: '#AA4A0A', 900: '#7C3408' },
+            amberbrand: { 400: '#FDBA74', 500: '#FF9F43', 600: '#F58022' },
+            charcoal: { 700: '#22242B', 750: '#1B1C22', 800: '#16171B', 850: '#111215', 900: '#0C0D0F', 950: '#08080A' }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    };
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="../assets/css/custom.css">
+</head>
+<body class="bg-[#F8F9FA] dark:bg-charcoal-900 text-gray-800 dark:text-gray-100 font-sans antialiased min-h-screen flex">
+
+  <!-- Admin Sidebar Navigation -->
+  <aside id="admin-sidebar" class="w-64 bg-[#0B0A12] border-r border-gray-800/80 flex flex-col justify-between shrink-0 fixed inset-y-0 left-0 z-50 transition-transform duration-300 -translate-x-full lg:translate-x-0 text-white select-none">
+    <div class="flex flex-col h-full overflow-hidden">
+      <!-- Brand Header -->
+      <div class="h-16 flex items-center justify-between px-5 border-b border-gray-800/80 shrink-0">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-xl bg-[#6C4CE3] flex items-center justify-center text-white shadow-md shadow-[#6C4CE3]/30">
+            <i data-lucide="shield-check" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <span class="font-serif font-bold text-base tracking-tight"><span class="text-white">Harmony</span><span class="text-[#FF9F43]">House</span></span>
+            <span class="block text-[8.5px] font-bold tracking-widest uppercase text-[#FF9F43]">Admin Control</span>
+          </div>
+        </div>
+        <!-- Mobile Close Button -->
+        <button type="button" class="sidebar-close-btn lg:hidden p-1.5 rounded-lg text-gray-400 hover:text-white hover:bg-white/10 transition" aria-label="Close menu">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="p-3 space-y-1 text-xs font-medium flex-1 overflow-y-auto">
+        <!-- 1. Overview & Analytics (Active) -->
+        <a href="index.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-[#F0EAFF] text-[#6C4CE3] font-bold shadow-sm transition">
+          <i data-lucide="layout-grid" class="w-4 h-4 text-[#6C4CE3] shrink-0"></i>
+          <span>Overview &amp; Analytics</span>
+        </a>
+
+        <!-- 2. Student Management -->
+        <a href="students.html" class="flex items-center gap-3 px-3.5 py-2 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
+          <i data-lucide="users" class="w-4 h-4 text-gray-400 group-hover:text-white shrink-0"></i>
+          <span>Student Management</span>
+        </a>
+
+        <!-- 3. Faculty & Staff Management -->
+        <a href="students.html#faculty" class="flex items-center gap-3 px-3.5 py-2 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
+          <i data-lucide="user-check" class="w-4 h-4 text-gray-400 group-hover:text-white shrink-0"></i>
+          <span>Faculty &amp; Staff Management</span>
+        </a>
+
+        <!-- 4. Admissions & Enquiries -->
+        <a href="messages.html" class="flex items-center gap-3 px-3.5 py-2 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
+          <i data-lucide="user-plus" class="w-4 h-4 text-gray-400 group-hover:text-white shrink-0"></i>
+          <span>Admissions &amp; Enquiries</span>
+        </a>
+
+        <!-- Section 1: ACADEMIC MANAGEMENT -->
+        <div class="pt-4 pb-1.5 px-3 text-[10px] font-bold tracking-wider uppercase text-gray-400">
+          Academic Management
+        </div>
+
+        <!-- 5. Courses & Instruments -->
+        <a href="courses.html" class="flex items-center gap-3 px-3.5 py-2 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
+          <i data-lucide="music" class="w-4 h-4 text-gray-400 group-hover:text-white shrink-0"></i>
+          <span>Courses &amp; Instruments</span>
+        </a>
+
+        <!-- 6. Batches & Enrollments -->
+        <a href="courses.html#batches" class="flex items-center gap-3 px-3.5 py-2 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
+          <i data-lucide="layers" class="w-4 h-4 text-gray-400 group-hover:text-white shrink-0"></i>
+          <span>Batches &amp; Enrollments</span>
+        </a>
+
+        <!-- 7. Class Schedule & Timetable -->
+        <a href="attendance.html#timetable" class="flex items-center gap-3 px-3.5 py-2 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
+          <i data-lucide="calendar" class="w-4 h-4 text-gray-400 group-hover:text-white shrink-0"></i>
+          <span>Class Schedule &amp; Timetable</span>
+        </a>
+
+        <!-- 8. Attendance Management -->
+        <a href="attendance.html" class="flex items-center gap-3 px-3.5 py-2 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
+          <i data-lucide="clipboard-check" class="w-4 h-4 text-gray-400 group-hover:text-white shrink-0"></i>
+          <span>Attendance Management</span>
+        </a>
+
+        <!-- 9. Student Progress & Assessments -->
+        <a href="reports.html#progress" class="flex items-center gap-3 px-3.5 py-2 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
+          <i data-lucide="trending-up" class="w-4 h-4 text-gray-400 group-hover:text-white shrink-0"></i>
+          <span>Student Progress &amp; Assessments</span>
+        </a>
+
+        <!-- Section 2: ACADEMY OPERATIONS -->
+        <div class="pt-4 pb-1.5 px-3 text-[10px] font-bold tracking-wider uppercase text-gray-400">
+          Academy Operations
+        </div>
+
+        <!-- 10. Studio & Room Management -->
+        <a href="courses.html#rooms" class="flex items-center gap-3 px-3.5 py-2 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
+          <i data-lucide="building" class="w-4 h-4 text-gray-400 group-hover:text-white shrink-0"></i>
+          <span>Studio &amp; Room Management</span>
+        </a>
+
+        <!-- 11. Instrument & Equipment Management -->
+        <a href="courses.html#equipment" class="flex items-center gap-3 px-3.5 py-2 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
+          <i data-lucide="guitar" class="w-4 h-4 text-gray-400 group-hover:text-white shrink-0"></i>
+          <span>Instrument &amp; Equipment Management</span>
+        </a>
+
+        <!-- 12. Events & Performances -->
+        <a href="reports.html#events" class="flex items-center gap-3 px-3.5 py-2 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
+          <i data-lucide="calendar-days" class="w-4 h-4 text-gray-400 group-hover:text-white shrink-0"></i>
+          <span>Events &amp; Performances</span>
+        </a>
+
+        <!-- Section 3: FINANCE & COMMUNICATION -->
+        <div class="pt-4 pb-1.5 px-3 text-[10px] font-bold tracking-wider uppercase text-gray-400">
+          Finance &amp; Communication
+        </div>
+
+        <!-- 13. Payments & Dues -->
+        <a href="payments.html" class="flex items-center gap-3 px-3.5 py-2 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
+          <i data-lucide="credit-card" class="w-4 h-4 text-gray-400 group-hover:text-white shrink-0"></i>
+          <span>Payments &amp; Dues</span>
+        </a>
+
+        <!-- 14. Expenses & Payroll -->
+        <a href="payments.html#payroll" class="flex items-center gap-3 px-3.5 py-2 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
+          <i data-lucide="receipt" class="w-4 h-4 text-gray-400 group-hover:text-white shrink-0"></i>
+          <span>Expenses &amp; Payroll</span>
+        </a>
+
+        <!-- 15. Announcements & Messages -->
+        <a href="messages.html" class="flex items-center gap-3 px-3.5 py-2 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
+          <i data-lucide="megaphone" class="w-4 h-4 text-gray-400 group-hover:text-white shrink-0"></i>
+          <span>Announcements &amp; Messages</span>
+        </a>
+
+        <!-- 16. Notifications -->
+        <a href="messages.html#notifications" class="flex items-center gap-3 px-3.5 py-2 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
+          <i data-lucide="bell" class="w-4 h-4 text-gray-400 group-hover:text-white shrink-0"></i>
+          <span>Notifications</span>
+          <span class="ml-auto w-2 h-2 rounded-full bg-[#FF9F43]"></span>
+        </a>
+
+        <!-- Section 4: BUSINESS INTELLIGENCE -->
+        <div class="pt-4 pb-1.5 px-3 text-[10px] font-bold tracking-wider uppercase text-gray-400">
+          Business Intelligence
+        </div>
+
+        <!-- 17. Reports & Business Insights -->
+        <a href="reports.html" class="flex items-center gap-3 px-3.5 py-2 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
+          <i data-lucide="bar-chart-2" class="w-4 h-4 text-gray-400 group-hover:text-white shrink-0"></i>
+          <span>Reports &amp; Business Insights</span>
+        </a>
+
+        <!-- 18. Academy Settings -->
+        <a href="settings.html" class="flex items-center gap-3 px-3.5 py-2 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
+          <i data-lucide="settings" class="w-4 h-4 text-gray-400 group-hover:text-white shrink-0"></i>
+          <span>Academy Settings</span>
+        </a>
+
+        <!-- 19. Roles & Permissions -->
+        <a href="settings.html#permissions" class="flex items-center gap-3 px-3.5 py-2 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
+          <i data-lucide="shield" class="w-4 h-4 text-gray-400 group-hover:text-white shrink-0"></i>
+          <span>Roles &amp; Permissions</span>
+        </a>
+
+        <!-- Divider Line -->
+        <div class="pt-2 my-2 border-t border-gray-800/80"></div>
+
+        <!-- 20. Logout -->
+        <a href="../auth/login.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-[#FF9F43] transition group">
+          <i data-lucide="log-out" class="w-4 h-4 text-gray-400 group-hover:text-[#FF9F43] shrink-0"></i>
+          <span>Logout</span>
+        </a>
+
+        <!-- Down Arrow Button -->
+        <div class="pt-3 pb-1 flex justify-center">
+          <button type="button" onclick="this.closest('nav').scrollBy({ top: 120, behavior: 'smooth' })" class="w-6 h-6 rounded-full border border-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:border-gray-600 transition cursor-pointer" title="Scroll Navigation">
+            <i data-lucide="arrow-down" class="w-3.5 h-3.5"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Bottom User Status -->
+    <div class="p-3 border-t border-gray-800/80 shrink-0 bg-[#07060D]">
+      <div class="flex items-center gap-3 px-2">
+        <div class="w-8 h-8 rounded-full bg-[#FF9F43] text-gray-900 flex items-center justify-center font-bold text-xs shrink-0 shadow-sm">
+          AD
+        </div>
+        <div class="overflow-hidden">
+          <div class="text-xs font-bold text-white truncate">Academy Director</div>
+          <div class="text-[10px] text-gray-400 truncate">director@harmonyhousemusic.com</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Mobile Backdrop -->
+  <div id="admin-sidebar-backdrop" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 hidden lg:hidden"></div>
+
+  <!-- Content Wrap -->
+  <div class="flex-1 flex flex-col min-w-0 lg:pl-64">
+    
+    <!-- Top Bar -->
+    <header class="h-16 sm:h-20 bg-white/90 dark:bg-charcoal-850/90 backdrop-blur-md border-b border-gray-200 dark:border-charcoal-800 px-3 sm:px-8 flex items-center justify-between sticky top-0 z-20">
+      <div class="flex items-center gap-2 sm:gap-3 min-w-0">
+        <button id="admin-sidebar-toggle" class="p-2 -ml-1 rounded-lg text-gray-600 dark:text-gray-300 lg:hidden hover:bg-gray-100 dark:hover:bg-charcoal-800 shrink-0" aria-label="Toggle menu">
+          <i data-lucide="menu" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+        </button>
+        <div class="min-w-0">
+          <h2 class="font-serif text-base sm:text-xl font-bold text-gray-900 dark:text-white truncate">Academy Operations Dashboard</h2>
+          <p class="text-[11px] text-gray-500 hidden sm:block truncate">Harmony House Music Academy &bull; Pune Central Campus</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+        <button data-action="toggle-theme" class="p-2 rounded-full text-gray-500 hover:bg-gray-100 dark:hover:bg-charcoal-800 transition">
+          <i data-lucide="sun" class="w-4 h-4 dark:hidden"></i>
+          <i data-lucide="moon" class="w-4 h-4 hidden dark:inline"></i>
+        </button>
+        <button data-action="toggle-rtl" class="hidden sm:inline-flex px-2.5 py-1 text-xs font-mono rounded-full border border-gray-200 dark:border-charcoal-700">
+          ⇄ RTL
+        </button>
+        <a href="students.html" class="px-3 sm:px-4 py-2 rounded-full bg-coral-500 hover:bg-coral-600 text-white font-bold text-xs flex items-center gap-1.5 shadow shrink-0">
+          <i data-lucide="user-plus" class="w-3.5 h-3.5"></i>
+          <span class="hidden sm:inline">Add Student</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="p-4 sm:p-8 space-y-8 flex-1">
+      
+      <!-- Key Academy Performance Metrics (Strict Two-Color Brand System) -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
+        
+        <div data-tilt class="card-3d p-3.5 sm:p-6 rounded-2xl sm:rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm flex items-center justify-between cursor-pointer">
+          <div class="min-w-0">
+            <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-gray-400 block truncate">Total Enrolled</span>
+            <div class="font-serif text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mt-1">428</div>
+            <span class="text-[9px] sm:text-[10px] text-[#6C4CE3] font-semibold block truncate">&uarr; +14 this mo</span>
+          </div>
+          <div class="w-9 h-9 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-purple-50 dark:bg-purple-950/50 text-[#6C4CE3] flex items-center justify-center shrink-0">
+            <i data-lucide="users" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+          </div>
+        </div>
+
+        <div data-tilt class="card-3d p-3.5 sm:p-6 rounded-2xl sm:rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm flex items-center justify-between cursor-pointer">
+          <div class="min-w-0">
+            <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-gray-400 block truncate">Active Batches</span>
+            <div class="font-serif text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mt-1">34</div>
+            <span class="text-[9px] sm:text-[10px] text-[#FF9F43] font-semibold block truncate">12 Mentors</span>
+          </div>
+          <div class="w-9 h-9 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-orange-50 dark:bg-orange-950/50 text-[#FF9F43] flex items-center justify-center shrink-0">
+            <i data-lucide="calendar" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+          </div>
+        </div>
+
+        <div data-tilt class="card-3d p-3.5 sm:p-6 rounded-2xl sm:rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm flex items-center justify-between cursor-pointer">
+          <div class="min-w-0">
+            <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-gray-400 block truncate">Monthly Rev</span>
+            <div class="font-serif text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mt-1">₹8.42L</div>
+            <span class="text-[9px] sm:text-[10px] text-[#FF9F43] font-semibold block truncate">&uarr; 96% paid</span>
+          </div>
+          <div class="w-9 h-9 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-orange-50 dark:bg-orange-950/50 text-[#FF9F43] flex items-center justify-center shrink-0">
+            <i data-lucide="dollar-sign" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+          </div>
+        </div>
+
+        <div data-tilt class="card-3d p-3.5 sm:p-6 rounded-2xl sm:rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm flex items-center justify-between cursor-pointer">
+          <div class="min-w-0">
+            <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-gray-400 block truncate">Attendance</span>
+            <div class="font-serif text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mt-1">94.2%</div>
+            <span class="text-[9px] sm:text-[10px] text-[#6C4CE3] font-semibold block truncate">Consistent</span>
+          </div>
+          <div class="w-9 h-9 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-purple-50 dark:bg-purple-950/50 text-[#6C4CE3] flex items-center justify-center shrink-0">
+            <i data-lucide="award" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Charts & Visual Analytics Section -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        
+        <!-- Revenue & Enrolment Chart Mockup -->
+        <div class="lg:col-span-8 p-6 sm:p-8 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm space-y-6">
+          <div class="flex items-center justify-between">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-[#6C4CE3]">Financial Metrics</span>
+              <h3 class="font-serif text-2xl font-bold text-gray-900 dark:text-white">Revenue by Instrument Discipline</h3>
+            </div>
+            <span class="text-xs text-gray-400">FY 2026-27</span>
+          </div>
+
+          <!-- Bar Visualization (Strict 2-Color: Deep Purple #6C4CE3 & Warm Orange #FF9F43) -->
+          <div class="space-y-4 pt-2">
+            <div>
+              <div class="flex justify-between text-xs font-semibold mb-1">
+                <span>Guitar &amp; Bass Studies (148 Students)</span>
+                <span class="text-[#6C4CE3] font-bold">₹3,40,000 / mo</span>
+              </div>
+              <div class="w-full bg-gray-100 dark:bg-charcoal-700 rounded-full h-3">
+                <div class="bg-[#6C4CE3] h-3 rounded-full" style="width: 78%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs font-semibold mb-1">
+                <span>Piano &amp; Classical Keyboards (124 Students)</span>
+                <span class="text-[#FF9F43] font-bold">₹2,85,000 / mo</span>
+              </div>
+              <div class="w-full bg-gray-100 dark:bg-charcoal-700 rounded-full h-3">
+                <div class="bg-[#FF9F43] h-3 rounded-full" style="width: 65%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs font-semibold mb-1">
+                <span>Singing &amp; Vocal Culture (82 Students)</span>
+                <span class="text-[#6C4CE3] font-bold">₹1,45,000 / mo</span>
+              </div>
+              <div class="w-full bg-gray-100 dark:bg-charcoal-700 rounded-full h-3">
+                <div class="bg-[#5A38D4] h-3 rounded-full" style="width: 42%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs font-semibold mb-1">
+                <span>Drums, Strings &amp; Production (74 Students)</span>
+                <span class="text-[#FF9F43] font-bold">₹1,22,000 / mo</span>
+              </div>
+              <div class="w-full bg-gray-100 dark:bg-charcoal-700 rounded-full h-3">
+                <div class="bg-[#F58022] h-3 rounded-full" style="width: 35%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Quick Actions & Capacity Meter -->
+        <div class="lg:col-span-4 space-y-6">
+          <div class="p-6 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm space-y-4">
+            <h3 class="font-serif text-lg font-bold text-gray-900 dark:text-white">Studio Room Capacity</h3>
+            
+            <div class="space-y-3 text-xs">
+              <div class="flex justify-between items-center p-3 rounded-xl bg-gray-50 dark:bg-charcoal-750">
+                <span>Acoustic Room 2A (Guitar)</span>
+                <span class="px-2.5 py-1 rounded-full bg-orange-100 dark:bg-orange-950/60 text-[#FF9F43] font-bold text-[10px]">85% Full</span>
+              </div>
+              <div class="flex justify-between items-center p-3 rounded-xl bg-gray-50 dark:bg-charcoal-750">
+                <span>Grand Piano Studio 1</span>
+                <span class="px-2.5 py-1 rounded-full bg-orange-100 dark:bg-orange-950/60 text-[#FF9F43] font-bold text-[10px]">95% Full</span>
+              </div>
+              <div class="flex justify-between items-center p-3 rounded-xl bg-gray-50 dark:bg-charcoal-750">
+                <span>Vocal Studio B</span>
+                <span class="px-2.5 py-1 rounded-full bg-purple-100 dark:bg-purple-950/60 text-[#6C4CE3] font-bold text-[10px]">Available</span>
+              </div>
+              <div class="flex justify-between items-center p-3 rounded-xl bg-gray-50 dark:bg-charcoal-750">
+                <span>Acoustic Drum Suite</span>
+                <span class="px-2.5 py-1 rounded-full bg-purple-100 dark:bg-purple-950/60 text-[#6C4CE3] font-bold text-[10px]">Available</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 rounded-3xl bg-[#6C4CE3] text-white space-y-3 shadow-lg shadow-[#6C4CE3]/25">
+            <h4 class="font-serif font-bold text-lg">Broadcast Class Alert</h4>
+            <p class="text-xs text-white/90">Send instant WhatsApp or SMS announcements to all students or specific batches.</p>
+            <button onclick="HarmonyApp.showToast('Broadcast dialog launched', 'info')" class="w-full py-2.5 rounded-xl bg-white text-[#6C4CE3] font-bold text-xs shadow hover:bg-gray-100 transition">
+              Compose Notification
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Recent Students Enrolled Table -->
+      <div class="bg-white dark:bg-charcoal-800 rounded-3xl border border-gray-200 dark:border-charcoal-700 shadow-sm overflow-hidden">
+        <div class="p-6 border-b border-gray-100 dark:border-charcoal-700 flex flex-col sm:flex-row justify-between sm:items-center gap-4">
+          <div>
+            <h3 class="font-serif text-lg font-bold text-gray-900 dark:text-white">Recent Enrolments &amp; Fee Status</h3>
+            <p class="text-xs text-gray-400">Latest active registrations across Pune campus</p>
+          </div>
+          <a href="students.html" class="text-xs font-bold text-[#6C4CE3] hover:underline">View All 428 Students &rarr;</a>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs text-gray-600 dark:text-gray-300">
+            <thead class="bg-gray-50 dark:bg-charcoal-750 text-gray-400 font-bold uppercase text-[10px]">
+              <tr>
+                <th class="p-4">Student ID &amp; Name</th>
+                <th class="p-4">Course Enrolled</th>
+                <th class="p-4">Assigned Batch</th>
+                <th class="p-4">Attendance</th>
+                <th class="p-4">Tuition Status</th>
+                <th class="p-4 text-right">Actions</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100 dark:divide-charcoal-700">
+              <tr>
+                <td class="p-4 font-bold text-gray-900 dark:text-white">
+                  <div>Ananya Kulkarni</div>
+                  <div class="text-[10px] text-gray-400 font-mono">STU-0428</div>
+                </td>
+                <td class="p-4">Piano &amp; Keyboard (Kids)</td>
+                <td class="p-4">Junior Keys (Tue/Fri 4:30 PM)</td>
+                <td class="p-4 font-bold text-[#6C4CE3]">96%</td>
+                <td class="p-4"><span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-purple-100 dark:bg-purple-950/60 text-[#6C4CE3]">Paid</span></td>
+                <td class="p-4 text-right">
+                  <a href="students.html" class="text-[#6C4CE3] font-bold hover:underline">Manage</a>
+                </td>
+              </tr>
+              <tr>
+                <td class="p-4 font-bold text-gray-900 dark:text-white">
+                  <div>Rohan Sen</div>
+                  <div class="text-[10px] text-gray-400 font-mono">STU-0427</div>
+                </td>
+                <td class="p-4">Guitar Mastery (Adult)</td>
+                <td class="p-4">Adult Evening (Tue/Thu 6:30 PM)</td>
+                <td class="p-4 font-bold text-[#6C4CE3]">94%</td>
+                <td class="p-4"><span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-orange-100 dark:bg-orange-950/60 text-[#FF9F43]">Due Nov 15</span></td>
+                <td class="p-4 text-right">
+                  <a href="students.html" class="text-[#6C4CE3] font-bold hover:underline">Manage</a>
+                </td>
+              </tr>
+              <tr>
+                <td class="p-4 font-bold text-gray-900 dark:text-white">
+                  <div>Kabir Deshmukh</div>
+                  <div class="text-[10px] text-gray-400 font-mono">STU-0425</div>
+                </td>
+                <td class="p-4">Drums Academy (Kids)</td>
+                <td class="p-4">Weekend Beat (Sat/Sun 11 AM)</td>
+                <td class="p-4 font-bold text-[#6C4CE3]">100%</td>
+                <td class="p-4"><span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-purple-100 dark:bg-purple-950/60 text-[#6C4CE3]">Paid</span></td>
+                <td class="p-4 text-right">
+                  <a href="students.html" class="text-[#6C4CE3] font-bold hover:underline">Manage</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="../assets/js/data.js"></script>
+  <script src="../assets/js/3d-engine.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>
+
