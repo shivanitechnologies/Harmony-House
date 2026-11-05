@@ -331,6 +331,12 @@ const HarmonyApp = {
           matchingHoloBtn.click();
         }
 
+        // Sync Live Instrument Bench Tab if present
+        const matchingBenchTab = document.querySelector(`[data-bench-tab="${soundType}"]`);
+        if (matchingBenchTab && !matchingBenchTab.classList.contains('bg-[#6C4CE3]')) {
+          matchingBenchTab.click();
+        }
+
         // Synthesize instrument tone in real time
         if (window.HarmonyAudio) {
           if (soundType === 'guitar') window.HarmonyAudio.playGuitarStrum();
@@ -402,21 +408,45 @@ const HarmonyApp = {
       // Update switcher buttons
       document.querySelectorAll('[data-bench-tab]').forEach(tab => {
         const isSelected = tab.getAttribute('data-bench-tab') === instKey;
+        const dot = tab.querySelector('.bench-card-dot');
+        const status = tab.querySelector('.bench-card-status');
+        const badge = tab.querySelector('.bench-card-badge');
+
         if (isSelected) {
-          tab.classList.remove('bg-white/5', 'text-gray-300', 'border-transparent');
-          tab.classList.add('bg-[#6C4CE3]', 'text-white', 'border-white/20', 'shadow-lg', 'shadow-[#6C4CE3]/30');
-          const subText = tab.querySelector('.text-gray-400');
-          if (subText) {
-            subText.classList.remove('text-gray-400');
-            subText.classList.add('text-orange-200');
+          tab.classList.remove('bg-white/5', 'text-gray-300', 'border-white/10');
+          tab.classList.add('bg-[#6C4CE3]', 'text-white', 'border-2', 'border-[#FF9F43]', 'shadow-xl', 'shadow-[#6C4CE3]/40');
+          if (dot) {
+            dot.className = 'bench-card-dot w-2 h-2 rounded-full bg-[#FF9F43] animate-pulse';
+          }
+          if (status) {
+            status.classList.remove('text-gray-400');
+            status.classList.add('text-orange-200');
+            const spans = status.querySelectorAll('span');
+            if (spans.length >= 2) {
+              spans[1].className = 'text-[#FF9F43] font-bold';
+              spans[1].textContent = '• Active';
+            }
+          }
+          if (badge) {
+            badge.className = 'bench-card-badge px-2 py-0.5 rounded-full text-[9px] font-mono font-bold uppercase tracking-wider bg-white/20 text-white';
           }
         } else {
-          tab.classList.add('bg-white/5', 'text-gray-300', 'border-transparent');
-          tab.classList.remove('bg-[#6C4CE3]', 'text-white', 'border-white/20', 'shadow-lg', 'shadow-[#6C4CE3]/30');
-          const subText = tab.querySelector('.text-orange-200');
-          if (subText) {
-            subText.classList.remove('text-orange-200');
-            subText.classList.add('text-gray-400');
+          tab.classList.add('bg-white/5', 'text-gray-300', 'border', 'border-white/10');
+          tab.classList.remove('bg-[#6C4CE3]', 'text-white', 'border-2', 'border-[#FF9F43]', 'shadow-xl', 'shadow-[#6C4CE3]/40');
+          if (dot) {
+            dot.className = 'bench-card-dot w-2 h-2 rounded-full bg-gray-500';
+          }
+          if (status) {
+            status.classList.remove('text-orange-200');
+            status.classList.add('text-gray-400');
+            const spans = status.querySelectorAll('span');
+            if (spans.length >= 2) {
+              spans[1].className = '';
+              spans[1].textContent = 'Tap to Play';
+            }
+          }
+          if (badge) {
+            badge.className = 'bench-card-badge px-2 py-0.5 rounded-full text-[9px] font-mono font-bold uppercase tracking-wider bg-white/10 text-gray-300';
           }
         }
       });
