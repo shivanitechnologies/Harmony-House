@@ -99,8 +99,10 @@ const HarmonyApp = {
     this.initContactForms();
     this.initSoundboard();
     this.initPlayablePiano();
+    this.initInstrumentTestLab();
     this.initMusicalMatcher();
     this.initPracticeMetronome();
+    this.initRecitalCards();
   },
 
   initTheme() {
@@ -124,7 +126,6 @@ const HarmonyApp = {
   toggleTheme() {
     const isDark = document.documentElement.classList.toggle('dark');
     localStorage.setItem('harmony_theme', isDark ? 'dark' : 'light');
-    this.showToast(isDark ? 'Switched to Dark Mode 🌙' : 'Switched to Light Mode ☀️', 'info');
     this.initLucide();
   },
 
@@ -145,7 +146,6 @@ const HarmonyApp = {
     const newDir = current === 'ltr' ? 'rtl' : 'ltr';
     document.documentElement.setAttribute('dir', newDir);
     localStorage.setItem('harmony_dir', newDir);
-    this.showToast(newDir === 'rtl' ? 'RTL Mode Enabled ⇄' : 'LTR Mode Enabled ⇄', 'info');
   },
 
   initLucide() {
@@ -160,54 +160,111 @@ const HarmonyApp = {
     const closeBtn = document.getElementById('mobile-menu-close');
     const backdrop = document.getElementById('mobile-menu-backdrop');
 
-    if (toggleBtn && mobileMenu) {
-      toggleBtn.addEventListener('click', () => {
-        mobileMenu.classList.remove('hidden');
-        if (backdrop) backdrop.classList.remove('hidden');
-        document.body.classList.add('overflow-hidden');
+    if (!mobileMenu) return;
+
+    const openMenu = () => {
+      mobileMenu.classList.remove('hidden', 'translate-x-full');
+      mobileMenu.classList.add('translate-x-0');
+      if (backdrop) {
+        backdrop.classList.remove('hidden', 'opacity-0', 'pointer-events-none');
+        backdrop.classList.add('opacity-100', 'pointer-events-auto');
+      }
+      document.body.classList.add('overflow-hidden');
+    };
+
+    const closeMenu = () => {
+      mobileMenu.classList.remove('translate-x-0');
+      mobileMenu.classList.add('translate-x-full');
+      if (backdrop) {
+        backdrop.classList.remove('opacity-100', 'pointer-events-auto');
+        backdrop.classList.add('opacity-0', 'pointer-events-none');
+      }
+      document.body.classList.remove('overflow-hidden');
+      setTimeout(() => {
+        if (!mobileMenu.classList.contains('translate-x-0')) {
+          mobileMenu.classList.add('hidden');
+          if (backdrop) backdrop.classList.add('hidden');
+        }
+      }, 300);
+    };
+
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const isOpen = mobileMenu.classList.contains('translate-x-0');
+        if (isOpen) closeMenu();
+        else openMenu();
       });
     }
 
-    const closeMenu = () => {
-      if (mobileMenu) mobileMenu.classList.add('hidden');
-      if (backdrop) backdrop.classList.add('hidden');
-      document.body.classList.remove('overflow-hidden');
-    };
+    if (closeBtn) {
+      closeBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        closeMenu();
+      });
+    }
 
-    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
-    if (backdrop) backdrop.addEventListener('click', closeMenu);
+    if (backdrop) {
+      backdrop.addEventListener('click', (e) => {
+        e.preventDefault();
+        closeMenu();
+      });
+    }
+
+    // Auto-close on any link tap inside drawer
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        closeMenu();
+      });
+    });
+
+    // Close on Escape key
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('translate-x-0')) {
+        closeMenu();
+      }
+    });
+
+    // Auto-close on resize if viewport expands to desktop
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 1280 && mobileMenu.classList.contains('translate-x-0')) {
+        closeMenu();
+      }
+    });
   },
 
   // Soundboard Trigger & Live Hero Instrument Photo Switcher
   initSoundboard() {
     const HERO_INSTRUMENTS = {
       guitar: {
-        image: 'https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=1000&q=80',
-        alt: 'Live student practicing acoustic guitar in sunlit music studio',
+        image: 'assets/images/guitar-3d.jpg',
+        alt: '3D Cinematic Acoustic Dreadnought Guitar',
         badge: 'Studio 1A &bull; Acoustic &amp; Classical',
         title: 'Acoustic &amp; Classical Guitar',
         session: 'Live Guitar Session',
         rating: '4.9 / 5.0'
       },
       piano: {
-        image: 'https://images.unsplash.com/photo-1552422535-c45813c61732?auto=format&fit=crop&w=1000&q=80',
-        alt: 'Pianist practicing on acoustic grand piano in studio',
+        image: 'assets/images/piano-3d.jpg',
+        alt: '3D Cinematic Concert Grand Piano',
         badge: 'Studio 2B &bull; Grand Keys &amp; Classical',
         title: 'Yamaha Grand Piano Studio',
         session: 'Live Piano Session',
         rating: '5.0 / 5.0'
       },
       drums: {
-        image: 'https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?auto=format&fit=crop&w=1000&q=80',
-        alt: 'Drummer practicing rhythm fills on acoustic drumkit',
+        image: 'assets/images/drums-3d.jpg',
+        alt: '3D Cinematic Stage Acoustic Drumkit',
         badge: 'Studio 3A &bull; Rhythm &amp; Percussion',
         title: 'Acoustic Drumkit Studio',
         session: 'Live Drum Session',
         rating: '4.9 / 5.0'
       },
       violin: {
-        image: 'https://images.unsplash.com/photo-1612225330812-01a9c6b355ec?auto=format&fit=crop&w=1000&q=80',
-        alt: 'Solo violinist playing classical violin in rehearsal room',
+        image: 'assets/images/violin-3d.jpg',
+        alt: '3D Cinematic Stradivarius Concert Violin',
         badge: 'Studio 4C &bull; Chamber &amp; Strings',
         title: 'Violin &amp; String Ensemble',
         session: 'Live Violin Session',
@@ -267,6 +324,13 @@ const HarmonyApp = {
         btn.classList.add('scale-95');
         setTimeout(() => btn.classList.remove('scale-95'), 180);
 
+        // Sync 2027 Holo Stage if present
+        const holoKey = soundType === 'piano' ? 'keyboard' : soundType;
+        const matchingHoloBtn = document.querySelector(`[data-holo-inst="${holoKey}"]`);
+        if (matchingHoloBtn && !matchingHoloBtn.classList.contains('bg-[#6C4CE3]')) {
+          matchingHoloBtn.click();
+        }
+
         // Synthesize instrument tone in real time
         if (window.HarmonyAudio) {
           if (soundType === 'guitar') window.HarmonyAudio.playGuitarStrum();
@@ -297,6 +361,356 @@ const HarmonyApp = {
         playKey();
       });
     });
+  },
+
+  // 2027 Interactive Virtual Instrument Studio Test Bench
+  initInstrumentTestLab() {
+    const labContainers = document.querySelectorAll('.studio-workbench-enclosure');
+    if (!labContainers.length) return;
+
+    // Attach Oscilloscope Visualizer to canvas if available
+    const canvas = document.getElementById('studio-visualizer-canvas');
+    if (canvas && window.HarmonyAudio && typeof window.HarmonyAudio.attachVisualizer === 'function') {
+      window.HarmonyAudio.attachVisualizer(canvas);
+    }
+
+    // Telemetry display elements
+    const noteDisplay = document.getElementById('studio-telemetry-note');
+    const freqDisplay = document.getElementById('studio-telemetry-freq');
+    const statusDisplay = document.getElementById('studio-telemetry-status');
+    const trialCtaBtn = document.getElementById('studio-trial-cta-btn');
+    const syllabusLink = document.getElementById('studio-syllabus-link');
+
+    let currentInstrument = 'guitar';
+    let currentViolinMode = 'arco';
+
+    const setTelemetry = (note, freq, status) => {
+      if (noteDisplay) noteDisplay.textContent = note;
+      if (freqDisplay) freqDisplay.textContent = freq;
+      if (statusDisplay) {
+        statusDisplay.innerHTML = `<span class="w-2 h-2 rounded-full bg-[#FF9F43] animate-ping"></span> Live Signal Active`;
+        clearTimeout(statusDisplay._timer);
+        statusDisplay._timer = setTimeout(() => {
+          statusDisplay.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Active 440 Hz`;
+        }, 1800);
+      }
+    };
+
+    const updateInstrumentView = (instKey) => {
+      currentInstrument = instKey;
+
+      // Update switcher buttons
+      document.querySelectorAll('[data-bench-tab]').forEach(tab => {
+        const isSelected = tab.getAttribute('data-bench-tab') === instKey;
+        if (isSelected) {
+          tab.classList.remove('bg-white/5', 'text-gray-300', 'border-transparent');
+          tab.classList.add('bg-[#6C4CE3]', 'text-white', 'border-white/20', 'shadow-lg', 'shadow-[#6C4CE3]/30');
+          const subText = tab.querySelector('.text-gray-400');
+          if (subText) {
+            subText.classList.remove('text-gray-400');
+            subText.classList.add('text-orange-200');
+          }
+        } else {
+          tab.classList.add('bg-white/5', 'text-gray-300', 'border-transparent');
+          tab.classList.remove('bg-[#6C4CE3]', 'text-white', 'border-white/20', 'shadow-lg', 'shadow-[#6C4CE3]/30');
+          const subText = tab.querySelector('.text-orange-200');
+          if (subText) {
+            subText.classList.remove('text-orange-200');
+            subText.classList.add('text-gray-400');
+          }
+        }
+      });
+
+      // Show/hide boards
+      document.querySelectorAll('[data-bench-board]').forEach(board => {
+        if (board.getAttribute('data-bench-board') === instKey) {
+          board.classList.remove('hidden');
+        } else {
+          board.classList.add('hidden');
+        }
+      });
+
+      // Update CTA details
+      const titles = {
+        guitar: { name: 'Acoustic Guitar', course: 'course-guitar', pitch: 'G3 • 196.0 Hz' },
+        piano: { name: 'Grand Piano', course: 'course-piano', pitch: 'C4 • 261.6 Hz' },
+        drums: { name: 'Acoustic Drums', course: 'course-drums', pitch: 'Kick • 45.0 Hz' },
+        violin: { name: 'Concert Violin', course: 'course-violin', pitch: 'A4 • 440.0 Hz' }
+      };
+
+      const meta = titles[instKey] || titles.guitar;
+      if (trialCtaBtn) {
+        trialCtaBtn.innerHTML = `<span>Book Free 30-Min Trial on ${meta.name}</span> <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>`;
+      }
+      if (syllabusLink) {
+        syllabusLink.href = `course-details.html?course=${meta.course}`;
+        syllabusLink.innerHTML = `View ${meta.name} Syllabus &amp; Trinity Grade Levels &rarr;`;
+      }
+      setTelemetry(`${meta.name} Mode`, meta.pitch, 'Active');
+      HarmonyApp.initLucide();
+    };
+
+    // Tab buttons
+    document.querySelectorAll('[data-bench-tab]').forEach(tab => {
+      tab.addEventListener('click', (e) => {
+        e.preventDefault();
+        const inst = tab.getAttribute('data-bench-tab');
+        updateInstrumentView(inst);
+      });
+    });
+
+    // 1. Guitar Strings
+    const pluckString = (strEl) => {
+      const stringNum = parseInt(strEl.getAttribute('data-guitar-string') || '1');
+      const freq = parseFloat(strEl.getAttribute('data-freq') || '329.63');
+      const noteName = strEl.getAttribute('data-note') || 'E4';
+      
+      if (window.HarmonyAudio && typeof window.HarmonyAudio.playGuitarPluck === 'function') {
+        window.HarmonyAudio.playGuitarPluck(stringNum, freq);
+      }
+      setTelemetry(`Guitar String ${stringNum} (${noteName})`, `${freq.toFixed(1)} Hz`, 'Plucked');
+
+      const wire = strEl.querySelector('.guitar-string-wire');
+      if (wire) {
+        wire.classList.add('wire-plucking');
+        setTimeout(() => wire.classList.remove('wire-plucking'), 400);
+      }
+    };
+
+    document.querySelectorAll('[data-guitar-string]').forEach(strEl => {
+      strEl.addEventListener('click', () => pluckString(strEl));
+      strEl.addEventListener('mouseenter', (e) => {
+        if (e.buttons === 1) pluckString(strEl); // strumming on drag
+      });
+    });
+
+    // Guitar Preset Chords
+    document.querySelectorAll('[data-guitar-chord]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const chord = btn.getAttribute('data-guitar-chord');
+        if (window.HarmonyAudio && typeof window.HarmonyAudio.playGuitarChord === 'function') {
+          window.HarmonyAudio.playGuitarChord(chord);
+        }
+        setTelemetry(`Guitar Chord: ${chord} Major`, 'Multi-String Strum', 'Resonating');
+        
+        // Animate all string wires in stagger
+        document.querySelectorAll('[data-guitar-string]').forEach((s, idx) => {
+          setTimeout(() => {
+            const wire = s.querySelector('.guitar-string-wire');
+            if (wire) {
+              wire.classList.add('wire-plucking');
+              setTimeout(() => wire.classList.remove('wire-plucking'), 400);
+            }
+          }, idx * 40);
+        });
+      });
+    });
+
+    // 2. Piano Keys (White & Black)
+    const playStudioPianoKey = (keyEl) => {
+      const freq = parseFloat(keyEl.getAttribute('data-studio-key') || '440');
+      const noteName = keyEl.getAttribute('data-note-name') || 'A4';
+      if (window.HarmonyAudio) {
+        window.HarmonyAudio.playPianoNote(freq, 1.4);
+      }
+      setTelemetry(`Piano Note: ${noteName}`, `${freq.toFixed(1)} Hz`, 'Key Pressed');
+      keyEl.classList.add('key-active');
+      setTimeout(() => keyEl.classList.remove('key-active'), 160);
+    };
+
+    document.querySelectorAll('[data-studio-key]').forEach(keyEl => {
+      keyEl.addEventListener('mousedown', () => playStudioPianoKey(keyEl));
+      keyEl.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        playStudioPianoKey(keyEl);
+      });
+    });
+
+    // Piano Preset Chords
+    document.querySelectorAll('[data-piano-chord]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const chord = btn.getAttribute('data-piano-chord');
+        if (window.HarmonyAudio && typeof window.HarmonyAudio.playPianoChord === 'function') {
+          window.HarmonyAudio.playPianoChord(chord);
+        }
+        setTelemetry(`Piano Chord: ${chord}`, 'Harmonic Triad', 'Sustained');
+      });
+    });
+
+    // 3. Drums MPC Pads
+    const hitDrumPad = (padEl) => {
+      const padType = padEl.getAttribute('data-drum-pad') || 'kick';
+      const padName = padEl.getAttribute('data-drum-name') || 'Kick';
+      if (window.HarmonyAudio && typeof window.HarmonyAudio.playDrumHit === 'function') {
+        window.HarmonyAudio.playDrumHit(padType);
+      }
+      setTelemetry(`Drum: ${padName}`, 'Acoustic Transient', 'Beat Struck');
+      padEl.classList.add('pad-struck');
+      setTimeout(() => padEl.classList.remove('pad-struck'), 200);
+    };
+
+    document.querySelectorAll('[data-drum-pad]').forEach(padEl => {
+      padEl.addEventListener('mousedown', () => hitDrumPad(padEl));
+      padEl.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        hitDrumPad(padEl);
+      });
+    });
+
+    // Drum Beat Looper Toggle Button
+    const drumLoopBtn = document.getElementById('btn-drum-loop-toggle');
+    const drumBpmLed = document.getElementById('drum-bpm-led');
+    if (drumLoopBtn) {
+      drumLoopBtn.addEventListener('click', () => {
+        if (!window.HarmonyAudio || typeof window.HarmonyAudio.toggleDrumLoop !== 'function') return;
+        const isPlaying = window.HarmonyAudio.toggleDrumLoop('rock', (step) => {
+          if (drumBpmLed) {
+            drumBpmLed.classList.add('bg-[#FF9F43]', 'scale-125');
+            setTimeout(() => drumBpmLed.classList.remove('bg-[#FF9F43]', 'scale-125'), 100);
+          }
+        });
+
+        if (isPlaying) {
+          drumLoopBtn.innerHTML = `<i data-lucide="square" class="w-3.5 h-3.5"></i> <span>Stop Drum Loop</span>`;
+          drumLoopBtn.classList.remove('bg-white/10');
+          drumLoopBtn.classList.add('bg-red-500', 'text-white', 'animate-pulse');
+          setTelemetry('Drum Loop: Rock 4/4', '100 BPM Steady Pocket', 'Looping');
+        } else {
+          drumLoopBtn.innerHTML = `<i data-lucide="play" class="w-3.5 h-3.5"></i> <span>Jam With 100 BPM Rock Beat</span>`;
+          drumLoopBtn.classList.add('bg-white/10');
+          drumLoopBtn.classList.remove('bg-red-500', 'text-white', 'animate-pulse');
+          setTelemetry('Drum Loop Stopped', 'Standby', 'Ready');
+        }
+        HarmonyApp.initLucide();
+      });
+    }
+
+    // 4. Violin Strings & Bow
+    const playViolinString = (strEl) => {
+      const freq = parseFloat(strEl.getAttribute('data-violin-freq') || '440');
+      const note = strEl.getAttribute('data-violin-note') || 'A4';
+      if (window.HarmonyAudio && typeof window.HarmonyAudio.playViolinNote === 'function') {
+        window.HarmonyAudio.playViolinNote(freq, currentViolinMode);
+      }
+      setTelemetry(`Violin ${currentViolinMode === 'arco' ? 'Bow' : 'Pizzicato'}: ${note}`, `${freq.toFixed(1)} Hz`, 'Vibrato Core');
+      strEl.classList.add('border-[#FF9F43]', 'bg-white/10');
+      setTimeout(() => strEl.classList.remove('border-[#FF9F43]', 'bg-white/10'), 250);
+    };
+
+    document.querySelectorAll('[data-violin-freq]').forEach(strEl => {
+      strEl.addEventListener('click', () => playViolinString(strEl));
+    });
+
+    // Violin Mode Switcher (Arco vs Pizzicato)
+    document.querySelectorAll('[data-violin-mode]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        currentViolinMode = btn.getAttribute('data-violin-mode');
+        document.querySelectorAll('[data-violin-mode]').forEach(b => {
+          if (b === btn) {
+            b.classList.add('bg-[#FF9F43]', 'text-charcoal-950', 'font-bold');
+            b.classList.remove('bg-white/10', 'text-white');
+          } else {
+            b.classList.remove('bg-[#FF9F43]', 'text-charcoal-950', 'font-bold');
+            b.classList.add('bg-white/10', 'text-white');
+          }
+        });
+        setTelemetry(`Violin Mode Changed`, currentViolinMode === 'arco' ? 'Arco (Bowed with Vibrato)' : 'Pizzicato (Acoustic Pluck)', 'Configured');
+      });
+    });
+
+    // Violin Bow Drag Track
+    const bowTrack = document.getElementById('violin-bow-simulator');
+    if (bowTrack) {
+      let lastBowTime = 0;
+      const triggerBow = () => {
+        const now = Date.now();
+        if (now - lastBowTime > 300) {
+          lastBowTime = now;
+          if (window.HarmonyAudio && typeof window.HarmonyAudio.playViolinBowStroke === 'function') {
+            window.HarmonyAudio.playViolinBowStroke();
+          }
+          setTelemetry('Violin Bow Stroke', '440.0 Hz A4 Swell', 'Bowing');
+        }
+      };
+      bowTrack.addEventListener('mousemove', triggerBow);
+      bowTrack.addEventListener('touchmove', triggerBow);
+    }
+
+    // Global Computer Keyboard Shortcuts for the Test Bench
+    window.addEventListener('keydown', (e) => {
+      if (['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName)) return;
+
+      const key = e.key.toUpperCase();
+
+      if (currentInstrument === 'guitar') {
+        if (['1', '2', '3', '4', '5', '6'].includes(e.key)) {
+          const stringEl = document.querySelector(`[data-guitar-string="${e.key}"]`);
+          if (stringEl) pluckString(stringEl);
+        }
+      } else if (currentInstrument === 'piano') {
+        const keyMap = {
+          'A': 261.63,
+          'W': 277.18,
+          'S': 293.66,
+          'E': 311.13,
+          'D': 329.63,
+          'F': 349.23,
+          'T': 369.99,
+          'G': 392.00,
+          'Y': 415.30,
+          'H': 440.00,
+          'U': 466.16,
+          'J': 493.88,
+          'K': 523.25
+        };
+        if (keyMap[key]) {
+          const targetKeyEl = document.querySelector(`[data-studio-key="${keyMap[key]}"]`);
+          if (targetKeyEl) playStudioPianoKey(targetKeyEl);
+          else if (window.HarmonyAudio) window.HarmonyAudio.playPianoNote(keyMap[key]);
+        }
+      } else if (currentInstrument === 'drums') {
+        const drumKeyMap = {
+          'Q': 'kick',
+          'W': 'snare',
+          'E': 'hihat-closed',
+          'R': 'hihat-open',
+          'A': 'crash',
+          'S': 'tom'
+        };
+        if (drumKeyMap[key]) {
+          const padEl = document.querySelector(`[data-drum-pad="${drumKeyMap[key]}"]`);
+          if (padEl) hitDrumPad(padEl);
+        }
+      } else if (currentInstrument === 'violin') {
+        const violinKeyMap = {
+          '1': 196.0,
+          '2': 293.66,
+          '3': 440.0,
+          '4': 659.25
+        };
+        if (violinKeyMap[e.key]) {
+          const strEl = document.querySelector(`[data-violin-freq="${violinKeyMap[e.key]}"]`);
+          if (strEl) playViolinString(strEl);
+        }
+      }
+    });
+
+    // Trial CTA Button handler (Auto pre-select instrument in modal)
+    if (trialCtaBtn) {
+      trialCtaBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const trialModal = document.getElementById('trial-modal');
+        if (trialModal) {
+          const select = trialModal.querySelector('#trial-instrument-select') || trialModal.querySelector('select[name="instrument"]') || trialModal.querySelector('select');
+          if (select) {
+            select.value = currentInstrument;
+          }
+          trialModal.classList.remove('hidden');
+          const nameInput = trialModal.querySelector('input[type="text"]');
+          if (nameInput) setTimeout(() => nameInput.focus(), 100);
+        }
+      });
+    }
   },
 
   // Musical Matcher Quiz logic
@@ -445,7 +859,7 @@ const HarmonyApp = {
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label class="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-1">Instrument *</label>
-                <select required class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-charcoal-700 bg-gray-50 dark:bg-charcoal-800 text-sm focus:outline-none focus:border-[#6C4CE3]">
+                <select id="trial-instrument-select" name="instrument" required class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-charcoal-700 bg-gray-50 dark:bg-charcoal-800 text-sm focus:outline-none focus:border-[#6C4CE3]">
                   <option value="guitar">Acoustic &amp; Electric Guitar</option>
                   <option value="piano">Piano &amp; Keyboard</option>
                   <option value="vocals">Singing &amp; Vocals</option>
@@ -746,6 +1160,88 @@ const HarmonyApp = {
         }
       });
     });
+  },
+
+  initRecitalCards() {
+    const recitalCards = document.querySelectorAll('.recital-card');
+    const modal = document.getElementById('recital-modal');
+    if (!recitalCards.length || !modal) return;
+
+    const modalTitle = document.getElementById('recital-modal-title');
+    const modalTrack = document.getElementById('recital-modal-track');
+    const modalBadge = document.getElementById('recital-modal-badge');
+    const modalImg = document.getElementById('recital-modal-img');
+    const playToggleBtn = document.getElementById('recital-play-toggle-btn');
+    const playIcon = document.getElementById('recital-play-icon');
+    const progressBar = document.getElementById('recital-progress-bar');
+    const timeDisplay = document.getElementById('recital-modal-time');
+
+    let isPlaying = false;
+    let timer = null;
+    let currentSec = 45;
+
+    recitalCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const title = card.getAttribute('data-recital-title') || 'Student Recital';
+        const track = card.getAttribute('data-recital-track') || 'Live Showcase';
+        const band = card.getAttribute('data-recital-band') || 'Academy Ensemble';
+        const img = card.getAttribute('data-recital-img');
+        const sound = card.getAttribute('data-recital-sound') || 'guitar';
+
+        if (modalTitle) modalTitle.textContent = title;
+        if (modalTrack) modalTrack.textContent = track;
+        if (modalBadge) modalBadge.textContent = band;
+        if (modalImg && img) modalImg.src = img;
+
+        isPlaying = false;
+        clearInterval(timer);
+        if (playIcon) playIcon.setAttribute('data-lucide', 'play');
+        if (progressBar) progressBar.style.width = '20%';
+        if (timeDisplay) timeDisplay.textContent = '00:00 / 03:20';
+        currentSec = 0;
+
+        modal.classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+        if (window.lucide) window.lucide.createIcons();
+
+        if (window.HarmonyAudio) {
+          if (sound === 'guitar') HarmonyAudio.playGuitarStrum();
+          else if (sound === 'piano') HarmonyAudio.playPianoChord();
+          else if (sound === 'drums') HarmonyAudio.playDrumGroove();
+        }
+      });
+    });
+
+    if (playToggleBtn) {
+      playToggleBtn.addEventListener('click', () => {
+        isPlaying = !isPlaying;
+        if (isPlaying) {
+          if (playIcon) playIcon.setAttribute('data-lucide', 'pause');
+          if (window.lucide) window.lucide.createIcons();
+          if (window.HarmonyAudio) {
+            HarmonyAudio.playGuitarStrum();
+          }
+          timer = setInterval(() => {
+            currentSec++;
+            const pct = Math.min((currentSec / 200) * 100, 100);
+            if (progressBar) progressBar.style.width = pct + '%';
+            const m = Math.floor(currentSec / 60);
+            const s = currentSec % 60;
+            if (timeDisplay) timeDisplay.textContent = `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')} / 03:20`;
+            if (currentSec >= 200) {
+              clearInterval(timer);
+              isPlaying = false;
+              if (playIcon) playIcon.setAttribute('data-lucide', 'play');
+              if (window.lucide) window.lucide.createIcons();
+            }
+          }, 1000);
+        } else {
+          clearInterval(timer);
+          if (playIcon) playIcon.setAttribute('data-lucide', 'play');
+          if (window.lucide) window.lucide.createIcons();
+        }
+      });
+    }
   },
 
   showToast(message, type = 'info') {

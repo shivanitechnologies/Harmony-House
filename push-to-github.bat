@@ -24,7 +24,7 @@ git add .
 
 :: 3. Commit files
 echo [3/5] Creating commit...
-git commit -m "Initial commit - Complete Harmony House Music Academy platform" 2>nul || (
+git commit -m "Add 2027 Interactive Virtual Instrument Studio Test Bench for Guitar, Piano, Drums and Violin" 2>nul || (
     echo Note: Working tree clean or commit already made.
 )
 

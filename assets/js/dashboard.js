@@ -10,6 +10,7 @@ const HarmonyDashboard = {
     this.initPracticeRecorder();
     this.initPaymentModal();
     this.initRescheduleModal();
+    this.initBatchEnrollment();
     this.initSearchFilters();
     this.initAttendanceToggles();
     this.initAdminModalsAndActions();
@@ -234,6 +235,60 @@ const HarmonyDashboard = {
         });
       }
     }
+  },
+
+  // Student batch enrollment handler
+  initBatchEnrollment() {
+    const form = document.getElementById('student-batch-enroll-form');
+    const modal = document.getElementById('enroll-batch-modal');
+    if (!form) return;
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const courseSelect = document.getElementById('enroll-course-select');
+      const batchSelect = document.getElementById('enroll-batch-select');
+      const courseName = courseSelect ? courseSelect.options[courseSelect.selectedIndex].text : 'New Instrument Course';
+      const batchName = batchSelect ? batchSelect.options[batchSelect.selectedIndex].text : 'Selected Batch';
+
+      if (modal) modal.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+
+      if (window.HarmonyApp) {
+        HarmonyApp.showToast(`Enrolled in ${courseName.split('(')[0].trim()}! Batch: ${batchName}`, 'success');
+      }
+
+      // If on student courses page, prepend a new enrolled course card
+      const main = document.querySelector('main');
+      if (main && window.location.pathname.includes('courses.html')) {
+        const newCard = document.createElement('div');
+        newCard.className = 'bg-white dark:bg-charcoal-800 rounded-3xl p-6 sm:p-8 border-2 border-[#6C4CE3] shadow-lg space-y-6 animate-fadeIn';
+        newCard.innerHTML = `
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 rounded-2xl bg-purple-100 dark:bg-purple-950/60 text-[#6C4CE3] flex items-center justify-center shrink-0">
+                <i data-lucide="sparkles" class="w-7 h-7"></i>
+              </div>
+              <div>
+                <span class="text-[10px] font-bold uppercase tracking-wider text-[#6C4CE3]">Newly Enrolled &bull; Winter 2026</span>
+                <h3 class="font-serif text-2xl font-bold text-gray-900 dark:text-white">${courseName.split('(')[0].trim()}</h3>
+                <p class="text-xs text-gray-500">Batch: ${batchName}</p>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-purple-100 text-[#6C4CE3] self-start sm:self-center">
+              Active &bull; Starting Soon
+            </span>
+          </div>
+          <div class="p-4 rounded-2xl bg-purple-50 dark:bg-purple-950/30 text-xs flex items-center justify-between">
+            <span class="text-gray-600 dark:text-gray-300">Your orientation pack and sheet music materials have been sent to your email.</span>
+            <a href="schedule.html" class="px-3.5 py-1.5 rounded-lg bg-[#6C4CE3] text-white font-bold text-[11px] shadow">
+              View on Timetable &rarr;
+            </a>
+          </div>
+        `;
+        main.insertBefore(newCard, main.firstChild);
+        if (window.lucide) window.lucide.createIcons();
+      }
+    });
   },
 
   // Instant Table Search Filtering

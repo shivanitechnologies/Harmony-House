@@ -179,11 +179,11 @@
           <i data-lucide="sun" class="w-4 h-4 dark:hidden"></i>
           <i data-lucide="moon" class="w-4 h-4 hidden dark:inline"></i>
         </button>
-        <a href="../courses.html" class="px-3 sm:px-4 py-2 rounded-full bg-coral-500 text-white font-bold text-xs hover:bg-coral-600 transition flex items-center gap-1.5 shadow shrink-0">
+        <button data-modal-target="enroll-batch-modal" class="px-3 sm:px-4 py-2 rounded-full bg-[#6C4CE3] hover:bg-[#5A38D4] text-white font-bold text-xs transition flex items-center gap-1.5 shadow shrink-0 cursor-pointer">
           <i data-lucide="plus" class="w-3.5 h-3.5"></i>
-          <span class="hidden sm:inline">Enroll in Another Course</span>
+          <span class="hidden sm:inline">Enroll in New Batch</span>
           <span class="sm:hidden">Enroll</span>
-        </a>
+        </button>
       </div>
     </header>
 
@@ -232,12 +232,12 @@
             <span class="text-gray-400 block font-semibold mb-1">Next Live Class:</span>
             <strong class="text-gray-900 dark:text-white">Tomorrow, Nov 2 at 6:30 PM</strong>
           </div>
-          <div class="p-4 rounded-2xl bg-gray-50 dark:bg-charcoal-750 text-xs flex items-center justify-between">
+          <div class="p-4 rounded-2xl bg-gray-50 dark:bg-charcoal-750 text-xs flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
             <div>
               <span class="text-gray-400 block font-semibold">Study Materials:</span>
               <strong class="text-coral-600">8 Sheet Music PDFs</strong>
             </div>
-            <button onclick="HarmonyApp.showToast('Downloading Guitar Tablature Bundle (.zip)...', 'success')" class="px-3 py-1.5 rounded-lg bg-coral-500 text-white font-bold text-[11px] shadow">
+            <button onclick="HarmonyApp.showToast('Downloading Guitar Tablature Bundle (.zip)...', 'success')" class="px-3 py-1.5 rounded-lg bg-coral-500 text-white font-bold text-[11px] shadow w-full sm:w-auto text-center cursor-pointer">
               Download
             </button>
           </div>
@@ -284,12 +284,12 @@
             <span class="text-gray-400 block font-semibold mb-1">Next Live Class:</span>
             <strong class="text-gray-900 dark:text-white">Wednesday, Nov 4 at 7:00 PM</strong>
           </div>
-          <div class="p-4 rounded-2xl bg-gray-50 dark:bg-charcoal-750 text-xs flex items-center justify-between">
+          <div class="p-4 rounded-2xl bg-gray-50 dark:bg-charcoal-750 text-xs flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
             <div>
               <span class="text-gray-400 block font-semibold">Study Materials:</span>
               <strong class="text-sage-600">Vocal Stems (MP3)</strong>
             </div>
-            <button onclick="HarmonyApp.showToast('Downloading Vocal Warming Warm-ups (.mp3)...', 'success')" class="px-3 py-1.5 rounded-lg bg-sage-600 text-white font-bold text-[11px] shadow">
+            <button onclick="HarmonyApp.showToast('Downloading Vocal Warming Warm-ups (.mp3)...', 'success')" class="px-3 py-1.5 rounded-lg bg-sage-600 text-white font-bold text-[11px] shadow w-full sm:w-auto text-center cursor-pointer">
               Download
             </button>
           </div>
@@ -297,6 +297,76 @@
       </div>
 
     </main>
+  </div>
+
+  <!-- Enroll in New Batch Modal -->
+  <div id="enroll-batch-modal" class="harmony-modal fixed inset-0 z-[60] hidden flex items-center justify-center p-4">
+    <div class="fixed inset-0 bg-black/60 backdrop-blur-sm" data-modal-close></div>
+    <div class="relative bg-white dark:bg-charcoal-850 rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl z-10 border border-gray-100 dark:border-charcoal-700">
+      <div class="flex items-center justify-between pb-4 border-b border-gray-100 dark:border-charcoal-700">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-[#FF9F43]">Student Portal</span>
+          <h3 class="font-serif text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">Enroll in a New Batch</h3>
+        </div>
+        <button data-modal-close class="p-2 text-gray-400 hover:text-gray-600 dark:hover:text-white rounded-lg cursor-pointer">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <form id="student-batch-enroll-form" data-ajax-form data-success-msg="Successfully enrolled in the selected batch! Timetable and mentor details added to your schedule." class="space-y-4 mt-6">
+        <div>
+          <label class="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-1">Select Instrument / Course *</label>
+          <select id="enroll-course-select" required class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-charcoal-700 bg-gray-50 dark:bg-charcoal-800 text-xs text-gray-800 dark:text-gray-200 focus:outline-none focus:border-[#6C4CE3]">
+            <option value="piano">Classical &amp; Contemporary Piano (₹3,500/mo)</option>
+            <option value="drums">Rhythm &amp; Percussion Drums Academy (₹3,400/mo)</option>
+            <option value="violin">Violin &amp; String Ensemble (₹3,600/mo)</option>
+            <option value="guitar">Acoustic &amp; Electric Guitar (₹3,200/mo)</option>
+            <option value="vocals">Contemporary &amp; Western Vocals (₹3,200/mo)</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-1">Select Available Batch Slot *</label>
+          <select id="enroll-batch-select" required class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-charcoal-700 bg-gray-50 dark:bg-charcoal-800 text-xs text-gray-800 dark:text-gray-200 focus:outline-none focus:border-[#6C4CE3]">
+            <option>Junior Keys: Tue &amp; Fri 4:30 PM (Studio 2B)</option>
+            <option>Adult Classical: Mon &amp; Wed 7:00 PM (Studio 2B)</option>
+            <option>Weekend Masterclass: Saturday 10:00 AM (Concert Hall)</option>
+            <option>Sunday Special: Sunday 11:30 AM (Studio 2A)</option>
+          </select>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-1">Skill Level</label>
+            <select class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-charcoal-700 bg-gray-50 dark:bg-charcoal-800 text-xs text-gray-800 dark:text-gray-200">
+              <option>Beginner (Grade 1-2)</option>
+              <option>Intermediate (Grade 3-5)</option>
+              <option>Advanced (Grade 6-8)</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-1">Start Date</label>
+            <select class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-charcoal-700 bg-gray-50 dark:bg-charcoal-800 text-xs text-gray-800 dark:text-gray-200">
+              <option>Next Monday (Nov 9, 2026)</option>
+              <option>Immediate (Nov 4, 2026)</option>
+              <option>December 1, 2026</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="p-3 rounded-xl bg-purple-50 dark:bg-purple-950/40 border border-purple-200/60 dark:border-purple-800/40 text-xs text-gray-600 dark:text-gray-300">
+          <div class="flex items-center gap-2 text-[#6C4CE3] dark:text-[#987AF0] font-bold mb-1">
+            <i data-lucide="shield-check" class="w-4 h-4"></i>
+            <span>Flexible Enrolment Guarantee</span>
+          </div>
+          You can reschedule up to 2 classes per month without any penalty or cancellation fee.
+        </div>
+
+        <button type="submit" class="btn-3d-purple w-full py-3.5 rounded-xl font-bold text-xs tracking-wide cursor-pointer shadow-lg shadow-[#6C4CE3]/30">
+          Confirm Enrolment &amp; Add to Timetable
+        </button>
+      </form>
+    </div>
   </div>
 
   <script src="../assets/js/data.js"></script>

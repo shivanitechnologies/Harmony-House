@@ -293,23 +293,23 @@
             <div class="space-y-4">
               <!-- Course 1 -->
               <div class="p-4 rounded-2xl bg-gray-50 dark:bg-charcoal-750 border border-gray-100 dark:border-charcoal-700 space-y-3">
-                <div class="flex items-center justify-between">
-                  <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-xl bg-coral-100 text-coral-600 flex items-center justify-center">
+                <div class="flex items-center justify-between gap-3">
+                  <div class="flex items-center gap-3 min-w-0">
+                    <div class="w-10 h-10 rounded-xl bg-coral-100 text-coral-600 flex items-center justify-center shrink-0">
                       <i data-lucide="guitar" class="w-5 h-5"></i>
                     </div>
-                    <div>
-                      <h4 class="text-xs font-bold text-gray-900 dark:text-white">Acoustic &amp; Electric Guitar Mastery</h4>
-                      <p class="text-[11px] text-gray-500">Mentor: David Miller &bull; Level 2 Intermediate</p>
+                    <div class="min-w-0">
+                      <h4 class="text-xs font-bold text-gray-900 dark:text-white truncate">Acoustic &amp; Electric Guitar Mastery</h4>
+                      <p class="text-[11px] text-gray-500 truncate">Mentor: David Miller &bull; Level 2 Intermediate</p>
                     </div>
                   </div>
-                  <span class="text-xs font-bold text-coral-600">68% Done</span>
+                  <span class="text-xs font-bold text-coral-600 shrink-0">68% Done</span>
                 </div>
                 <!-- Progress bar -->
                 <div class="w-full bg-gray-200 dark:bg-charcoal-700 rounded-full h-2 overflow-hidden">
                   <div class="bg-coral-500 h-2 rounded-full" style="width: 68%"></div>
                 </div>
-                <div class="flex items-center justify-between text-[11px] text-gray-400">
+                <div class="flex flex-wrap items-center justify-between gap-2 text-[11px] text-gray-400">
                   <span>22 of 32 sessions completed</span>
                   <a href="courses.html" class="text-coral-600 hover:underline">Download Sheet PDFs</a>
                 </div>
@@ -317,23 +317,23 @@
 
               <!-- Course 2 -->
               <div class="p-4 rounded-2xl bg-gray-50 dark:bg-charcoal-750 border border-gray-100 dark:border-charcoal-700 space-y-3">
-                <div class="flex items-center justify-between">
-                  <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-xl bg-sage-100 text-sage-600 flex items-center justify-center">
+                <div class="flex items-center justify-between gap-3">
+                  <div class="flex items-center gap-3 min-w-0">
+                    <div class="w-10 h-10 rounded-xl bg-sage-100 text-sage-600 flex items-center justify-center shrink-0">
                       <i data-lucide="mic" class="w-5 h-5"></i>
                     </div>
-                    <div>
-                      <h4 class="text-xs font-bold text-gray-900 dark:text-white">Contemporary &amp; Western Vocals</h4>
-                      <p class="text-[11px] text-gray-500">Mentor: Aarav Sharma &bull; Level 1 Breath &amp; Pitch</p>
+                    <div class="min-w-0">
+                      <h4 class="text-xs font-bold text-gray-900 dark:text-white truncate">Contemporary &amp; Western Vocals</h4>
+                      <p class="text-[11px] text-gray-500 truncate">Mentor: Aarav Sharma &bull; Level 1 Breath &amp; Pitch</p>
                     </div>
                   </div>
-                  <span class="text-xs font-bold text-sage-600">45% Done</span>
+                  <span class="text-xs font-bold text-sage-600 shrink-0">45% Done</span>
                 </div>
                 <!-- Progress bar -->
                 <div class="w-full bg-gray-200 dark:bg-charcoal-700 rounded-full h-2 overflow-hidden">
                   <div class="bg-sage-600 h-2 rounded-full" style="width: 45%"></div>
                 </div>
-                <div class="flex items-center justify-between text-[11px] text-gray-400">
+                <div class="flex flex-wrap items-center justify-between gap-2 text-[11px] text-gray-400">
                   <span>11 of 24 sessions completed</span>
                   <a href="courses.html" class="text-sage-600 hover:underline">Download Scales Audio</a>
                 </div>
@@ -359,8 +359,8 @@
               <p class="text-xs text-gray-600 dark:text-gray-300 leading-relaxed italic">
                 "Rohan's transition to the F major barre chord is noticeably cleaner this week! Hand tension has reduced by 80%. Keep practicing with the 75 BPM metronome groove."
               </p>
-              <div class="pt-2 flex items-center justify-between">
-                <button data-audio-player class="px-3 py-1.5 rounded-lg bg-coral-500 text-white font-bold text-[11px] flex items-center gap-1.5 hover:bg-coral-600 transition">
+              <div class="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+                <button data-audio-player class="px-3 py-1.5 rounded-lg bg-coral-500 text-white font-bold text-[11px] flex items-center justify-center sm:justify-start gap-1.5 hover:bg-coral-600 transition w-full sm:w-auto">
                   <i data-lucide="play" class="w-3.5 h-3.5"></i> Play Voice Note (0:48)
                 </button>
                 <span class="text-[11px] font-semibold text-gray-500">Homework: Hotel California Intro</span>

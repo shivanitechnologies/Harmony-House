@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 450" width="100%" height="100%" style="overflow: visible; filter: drop-shadow(0 25px 45px rgba(0,0,0,0.5));">
+  <defs>
+    <!-- Ebony Piano Gloss Finish -->
+    <linearGradient id="pianoGloss" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155" />
+      <stop offset="35%" stop-color="#0F172A" />
+      <stop offset="80%" stop-color="#020617" />
+      <stop offset="100%" stop-color="#000000" />
+    </linearGradient>
+
+    <!-- Ivory White Key Gradient -->
+    <linearGradient id="ivoryKey" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="85%" stop-color="#F8FAFC" />
+      <stop offset="100%" stop-color="#E2E8F0" />
+    </linearGradient>
+
+    <!-- Ebony Black Key Gradient -->
+    <linearGradient id="ebonyKey" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#475569" />
+      <stop offset="20%" stop-color="#1E293B" />
+      <stop offset="85%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+
+    <!-- Glowing 2027 LED Strip -->
+    <linearGradient id="neonStrip" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6C4CE3" />
+      <stop offset="50%" stop-color="#FF9F43" />
+      <stop offset="100%" stop-color="#6C4CE3" />
+    </linearGradient>
+
+    <!-- Gold Brandmark -->
+    <linearGradient id="goldText" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FDE68A" />
+      <stop offset="50%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+  </defs>
+
+  <!-- 1. PIANO CHASSIS & CONSOLE (Perspective 3D angle) -->
+  <g id="pianoCase">
+    <!-- Backfall & Cheek Blocks -->
+    <path d="M 50 140 L 650 140 L 670 380 L 30 380 Z" fill="url(#pianoGloss)" stroke="#475569" stroke-width="2" />
+    <!-- Top Fallboard Lid -->
+    <polygon points="50,140 100,50 600,50 650,140" fill="#0B0F19" stroke="#334155" stroke-width="2" />
+    
+    <!-- Neon Soundwave LED Visualizer Strip -->
+    <rect x="70" y="132" width="560" height="6" rx="3" fill="url(#neonStrip)" />
+
+    <!-- Academy Brandmark in Gold Inlay -->
+    <text x="350" y="105" font-family="'Playfair Display', serif" font-size="20" font-weight="bold" fill="url(#goldText)" text-anchor="middle" letter-spacing="4">
+      HARMONY HOUSE
+    </text>
+    <text x="350" y="122" font-family="'DM Sans', sans-serif" font-size="9" font-weight="bold" fill="#94A3B8" text-anchor="middle" letter-spacing="2">
+      CONCERT GRAND &#8226; 88 KEYS WEIGHTED HAMMER
+    </text>
+
+    <!-- Keybed Wooden Felt Rail (Red/Crimson Damper Felt) -->
+    <rect x="52" y="145" width="596" height="10" fill="#991B1B" />
+  </g>
+
+  <!-- 2. NATURAL WHITE KEYS (OCTAVES C3 to B4) -->
+  <g id="whiteKeys" transform="translate(56, 155)">
+    <!-- 14 Natural Keys rendered with 3D drop shadow -->
+    <!-- Key 1 (C) -->
+    <rect x="0" y="0" width="40" height="200" rx="3" fill="url(#ivoryKey)" stroke="#CBD5E1" stroke-width="1.5" />
+    <!-- Key 2 (D) -->
+    <rect x="42" y="0" width="40" height="200" rx="3" fill="url(#ivoryKey)" stroke="#CBD5E1" stroke-width="1.5" />
+    <!-- Key 3 (E) -->
+    <rect x="84" y="0" width="40" height="200" rx="3" fill="url(#ivoryKey)" stroke="#CBD5E1" stroke-width="1.5" />
+    <!-- Key 4 (F) -->
+    <rect x="126" y="0" width="40" height="200" rx="3" fill="url(#ivoryKey)" stroke="#CBD5E1" stroke-width="1.5" />
+    <!-- Key 5 (G) -->
+    <rect x="168" y="0" width="40" height="200" rx="3" fill="url(#ivoryKey)" stroke="#CBD5E1" stroke-width="1.5" />
+    <!-- Key 6 (A) -->
+    <rect x="210" y="0" width="40" height="200" rx="3" fill="url(#ivoryKey)" stroke="#CBD5E1" stroke-width="1.5" />
+    <!-- Key 7 (B) -->
+    <rect x="252" y="0" width="40" height="200" rx="3" fill="url(#ivoryKey)" stroke="#CBD5E1" stroke-width="1.5" />
+
+    <!-- Octave 2 -->
+    <!-- Key 8 (C) -->
+    <rect x="294" y="0" width="40" height="200" rx="3" fill="url(#ivoryKey)" stroke="#CBD5E1" stroke-width="1.5" />
+    <!-- Key 9 (D) -->
+    <rect x="336" y="0" width="40" height="200" rx="3" fill="url(#ivoryKey)" stroke="#CBD5E1" stroke-width="1.5" />
+    <!-- Key 10 (E) -->
+    <rect x="378" y="0" width="40" height="200" rx="3" fill="url(#ivoryKey)" stroke="#CBD5E1" stroke-width="1.5" />
+    <!-- Key 11 (F) -->
+    <rect x="420" y="0" width="40" height="200" rx="3" fill="url(#ivoryKey)" stroke="#CBD5E1" stroke-width="1.5" />
+    <!-- Key 12 (G) -->
+    <rect x="462" y="0" width="40" height="200" rx="3" fill="url(#ivoryKey)" stroke="#CBD5E1" stroke-width="1.5" />
+    <!-- Key 13 (A) -->
+    <rect x="504" y="0" width="40" height="200" rx="3" fill="url(#ivoryKey)" stroke="#CBD5E1" stroke-width="1.5" />
+    <!-- Key 14 (B) -->
+    <rect x="546" y="0" width="40" height="200" rx="3" fill="url(#ivoryKey)" stroke="#CBD5E1" stroke-width="1.5" />
+  </g>
+
+  <!-- 3. ACCIDENTAL BLACK KEYS (SHARPS & FLATS) -->
+  <g id="blackKeys" transform="translate(56, 155)">
+    <!-- Octave 1 Sharps -->
+    <!-- C# -->
+    <rect x="26" y="0" width="28" height="125" rx="3" fill="url(#ebonyKey)" stroke="#0F172A" stroke-width="1" />
+    <!-- D# -->
+    <rect x="70" y="0" width="28" height="125" rx="3" fill="url(#ebonyKey)" stroke="#0F172A" stroke-width="1" />
+    
+    <!-- F# -->
+    <rect x="152" y="0" width="28" height="125" rx="3" fill="url(#ebonyKey)" stroke="#0F172A" stroke-width="1" />
+    <!-- G# -->
+    <rect x="196" y="0" width="28" height="125" rx="3" fill="url(#ebonyKey)" stroke="#0F172A" stroke-width="1" />
+    <!-- A# -->
+    <rect x="240" y="0" width="28" height="125" rx="3" fill="url(#ebonyKey)" stroke="#0F172A" stroke-width="1" />
+
+    <!-- Octave 2 Sharps -->
+    <!-- C# -->
+    <rect x="320" y="0" width="28" height="125" rx="3" fill="url(#ebonyKey)" stroke="#0F172A" stroke-width="1" />
+    <!-- D# -->
+    <rect x="364" y="0" width="28" height="125" rx="3" fill="url(#ebonyKey)" stroke="#0F172A" stroke-width="1" />
+
+    <!-- F# -->
+    <rect x="446" y="0" width="28" height="125" rx="3" fill="url(#ebonyKey)" stroke="#0F172A" stroke-width="1" />
+    <!-- G# -->
+    <rect x="490" y="0" width="28" height="125" rx="3" fill="url(#ebonyKey)" stroke="#0F172A" stroke-width="1" />
+    <!-- A# -->
+    <rect x="534" y="0" width="28" height="125" rx="3" fill="url(#ebonyKey)" stroke="#0F172A" stroke-width="1" />
+  </g>
+</svg>
+

@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 1100" width="100%" height="100%" style="overflow: visible; filter: drop-shadow(0 25px 35px rgba(0,0,0,0.35));">
+  <defs>
+    <!-- Flamed Maple & Spruce Amber Sunburst -->
+    <radialGradient id="violinSunburst" cx="50%" cy="65%" r="60%">
+      <stop offset="0%" stop-color="#FED7AA" />
+      <stop offset="30%" stop-color="#FB923C" />
+      <stop offset="65%" stop-color="#C2410C" />
+      <stop offset="85%" stop-color="#7C2D12" />
+      <stop offset="100%" stop-color="#270A03" />
+    </radialGradient>
+
+    <!-- Ebony Parts -->
+    <linearGradient id="violinEbony" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#18181B" />
+      <stop offset="50%" stop-color="#27272A" />
+      <stop offset="100%" stop-color="#09090B" />
+    </linearGradient>
+
+    <!-- Silver Strings -->
+    <linearGradient id="violinString" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E2E8F0" />
+      <stop offset="50%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#94A3B8" />
+    </linearGradient>
+
+    <!-- Pernambuco Bow Wood -->
+    <linearGradient id="bowWood" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#B45309" />
+      <stop offset="100%" stop-color="#78350F" />
+    </linearGradient>
+  </defs>
+
+  <!-- 1. SCROLL & PEG BOX -->
+  <g id="scroll" transform="translate(0, 30)">
+    <!-- Carved Volute Scroll -->
+    <path d="M 200 40 
+             C 185 40 175 55 175 75 
+             C 175 95 190 105 200 105 
+             C 210 105 225 95 225 75 
+             C 225 55 215 40 200 40 Z" fill="url(#violinSunburst)" stroke="#451A03" stroke-width="2" />
+    <!-- Scroll Spiral Eye -->
+    <circle cx="193" cy="75" r="5" fill="#451A03" />
+    <circle cx="207" cy="75" r="5" fill="#451A03" />
+
+    <!-- Pegbox -->
+    <rect x="186" y="100" width="28" height="65" fill="#2E1106" stroke="#451A03" stroke-width="1.5" />
+    <!-- 4 Swiss Ebony Tuning Pegs -->
+    <circle cx="168" cy="112" r="5.5" fill="url(#violinEbony)" />
+    <line x1="173" y1="112" x2="186" y2="112" stroke="url(#violinEbony)" stroke-width="3" />
+
+    <circle cx="232" cy="126" r="5.5" fill="url(#violinEbony)" />
+    <line x1="214" y1="126" x2="227" y2="126" stroke="url(#violinEbony)" stroke-width="3" />
+
+    <circle cx="168" cy="140" r="5.5" fill="url(#violinEbony)" />
+    <line x1="173" y1="140" x2="186" y2="140" stroke="url(#violinEbony)" stroke-width="3" />
+
+    <circle cx="232" cy="154" r="5.5" fill="url(#violinEbony)" />
+    <line x1="214" y1="154" x2="227" y2="154" stroke="url(#violinEbony)" stroke-width="3" />
+
+    <!-- Bone Nut -->
+    <rect x="187" y="165" width="26" height="4" fill="#F8FAFC" />
+  </g>
+
+  <!-- 2. NECK & EBONY FINGERBOARD -->
+  <g id="neck">
+    <rect x="188" y="195" width="24" height="280" fill="url(#violinSunburst)" />
+    <path d="M 187 195 L 182 560 L 218 560 L 213 195 Z" fill="url(#violinEbony)" stroke="#09090B" stroke-width="1" />
+  </g>
+
+  <!-- 3. VIOLIN RESONANT BODY (Classic Stradivari Outline) -->
+  <g id="body">
+    <!-- Upper Bout, C-Bouts, Lower Bout -->
+    <path d="M 200 480 
+             C 230 480 290 510 300 580 
+             C 305 615 295 640 270 660 
+             C 255 675 255 705 275 725 
+             C 315 765 325 845 305 915 
+             C 285 985 235 1010 200 1010 
+             C 165 1010 115 985 95 915 
+             C 75 845 85 765 125 725 
+             C 145 705 145 675 130 660 
+             C 105 640 95 615 100 580 
+             C 110 510 170 480 200 480 Z" 
+          fill="url(#violinSunburst)" 
+          stroke="#3B1204" 
+          stroke-width="3.5" />
+
+    <!-- Pure Purfling Inlay Line -->
+    <path d="M 200 486 
+             C 227 486 283 513 293 578 
+             C 297 610 288 634 265 653 
+             C 248 668 248 710 268 730 
+             C 307 768 316 842 297 908 
+             C 278 974 233 1002 200 1002 
+             C 167 1002 122 974 103 908 
+             C 84 842 93 768 132 730 
+             C 152 710 152 668 135 653 
+             C 112 634 103 610 107 578 
+             C 117 513 173 486 200 486 Z" 
+          fill="none" 
+          stroke="#451A03" 
+          stroke-width="1.8" />
+
+    <!-- F-HOLES (Left & Right Harmonic Vents) -->
+    <!-- Left f-hole -->
+    <path d="M 160 670 C 150 710 170 760 155 800 C 150 812 140 810 145 795 C 155 760 135 720 150 675 C 153 665 163 660 160 670 Z" fill="#09090B" />
+    <circle cx="160" cy="670" r="3.5" fill="#09090B" />
+    <circle cx="145" cy="805" r="4.5" fill="#09090B" />
+    <!-- Notch -->
+    <polygon points="152,735 158,738 152,741" fill="#09090B" />
+
+    <!-- Right f-hole -->
+    <path d="M 240 670 C 250 710 230 760 245 800 C 250 812 260 810 255 795 C 245 760 265 720 250 675 C 247 665 237 660 240 670 Z" fill="#09090B" />
+    <circle cx="240" cy="670" r="3.5" fill="#09090B" />
+    <circle cx="255" cy="805" r="4.5" fill="#09090B" />
+    <!-- Notch -->
+    <polygon points="248,735 242,738 248,741" fill="#09090B" />
+
+    <!-- MAPLE BRIDGE -->
+    <path d="M 175 735 C 190 732 210 732 225 735 L 222 755 C 215 750 185 750 178 755 Z" fill="#FEF3C7" stroke="#92400E" stroke-width="1.2" />
+
+    <!-- EBONY TAILPIECE & 4 FINE TUNERS -->
+    <path d="M 190 820 L 210 820 L 204 940 L 196 940 Z" fill="url(#violinEbony)" stroke="#09090B" stroke-width="1" />
+    <!-- 4 Golden Fine Tuners -->
+    <circle cx="193" cy="824" r="2" fill="#FCD34D" />
+    <circle cx="198" cy="824" r="2" fill="#FCD34D" />
+    <circle cx="202" cy="824" r="2" fill="#FCD34D" />
+    <circle cx="207" cy="824" r="2" fill="#FCD34D" />
+
+    <!-- EBONY CHINREST (LOWER LEFT) -->
+    <path d="M 140 910 C 150 880 185 880 195 910 C 200 930 195 970 175 975 C 150 980 135 940 140 910 Z" fill="url(#violinEbony)" stroke="#09090B" stroke-width="1.5" filter="drop-shadow(0 4px 6px rgba(0,0,0,0.6))" />
+  </g>
+
+  <!-- 4. STRINGS (G, D, A, E) -->
+  <g id="strings">
+    <!-- G (4th) -->
+    <line x1="190" y1="195" x2="193" y2="824" stroke="url(#violinString)" stroke-width="2.2" opacity="0.95" />
+    <!-- D (3rd) -->
+    <line x1="196" y1="195" x2="198" y2="824" stroke="url(#violinString)" stroke-width="1.8" opacity="0.95" />
+    <!-- A (2nd) -->
+    <line x1="202" y1="195" x2="202" y2="824" stroke="url(#violinString)" stroke-width="1.4" opacity="0.95" />
+    <!-- E (1st Gold/Steel) -->
+    <line x1="208" y1="195" x2="207" y2="824" stroke="#FDE68A" stroke-width="1.0" opacity="0.95" />
+  </g>
+
+  <!-- 5. DIAGONAL PERNAMBUCO BOW WITH HORSEHAIR -->
+  <g id="bow" transform="rotate(-35 200 700)">
+    <!-- Wooden Stick -->
+    <line x1="50" y1="695" x2="350" y2="695" stroke="url(#bowWood)" stroke-width="4" stroke-linecap="round" />
+    <!-- White Bleached Horsehair -->
+    <line x1="55" y1="702" x2="345" y2="702" stroke="#FFFFFF" stroke-width="2.2" opacity="0.9" />
+    <!-- Ebony Frog with Mother of Pearl Eye -->
+    <rect x="52" y="694" width="22" height="11" fill="url(#violinEbony)" />
+    <circle cx="63" cy="700" r="2" fill="#E2E8F0" />
+    <circle cx="76" cy="700" r="2.5" fill="#FCD34D" />
+  </g>
+</svg>
+

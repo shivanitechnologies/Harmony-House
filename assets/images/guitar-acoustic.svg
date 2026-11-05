@@ -1,0 +1,249 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 1100" width="100%" height="100%" style="overflow: visible; filter: drop-shadow(0 25px 35px rgba(0,0,0,0.35));">
+  <defs>
+    <!-- Sunburst Body Gradient -->
+    <radialGradient id="sunburstGrad" cx="50%" cy="65%" r="55%" fx="50%" fy="62%">
+      <stop offset="0%" stop-color="#FFDD99" />
+      <stop offset="35%" stop-color="#F39C38" />
+      <stop offset="65%" stop-color="#A54012" />
+      <stop offset="85%" stop-color="#4A1604" />
+      <stop offset="100%" stop-color="#1A0701" />
+    </radialGradient>
+
+    <!-- Wood Grain Reflection Highlight -->
+    <linearGradient id="bodySheen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.35" />
+      <stop offset="40%" stop-color="#FFFFFF" stop-opacity="0.05" />
+      <stop offset="60%" stop-color="#000000" stop-opacity="0" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.4" />
+    </linearGradient>
+
+    <!-- Mahogany Neck Gradient -->
+    <linearGradient id="neckGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4E2310" />
+      <stop offset="30%" stop-color="#7A391A" />
+      <stop offset="70%" stop-color="#672F15" />
+      <stop offset="100%" stop-color="#3B180A" />
+    </linearGradient>
+
+    <!-- Rosewood Fretboard -->
+    <linearGradient id="fretboardGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1E130D" />
+      <stop offset="50%" stop-color="#2D1C13" />
+      <stop offset="100%" stop-color="#140C08" />
+    </linearGradient>
+
+    <!-- Soundhole Rosette Patterns -->
+    <radialGradient id="holeDepth" cx="50%" cy="50%" r="50%">
+      <stop offset="75%" stop-color="#0B0503" />
+      <stop offset="100%" stop-color="#220F08" />
+    </radialGradient>
+
+    <!-- Tortoiseshell Pickguard -->
+    <linearGradient id="pickguardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#801C08" />
+      <stop offset="50%" stop-color="#470D03" />
+      <stop offset="100%" stop-color="#260601" />
+    </linearGradient>
+
+    <!-- Chrome Strings & Tuners -->
+    <linearGradient id="chromeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E8E8E8" />
+      <stop offset="50%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#A0A0A0" />
+    </linearGradient>
+
+    <!-- Bronze Strings -->
+    <linearGradient id="bronzeString" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ECC880" />
+      <stop offset="50%" stop-color="#DDA14B" />
+      <stop offset="100%" stop-color="#B87A28" />
+    </linearGradient>
+  </defs>
+
+  <!-- 1. HEADSTOCK & TUNERS -->
+  <g id="headstock" transform="translate(0, 20)">
+    <!-- Headstock Wood Shape -->
+    <path d="M 175 140 L 165 40 C 165 30 175 15 190 18 C 200 20 200 20 210 18 C 225 15 235 30 235 40 L 225 140 Z" fill="url(#sunburstGrad)" stroke="#1A0701" stroke-width="2" />
+    <!-- Brand Logo on Headstock -->
+    <path d="M 197 45 A 4 4 0 0 1 203 45 L 203 55 A 4 4 0 0 1 197 55 Z" fill="#ECC880" />
+    <circle cx="200" cy="50" r="3" fill="#D45D3A" />
+
+    <!-- 6 Tuning Pegs & Posts -->
+    <!-- Left Pegs (E, A, D) -->
+    <circle cx="150" cy="50" r="7" fill="url(#chromeGrad)" stroke="#666" stroke-width="1" />
+    <rect x="156" y="47" width="12" height="6" rx="2" fill="url(#chromeGrad)" />
+    
+    <circle cx="150" cy="80" r="7" fill="url(#chromeGrad)" stroke="#666" stroke-width="1" />
+    <rect x="156" y="77" width="12" height="6" rx="2" fill="url(#chromeGrad)" />
+
+    <circle cx="150" cy="110" r="7" fill="url(#chromeGrad)" stroke="#666" stroke-width="1" />
+    <rect x="156" y="107" width="12" height="6" rx="2" fill="url(#chromeGrad)" />
+
+    <!-- Right Pegs (G, B, E) -->
+    <circle cx="250" cy="50" r="7" fill="url(#chromeGrad)" stroke="#666" stroke-width="1" />
+    <rect x="232" y="47" width="12" height="6" rx="2" fill="url(#chromeGrad)" />
+
+    <circle cx="250" cy="80" r="7" fill="url(#chromeGrad)" stroke="#666" stroke-width="1" />
+    <rect x="232" y="77" width="12" height="6" rx="2" fill="url(#chromeGrad)" />
+
+    <circle cx="250" cy="110" r="7" fill="url(#chromeGrad)" stroke="#666" stroke-width="1" />
+    <rect x="232" y="107" width="12" height="6" rx="2" fill="url(#chromeGrad)" />
+
+    <!-- Bone Nut -->
+    <rect x="175" y="137" width="50" height="7" rx="1.5" fill="#F4EEDB" stroke="#D3C7AB" stroke-width="1" />
+  </g>
+
+  <!-- 2. NECK & FRETBOARD -->
+  <g id="neck">
+    <!-- Mahogany Back Neck Shadow -->
+    <path d="M 174 164 L 166 520 L 234 520 L 226 164 Z" fill="url(#neckGrad)" />
+    <!-- Fretboard -->
+    <path d="M 176 164 L 168 520 L 232 520 L 224 164 Z" fill="url(#fretboardGrad)" stroke="#0E0805" stroke-width="1" />
+
+    <!-- Nickel Silver Frets -->
+    <line x1="176" y1="185" x2="224" y2="185" stroke="#CCC" stroke-width="1.8" />
+    <line x1="175" y1="210" x2="225" y2="210" stroke="#CCC" stroke-width="1.8" />
+    <line x1="174" y1="238" x2="226" y2="238" stroke="#CCC" stroke-width="1.8" /> <!-- 3rd fret -->
+    <circle cx="200" cy="224" r="3" fill="#E8DEC5" opacity="0.9" /> <!-- Inlay 3 -->
+
+    <line x1="173" y1="270" x2="227" y2="270" stroke="#CCC" stroke-width="1.8" />
+    <line x1="172" y1="305" x2="228" y2="305" stroke="#CCC" stroke-width="1.8" /> <!-- 5th fret -->
+    <circle cx="200" cy="287" r="3" fill="#E8DEC5" opacity="0.9" /> <!-- Inlay 5 -->
+
+    <line x1="171" y1="344" x2="229" y2="344" stroke="#CCC" stroke-width="1.8" />
+    <line x1="170" y1="386" x2="230" y2="386" stroke="#CCC" stroke-width="1.8" /> <!-- 7th fret -->
+    <circle cx="200" cy="365" r="3" fill="#E8DEC5" opacity="0.9" /> <!-- Inlay 7 -->
+
+    <line x1="169" y1="430" x2="231" y2="430" stroke="#CCC" stroke-width="1.8" />
+    <line x1="168" y1="475" x2="232" y2="475" stroke="#CCC" stroke-width="1.8" /> <!-- 9th fret -->
+    <circle cx="200" cy="452" r="3" fill="#E8DEC5" opacity="0.9" /> <!-- Inlay 9 -->
+
+    <line x1="168" y1="520" x2="232" y2="520" stroke="#CCC" stroke-width="1.8" /> <!-- 12th double dot -->
+    <circle cx="193" cy="497" r="2.8" fill="#E8DEC5" opacity="0.9" />
+    <circle cx="207" cy="497" r="2.8" fill="#E8DEC5" opacity="0.9" />
+  </g>
+
+  <!-- 3. ACOUSTIC DREADNOUGHT BODY -->
+  <g id="body">
+    <!-- Outer Contour & Solid Sunburst -->
+    <!-- Authentic Dreadnought Curves: Upper bout, narrow waist, wider lower bout -->
+    <path d="M 200 500 
+             C 240 500 310 530 325 610 
+             C 335 660 320 720 295 755 
+             C 285 770 285 780 295 800 
+             C 330 845 350 910 335 980 
+             C 315 1060 250 1085 200 1085 
+             C 150 1085 85 1060 65 980 
+             C 50 910 70 845 105 800 
+             C 115 780 115 770 105 755 
+             C 80 720 65 660 75 610 
+             C 90 530 160 500 200 500 Z" 
+          fill="url(#sunburstGrad)" 
+          stroke="#100401" 
+          stroke-width="3.5" />
+
+    <!-- Body Surface 3D Gloss / Sheen overlay -->
+    <path d="M 200 500 
+             C 240 500 310 530 325 610 
+             C 335 660 320 720 295 755 
+             C 285 770 285 780 295 800 
+             C 330 845 350 910 335 980 
+             C 315 1060 250 1085 200 1085 
+             C 150 1085 85 1060 65 980 
+             C 50 910 70 845 105 800 
+             C 115 780 115 770 105 755 
+             C 80 720 65 660 75 610 
+             C 90 530 160 500 200 500 Z" 
+          fill="url(#bodySheen)" />
+
+    <!-- Pure Ivory Binding Accent -->
+    <path d="M 200 504 
+             C 238 504 306 533 321 611 
+             C 330 659 316 717 292 751 
+             C 281 768 281 782 292 802 
+             C 326 846 345 909 331 977 
+             C 312 1054 249 1080 200 1080 
+             C 151 1080 88 1054 69 977 
+             C 55 909 74 846 108 802 
+             C 119 782 119 768 108 751 
+             C 84 717 70 659 79 611 
+             C 94 533 162 504 200 504 Z" 
+          fill="none" 
+          stroke="#FAF0DC" 
+          stroke-width="1.8" 
+          opacity="0.85" />
+
+    <!-- Tortoiseshell Pickguard (Right side of soundhole) -->
+    <path d="M 205 675 
+             C 235 675 258 698 258 728 
+             C 258 745 250 760 240 770 
+             C 260 785 270 810 262 835 
+             C 254 860 230 870 215 865 
+             C 205 820 205 780 205 745 Z" 
+          fill="url(#pickguardGrad)" 
+          stroke="#400A02" 
+          stroke-width="1.5" 
+          filter="drop-shadow(0 2px 4px rgba(0,0,0,0.5))" />
+
+    <!-- SOUNDHOLE & MULTI-RING ROSETTE -->
+    <!-- Outer Herringbone Ring -->
+    <circle cx="200" cy="710" r="54" fill="none" stroke="#2B150A" stroke-width="4" />
+    <circle cx="200" cy="710" r="51" fill="none" stroke="#F6E7C8" stroke-width="2" />
+    <circle cx="200" cy="710" r="47" fill="none" stroke="#ECC880" stroke-width="1.5" stroke-dasharray="3,2" />
+    <circle cx="200" cy="710" r="44" fill="none" stroke="#2B150A" stroke-width="2.5" />
+    <circle cx="200" cy="710" r="41" fill="none" stroke="#F6E7C8" stroke-width="1.5" />
+    <!-- Soundhole Dark Abyss -->
+    <circle cx="200" cy="710" r="38" fill="url(#holeDepth)" stroke="#0E0502" stroke-width="2" />
+
+    <!-- ROSEWOOD BRIDGE & BONE SADDLE -->
+    <!-- Belly Bridge -->
+    <path d="M 145 870 
+             C 170 866 230 866 255 870 
+             C 262 882 258 902 252 905 
+             C 225 900 175 900 148 905 
+             C 142 902 138 882 145 870 Z" 
+          fill="#1C110B" 
+          stroke="#0D0704" 
+          stroke-width="1.5" 
+          filter="drop-shadow(0 5px 8px rgba(0,0,0,0.7))" />
+
+    <!-- Bone Saddle -->
+    <rect x="165" y="874" width="70" height="5" rx="1.5" fill="#FAF5E8" stroke="#D3C7AB" stroke-width="0.8" />
+
+    <!-- 6 White Bridge Pins with Ebony inlays -->
+    <circle cx="172" cy="892" r="3.5" fill="#FAF5E8" stroke="#1A0D07" stroke-width="1" />
+    <circle cx="172" cy="892" r="1" fill="#1A0D07" />
+
+    <circle cx="183" cy="892" r="3.5" fill="#FAF5E8" stroke="#1A0D07" stroke-width="1" />
+    <circle cx="183" cy="892" r="1" fill="#1A0D07" />
+
+    <circle cx="194" cy="892" r="3.5" fill="#FAF5E8" stroke="#1A0D07" stroke-width="1" />
+    <circle cx="194" cy="892" r="1" fill="#1A0D07" />
+
+    <circle cx="206" cy="892" r="3.5" fill="#FAF5E8" stroke="#1A0D07" stroke-width="1" />
+    <circle cx="206" cy="892" r="1" fill="#1A0D07" />
+
+    <circle cx="217" cy="892" r="3.5" fill="#FAF5E8" stroke="#1A0D07" stroke-width="1" />
+    <circle cx="217" cy="892" r="1" fill="#1A0D07" />
+
+    <circle cx="228" cy="892" r="3.5" fill="#FAF5E8" stroke="#1A0D07" stroke-width="1" />
+    <circle cx="228" cy="892" r="1" fill="#1A0D07" />
+  </g>
+
+  <!-- 4. STRINGS (STRETCHING FROM NUT TO SADDLE) -->
+  <g id="strings">
+    <!-- Low E (6th - Thick Bronze Wound) -->
+    <line x1="180" y1="160" x2="172" y2="876" stroke="url(#bronzeString)" stroke-width="2.6" opacity="0.95" />
+    <!-- A (5th - Bronze Wound) -->
+    <line x1="188" y1="160" x2="183" y2="876" stroke="url(#bronzeString)" stroke-width="2.2" opacity="0.95" />
+    <!-- D (4th - Bronze Wound) -->
+    <line x1="196" y1="160" x2="194" y2="876" stroke="url(#bronzeString)" stroke-width="1.8" opacity="0.95" />
+    <!-- G (3rd - Bronze / Steel) -->
+    <line x1="204" y1="160" x2="206" y2="876" stroke="url(#bronzeString)" stroke-width="1.4" opacity="0.95" />
+    <!-- B (2nd - Plain Steel) -->
+    <line x1="212" y1="160" x2="217" y2="876" stroke="url(#chromeGrad)" stroke-width="1.1" opacity="0.9" />
+    <!-- High E (1st - Plain Steel) -->
+    <line x1="220" y1="160" x2="228" y2="876" stroke="url(#chromeGrad)" stroke-width="0.9" opacity="0.9" />
+  </g>
+</svg>
+

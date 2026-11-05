@@ -26,7 +26,7 @@ const HarmonyData = {
       reviewsCount: 142,
       priceMonthly: "₹3,200",
       featured: true,
-      image: "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=800&q=80",
+      image: "assets/images/guitar-3d.jpg",
       bannerImage: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=80",
       description: "From first strum to fluid soloing. Learn fingerpicking, rhythm techniques, chord progressions, and modern pop/rock repertoire with certified Trinity College London mentors.",
       learningOutcomes: [
@@ -51,7 +51,7 @@ const HarmonyData = {
       reviewsCount: 189,
       priceMonthly: "₹3,500",
       featured: true,
-      image: "https://images.unsplash.com/photo-1520523839898-5071270505a7?auto=format&fit=crop&w=800&q=80",
+      image: "assets/images/piano-3d.jpg",
       bannerImage: "https://images.unsplash.com/photo-1552422535-c45813c61732?auto=format&fit=crop&w=1200&q=80",
       description: "Master two-hand coordination, sight-reading, classical sonatinas, and jazz chords on premium Yamaha grand keyboards and upright pianos in acoustic studios.",
       learningOutcomes: [
@@ -101,7 +101,7 @@ const HarmonyData = {
       reviewsCount: 104,
       priceMonthly: "₹3,400",
       featured: true,
-      image: "https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?auto=format&fit=crop&w=800&q=80",
+      image: "assets/images/drums-3d.jpg",
       bannerImage: "https://images.unsplash.com/photo-1543791187-df796fa11835?auto=format&fit=crop&w=1200&q=80",
       description: "Build unstoppable groove, limb independence, dynamic drum fills, and rock/funk pocket rhythm on real acoustic Roland and Pearl drumkits.",
       learningOutcomes: [
@@ -126,7 +126,7 @@ const HarmonyData = {
       reviewsCount: 86,
       priceMonthly: "₹3,600",
       featured: false,
-      image: "https://images.unsplash.com/photo-1612225330812-01a9c6b355ec?auto=format&fit=crop&w=800&q=80",
+      image: "assets/images/violin-3d.jpg",
       bannerImage: "https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=1200&q=80",
       description: "Pure intonation, graceful bowing technique, and expressive classical & Celtic fiddle repertoire taught through tailored Suzuki and Western classical frameworks.",
       learningOutcomes: [
@@ -391,7 +391,7 @@ const HarmonyData = {
       readTime: "5 min read",
       author: "Elena Rostova",
       authorRole: "Head of Piano Studies",
-      image: "https://images.unsplash.com/photo-1520523839898-5071270505a7?auto=format&fit=crop&w=800&q=80",
+      image: "assets/images/piano-3d.jpg",
       excerpt: "Why short, focused daily sessions outperform grueling weekend cramming sessions for neuroplasticity, muscle memory, and creative joy."
     },
     {
@@ -403,7 +403,7 @@ const HarmonyData = {
       readTime: "6 min read",
       author: "David Miller",
       authorRole: "Head of Guitar Studies",
-      image: "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=800&q=80",
+      image: "assets/images/guitar-3d.jpg",
       excerpt: "Body shapes, string actions, tonewoods, and key things to test in a guitar shop before buying your first instrument."
     },
     {

@@ -16,6 +16,7 @@ class Harmony3DEngine {
     this.init3DSoundwaveCanvas();
     this.init3DParallaxHero();
     this.initVinylControls();
+    this.init2027HoloStage();
   }
 
   // Interactive 3D Vinyl Player Controls
@@ -181,6 +182,150 @@ class Harmony3DEngine {
     };
 
     render();
+  }
+
+  // 2027 Holographic 3D Interactive Stage for Guitar, Drums, Violin & Keyboard
+  init2027HoloStage() {
+    const stage = document.getElementById('holo-instrument-stage');
+    const instrumentImg = document.getElementById('holo-3d-instrument-img');
+    const sessionStatus = document.getElementById('holo-session-status');
+    const studioBadge = document.getElementById('holo-studio-badge');
+    const instrumentTitle = document.getElementById('holo-instrument-title');
+    const frequencyBadge = document.getElementById('holo-freq-badge');
+    const rippleContainer = document.getElementById('holo-ripple-container');
+    const particleContainer = document.getElementById('holo-particle-container');
+
+    const INSTRUMENTS = {
+      guitar: {
+        title: "Acoustic & Electric Guitar",
+        studio: "Studio 1A • Trinity Acoustic Suite",
+        status: "Live Guitar Session",
+        freq: "196 Hz G3 Peak Resonance",
+        image: "assets/images/guitar-3d.jpg",
+        scale: "scale-100",
+        notes: ["♪", "♫", "♩", "♬"]
+      },
+      drums: {
+        title: "Rhythm & Acoustic Drumkit",
+        studio: "Studio 3A • Soundproof Percussion Vault",
+        status: "Live Drum Session",
+        freq: "60 Hz Sub Kick • 2.4 kHz Snare",
+        image: "assets/images/drums-3d.jpg",
+        scale: "scale-100",
+        notes: ["🥁", "💥", "♫", "♩"]
+      },
+      violin: {
+        title: "Classical & Concert Violin",
+        studio: "Studio 4C • Chamber Rehearsal Room",
+        status: "Live Violin Masterclass",
+        freq: "440 Hz A4 Concert Pitch",
+        image: "assets/images/violin-3d.jpg",
+        scale: "scale-100",
+        notes: ["𝄞", "♪", "♫", "♬"]
+      },
+      keyboard: {
+        title: "Yamaha Grand Piano & Keys",
+        studio: "Studio 2B • Concert Hall Acoustic",
+        status: "Live Piano Session",
+        freq: "88-Key Hammer Weighted Action",
+        image: "assets/images/piano-3d.jpg",
+        scale: "scale-100",
+        notes: ["🎹", "♪", "♫", "♭"]
+      }
+    };
+
+    const spawnParticles = (instrumentKey) => {
+      if (!particleContainer) return;
+      particleContainer.innerHTML = '';
+      const notes = INSTRUMENTS[instrumentKey]?.notes || ["♪", "♫"];
+      for (let i = 0; i < 6; i++) {
+        const span = document.createElement('span');
+        span.className = 'note-particle text-[#FF9F43] dark:text-[#FFAE5C] text-lg select-none';
+        span.textContent = notes[i % notes.length];
+        span.style.left = `${15 + Math.random() * 70}%`;
+        span.style.bottom = `${20 + Math.random() * 40}%`;
+        span.style.animationDelay = `${Math.random() * 1.5}s`;
+        particleContainer.appendChild(span);
+      }
+    };
+
+    const triggerRipple = () => {
+      if (!rippleContainer) return;
+      rippleContainer.innerHTML = `
+        <div class="resonance-ring w-48 h-48 border-2 border-[#FF9F43]/60 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="resonance-ring w-48 h-48 border-2 border-[#6C4CE3]/60 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="resonance-ring w-48 h-48 border border-[#FF9F43]/40 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+      `;
+    };
+
+    const setInstrument = (key) => {
+      const data = INSTRUMENTS[key];
+      if (!data) return;
+
+      if (instrumentImg) {
+        instrumentImg.classList.add('opacity-0', 'scale-95');
+        setTimeout(() => {
+          instrumentImg.src = data.image;
+          instrumentImg.className = `w-full h-full object-cover rounded-2xl filter drop-shadow-[0_25px_40px_rgba(0,0,0,0.6)] transition-all duration-500 ${data.scale}`;
+          instrumentImg.classList.remove('opacity-0', 'scale-95');
+        }, 150);
+      }
+
+      if (sessionStatus) sessionStatus.textContent = data.status;
+      if (studioBadge) studioBadge.textContent = data.studio;
+      if (instrumentTitle) instrumentTitle.textContent = data.title;
+      if (frequencyBadge) frequencyBadge.textContent = data.freq;
+
+      spawnParticles(key);
+      triggerRipple();
+
+      // Trigger Web Audio tone
+      if (window.HarmonyAudio) {
+        if (key === 'guitar') window.HarmonyAudio.playGuitarStrum();
+        else if (key === 'drums') window.HarmonyAudio.playDrumGroove();
+        else if (key === 'violin') window.HarmonyAudio.playViolinSwell();
+        else if (key === 'keyboard') window.HarmonyAudio.playPianoChord();
+      }
+
+      // Update button highlights
+      document.querySelectorAll('[data-holo-inst]').forEach(btn => {
+        const isCurrent = btn.getAttribute('data-holo-inst') === key;
+        btn.classList.toggle('bg-[#6C4CE3]', isCurrent);
+        btn.classList.toggle('text-white', isCurrent);
+        btn.classList.toggle('font-bold', isCurrent);
+        btn.classList.toggle('shadow-lg', isCurrent);
+        btn.classList.toggle('bg-white/10', !isCurrent);
+        btn.classList.toggle('text-gray-300', !isCurrent);
+      });
+    };
+
+    document.querySelectorAll('[data-holo-inst]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const key = btn.getAttribute('data-holo-inst');
+        setInstrument(key);
+      });
+    });
+
+    // Tap directly on 3D instrument to play audio & trigger ripples
+    if (stage) {
+      stage.addEventListener('click', (e) => {
+        if (e.target.closest('button')) return;
+        const activeBtn = document.querySelector('[data-holo-inst].bg-\\[\\#6C4CE3\\]');
+        const currentKey = activeBtn ? activeBtn.getAttribute('data-holo-inst') : 'guitar';
+        triggerRipple();
+        if (window.HarmonyAudio) {
+          if (currentKey === 'guitar') window.HarmonyAudio.playGuitarStrum();
+          else if (currentKey === 'drums') window.HarmonyAudio.playDrumGroove();
+          else if (currentKey === 'violin') window.HarmonyAudio.playViolinSwell();
+          else if (currentKey === 'keyboard') window.HarmonyAudio.playPianoChord();
+        }
+      });
+    }
+
+    // Default load Guitar
+    spawnParticles('guitar');
+    triggerRipple();
   }
 }
 

@@ -43,39 +43,72 @@
       <div class="flex items-center justify-between h-20">
         <a href="index.html" class="flex items-center gap-3 shrink-0 mr-4 lg:mr-8 group">
           <div class="w-11 h-11 rounded-xl bg-[#6C4CE3] flex items-center justify-center text-[#FF9F43] shadow-md shadow-[#6C4CE3]/20 group-hover:scale-105 transition-transform">
-            <i data-lucide="music" class="w-6 h-6"></i>
+            <i data-lucide="music" class="w-5 h-5 sm:w-6 sm:h-6"></i>
           </div>
           <div>
-            <span class="font-serif font-bold text-2xl tracking-tight"><span class="text-[#6C4CE3] dark:text-[#987AF0]">Harmony</span><span class="text-[#FF9F43]">House</span></span>
-            <span class="block text-[9.5px] font-bold tracking-[0.2em] uppercase text-[#6C4CE3] dark:text-[#987AF0]">Music Academy</span>
+            <span class="font-serif font-bold text-xl sm:text-2xl tracking-tight"><span class="text-[#6C4CE3] dark:text-[#987AF0]">Harmony</span><span class="text-[#FF9F43]">House</span></span>
+            <span class="block text-[8.5px] sm:text-[9.5px] font-bold tracking-[0.2em] uppercase text-[#6C4CE3] dark:text-[#987AF0]">Music Academy</span>
           </div>
         </a>
 
         <nav class="hidden xl:flex items-center gap-7 text-sm font-medium">
+          <!-- Home dropdown with active indicator line -->
           <div class="relative group">
-            <button class="flex items-center gap-1 text-gray-600 dark:text-gray-300 hover:text-coral-500 py-2">
+            <button class="relative py-2.5 flex items-center gap-1.5 text-gray-600 dark:text-gray-300 hover:text-[#6C4CE3] dark:hover:text-[#987AF0] font-medium transition cursor-pointer">
               <span>Home</span>
-              <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
+              <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180"></i>
+              <span class="absolute bottom-0 left-0 w-0 h-[3px] bg-[#6C4CE3]/60 dark:bg-[#987AF0]/60 rounded-full transition-all duration-300 group-hover:w-full"></span>
             </button>
-            <div class="absolute left-0 mt-1 w-52 bg-white dark:bg-charcoal-800 rounded-xl shadow-xl border border-gray-100 dark:border-charcoal-700 p-2 hidden group-hover:block transition-all animate-fadeIn">
-              <a href="index.html" class="flex items-center gap-2 px-3 py-2 text-xs font-medium rounded-lg hover:bg-gray-50 dark:hover:bg-charcoal-700 text-gray-700 dark:text-gray-300">
-                <i data-lucide="layout-template" class="w-4 h-4"></i> Home 1 (Classic)
-              </a>
-              <a href="home-2.html" class="flex items-center gap-2 px-3 py-2 text-xs font-medium rounded-lg hover:bg-gray-50 dark:hover:bg-charcoal-700 text-gray-700 dark:text-gray-300">
-                <i data-lucide="sparkles" class="w-4 h-4 text-amberbrand-500"></i> Home 2 (Premium)
-              </a>
+            <div class="absolute left-0 top-full pt-1.5 w-52 hidden group-hover:block transition-all animate-fadeIn z-50">
+              <div class="bg-white dark:bg-charcoal-800 rounded-xl shadow-xl border border-gray-100 dark:border-charcoal-700 p-2">
+                <a href="index.html" class="flex items-center gap-2 px-3 py-2 text-xs font-semibold rounded-lg hover:bg-gray-50 dark:hover:bg-charcoal-700 text-gray-700 dark:text-gray-300 transition">
+                  <i data-lucide="layout-template" class="w-4 h-4"></i> Home 1 (Classic)
+                </a>
+                <a href="home-2.html" class="flex items-center gap-2 px-3 py-2 text-xs font-semibold rounded-lg hover:bg-gray-50 dark:hover:bg-charcoal-700 text-gray-700 dark:text-gray-300 transition">
+                  <i data-lucide="sparkles" class="w-4 h-4 text-[#FF9F43]"></i> Home 2 (Premium)
+                </a>
+              </div>
             </div>
           </div>
-          <!-- Courses (Direct Link) -->
-          <a href="courses.html" class="text-[#6C4CE3] dark:text-[#987AF0] font-bold py-2">Courses</a>
 
-          <a href="instructors.html" class="text-gray-600 dark:text-gray-300 hover:text-[#6C4CE3] dark:hover:text-[#987AF0] transition">Instructors</a>
-          <a href="about.html" class="text-gray-600 dark:text-gray-300 hover:text-[#6C4CE3] dark:hover:text-[#987AF0] transition">About Us</a>
-          <a href="blog.html" class="text-gray-600 dark:text-gray-300 hover:text-[#6C4CE3] dark:hover:text-[#987AF0] transition">Blog</a>
-          <a href="contact.html" class="text-gray-600 dark:text-gray-300 hover:text-[#6C4CE3] dark:hover:text-[#987AF0] transition">Contact</a>
+          <!-- Courses -->
+          <a href="courses.html" class="relative py-2.5 text-[#6C4CE3] dark:text-[#987AF0] font-bold transition group">
+            <span>Courses</span>
+            <span class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#6C4CE3] dark:bg-[#987AF0] rounded-full shadow-sm shadow-[#6C4CE3]/40"></span>
+          </a>
+
+          <!-- Instructors -->
+          <a href="instructors.html" class="relative py-2.5 text-gray-600 dark:text-gray-300 hover:text-[#6C4CE3] dark:hover:text-[#987AF0] font-medium transition group">
+            <span>Instructors</span>
+            <span class="absolute bottom-0 left-0 w-0 h-[3px] bg-[#6C4CE3]/60 dark:bg-[#987AF0]/60 rounded-full transition-all duration-300 group-hover:w-full"></span>
+          </a>
+
+          <!-- Fees & Batches -->
+          <a href="fees-batches.html" class="relative py-2.5 text-gray-600 dark:text-gray-300 hover:text-[#6C4CE3] dark:hover:text-[#987AF0] font-medium transition group">
+            <span>Fees &amp; Batches</span>
+            <span class="absolute bottom-0 left-0 w-0 h-[3px] bg-[#6C4CE3]/60 dark:bg-[#987AF0]/60 rounded-full transition-all duration-300 group-hover:w-full"></span>
+          </a>
+
+          <!-- About Us -->
+          <a href="about.html" class="relative py-2.5 text-gray-600 dark:text-gray-300 hover:text-[#6C4CE3] dark:hover:text-[#987AF0] font-medium transition group">
+            <span>About Us</span>
+            <span class="absolute bottom-0 left-0 w-0 h-[3px] bg-[#6C4CE3]/60 dark:bg-[#987AF0]/60 rounded-full transition-all duration-300 group-hover:w-full"></span>
+          </a>
+
+          <!-- Blog -->
+          <a href="blog.html" class="relative py-2.5 text-gray-600 dark:text-gray-300 hover:text-[#6C4CE3] dark:hover:text-[#987AF0] font-medium transition group">
+            <span>Blog</span>
+            <span class="absolute bottom-0 left-0 w-0 h-[3px] bg-[#6C4CE3]/60 dark:bg-[#987AF0]/60 rounded-full transition-all duration-300 group-hover:w-full"></span>
+          </a>
+
+          <!-- Contact -->
+          <a href="contact.html" class="relative py-2.5 text-gray-600 dark:text-gray-300 hover:text-[#6C4CE3] dark:hover:text-[#987AF0] font-medium transition group">
+            <span>Contact</span>
+            <span class="absolute bottom-0 left-0 w-0 h-[3px] bg-[#6C4CE3]/60 dark:bg-[#987AF0]/60 rounded-full transition-all duration-300 group-hover:w-full"></span>
+          </a>
         </nav>
 
-        <div class="flex items-center gap-2.5 sm:gap-3 shrink-0">
+        <div class="flex items-center gap-1.5 sm:gap-3 shrink-0">
           <button data-action="toggle-theme" class="p-2 rounded-full border border-gray-200 dark:border-charcoal-700 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-charcoal-800 transition" title="Toggle Light/Dark Theme">
             <i data-lucide="sun" class="w-4 h-4 dark:hidden"></i>
             <i data-lucide="moon" class="w-4 h-4 hidden dark:inline"></i>
@@ -87,50 +120,126 @@
             <i data-lucide="graduation-cap" class="w-4 h-4 text-[#6C4CE3]"></i>
             <span>Student Portal</span>
           </a>
-          <button id="mobile-menu-btn" class="p-2 rounded-xl text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-charcoal-800 xl:hidden focus:outline-none" aria-label="Open Mobile Menu">
+          <button id="mobile-menu-btn" class="p-2 sm:p-2.5 rounded-xl text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-charcoal-800 xl:hidden focus:outline-none cursor-pointer" aria-label="Open Mobile Menu">
             <i data-lucide="menu" class="w-6 h-6"></i>
           </button>
         </div>
       </div>
     </div>
   </header>
-
-  <!-- Course Hero Banner -->
-  <section class="relative bg-charcoal-900 text-white py-16 overflow-hidden">
-    <div class="absolute inset-0 opacity-25">
-      <img id="detail-banner" src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=1400&q=80" alt="Course Banner" class="w-full h-full object-cover">
+  <!-- Mobile Drawer Menu (Sidebar) -->
+  <div id="mobile-menu-backdrop" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] opacity-0 pointer-events-none transition-opacity duration-300"></div>
+  <aside id="mobile-menu-drawer" aria-label="Mobile Navigation" class="fixed top-0 right-0 bottom-0 w-[85vw] max-w-xs sm:w-80 bg-white dark:bg-charcoal-900 z-[70] shadow-2xl flex flex-col p-5 sm:p-6 overflow-y-auto transform transition-transform duration-300 ease-in-out translate-x-full">
+    <div class="flex items-center justify-between pb-5 border-b border-gray-100 dark:border-charcoal-800 shrink-0">
+      <div class="flex items-center gap-2.5">
+        <div class="w-9 h-9 rounded-xl bg-[#6C4CE3] flex items-center justify-center text-[#FF9F43] font-bold shadow-md shadow-[#6C4CE3]/25">
+          <i data-lucide="music" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <span class="font-serif font-bold text-lg"><span class="text-[#6C4CE3] dark:text-[#987AF0]">Harmony</span><span class="text-[#FF9F43]">House</span></span>
+          <span class="block text-[8.5px] font-bold tracking-widest uppercase text-gray-400 dark:text-gray-500">Music Academy</span>
+        </div>
+      </div>
+      <button id="mobile-menu-close" class="p-2 rounded-lg text-gray-400 hover:text-gray-600 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-charcoal-800 transition cursor-pointer" aria-label="Close Mobile Menu">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
     </div>
-    <div class="absolute inset-0 bg-charcoal-950/80"></div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="max-w-3xl space-y-4">
-        <div class="flex flex-wrap items-center gap-2">
-          <a href="courses.html" class="text-xs text-gray-400 hover:text-white flex items-center gap-1">
-            <i data-lucide="arrow-left" class="w-3 h-3 rtl-mirror"></i> All Courses
-          </a>
-          <span class="text-gray-500">&bull;</span>
-          <span id="detail-badge" class="px-3 py-0.5 rounded-full bg-coral-500/20 text-coral-400 text-xs font-bold uppercase tracking-wider">
-            Guitar &amp; Bass
-          </span>
-          <span class="text-gray-500">&bull;</span>
-          <span class="text-xs text-amberbrand-500 font-bold flex items-center gap-1">
-            <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i> 4.9 (142 Reviews)
-          </span>
-        </div>
+    <nav class="flex flex-col gap-1.5 py-5 text-sm font-medium">
+      <a href="index.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl hover:bg-gray-50 dark:hover:bg-charcoal-800 text-gray-700 dark:text-gray-300">
+        <i data-lucide="home" class="w-4 h-4 "></i> Home 1 (Classic)
+      </a>
+      <a href="home-2.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl hover:bg-gray-50 dark:hover:bg-charcoal-800 text-gray-700 dark:text-gray-300">
+        <i data-lucide="sparkles" class="w-4 h-4 text-[#FF9F43]"></i> Home 2 (Premium)
+      </a>
+      <a href="courses.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-purple-50 dark:bg-purple-950/40 text-[#6C4CE3] dark:text-[#987AF0] font-bold border-l-4 border-[#6C4CE3]">
+        <i data-lucide="book-open" class="w-4 h-4 text-[#6C4CE3]"></i> Courses
+      </a>
+      <a href="instructors.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl hover:bg-gray-50 dark:hover:bg-charcoal-800 text-gray-700 dark:text-gray-300">
+        <i data-lucide="award" class="w-4 h-4 "></i> Instructors
+      </a>
+      <a href="fees-batches.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl hover:bg-gray-50 dark:hover:bg-charcoal-800 text-gray-700 dark:text-gray-300">
+        <i data-lucide="calendar" class="w-4 h-4 text-[#FF9F43]"></i> Fees &amp; Batches
+      </a>
+      <a href="about.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl hover:bg-gray-50 dark:hover:bg-charcoal-800 text-gray-700 dark:text-gray-300">
+        <i data-lucide="info" class="w-4 h-4 "></i> About Our Academy
+      </a>
+      <a href="blog.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl hover:bg-gray-50 dark:hover:bg-charcoal-800 text-gray-700 dark:text-gray-300">
+        <i data-lucide="file-text" class="w-4 h-4 "></i> Blog &amp; Tips
+      </a>
+      <a href="contact.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl hover:bg-gray-50 dark:hover:bg-charcoal-800 text-gray-700 dark:text-gray-300">
+        <i data-lucide="map-pin" class="w-4 h-4 "></i> Contact Us
+      </a>
+    </nav>
 
-        <h1 id="detail-title" class="font-serif text-3xl sm:text-5xl font-bold tracking-tight">
-          Acoustic &amp; Electric Guitar Mastery
-        </h1>
+    <!-- Settings & Quick Access Controls inside Mobile Drawer -->
+    <div class="pt-4 border-t border-gray-100 dark:border-charcoal-800 space-y-3 shrink-0">
+      <div class="text-[10.5px] font-bold uppercase tracking-wider text-gray-400">Settings &amp; Access</div>
+      <div class="grid grid-cols-2 gap-2">
+        <button data-action="toggle-theme" class="flex items-center justify-center gap-2 px-3 py-2 text-xs font-semibold rounded-xl border border-gray-200 dark:border-charcoal-700 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-charcoal-800 transition cursor-pointer">
+          <i data-lucide="sun" class="w-3.5 h-3.5 dark:hidden"></i>
+          <i data-lucide="moon" class="w-3.5 h-3.5 hidden dark:inline"></i>
+          <span>Theme</span>
+        </button>
+        <button data-action="toggle-rtl" class="flex items-center justify-center gap-2 px-3 py-2 text-xs font-semibold rounded-xl border border-gray-200 dark:border-charcoal-700 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-charcoal-800 transition cursor-pointer">
+          <span>⇄ RTL / LTR</span>
+        </button>
+      </div>
+      <a href="auth/login.html" class="flex items-center justify-center gap-2 px-3 py-2.5 rounded-xl bg-purple-50 dark:bg-purple-950/40 text-[#6C4CE3] dark:text-[#987AF0] font-bold text-xs border border-purple-200 dark:border-charcoal-700 hover:bg-purple-100 transition">
+        <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+        <span>Student Dashboard Login</span>
+      </a>
+    </div>
 
-        <p id="detail-desc" class="text-sm sm:text-base text-gray-300 leading-relaxed max-w-2xl">
-          From first strum to fluid soloing. Learn fingerpicking, rhythm techniques, chord progressions, and modern pop/rock repertoire with certified Trinity College London mentors.
-        </p>
+    <!-- Mobile CTA -->
+    <div class="mt-auto pt-4 border-t border-gray-100 dark:border-charcoal-800 shrink-0">
+      <button data-modal-target="trial-modal" class="btn-3d-purple w-full py-3 rounded-xl font-bold text-center text-sm cursor-pointer shadow-lg shadow-[#6C4CE3]/25">
+        Book Free Trial Session
+      </button>
+    </div>
+  </aside>
 
-        <div class="pt-2 flex flex-wrap items-center gap-6 text-xs text-gray-300">
-          <div class="flex items-center gap-1.5"><i data-lucide="clock" class="w-4 h-4 text-coral-400"></i> <span id="detail-duration">16 Weeks / 32 Sessions</span></div>
-          <div class="flex items-center gap-1.5"><i data-lucide="users" class="w-4 h-4 text-sage-400"></i> <span id="detail-age">Kids &amp; Adults (7+ yrs)</span></div>
-          <div class="flex items-center gap-1.5"><i data-lucide="gauge" class="w-4 h-4 text-amberbrand-500"></i> <span id="detail-difficulty">Beginner to Intermediate</span></div>
-        </div>
+
+  <!-- Unified Hero Section with Atmospheric Conservatory Stage Background -->
+  <section class="relative bg-charcoal-950 text-white py-16 sm:py-20 lg:py-24 min-h-[380px] sm:min-h-[420px] flex items-center justify-center overflow-hidden border-b border-charcoal-800">
+    <!-- Real Cinematic Background Image with Gradient Overlay -->
+    <div class="absolute inset-0 z-0">
+      <img src="assets/images/hero-bg.jpg" alt="Concert Stage Background" class="w-full h-full object-cover object-center opacity-30 select-none pointer-events-none">
+      <div class="absolute inset-0 bg-gradient-to-b from-[#0C0A18]/85 via-[#120E24]/75 to-[#0A0815]/95"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(#6C4CE3_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none"></div>
+    </div>
+
+    <!-- Ambient Glowing Light Orbs in Deep Purple & Warm Amber -->
+    <div class="absolute top-0 left-1/4 -translate-x-1/2 w-[550px] h-[320px] bg-[#6C4CE3]/25 rounded-full blur-[110px] pointer-events-none z-0"></div>
+    <div class="absolute bottom-0 right-1/4 translate-x-1/2 w-[500px] h-[280px] bg-[#FF9F43]/20 rounded-full blur-[100px] pointer-events-none z-0"></div>
+
+    <!-- Musical Notation Ambient Decorative Watermark Icons in Corners -->
+    <div class="absolute top-8 left-8 text-3xl font-serif text-[#987AF0]/30 select-none pointer-events-none z-0">𝄞</div>
+    <div class="absolute bottom-8 right-12 text-3xl font-serif text-[#FF9F43]/30 select-none pointer-events-none z-0">♫</div>
+    <div class="absolute top-12 right-20 text-2xl font-serif text-[#987AF0]/25 select-none pointer-events-none z-0">♩</div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center max-w-3xl">
+      <!-- Master Heading -->
+      <h1 id="detail-title" class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.15] drop-shadow-md">
+        Acoustic &amp; Electric Guitar Mastery
+      </h1>
+
+      <!-- Lead Description -->
+      <p id="detail-desc" class="text-base sm:text-lg text-gray-200 mt-4 leading-relaxed max-w-2xl mx-auto font-normal">
+        From first strum to fluid soloing. Learn fingerpicking, rhythm techniques, chord progressions, and modern pop/rock repertoire with certified Trinity College London mentors.
+      </p>
+
+      <!-- Interactive Controls / Pills -->
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-4 text-xs text-purple-200 font-semibold">
+        <span class="flex items-center gap-1.5 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/15">
+          <i data-lucide="clock" class="w-4 h-4 text-[#FF9F43]"></i> <span id="detail-duration">16 Weeks / 32 Sessions</span>
+        </span>
+        <span class="flex items-center gap-1.5 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/15">
+          <i data-lucide="users" class="w-4 h-4 text-[#FF9F43]"></i> <span id="detail-age">Kids &amp; Adults (7+ yrs)</span>
+        </span>
+        <span class="flex items-center gap-1.5 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/15">
+          <i data-lucide="gauge" class="w-4 h-4 text-[#FF9F43]"></i> <span id="detail-difficulty">Beginner to Intermediate</span>
+        </span>
       </div>
     </div>
   </section>
@@ -242,19 +351,55 @@
             </div>
           </div>
 
-          <!-- Instructor Profile Highlight -->
-          <div class="p-8 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-100 dark:border-charcoal-700 shadow-sm flex flex-col sm:flex-row items-center gap-6">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" alt="David Miller" class="w-24 h-24 rounded-full object-cover border-2 border-coral-500/30">
-            <div class="space-y-2 text-center sm:text-left">
-              <span class="text-[10px] font-bold uppercase tracking-wider text-coral-600">Assigned Faculty Mentor</span>
-              <h3 class="font-serif text-xl font-bold text-gray-900 dark:text-white">David Miller (LTCL, Trinity)</h3>
-              <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
-                With 14+ years of performing and teaching experience, David has mentored over 700 guitarists. His patient, groove-first coaching style ensures natural finger dexterity without frustration.
-              </p>
-              <div class="pt-2 flex items-center justify-center sm:justify-start gap-4 text-xs font-semibold text-sage-600">
-                <span>720+ Students Taught</span>
-                <span>&bull;</span>
-                <span class="text-amberbrand-500">★ 4.95 Rating</span>
+          <!-- Instructor 3D ID Card Credential Badge -->
+          <div data-tilt class="id-card-3d p-5 sm:p-7 relative overflow-hidden group cursor-pointer shadow-lg">
+            <div class="id-card-hologram-sheen"></div>
+
+            <!-- Top Lanyard Slot -->
+            <div class="relative flex flex-col items-center -mt-2 mb-3">
+              <div class="w-14 h-2.5 rounded-t-md bg-gradient-to-r from-gray-300 via-gray-100 to-gray-400 dark:from-charcoal-700 dark:via-charcoal-600 dark:to-charcoal-700 shadow border-b border-gray-400 dark:border-charcoal-600"></div>
+              <div class="id-card-lanyard-slot -mt-1 z-10"></div>
+            </div>
+
+            <!-- Header -->
+            <div class="relative z-10 pb-2.5 border-b border-gray-200/70 dark:border-charcoal-700 flex items-center justify-between mb-4">
+              <div class="flex items-center gap-2">
+                <div class="w-6 h-6 rounded-md bg-[#6C4CE3] text-[#FF9F43] flex items-center justify-center font-bold text-xs shadow-xs">
+                  <i data-lucide="music" class="w-3.5 h-3.5"></i>
+                </div>
+                <span class="text-[10px] font-mono uppercase tracking-wider text-gray-500 dark:text-gray-400 font-bold">Faculty Credential Badge</span>
+              </div>
+              <div class="flex items-center gap-1 px-2 py-0.5 rounded-md bg-gradient-to-r from-amber-400 to-amber-500 text-charcoal-950 font-mono text-[9px] font-bold">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-900 animate-ping"></span>
+                <span>VERIFIED NFC</span>
+              </div>
+            </div>
+
+            <div class="relative z-10 flex flex-col sm:flex-row items-center gap-6">
+              <!-- Photo Frame -->
+              <div class="relative w-24 h-24 shrink-0">
+                <div class="w-full h-full rounded-2xl overflow-hidden border-2 border-white dark:border-charcoal-700 shadow-xl ring-4 ring-[#6C4CE3]/20 bg-gray-100 dark:bg-charcoal-900">
+                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" alt="David Miller" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded-full bg-emerald-500 text-white text-[8px] font-bold tracking-wider uppercase shadow flex items-center gap-0.5">
+                  <i data-lucide="badge-check" class="w-2.5 h-2.5"></i> VERIFIED
+                </div>
+              </div>
+
+              <!-- Details -->
+              <div class="space-y-1.5 text-center sm:text-left flex-1">
+                <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-[#6C4CE3] dark:text-[#987AF0] block">Assigned Lead Mentor &bull; Studio 1A</span>
+                <h3 class="font-serif text-xl font-bold text-gray-900 dark:text-white">David Miller (LTCL, Trinity)</h3>
+                <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                  With 14+ years of performing and teaching experience, David has mentored over 700 guitarists. His patient, groove-first coaching style ensures natural finger dexterity without frustration.
+                </p>
+                <div class="pt-2 flex items-center justify-center sm:justify-start gap-3 text-xs font-semibold">
+                  <span class="text-[#6C4CE3] dark:text-[#987AF0]">720+ Students Taught</span>
+                  <span>&bull;</span>
+                  <span class="text-[#FF9F43]">★ 4.95 Rating</span>
+                  <span>&bull;</span>
+                  <span class="font-mono text-[10px] text-gray-400">ID: HH-FAC-0104</span>
+                </div>
               </div>
             </div>
           </div>

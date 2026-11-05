@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 1100" width="100%" height="100%" style="overflow: visible; filter: drop-shadow(0 20px 30px rgba(0,0,0,0.35));">
+  <defs>
+    <!-- Sunburst Finish for Bass -->
+    <radialGradient id="bassSunburst" cx="50%" cy="70%" r="50%">
+      <stop offset="0%" stop-color="#FFC87A" />
+      <stop offset="45%" stop-color="#E27227" />
+      <stop offset="75%" stop-color="#6E2308" />
+      <stop offset="100%" stop-color="#140602" />
+    </radialGradient>
+    <!-- Chrome Hardware -->
+    <linearGradient id="bassChrome" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C8C8C8" />
+      <stop offset="50%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#888888" />
+    </linearGradient>
+    <!-- Rosewood Neck -->
+    <linearGradient id="bassFretboard" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#241710" />
+      <stop offset="50%" stop-color="#3A251B" />
+      <stop offset="100%" stop-color="#1A100B" />
+    </linearGradient>
+    <linearGradient id="bassPickguard" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F7F5EE" />
+      <stop offset="100%" stop-color="#DFDDD5" />
+    </linearGradient>
+  </defs>
+
+  <!-- HEADSTOCK (4 Open Gear Tuners) -->
+  <g id="bassHeadstock" transform="translate(0, 10)">
+    <path d="M 180 140 L 170 30 C 170 12 195 5 215 15 C 240 28 250 50 240 80 L 230 140 Z" fill="#D9A86E" stroke="#8A5A28" stroke-width="1.5" />
+    <!-- 4 Massive Clover Tuners on Left Side -->
+    <circle cx="150" cy="30" r="9" fill="url(#bassChrome)" stroke="#666" stroke-width="1.5" />
+    <circle cx="150" cy="60" r="9" fill="url(#bassChrome)" stroke="#666" stroke-width="1.5" />
+    <circle cx="150" cy="90" r="9" fill="url(#bassChrome)" stroke="#666" stroke-width="1.5" />
+    <circle cx="150" cy="120" r="9" fill="url(#bassChrome)" stroke="#666" stroke-width="1.5" />
+    <rect x="180" y="137" width="50" height="7" rx="2" fill="#FAF5E8" stroke="#DDD" stroke-width="1" />
+  </g>
+
+  <!-- LONG SCALE BASS NECK -->
+  <g id="bassNeck">
+    <path d="M 180 157 L 170 520 L 230 520 L 220 157 Z" fill="url(#bassFretboard)" stroke="#110A07" stroke-width="1" />
+    <!-- Frets & Pearl Dot Inlays -->
+    <line x1="179" y1="205" x2="221" y2="205" stroke="#BBB" stroke-width="2" />
+    <circle cx="200" cy="230" r="3.2" fill="#FAF5E8" />
+    <line x1="177" y1="255" x2="223" y2="255" stroke="#BBB" stroke-width="2" />
+    <circle cx="200" cy="285" r="3.2" fill="#FAF5E8" />
+    <line x1="175" y1="315" x2="225" y2="315" stroke="#BBB" stroke-width="2" />
+    <circle cx="200" cy="350" r="3.2" fill="#FAF5E8" />
+    <line x1="173" y1="385" x2="227" y2="385" stroke="#BBB" stroke-width="2" />
+    <circle cx="200" cy="425" r="3.2" fill="#FAF5E8" />
+    <line x1="171" y1="465" x2="229" y2="465" stroke="#BBB" stroke-width="2" />
+    <circle cx="193" cy="495" r="2.8" fill="#FAF5E8" />
+    <circle cx="207" cy="495" r="2.8" fill="#FAF5E8" />
+  </g>
+
+  <!-- BASS BODY (Contoured offset waist) -->
+  <g id="bassBody">
+    <path d="M 170 520 
+             C 135 500 100 450 85 410 
+             C 80 400 70 405 72 425 
+             C 76 470 95 530 100 575 
+             C 105 620 85 660 80 715 
+             C 70 805 100 890 145 940 
+             C 185 985 225 985 260 940 
+             C 305 890 330 805 320 715 
+             C 315 660 295 620 300 575 
+             C 305 530 320 470 324 425 
+             C 326 405 316 400 311 410 
+             C 295 450 260 500 230 520 Z" 
+          fill="url(#bassSunburst)" 
+          stroke="#0A0201" 
+          stroke-width="3" />
+
+    <!-- Tortoiseshell/Cream Pickguard -->
+    <path d="M 160 535 
+             C 120 535 105 570 110 625 
+             C 115 680 135 710 130 770 
+             C 125 830 165 885 200 885 
+             C 235 885 265 845 270 785 
+             C 275 710 245 660 250 610 
+             C 255 570 235 535 200 535 Z" 
+          fill="url(#bassPickguard)" 
+          stroke="#CCC" 
+          stroke-width="1.8" />
+
+    <!-- Split-Coil Precision Pickup (2 Offset Halves) -->
+    <rect x="175" y="650" width="22" height="18" rx="4" fill="#1A1C1E" stroke="#555" stroke-width="1" />
+    <circle cx="182" cy="659" r="2.2" fill="url(#bassChrome)" />
+    <circle cx="190" cy="659" r="2.2" fill="url(#bassChrome)" />
+
+    <rect x="195" y="670" width="22" height="18" rx="4" fill="#1A1C1E" stroke="#555" stroke-width="1" />
+    <circle cx="202" cy="679" r="2.2" fill="url(#bassChrome)" />
+    <circle cx="210" cy="679" r="2.2" fill="url(#bassChrome)" />
+
+    <!-- Heavy-Duty Chrome Bass Bridge -->
+    <rect x="175" y="770" width="50" height="35" rx="3" fill="url(#bassChrome)" stroke="#666" stroke-width="1" />
+
+    <!-- Chrome Knurled Dials (Master Volume, Master Tone) -->
+    <circle cx="235" cy="805" r="9" fill="url(#bassChrome)" stroke="#555" stroke-width="1.5" />
+    <circle cx="245" cy="835" r="9" fill="url(#bassChrome)" stroke="#555" stroke-width="1.5" />
+  </g>
+
+  <!-- 4 THICK HEAVY BASS STRINGS -->
+  <g id="bassStrings">
+    <!-- E String (.105) -->
+    <line x1="184" y1="145" x2="182" y2="775" stroke="url(#bassChrome)" stroke-width="3.4" opacity="0.95" />
+    <!-- A String (.085) -->
+    <line x1="192" y1="145" x2="191" y2="775" stroke="url(#bassChrome)" stroke-width="2.8" opacity="0.95" />
+    <!-- D String (.065) -->
+    <line x1="200" y1="145" x2="201" y2="775" stroke="url(#bassChrome)" stroke-width="2.2" opacity="0.95" />
+    <!-- G String (.045) -->
+    <line x1="208" y1="145" x2="210" y2="775" stroke="url(#bassChrome)" stroke-width="1.6" opacity="0.95" />
+  </g>
+</svg>
+

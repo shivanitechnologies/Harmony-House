@@ -3,94 +3,100 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Harmony House – Premium Music Conservatory &amp; Studio Academy</title>
-  <meta name="description" content="Experience high-calibre musical excellence. Premium conservatory training, masterclasses, and certified diploma programmes for discerning young artists and adult musicians.">
-
+  <title>Premium Music Conservatory – Harmony House Music Academy</title>
+  <meta name="description" content="Elite European classical & contemporary music conservatory for kids and adults. Trinity & ABRSM diploma tracks, private acoustic recording pods, concert grand piano suites, and artist masterclasses.">
   <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            brandpurple: { 50: '#F5F3FF', 100: '#EDE9FE', 200: '#DDD6FE', 300: '#C4B5FD', 400: '#987AF0', 500: '#6C4CE3', 600: '#5A38D4', 700: '#4B29B8', 800: '#3D2094', 900: '#2E1771', 950: '#1A0B45' },
-            brandorange: { 50: '#FFF7ED', 100: '#FFEDD5', 200: '#FED7AA', 300: '#FDBA74', 400: '#FB923C', 500: '#FF9F43', 600: '#F58022', 700: '#D6620E', 800: '#AA4A0A', 900: '#7C3408' },
-            coral: { 50: '#F5F3FF', 100: '#EDE9FE', 200: '#DDD6FE', 300: '#C4B5FD', 400: '#987AF0', 500: '#6C4CE3', 600: '#5A38D4', 700: '#4B29B8', 800: '#3D2094', 900: '#2E1771' },
-            sage: { 50: '#FFF7ED', 100: '#FFEDD5', 200: '#FED7AA', 300: '#FDBA74', 400: '#FB923C', 500: '#FF9F43', 600: '#F58022', 700: '#D6620E', 800: '#AA4A0A', 900: '#7C3408' },
-            amberbrand: { 400: '#FDBA74', 500: '#FF9F43', 600: '#F58022' },
-            charcoal: { 700: '#22242B', 750: '#1B1C22', 800: '#16171B', 850: '#111215', 900: '#0C0D0F', 950: '#08080A' }
-          },
-          fontFamily: {
-            serif: ['"Playfair Display"', 'Georgia', 'serif'],
-            sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
-          }
-        }
-      }
-    };
-  </script>
-  <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  <!-- Custom Styles -->
   <link rel="stylesheet" href="assets/css/custom.css">
 </head>
-<body class="bg-[#F8F9FA] dark:bg-charcoal-900 text-gray-800 dark:text-gray-100 font-sans antialiased transition-colors duration-300">
+<body class="font-sans antialiased bg-white dark:bg-charcoal-900 text-gray-800 dark:text-gray-100 transition-colors duration-300">
 
-  <!-- Sleek Premium Navigation -->
-  <header class="sticky top-0 z-40 bg-white/95 dark:bg-charcoal-900/95 backdrop-blur-md border-b border-gray-200 dark:border-charcoal-800 transition-colors shadow-xs">
+  <!-- ==========================================
+       CONSERVATORY HEADER & NAVIGATION
+       ========================================== -->
+  <header class="sticky top-0 z-40 bg-white/95 dark:bg-charcoal-900/95 backdrop-blur-md border-b border-gray-100 dark:border-charcoal-800 transition-colors">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
         
-        <!-- Logo (Spacious & with margin) -->
-        <a href="index.html" class="flex items-center gap-3 shrink-0 mr-4 lg:mr-8 group">
-          <div class="w-11 h-11 rounded-xl bg-[#6C4CE3] flex items-center justify-center text-[#FF9F43] shadow-md shadow-[#6C4CE3]/20 group-hover:rotate-6 transition">
-            <i data-lucide="sparkles" class="w-6 h-6"></i>
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-2.5 group">
+          <div class="w-10 h-10 rounded-xl bg-[#6C4CE3] flex items-center justify-center text-[#FF9F43] shadow-md shadow-[#6C4CE3]/20 group-hover:scale-105 transition">
+            <i data-lucide="music" class="w-5 h-5"></i>
           </div>
-          <div>
-            <span class="font-serif font-bold text-2xl tracking-tight">
+          <div class="flex flex-col">
+            <span class="font-serif font-bold text-xl leading-tight">
               <span class="text-[#6C4CE3] dark:text-[#987AF0]">Harmony</span><span class="text-[#FF9F43]">House</span>
             </span>
-            <span class="block text-[9px] font-bold tracking-[0.25em] uppercase text-[#6C4CE3] dark:text-[#987AF0]">
-              Conservatory &amp; Academy
-            </span>
+            <span class="text-[10px] uppercase font-mono tracking-widest text-[#FF9F43] font-bold">Conservatory Studio</span>
           </div>
         </a>
 
-        <!-- Desktop Nav (Hidden below xl to prevent crowding) -->
+        <!-- Desktop Navigation with Active Button Line Indicator -->
         <nav class="hidden xl:flex items-center gap-7 text-sm font-medium">
+          <!-- Home dropdown with Home 2 marked as active -->
           <div class="relative group">
-            <button class="flex items-center gap-1 text-[#6C4CE3] dark:text-[#987AF0] font-semibold py-2">
+            <button class="relative py-2.5 flex items-center gap-1.5 text-[#6C4CE3] dark:text-[#987AF0] font-bold transition cursor-pointer">
               <span>Home</span>
-              <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
+              <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180"></i>
+              <span class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#6C4CE3] dark:bg-[#987AF0] rounded-full shadow-sm shadow-[#6C4CE3]/40"></span>
             </button>
-            <div class="absolute left-0 mt-1 w-52 bg-white dark:bg-charcoal-800 rounded-xl shadow-xl border border-gray-100 dark:border-charcoal-700 p-2 hidden group-hover:block transition animate-fadeIn">
-              <a href="index.html" class="flex items-center gap-2 px-3 py-2 text-xs font-medium rounded-lg hover:bg-gray-50 dark:hover:bg-charcoal-700 text-gray-700 dark:text-gray-300">
-                <i data-lucide="layout-template" class="w-4 h-4"></i> Home 1 (Classic)
-              </a>
-              <a href="home-2.html" class="flex items-center gap-2 px-3 py-2 text-xs font-semibold rounded-lg bg-coral-50 dark:bg-coral-950/40 text-coral-600 dark:text-coral-400">
-                <i data-lucide="sparkles" class="w-4 h-4 text-amberbrand-500"></i> Home 2 (Premium)
-              </a>
+            <div class="absolute left-0 top-full pt-1.5 w-52 hidden group-hover:block transition-all animate-fadeIn z-50">
+              <div class="bg-white dark:bg-charcoal-800 rounded-xl shadow-xl border border-gray-100 dark:border-charcoal-700 p-2">
+                <a href="index.html" class="flex items-center gap-2 px-3 py-2 text-xs font-semibold rounded-lg hover:bg-gray-50 dark:hover:bg-charcoal-700 text-gray-700 dark:text-gray-300 transition">
+                  <i data-lucide="layout-template" class="w-4 h-4"></i> Home 1 (Classic)
+                </a>
+                <a href="home-2.html" class="flex items-center gap-2 px-3 py-2 text-xs font-semibold rounded-lg bg-orange-50 dark:bg-orange-950/40 text-[#FF9F43] font-bold border-l-2 border-[#FF9F43] transition">
+                  <i data-lucide="sparkles" class="w-4 h-4 text-[#FF9F43]"></i> Home 2 (Premium)
+                </a>
+              </div>
             </div>
           </div>
 
-          <!-- Courses (Direct Link) -->
-          <a href="courses.html" class="text-gray-600 dark:text-gray-300 hover:text-[#6C4CE3] dark:hover:text-[#987AF0] transition">Courses</a>
+          <!-- Courses -->
+          <a href="courses.html" class="relative py-2.5 text-gray-600 dark:text-gray-300 hover:text-[#6C4CE3] dark:hover:text-[#987AF0] font-medium transition group">
+            <span>Courses</span>
+            <span class="absolute bottom-0 left-0 w-0 h-[3px] bg-[#6C4CE3]/60 dark:bg-[#987AF0]/60 rounded-full transition-all duration-300 group-hover:w-full"></span>
+          </a>
 
-          <a href="about.html" class="text-gray-600 dark:text-gray-300 hover:text-[#6C4CE3] dark:hover:text-[#987AF0] transition">Conservatory Story</a>
-          <a href="instructors.html" class="text-gray-600 dark:text-gray-300 hover:text-[#6C4CE3] dark:hover:text-[#987AF0] transition">Faculty Artists</a>
-          <a href="blog.html" class="text-gray-600 dark:text-gray-300 hover:text-[#6C4CE3] dark:hover:text-[#987AF0] transition">Journal</a>
-          <a href="contact.html" class="text-gray-600 dark:text-gray-300 hover:text-[#6C4CE3] dark:hover:text-[#987AF0] transition">Concierge</a>
+          <!-- Instructors -->
+          <a href="instructors.html" class="relative py-2.5 text-gray-600 dark:text-gray-300 hover:text-[#6C4CE3] dark:hover:text-[#987AF0] font-medium transition group">
+            <span>Instructors</span>
+            <span class="absolute bottom-0 left-0 w-0 h-[3px] bg-[#6C4CE3]/60 dark:bg-[#987AF0]/60 rounded-full transition-all duration-300 group-hover:w-full"></span>
+          </a>
+
+          <!-- Fees & Batches -->
+          <a href="fees-batches.html" class="relative py-2.5 text-gray-600 dark:text-gray-300 hover:text-[#6C4CE3] dark:hover:text-[#987AF0] font-medium transition group">
+            <span>Fees &amp; Batches</span>
+            <span class="absolute bottom-0 left-0 w-0 h-[3px] bg-[#6C4CE3]/60 dark:bg-[#987AF0]/60 rounded-full transition-all duration-300 group-hover:w-full"></span>
+          </a>
+
+          <!-- About Us -->
+          <a href="about.html" class="relative py-2.5 text-gray-600 dark:text-gray-300 hover:text-[#6C4CE3] dark:hover:text-[#987AF0] font-medium transition group">
+            <span>About Us</span>
+            <span class="absolute bottom-0 left-0 w-0 h-[3px] bg-[#6C4CE3]/60 dark:bg-[#987AF0]/60 rounded-full transition-all duration-300 group-hover:w-full"></span>
+          </a>
+
+          <!-- Blog -->
+          <a href="blog.html" class="relative py-2.5 text-gray-600 dark:text-gray-300 hover:text-[#6C4CE3] dark:hover:text-[#987AF0] font-medium transition group">
+            <span>Blog</span>
+            <span class="absolute bottom-0 left-0 w-0 h-[3px] bg-[#6C4CE3]/60 dark:bg-[#987AF0]/60 rounded-full transition-all duration-300 group-hover:w-full"></span>
+          </a>
+
+          <!-- Contact -->
+          <a href="contact.html" class="relative py-2.5 text-gray-600 dark:text-gray-300 hover:text-[#6C4CE3] dark:hover:text-[#987AF0] font-medium transition group">
+            <span>Contact</span>
+            <span class="absolute bottom-0 left-0 w-0 h-[3px] bg-[#6C4CE3]/60 dark:bg-[#987AF0]/60 rounded-full transition-all duration-300 group-hover:w-full"></span>
+          </a>
         </nav>
 
-        <!-- Right Utility Controls (Clean & Spacious) -->
-        <div class="flex items-center gap-2.5 sm:gap-3 shrink-0">
+        <!-- Right Utility Controls -->
+        <div class="flex items-center gap-1.5 sm:gap-3 shrink-0">
           <button data-action="toggle-theme" class="p-2 rounded-full border border-gray-200 dark:border-charcoal-700 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-charcoal-800 transition" title="Toggle Light/Dark Theme">
             <i data-lucide="sun" class="w-4 h-4 dark:hidden"></i>
             <i data-lucide="moon" class="w-4 h-4 hidden dark:inline"></i>
@@ -105,8 +111,7 @@
             <span>Portal Login</span>
           </a>
 
-          <!-- Mobile Hamburger -->
-          <button id="mobile-menu-btn" class="p-2 rounded-xl text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-charcoal-800 xl:hidden focus:outline-none" aria-label="Open Mobile Menu">
+          <button id="mobile-menu-btn" class="p-2 sm:p-2.5 rounded-xl text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-charcoal-800 xl:hidden focus:outline-none cursor-pointer" aria-label="Open Mobile Menu">
             <i data-lucide="menu" class="w-6 h-6"></i>
           </button>
         </div>
@@ -115,117 +120,592 @@
     </div>
   </header>
 
-  <!-- Mobile Drawer Menu -->
-  <div id="mobile-menu-backdrop" class="fixed inset-0 bg-black/50 z-50 hidden backdrop-blur-sm transition-opacity"></div>
-  <aside id="mobile-menu-drawer" aria-label="Mobile Navigation" class="fixed top-0 right-0 bottom-0 w-80 bg-white dark:bg-charcoal-900 z-50 hidden shadow-2xl flex flex-col p-6 overflow-y-auto">
-    <div class="flex items-center justify-between pb-6 border-b border-gray-100 dark:border-charcoal-800">
-      <div class="flex items-center gap-2">
-        <div class="w-9 h-9 rounded-lg bg-[#6C4CE3] flex items-center justify-center text-[#FF9F43] font-bold">
+  <!-- Mobile Drawer Menu (Sidebar) -->
+  <div id="mobile-menu-backdrop" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] opacity-0 pointer-events-none transition-opacity duration-300"></div>
+  <aside id="mobile-menu-drawer" aria-label="Mobile Navigation" class="fixed top-0 right-0 bottom-0 w-[85vw] max-w-xs sm:w-80 bg-white dark:bg-charcoal-900 z-[70] shadow-2xl flex flex-col p-5 sm:p-6 overflow-y-auto transform transition-transform duration-300 ease-in-out translate-x-full">
+    <div class="flex items-center justify-between pb-5 border-b border-gray-100 dark:border-charcoal-800 shrink-0">
+      <div class="flex items-center gap-2.5">
+        <div class="w-9 h-9 rounded-xl bg-[#6C4CE3] flex items-center justify-center text-[#FF9F43] font-bold shadow-md shadow-[#6C4CE3]/25">
           <i data-lucide="music" class="w-5 h-5"></i>
         </div>
-        <span class="font-serif font-bold text-xl"><span class="text-[#6C4CE3] dark:text-[#987AF0]">Harmony</span><span class="text-[#FF9F43]">House</span></span>
+        <div>
+          <span class="font-serif font-bold text-lg"><span class="text-[#6C4CE3] dark:text-[#987AF0]">Harmony</span><span class="text-[#FF9F43]">House</span></span>
+          <span class="block text-[8.5px] font-bold tracking-widest uppercase text-gray-400 dark:text-gray-500">Music Academy</span>
+        </div>
       </div>
-      <button id="mobile-menu-close" class="p-2 rounded-lg text-gray-400 hover:text-gray-600 dark:hover:text-white">
+      <button id="mobile-menu-close" class="p-2 rounded-lg text-gray-400 hover:text-gray-600 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-charcoal-800 transition cursor-pointer" aria-label="Close Mobile Menu">
         <i data-lucide="x" class="w-5 h-5"></i>
       </button>
     </div>
-    <nav class="flex flex-col gap-2 py-6 text-sm font-medium">
-      <a href="index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-50">
-        <i data-lucide="home" class="w-4 h-4"></i> Home 1 (Classic)
+
+    <nav class="flex flex-col gap-1.5 py-5 text-sm font-medium">
+      <a href="index.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl hover:bg-gray-50 dark:hover:bg-charcoal-800 text-gray-700 dark:text-gray-300">
+        <i data-lucide="home" class="w-4 h-4 "></i> Home 1 (Classic)
       </a>
-      <a href="home-2.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-coral-50 dark:bg-coral-950/40 text-coral-600 dark:text-coral-400 font-bold">
-        <i data-lucide="sparkles" class="w-4 h-4 text-amberbrand-500"></i> Home 2 (Premium)
+      <a href="home-2.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-orange-50 dark:bg-orange-950/40 text-[#FF9F43] font-bold border-l-4 border-[#FF9F43]">
+        <i data-lucide="sparkles" class="w-4 h-4 text-[#FF9F43]"></i> Home 2 (Premium)
       </a>
-      <a href="courses.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 text-gray-700 dark:text-gray-300">
-        <i data-lucide="book-open" class="w-4 h-4"></i> Signature Programmes
+      <a href="courses.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl hover:bg-gray-50 dark:hover:bg-charcoal-800 text-gray-700 dark:text-gray-300">
+        <i data-lucide="book-open" class="w-4 h-4 "></i> Courses
       </a>
-      <a href="instructors.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 text-gray-700 dark:text-gray-300">
-        <i data-lucide="award" class="w-4 h-4"></i> Faculty Artists
+      <a href="instructors.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl hover:bg-gray-50 dark:hover:bg-charcoal-800 text-gray-700 dark:text-gray-300">
+        <i data-lucide="award" class="w-4 h-4 "></i> Instructors
       </a>
-      <a href="fees-batches.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 text-gray-700 dark:text-gray-300">
-        <i data-lucide="calendar" class="w-4 h-4"></i> Fees &amp; Batches
+      <a href="fees-batches.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl hover:bg-gray-50 dark:hover:bg-charcoal-800 text-gray-700 dark:text-gray-300">
+        <i data-lucide="calendar" class="w-4 h-4 text-[#FF9F43]"></i> Fees &amp; Batches
       </a>
-      <a href="pricing.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 text-gray-700 dark:text-gray-300">
-        <i data-lucide="credit-card" class="w-4 h-4"></i> Membership Plans
+      <a href="about.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl hover:bg-gray-50 dark:hover:bg-charcoal-800 text-gray-700 dark:text-gray-300">
+        <i data-lucide="info" class="w-4 h-4 "></i> About Our Academy
       </a>
-      <a href="contact.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 text-gray-700 dark:text-gray-300">
-        <i data-lucide="map-pin" class="w-4 h-4"></i> Concierge
+      <a href="blog.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl hover:bg-gray-50 dark:hover:bg-charcoal-800 text-gray-700 dark:text-gray-300">
+        <i data-lucide="file-text" class="w-4 h-4 "></i> Blog &amp; Tips
+      </a>
+      <a href="contact.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl hover:bg-gray-50 dark:hover:bg-charcoal-800 text-gray-700 dark:text-gray-300">
+        <i data-lucide="map-pin" class="w-4 h-4 "></i> Contact Us
       </a>
     </nav>
+
+    <!-- Settings & Quick Access Controls inside Mobile Drawer -->
+    <div class="pt-4 border-t border-gray-100 dark:border-charcoal-800 space-y-3 shrink-0">
+      <div class="text-[10.5px] font-bold uppercase tracking-wider text-gray-400">Settings &amp; Access</div>
+      <div class="grid grid-cols-2 gap-2">
+        <button data-action="toggle-theme" class="flex items-center justify-center gap-2 px-3 py-2 text-xs font-semibold rounded-xl border border-gray-200 dark:border-charcoal-700 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-charcoal-800 transition cursor-pointer">
+          <i data-lucide="sun" class="w-3.5 h-3.5 dark:hidden"></i>
+          <i data-lucide="moon" class="w-3.5 h-3.5 hidden dark:inline"></i>
+          <span>Theme</span>
+        </button>
+        <button data-action="toggle-rtl" class="flex items-center justify-center gap-2 px-3 py-2 text-xs font-semibold rounded-xl border border-gray-200 dark:border-charcoal-700 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-charcoal-800 transition cursor-pointer">
+          <span>⇄ RTL / LTR</span>
+        </button>
+      </div>
+      <a href="auth/login.html" class="flex items-center justify-center gap-2 px-3 py-2.5 rounded-xl bg-purple-50 dark:bg-purple-950/40 text-[#6C4CE3] dark:text-[#987AF0] font-bold text-xs border border-purple-200 dark:border-charcoal-700 hover:bg-purple-100 transition">
+        <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+        <span>Student Dashboard Login</span>
+      </a>
+    </div>
+
+    <!-- Mobile CTA -->
+    <div class="mt-auto pt-4 border-t border-gray-100 dark:border-charcoal-800 shrink-0">
+      <button data-modal-target="trial-modal" class="btn-3d-purple w-full py-3 rounded-xl font-bold text-center text-sm cursor-pointer shadow-lg shadow-[#6C4CE3]/25">
+        Book Free Trial Session
+      </button>
+    </div>
   </aside>
 
-  <!-- Premium Hero Section (Nuvo Music School Style) -->
-  <section class="relative bg-[#F8F9FA] dark:bg-charcoal-900 py-20 lg:py-28 overflow-hidden">
+  <!-- ==========================================
+       HERO: THE EUROPEAN CONSERVATORY STUDIO
+       ========================================== -->
+  <section class="relative bg-gradient-to-b from-[#F5F2FC] via-white to-gray-50 dark:from-charcoal-950 dark:via-charcoal-900 dark:to-charcoal-950 pt-8 pb-16 lg:pt-10 lg:pb-20 overflow-hidden border-b border-gray-100 dark:border-charcoal-800 text-center">
+    <!-- Ambient Conservatory Glows -->
+    <div class="absolute top-6 left-1/3 w-96 h-96 bg-[#6C4CE3]/15 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-6 right-1/3 w-96 h-96 bg-[#FF9F43]/15 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6">
+
+      <!-- Main Headline -->
+      <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold text-gray-950 dark:text-white tracking-tight leading-[1.1]">
+        Where Musical Talent <br>
+        <span class="font-serif italic font-normal text-[#6C4CE3] dark:text-[#987AF0]">
+          Becomes Mastery.
+        </span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="text-base sm:text-xl text-gray-600 dark:text-gray-300 font-normal leading-relaxed max-w-2xl mx-auto pt-2">
+        Private instrument tuition, ensemble chamber halls, sound recording suites, and rigorous conservatory curricula tailored for young visionaries and adult connoisseurs.
+      </p>
+
+      <!-- CTA Cluster -->
+      <div class="pt-4 flex flex-wrap items-center justify-center gap-3 sm:gap-4 w-full max-w-2xl mx-auto">
+        <a href="#conservatory-metronome" class="btn-3d-purple px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold text-xs sm:text-sm tracking-wide flex items-center justify-center gap-2 w-full sm:w-auto text-center">
+          <i data-lucide="activity" class="w-4 h-4 text-[#FF9F43]"></i>
+          <span>Launch Live Metronome Studio</span>
+        </a>
+        <a href="#conservatory-disciplines" class="px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl bg-white dark:bg-charcoal-800 border border-gray-300 dark:border-charcoal-700 text-gray-900 dark:text-white font-semibold text-xs sm:text-sm hover:border-[#6C4CE3] hover:text-[#6C4CE3] transition shadow-sm flex items-center justify-center gap-2 w-full sm:w-auto text-center">
+          <span>View 4 Master Disciplines</span>
+          <i data-lucide="arrow-down" class="w-4 h-4 text-[#FF9F43]"></i>
+        </a>
+        <button data-modal-target="trial-modal" class="card-3d px-6 sm:px-7 py-3.5 sm:py-4 rounded-xl bg-charcoal-950 text-white border border-[#FF9F43]/50 text-xs sm:text-sm font-semibold hover:border-[#FF9F43] transition shadow-lg shadow-[#FF9F43]/20 flex items-center justify-center gap-2 cursor-pointer w-full sm:w-auto text-center">
+          <i data-lucide="calendar" class="w-4 h-4 text-[#FF9F43]"></i>
+          <span>Schedule VIP Audition</span>
+        </button>
+      </div>
+
+      <!-- Academic Benchmarks Stats Strip -->
+      <div class="pt-10 grid grid-cols-2 md:grid-cols-4 gap-6 border-t border-gray-200/60 dark:border-charcoal-800 max-w-4xl mx-auto text-center">
+        <div class="p-4 rounded-2xl bg-white/60 dark:bg-charcoal-850/60 border border-gray-100 dark:border-charcoal-800 backdrop-blur-sm shadow-xs">
+          <div class="font-serif text-3xl sm:text-4xl font-bold text-[#6C4CE3] dark:text-[#987AF0]">99.4%</div>
+          <div class="text-xs text-gray-500 dark:text-gray-400 font-medium mt-1">Trinity Distinction Rate</div>
+        </div>
+        <div class="p-4 rounded-2xl bg-white/60 dark:bg-charcoal-850/60 border border-gray-100 dark:border-charcoal-800 backdrop-blur-sm shadow-xs">
+          <div class="font-serif text-3xl sm:text-4xl font-bold text-[#FF9F43]">1:1</div>
+          <div class="text-xs text-gray-500 dark:text-gray-400 font-medium mt-1">Private Artist Mentorship</div>
+        </div>
+        <div class="p-4 rounded-2xl bg-white/60 dark:bg-charcoal-850/60 border border-gray-100 dark:border-charcoal-800 backdrop-blur-sm shadow-xs">
+          <div class="font-serif text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">-42 dB</div>
+          <div class="text-xs text-gray-500 dark:text-gray-400 font-medium mt-1">Soundproof Isolation</div>
+        </div>
+        <div class="p-4 rounded-2xl bg-white/60 dark:bg-charcoal-850/60 border border-gray-100 dark:border-charcoal-800 backdrop-blur-sm shadow-xs">
+          <div class="font-serif text-3xl sm:text-4xl font-bold text-[#6C4CE3] dark:text-[#987AF0]">1,400+</div>
+          <div class="text-xs text-gray-500 dark:text-gray-400 font-medium mt-1">Graduated Performing Artists</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION 1: THE 4 MASTER CONSERVATORY DISCIPLINES
+       Uses 4 Brand-New Bespoke 3D Renders (conservatory-*.jpg)
+       ========================================== -->
+  <section id="conservatory-disciplines" class="py-20 bg-gray-50 dark:bg-charcoal-950/70 border-b border-gray-200 dark:border-charcoal-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-14">
+        <div>
+          <span class="text-xs font-mono font-bold tracking-widest uppercase text-[#FF9F43] flex items-center gap-2">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-[#FF9F43]"></i>
+            Premier Repertoire Syllabi
+          </span>
+          <h2 class="font-serif text-3xl sm:text-5xl font-bold text-gray-900 dark:text-white mt-2">
+            The Four Pillars of Mastery
+          </h2>
+        </div>
+        <p class="text-sm text-gray-500 dark:text-gray-400 max-w-md mt-3 md:mt-0">
+          Rigorous classical sonatas, modern harmonic fusion, and private artist mentorship using world-class concert instruments.
+        </p>
+      </div>
+
+      <!-- 4 Bespoke Conservatory Cards with Distinct Images -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Pillar 1: Concert Piano (conservatory-piano.jpg) -->
+        <div class="conservatory-glass-card rounded-3xl p-5 flex flex-col justify-between group shadow-sm hover:shadow-2xl transition-all duration-300">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="px-2.5 py-1 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-purple-50 dark:bg-purple-950/60 text-[#6C4CE3] dark:text-[#987AF0] border border-purple-200/60 dark:border-purple-800/40">
+                Studio 1A &bull; Grand Keys
+              </span>
+              <span class="text-xs font-bold text-[#FF9F43]">Grade 1-8</span>
+            </div>
+
+            <!-- Image: Steinway Concert Grand on Stage -->
+            <div class="relative h-48 rounded-2xl overflow-hidden my-3 shadow-md bg-charcoal-950 border border-black/5 dark:border-white/10">
+              <img 
+                src="assets/images/conservatory-piano.jpg" 
+                alt="Steinway Concert Grand Piano" 
+                class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"
+                loading="lazy"
+              >
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
+              <div class="absolute bottom-2.5 left-2.5 px-2 py-0.5 rounded-md bg-black/70 backdrop-blur-md text-[9px] font-mono text-white">
+                Steinway Model D Spec
+              </div>
+            </div>
+
+            <h3 class="font-serif font-bold text-xl text-gray-900 dark:text-white group-hover:text-[#6C4CE3] transition">
+              Concert Grand Piano
+            </h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed">
+              Two-hand polyphonic counterpoint, Chopin nocturnes, Beethoven sonatinas &amp; Trinity honors diploma preparation.
+            </p>
+          </div>
+
+          <div class="mt-5 pt-3 border-t border-gray-100 dark:border-charcoal-800 flex items-center justify-between text-xs">
+            <span class="font-bold text-[#6C4CE3] dark:text-[#987AF0]">88-Key Weighted</span>
+            <a href="course-details.html?course=course-piano" class="font-semibold text-gray-400 hover:text-gray-900 dark:hover:text-white transition">
+              Curriculum &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- Pillar 2: Archtop Guitar (conservatory-guitar.jpg) -->
+        <div class="conservatory-glass-card rounded-3xl p-5 flex flex-col justify-between group shadow-sm hover:shadow-2xl transition-all duration-300">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="px-2.5 py-1 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-orange-50 dark:bg-orange-950/60 text-[#FF9F43] border border-orange-200/60 dark:border-orange-800/40">
+                Studio 2A &bull; Fretboard
+              </span>
+              <span class="text-xs font-bold text-[#FF9F43]">Grade 1-8</span>
+            </div>
+
+            <!-- Image: Flamed Maple Archtop Jazz Guitar -->
+            <div class="relative h-48 rounded-2xl overflow-hidden my-3 shadow-md bg-charcoal-950 border border-black/5 dark:border-white/10">
+              <img 
+                src="assets/images/conservatory-guitar.jpg" 
+                alt="Flamed Maple Archtop Guitar" 
+                class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"
+                loading="lazy"
+              >
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
+              <div class="absolute bottom-2.5 left-2.5 px-2 py-0.5 rounded-md bg-black/70 backdrop-blur-md text-[9px] font-mono text-white">
+                Flamed Maple Archtop
+              </div>
+            </div>
+
+            <h3 class="font-serif font-bold text-xl text-gray-900 dark:text-white group-hover:text-[#FF9F43] transition">
+              Archtop &amp; Classical Guitar
+            </h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed">
+              Fingerstyle contrapuntal voicings, jazz modal substitutions, Bach lute suites &amp; contemporary flamenco agility.
+            </p>
+          </div>
+
+          <div class="mt-5 pt-3 border-t border-gray-100 dark:border-charcoal-800 flex items-center justify-between text-xs">
+            <span class="font-bold text-[#FF9F43]">Harmonic Mastery</span>
+            <a href="course-details.html?course=course-guitar" class="font-semibold text-gray-400 hover:text-gray-900 dark:hover:text-white transition">
+              Curriculum &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- Pillar 3: Walnut Studio Drumkit (conservatory-drums.jpg) -->
+        <div class="conservatory-glass-card rounded-3xl p-5 flex flex-col justify-between group shadow-sm hover:shadow-2xl transition-all duration-300">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="px-2.5 py-1 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-purple-50 dark:bg-purple-950/60 text-[#6C4CE3] dark:text-[#987AF0] border border-purple-200/60 dark:border-purple-800/40">
+                Studio 3A &bull; Percussion
+              </span>
+              <span class="text-xs font-bold text-[#FF9F43]">Grade 1-8</span>
+            </div>
+
+            <!-- Image: Dark Walnut Custom Drumkit -->
+            <div class="relative h-48 rounded-2xl overflow-hidden my-3 shadow-md bg-charcoal-950 border border-black/5 dark:border-white/10">
+              <img 
+                src="assets/images/conservatory-drums.jpg" 
+                alt="Custom Dark Walnut Drumkit" 
+                class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"
+                loading="lazy"
+              >
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
+              <div class="absolute bottom-2.5 left-2.5 px-2 py-0.5 rounded-md bg-black/70 backdrop-blur-md text-[9px] font-mono text-white">
+                Zildjian K Bronze Cymbals
+              </div>
+            </div>
+
+            <h3 class="font-serif font-bold text-xl text-gray-900 dark:text-white group-hover:text-[#6C4CE3] transition">
+              Percussion &amp; Drumkit
+            </h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed">
+              Four-way independent metric modulation, syncopated polyrhythms, Latin Afro-Cuban claves &amp; studio session chops.
+            </p>
+          </div>
+
+          <div class="mt-5 pt-3 border-t border-gray-100 dark:border-charcoal-800 flex items-center justify-between text-xs">
+            <span class="font-bold text-[#6C4CE3] dark:text-[#987AF0]">Metric Modulation</span>
+            <a href="course-details.html?course=course-drums" class="font-semibold text-gray-400 hover:text-gray-900 dark:hover:text-white transition">
+              Curriculum &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- Pillar 4: Concert Violin (conservatory-violin.jpg) -->
+        <div class="conservatory-glass-card rounded-3xl p-5 flex flex-col justify-between group shadow-sm hover:shadow-2xl transition-all duration-300">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="px-2.5 py-1 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-orange-50 dark:bg-orange-950/60 text-[#FF9F43] border border-orange-200/60 dark:border-orange-800/40">
+                Studio 4A &bull; Strings
+              </span>
+              <span class="text-xs font-bold text-[#FF9F43]">Grade 1-8</span>
+            </div>
+
+            <!-- Image: Mastercrafted Violin with Bow -->
+            <div class="relative h-48 rounded-2xl overflow-hidden my-3 shadow-md bg-charcoal-950 border border-black/5 dark:border-white/10">
+              <img 
+                src="assets/images/conservatory-violin.jpg" 
+                alt="Concert Violin with Pernambuco Bow" 
+                class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"
+                loading="lazy"
+              >
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
+              <div class="absolute bottom-2.5 left-2.5 px-2 py-0.5 rounded-md bg-black/70 backdrop-blur-md text-[9px] font-mono text-white">
+                Italian Amber Varnish
+              </div>
+            </div>
+
+            <h3 class="font-serif font-bold text-xl text-gray-900 dark:text-white group-hover:text-[#FF9F43] transition">
+              Concert Violin &amp; Strings
+            </h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed">
+              Pure intonation, spiccato &amp; martelé bow physics, Paganini caprices &amp; chamber orchestra leadership.
+            </p>
+          </div>
+
+          <div class="mt-5 pt-3 border-t border-gray-100 dark:border-charcoal-800 flex items-center justify-between text-xs">
+            <span class="font-bold text-[#FF9F43]">Concert Pitch A440</span>
+            <a href="course-details.html?course=course-violin" class="font-semibold text-gray-400 hover:text-gray-900 dark:hover:text-white transition">
+              Curriculum &rarr;
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION 2: 2027 LIVE MECHANICAL METRONOME & BPM STUDIO
+       Unique Interactive Animation - Pendulum Physics & Web Audio
+       ========================================== -->
+  <section id="conservatory-metronome" class="py-20 bg-charcoal-950 text-white relative overflow-hidden border-b border-charcoal-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       
-      <!-- Top Eyebrow -->
-      <div class="text-center max-w-3xl mx-auto space-y-4">
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white dark:bg-charcoal-800 shadow-sm border border-gray-200 dark:border-charcoal-700 text-xs font-semibold text-gray-800 dark:text-gray-200">
-          <i data-lucide="award" class="w-4 h-4 text-[#FF9F43]"></i>
-          <span>Trinity College London &amp; RockSchool Premier Exam Centre</span>
-        </div>
-
-        <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold text-gray-950 dark:text-white tracking-tight leading-[1.1]">
-          Where Musical Talent <br>
-          <span class="font-serif italic font-normal text-[#6C4CE3]">
-            Becomes Mastery.
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left: Metronome Description -->
+        <div class="lg:col-span-5 space-y-5">
+          <span class="text-xs font-mono font-bold tracking-widest uppercase text-[#FF9F43] flex items-center gap-2">
+            <i data-lucide="activity" class="w-4 h-4 text-[#FF9F43]"></i>
+            Live Practice Bench &bull; Metronome Engine
           </span>
-        </h1>
 
-        <p class="text-base sm:text-xl text-gray-600 dark:text-gray-300 font-normal leading-relaxed pt-2">
-          Private instrument tuition, ensemble chamber halls, sound recording suites, and rigorous conservatory curricula tailored for young visionaries and adult connoisseurs.
+          <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white leading-tight">
+            Precision Timing &amp; Tempo Mastery
+          </h2>
+
+          <p class="text-sm text-gray-300 leading-relaxed">
+            Every conservatory virtuoso must build flawless internal rhythm. Our interactive digital mechanical metronome generates high-definition audio clicks, animated pendulum physics, and instant tap tempo calculation.
+          </p>
+
+          <!-- Italian Tempo Markings Quick Selector -->
+          <div class="space-y-2 pt-2">
+            <span class="text-xs font-mono font-bold uppercase tracking-wider text-gray-400">Classical Tempo Presets:</span>
+            <div class="flex flex-wrap gap-2 text-xs">
+              <button data-tempo-preset="52" class="px-3 py-1.5 rounded-lg bg-charcoal-900 border border-charcoal-700 hover:border-[#6C4CE3] text-gray-300 hover:text-white transition cursor-pointer">
+                Largo (52)
+              </button>
+              <button data-tempo-preset="76" class="px-3 py-1.5 rounded-lg bg-charcoal-900 border border-charcoal-700 hover:border-[#6C4CE3] text-gray-300 hover:text-white transition cursor-pointer">
+                Adagio (76)
+              </button>
+              <button data-tempo-preset="108" class="px-3 py-1.5 rounded-lg bg-charcoal-900 border border-[#6C4CE3] text-[#6C4CE3] font-bold transition cursor-pointer">
+                Andante (108)
+              </button>
+              <button data-tempo-preset="120" class="px-3 py-1.5 rounded-lg bg-charcoal-900 border border-charcoal-700 hover:border-[#FF9F43] text-gray-300 hover:text-white transition cursor-pointer">
+                Moderato (120)
+              </button>
+              <button data-tempo-preset="144" class="px-3 py-1.5 rounded-lg bg-charcoal-900 border border-charcoal-700 hover:border-[#FF9F43] text-gray-300 hover:text-white transition cursor-pointer">
+                Allegro (144)
+              </button>
+              <button data-tempo-preset="184" class="px-3 py-1.5 rounded-lg bg-charcoal-900 border border-charcoal-700 hover:border-[#FF9F43] text-gray-300 hover:text-white transition cursor-pointer">
+                Presto (184)
+              </button>
+            </div>
+          </div>
+
+          <!-- Academic Benefit Callout -->
+          <div class="p-4 rounded-2xl bg-charcoal-900/80 border border-charcoal-800 text-xs text-gray-300 flex items-start gap-3">
+            <i data-lucide="check-circle-2" class="w-4 h-4 text-[#FF9F43] shrink-0 mt-0.5"></i>
+            <span>Included in all Trinity Grade 1–8 examinations: Scales &amp; arpeggios are strictly evaluated against benchmark BPM thresholds.</span>
+          </div>
+        </div>
+
+        <!-- Right: Animated Mechanical Metronome Body -->
+        <div class="lg:col-span-7">
+          <div class="p-8 sm:p-10 rounded-3xl bg-charcoal-900 border border-charcoal-800 shadow-2xl relative overflow-hidden">
+            
+            <!-- Top Metronome Readout -->
+            <div class="flex items-center justify-between pb-6 border-b border-charcoal-800">
+              <div>
+                <span class="text-[10px] font-mono uppercase text-[#FF9F43] font-bold tracking-widest block">Acoustic Clockwork Pulse</span>
+                <div class="flex items-baseline gap-2 mt-1">
+                  <span id="metronome-bpm-display" class="font-serif text-5xl font-bold text-white">108</span>
+                  <span class="text-sm font-mono text-gray-400">BPM</span>
+                </div>
+              </div>
+
+              <!-- Beat LED Visualizer Dots -->
+              <div class="flex flex-col items-end gap-2">
+                <span id="metronome-tempo-name" class="text-xs font-serif italic text-gray-300">Andante (Walking Pace)</span>
+                <div class="flex items-center gap-2">
+                  <span class="metronome-beat-dot w-3 h-3 rounded-full bg-gray-300 dark:bg-charcoal-700 transition-all duration-100"></span>
+                  <span class="metronome-beat-dot w-3 h-3 rounded-full bg-gray-300 dark:bg-charcoal-700 transition-all duration-100"></span>
+                  <span class="metronome-beat-dot w-3 h-3 rounded-full bg-gray-300 dark:bg-charcoal-700 transition-all duration-100"></span>
+                  <span class="metronome-beat-dot w-3 h-3 rounded-full bg-gray-300 dark:bg-charcoal-700 transition-all duration-100"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- The Mechanical Pendulum Chamber (Animated Canvas & CSS Physics) -->
+            <div class="relative h-56 sm:h-64 my-6 bg-charcoal-950 rounded-2xl border border-charcoal-800 flex items-center justify-center overflow-hidden">
+              
+              <!-- Wooden Backing Scale Markings -->
+              <div class="absolute inset-0 flex items-center justify-center opacity-30 pointer-events-none">
+                <div class="w-48 h-full border-x border-dashed border-gray-600 flex flex-col justify-between py-6 text-[9px] font-mono text-gray-400 select-none">
+                  <div class="flex justify-between px-2"><span>40</span><span>LARGO</span></div>
+                  <div class="flex justify-between px-2"><span>80</span><span>ANDANTE</span></div>
+                  <div class="flex justify-between px-2"><span>120</span><span>MODERATO</span></div>
+                  <div class="flex justify-between px-2"><span>160</span><span>ALLEGRO</span></div>
+                  <div class="flex justify-between px-2"><span>208</span><span>PRESTO</span></div>
+                </div>
+              </div>
+
+              <!-- Pendulum Assembly -->
+              <div id="metronome-pendulum" class="relative w-8 h-48 origin-bottom flex flex-col items-center justify-end z-10 transition-transform">
+                <!-- Stainless Steel Rod -->
+                <div class="w-1.5 h-44 bg-gradient-to-r from-gray-300 via-white to-gray-400 rounded-full shadow-lg"></div>
+
+                <!-- Sliding Brass Weight -->
+                <div id="metronome-weight" class="absolute w-7 h-6 rounded-md bg-gradient-to-b from-[#FF9F43] to-[#F58022] border border-white/60 shadow-md flex items-center justify-center top-8 transition-transform duration-200">
+                  <div class="w-2.5 h-1 bg-charcoal-950 rounded-full"></div>
+                </div>
+
+                <!-- Pivot Point -->
+                <div class="w-6 h-6 rounded-full bg-gradient-to-b from-gray-400 to-gray-700 border-2 border-white shadow-md -mb-3 z-20"></div>
+              </div>
+
+            </div>
+
+            <!-- Metronome Controls: Slider & Buttons -->
+            <div class="space-y-4">
+              <!-- Range Slider -->
+              <div>
+                <div class="flex items-center justify-between text-xs text-gray-400 mb-1">
+                  <span>40 (Grave)</span>
+                  <span class="font-mono text-white font-bold">Slide to Tune Tempo</span>
+                  <span>220 (Prestissimo)</span>
+                </div>
+                <input 
+                  type="range" 
+                  id="metronome-bpm-slider" 
+                  min="40" 
+                  max="220" 
+                  value="108" 
+                  class="w-full accent-[#6C4CE3] cursor-ew-resize h-2 bg-charcoal-800 rounded-lg"
+                >
+              </div>
+
+              <!-- Control Buttons -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                <button id="metronome-play-btn" class="py-3 px-4 rounded-xl bg-[#6C4CE3] text-white font-bold text-sm flex items-center justify-center gap-2 hover:opacity-90 active:scale-95 transition cursor-pointer shadow-lg shadow-[#6C4CE3]/30">
+                  <i data-lucide="play" id="metronome-play-icon" class="w-4 h-4"></i>
+                  <span id="metronome-play-label">Start Metronome</span>
+                </button>
+                <button id="metronome-tap-btn" class="py-3 px-4 rounded-xl bg-charcoal-800 border border-charcoal-700 text-gray-200 font-bold text-sm flex items-center justify-center gap-2 hover:bg-charcoal-750 active:scale-95 transition cursor-pointer">
+                  <i data-lucide="hand" class="w-4 h-4 text-[#FF9F43]"></i>
+                  <span>Tap Tempo Counter</span>
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION 3: TRINITY & ABRSM GRADED BENCHMARK MATRIX
+       Interactive Graded Syllabus Benchmark Explorer
+       ========================================== -->
+  <section class="py-20 bg-white dark:bg-charcoal-900 border-b border-gray-100 dark:border-charcoal-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs font-mono font-bold tracking-widest uppercase text-[#6C4CE3] dark:text-[#987AF0] block">
+          Accreditation Framework
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mt-1">
+          Trinity &amp; ABRSM Syllabus Benchmark
+        </h2>
+        <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
+          From foundational rhythmic motor control to international concert diplomas.
         </p>
+      </div>
 
-        <!-- CTA Cluster (Tactile 3D Buttons) -->
-        <div class="pt-6 flex flex-wrap items-center justify-center gap-4">
-          <a href="#signature-programmes" class="btn-3d-purple px-8 py-4 rounded-full font-bold text-sm tracking-wide">
-            Explore Signature Programmes
-          </a>
-          <button data-modal-target="trial-modal" class="card-3d px-8 py-4 rounded-full bg-white dark:bg-charcoal-800 border border-gray-300 dark:border-charcoal-700 text-gray-800 dark:text-white font-semibold text-sm hover:border-[#FF9F43] hover:text-[#FF9F43] transition shadow-sm flex items-center gap-2">
-            <i data-lucide="calendar" class="w-4 h-4 text-[#FF9F43]"></i>
-            Schedule VIP Audition
-          </button>
+      <!-- Grade Switcher Tabs -->
+      <div class="flex items-center justify-center gap-2 mb-10 overflow-x-auto p-1.5 max-w-xl mx-auto rounded-2xl bg-gray-100 dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 text-xs font-bold">
+        <button data-grade-tab="foundation" class="flex-1 py-2.5 px-4 rounded-xl bg-[#6C4CE3] text-white shadow-md transition cursor-pointer">
+          Grade 1–2: Foundation
+        </button>
+        <button data-grade-tab="intermediate" class="flex-1 py-2.5 px-4 rounded-xl text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition cursor-pointer">
+          Grade 3–5: Intermediate
+        </button>
+        <button data-grade-tab="virtuoso" class="flex-1 py-2.5 px-4 rounded-xl text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition cursor-pointer">
+          Grade 6–8: Diploma
+        </button>
+      </div>
+
+      <!-- Tab Panel 1: Foundation (Grade 1-2) -->
+      <div data-grade-panel="foundation" class="p-8 sm:p-10 rounded-3xl bg-gray-50 dark:bg-charcoal-850 border border-gray-200 dark:border-charcoal-700 shadow-sm">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="space-y-3">
+            <span class="text-xs font-mono font-bold text-[#6C4CE3] uppercase">Technical Agility Target</span>
+            <h4 class="font-serif text-xl font-bold text-gray-900 dark:text-white">60–80 BPM Legato Scales</h4>
+            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+              C Major, G Major, and A Minor single-octave scales with uniform finger strike velocity and correct wrist curvature.
+            </p>
+          </div>
+          <div class="space-y-3">
+            <span class="text-xs font-mono font-bold text-[#FF9F43] uppercase">Aural &amp; Sight-Reading</span>
+            <h4 class="font-serif text-xl font-bold text-gray-900 dark:text-white">Quarter &amp; Eighth Note Pulse</h4>
+            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+              Clapping syncopated 4/4 and 3/4 measures on first sight, singing back pitched melodies, and distinguishing crescendo from diminuendo.
+            </p>
+          </div>
+          <div class="space-y-3">
+            <span class="text-xs font-mono font-bold text-gray-600 dark:text-gray-300 uppercase">Trinity Repertoire Pieces</span>
+            <h4 class="font-serif text-xl font-bold text-gray-900 dark:text-white">Classical &amp; Jazz Minuets</h4>
+            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+              3 chosen performance pieces with dynamic expression (piano to forte) evaluated by certified Trinity London external examiners.
+            </p>
+          </div>
         </div>
       </div>
 
-      <!-- Hero Gallery Composition: Piano & String Excellence (3D Tilt Cards) -->
-      <div class="mt-16 grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
-        <div class="md:col-span-4 space-y-6">
-          <div data-tilt class="card-3d relative rounded-3xl overflow-hidden shadow-xl group h-64 border border-white/50 cursor-pointer">
-            <img src="https://images.unsplash.com/photo-1520523839898-5071270505a7?auto=format&fit=crop&w=700&q=80" alt="Yamaha Grand Piano Repertoire" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
-              <span class="text-white text-xs font-bold tracking-wider uppercase">Concert Grand Acoustic Repertoire</span>
-            </div>
+      <!-- Tab Panel 2: Intermediate (Grade 3-5) -->
+      <div data-grade-panel="intermediate" class="hidden p-8 sm:p-10 rounded-3xl bg-gray-50 dark:bg-charcoal-850 border border-gray-200 dark:border-charcoal-700 shadow-sm">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="space-y-3">
+            <span class="text-xs font-mono font-bold text-[#6C4CE3] uppercase">Technical Agility Target</span>
+            <h4 class="font-serif text-xl font-bold text-gray-900 dark:text-white">96–120 BPM 2-Octave Arpeggios</h4>
+            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+              Major &amp; harmonic minor two-octave scales with thumb-under transitions and chromatic runs across the full instrument register.
+            </p>
           </div>
-          <div data-tilt class="card-3d p-6 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm cursor-pointer">
-            <span class="text-xs font-bold uppercase tracking-wider text-[#FF9F43]">Suzuki &amp; Kodály Framework</span>
-            <h4 class="font-serif text-lg font-bold text-gray-900 dark:text-white mt-1">Holistic Ear-First Pedagogy</h4>
-            <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">Developing pitch perfection, tempo perception, and artistic expression naturally.</p>
+          <div class="space-y-3">
+            <span class="text-xs font-mono font-bold text-[#FF9F43] uppercase">Aural &amp; Sight-Reading</span>
+            <h4 class="font-serif text-xl font-bold text-gray-900 dark:text-white">Compound 6/8 &amp; Modal Cadences</h4>
+            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+              Recognizing perfect fourths, major thirds, relative minors, and executing 8-measure sight-reading with key signature modulations.
+            </p>
+          </div>
+          <div class="space-y-3">
+            <span class="text-xs font-mono font-bold text-gray-600 dark:text-gray-300 uppercase">Trinity Repertoire Pieces</span>
+            <h4 class="font-serif text-xl font-bold text-gray-900 dark:text-white">Sonatinas, Blues &amp; Film Suites</h4>
+            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+              Clementi sonatinas, blues improvisation, rubato expression, and multi-movement technical suite mastery.
+            </p>
           </div>
         </div>
+      </div>
 
-        <div class="md:col-span-4">
-          <div data-tilt class="card-3d hero-curved-frame relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white dark:border-charcoal-800 h-96 group cursor-pointer" style="border-radius: 24px; -webkit-mask-image: -webkit-radial-gradient(white, black); isolation: isolate;">
-            <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80" alt="Master Violinist Soloist" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 rounded-[20px]" style="border-radius: 20px;">
-            <div class="absolute inset-0 bg-gradient-to-t from-charcoal-950/80 via-transparent to-transparent flex flex-col justify-end p-8 text-white rounded-[20px]">
-              <span class="text-[#FF9F43] text-xs font-bold tracking-widest uppercase">Chamber Hall Acoustics</span>
-              <h3 class="font-serif text-2xl font-bold mt-1">European Classical &amp; Modern Fusion</h3>
-              <p class="text-xs text-gray-300 mt-2">Quarterly symphonic showcases in our 250-seat acoustically tuned auditorium.</p>
-            </div>
+      <!-- Tab Panel 3: Virtuoso Diploma (Grade 6-8) -->
+      <div data-grade-panel="virtuoso" class="hidden p-8 sm:p-10 rounded-3xl bg-gray-50 dark:bg-charcoal-850 border border-gray-200 dark:border-charcoal-700 shadow-sm">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="space-y-3">
+            <span class="text-xs font-mono font-bold text-[#6C4CE3] uppercase">Technical Agility Target</span>
+            <h4 class="font-serif text-xl font-bold text-gray-900 dark:text-white">144+ BPM Polyrhythmic Precision</h4>
+            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+              Three-octave contrary motion scales, diminished seventh arpeggios, rapid staccato octave leaps, and metric modulation.
+            </p>
           </div>
-        </div>
-
-        <div class="md:col-span-4 space-y-6">
-          <div data-tilt class="card-3d p-6 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm cursor-pointer">
-            <span class="text-xs font-bold uppercase tracking-wider text-[#6C4CE3] dark:text-[#987AF0]">Digital Audio Lab</span>
-            <h4 class="font-serif text-lg font-bold text-gray-900 dark:text-white mt-1">Logic &amp; Ableton Workstations</h4>
-            <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">Every student records their original arrangements in our sound-isolated studio.</p>
+          <div class="space-y-3">
+            <span class="text-xs font-mono font-bold text-[#FF9F43] uppercase">Aural &amp; Sight-Reading</span>
+            <h4 class="font-serif text-xl font-bold text-gray-900 dark:text-white">Atonal Intervals &amp; Orchestral Scores</h4>
+            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+              Transposition at sight, identification of secondary dominants, and complex 5/4 &amp; 7/8 modern polyrhythmic dictation.
+            </p>
           </div>
-          <div data-tilt class="card-3d hero-curved-frame relative rounded-3xl overflow-hidden shadow-xl group h-64 border border-white/50 cursor-pointer" style="border-radius: 24px; -webkit-mask-image: -webkit-radial-gradient(white, black); isolation: isolate;">
-            <img src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=700&q=80" alt="Acoustic Guitar Rehearsal" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 rounded-[20px]" style="border-radius: 20px;">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6 rounded-[20px]">
-              <span class="text-white text-xs font-bold tracking-wider uppercase">Fretboard Harmony &amp; Fingerstyle</span>
-            </div>
+          <div class="space-y-3">
+            <span class="text-xs font-mono font-bold text-gray-600 dark:text-gray-300 uppercase">Trinity Repertoire Pieces</span>
+            <h4 class="font-serif text-xl font-bold text-gray-900 dark:text-white">Concertos, Chopin &amp; Fusion Suites</h4>
+            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+              Full concert recital program (30 minutes continuous playing), culminating in the ATCL / LTCL Associate Diploma certification.
+            </p>
           </div>
         </div>
       </div>
@@ -233,350 +713,293 @@
     </div>
   </section>
 
-  <!-- Academy Achievements Counter -->
-  <section class="py-14 bg-white dark:bg-charcoal-850 border-y border-gray-100 dark:border-charcoal-800">
+  <!-- ==========================================
+       SECTION 4: SOUNDPROOF CONSERVATORY PODS (3D TOUR)
+       Interactive Pod Showcase
+       ========================================== -->
+  <section class="py-20 bg-gray-50 dark:bg-charcoal-950 border-b border-gray-200 dark:border-charcoal-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center divide-y lg:divide-y-0 lg:divide-x divide-gray-100 dark:divide-charcoal-700">
-        <div class="pt-4 lg:pt-0">
-          <div class="font-serif text-4xl sm:text-5xl font-bold text-coral-600 dark:text-coral-400">14+</div>
-          <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mt-2">Years of Musical Heritage</p>
-        </div>
-        <div class="pt-4 lg:pt-0">
-          <div class="font-serif text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white">99.4%</div>
-          <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mt-2">Distinction in Trinity Exams</p>
-        </div>
-        <div class="pt-4 lg:pt-0">
-          <div class="font-serif text-4xl sm:text-5xl font-bold text-sage-600 dark:text-sage-400">1,400+</div>
-          <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mt-2">Graduated Artists</p>
-        </div>
-        <div class="pt-4 lg:pt-0">
-          <div class="font-serif text-4xl sm:text-5xl font-bold text-amberbrand-500">100%</div>
-          <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mt-2">Accredited International Faculty</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Signature Music Programmes Section -->
-  <section id="signature-programmes" class="py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
         <div>
-          <span class="text-xs font-bold uppercase tracking-wider text-coral-600">Curated Syllabi</span>
+          <span class="text-xs font-mono font-bold tracking-widest uppercase text-[#FF9F43]">
+            Acoustic Engineering
+          </span>
           <h2 class="font-serif text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mt-1">
-            Signature Conservatory Programmes
+            Soundproof Masterclass Suites
           </h2>
         </div>
         <p class="text-sm text-gray-500 dark:text-gray-400 max-w-md mt-2 md:mt-0">
-          Targeted paths designed for comprehensive musical literacy, technical virtuosity, and stage readiness.
+          Four dedicated acoustically isolated pods engineered with floating concrete slabs and diffusion clouds for uncompromised acoustic clarity.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <!-- Pod Selector Buttons -->
+        <div class="lg:col-span-5 space-y-3">
+          <button data-conservatory-pod="piano" class="w-full p-4 rounded-2xl bg-white dark:bg-charcoal-900 border-2 border-[#FF9F43] bg-[#FF9F43]/10 text-left transition flex items-center justify-between cursor-pointer shadow-sm">
+            <div>
+              <div class="font-serif font-bold text-base text-gray-900 dark:text-white">Steinway Concert Chamber</div>
+              <div class="text-xs text-gray-500 dark:text-gray-400">Grand Keys &bull; Studio 1A</div>
+            </div>
+            <span class="text-xs font-mono font-bold text-[#FF9F43]">-42 dB</span>
+          </button>
+
+          <button data-conservatory-pod="guitar" class="w-full p-4 rounded-2xl bg-white dark:bg-charcoal-900 border border-gray-200 dark:border-charcoal-800 text-left hover:border-[#6C4CE3] transition flex items-center justify-between cursor-pointer shadow-sm">
+            <div>
+              <div class="font-serif font-bold text-base text-gray-900 dark:text-white">Vintage Archtop Lounge</div>
+              <div class="text-xs text-gray-500 dark:text-gray-400">Classical &amp; Jazz &bull; Studio 2A</div>
+            </div>
+            <span class="text-xs font-mono font-bold text-[#6C4CE3]">-38 dB</span>
+          </button>
+
+          <button data-conservatory-pod="drums" class="w-full p-4 rounded-2xl bg-white dark:bg-charcoal-900 border border-gray-200 dark:border-charcoal-800 text-left hover:border-[#6C4CE3] transition flex items-center justify-between cursor-pointer shadow-sm">
+            <div>
+              <div class="font-serif font-bold text-base text-gray-900 dark:text-white">Bonham Percussion Vault</div>
+              <div class="text-xs text-gray-500 dark:text-gray-400">Soundproof Isolation &bull; Studio 3A</div>
+            </div>
+            <span class="text-xs font-mono font-bold text-[#FF9F43]">-48 dB</span>
+          </button>
+
+          <button data-conservatory-pod="violin" class="w-full p-4 rounded-2xl bg-white dark:bg-charcoal-900 border border-gray-200 dark:border-charcoal-800 text-left hover:border-[#6C4CE3] transition flex items-center justify-between cursor-pointer shadow-sm">
+            <div>
+              <div class="font-serif font-bold text-base text-gray-900 dark:text-white">Stradivari Strings Atelier</div>
+              <div class="text-xs text-gray-500 dark:text-gray-400">Violin &amp; Chamber &bull; Studio 4A</div>
+            </div>
+            <span class="text-xs font-mono font-bold text-[#6C4CE3]">-36 dB</span>
+          </button>
+        </div>
+
+        <!-- Featured Pod Spotlight Card -->
+        <div class="lg:col-span-7">
+          <div class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-charcoal-900 border border-gray-200 dark:border-charcoal-700 shadow-xl space-y-5">
+            <div class="relative h-64 sm:h-72 rounded-2xl overflow-hidden bg-charcoal-950 border border-black/10">
+              <img 
+                id="pod-feature-img" 
+                src="assets/images/conservatory-piano.jpg" 
+                alt="Conservatory Chamber Suite" 
+                class="w-full h-full object-cover transition-opacity duration-300"
+              >
+              <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent pointer-events-none"></div>
+              <div class="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/70 backdrop-blur-md text-xs font-mono text-[#FF9F43] font-bold border border-[#FF9F43]/40 flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-[#FF9F43] animate-pulse"></span>
+                <span id="pod-feature-db">-42 dB Sound Isolation</span>
+              </div>
+            </div>
+
+            <div>
+              <h3 id="pod-feature-name" class="font-serif font-bold text-2xl text-gray-900 dark:text-white">
+                The Steinway Concert Chamber (Studio 1A)
+              </h3>
+              <div class="mt-3 space-y-2 text-xs text-gray-600 dark:text-gray-300">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="volume-2" class="w-4 h-4 text-[#6C4CE3] shrink-0"></i>
+                  <span id="pod-feature-acoustic">Diffusion cloud ceiling tuned for 1.4s natural reverb</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i data-lucide="disc" class="w-4 h-4 text-[#FF9F43] shrink-0"></i>
+                  <span id="pod-feature-gear">Steinway Model D Concert Grand (88-Keys, Hamburg Spec)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION 5: SIGNATURE PROGRAMMES & AUDITIONS
+       ========================================== -->
+  <section id="signature-programmes" class="py-20 bg-white dark:bg-charcoal-900 border-b border-gray-100 dark:border-charcoal-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-xs font-bold uppercase tracking-wider text-[#6C4CE3] dark:text-[#987AF0]">Curated Programmes</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mt-1">
+          Signature Conservatory Pathways
+        </h2>
+        <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
+          Tailored training tracks designed for technical virtuosity, stage readiness, and formal accreditation.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         
-        <!-- Programme 1 -->
-        <div class="bg-white dark:bg-charcoal-800 rounded-3xl p-8 border border-gray-200 dark:border-charcoal-700 shadow-sm hover:shadow-xl transition relative flex flex-col justify-between">
+        <!-- Programme 1: Kids & Prodigies -->
+        <div class="p-8 rounded-3xl bg-gray-50 dark:bg-charcoal-850 border border-gray-200 dark:border-charcoal-700 shadow-sm flex flex-col justify-between">
           <div class="space-y-4">
-            <span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-coral-100 text-coral-700 dark:bg-coral-950/60 dark:text-coral-300">
-              Young Prodigy (Ages 5-11)
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-purple-100 text-[#6C4CE3] dark:bg-purple-950/60 dark:text-[#987AF0]">
+              Young Prodigy (Ages 5–11)
             </span>
             <h3 class="font-serif text-2xl font-bold text-gray-900 dark:text-white">
               The Young Virtuoso Conservatory
             </h3>
             <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
-              Early childhood ear cultivation, rhythmic pulse games, and foundational technique on piano, violin, or mini acoustic guitar. Fosters cognitive focus and lifelong love for melody.
+              Early childhood ear cultivation, rhythmic motor memory, and foundational posture on piano, violin, or acoustic guitar.
             </p>
-            <ul class="space-y-2 text-xs text-gray-600 dark:text-gray-300 pt-3 border-t border-gray-100 dark:border-charcoal-700">
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-coral-500"></i> Max 4 students per masterclass</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-coral-500"></i> Trinity Initial to Grade 2 syllabus</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-coral-500"></i> Bi-weekly instructor audio progress notes</li>
+            <ul class="space-y-2 text-xs text-gray-600 dark:text-gray-300 pt-3 border-t border-gray-200/60 dark:border-charcoal-700">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-[#6C4CE3]"></i> Max 4 students per masterclass</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-[#6C4CE3]"></i> Trinity Initial to Grade 2 syllabus</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-[#6C4CE3]"></i> Bi-weekly mentor performance notes</li>
             </ul>
           </div>
-          <div class="mt-8 pt-4 border-t border-gray-100 dark:border-charcoal-700 flex items-center justify-between">
+          <div class="mt-8 pt-4 border-t border-gray-200/60 dark:border-charcoal-700 flex items-center justify-between">
             <span class="font-serif text-lg font-bold text-gray-900 dark:text-white">₹3,200<span class="text-xs font-normal text-gray-400">/mo</span></span>
-            <a href="course-details.html?course=course-piano" class="px-4 py-2 rounded-full bg-coral-500 hover:bg-coral-600 text-white text-xs font-bold">
+            <a href="course-details.html?course=course-piano" class="px-4 py-2 rounded-full bg-[#6C4CE3] hover:bg-[#5A38D4] text-white text-xs font-bold transition">
               View Syllabus
             </a>
           </div>
         </div>
 
-        <!-- Programme 2 -->
-        <div class="bg-charcoal-850 text-white rounded-3xl p-8 border border-charcoal-700 shadow-xl relative flex flex-col justify-between">
-          <div class="absolute -top-3 right-8 px-3 py-1 bg-amberbrand-500 text-charcoal-950 rounded-full text-[10px] font-bold uppercase tracking-wider">
-            Flagship Track
+        <!-- Programme 2: Honors Diploma Track -->
+        <div class="p-8 rounded-3xl bg-charcoal-950 text-white border-2 border-[#FF9F43] shadow-xl relative flex flex-col justify-between">
+          <div class="absolute -top-3.5 right-6 px-3.5 py-1 bg-[#FF9F43] text-charcoal-950 rounded-full text-[10px] font-bold uppercase tracking-wider shadow">
+            Conservatory Flagship
           </div>
           <div class="space-y-4">
-            <span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-amberbrand-500/20 text-amberbrand-400">
-              Exam &amp; Diploma Track (All Ages)
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-[#FF9F43]/20 text-[#FF9F43]">
+              Honors Diploma (All Ages)
             </span>
             <h3 class="font-serif text-2xl font-bold text-white">
               Trinity &amp; ABRSM Honors Diploma
             </h3>
             <p class="text-xs text-gray-300 leading-relaxed">
-              Intensive technical mastership covering sight-reading, aural recognition, complex polyrhythms, and high-difficulty classical &amp; jazz performance grades (Grades 3 through 8 and ATCL).
+              Intensive technical mastership covering sight-reading, aural recognition, complex polyrhythms, and high-difficulty performance grades (Grades 3 through 8).
             </p>
             <ul class="space-y-2 text-xs text-gray-300 pt-3 border-t border-charcoal-800">
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amberbrand-500"></i> Dedicated 1-on-1 private lesson weekly</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amberbrand-500"></i> Official Trinity exam center registration</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amberbrand-500"></i> Mock board evaluations with external jurors</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-[#FF9F43]"></i> Dedicated 1-on-1 private lesson weekly</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-[#FF9F43]"></i> Official Trinity exam center registration</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-[#FF9F43]"></i> Mock board jury reviews before exam</li>
             </ul>
           </div>
           <div class="mt-8 pt-4 border-t border-charcoal-800 flex items-center justify-between">
             <span class="font-serif text-lg font-bold text-white">₹4,500<span class="text-xs font-normal text-gray-400">/mo</span></span>
-            <a href="course-details.html?course=course-guitar" class="px-4 py-2 rounded-full bg-amberbrand-500 hover:bg-amber-600 text-charcoal-950 text-xs font-bold">
+            <a href="course-details.html?course=course-guitar" class="px-4 py-2 rounded-full bg-[#FF9F43] hover:bg-[#F58022] text-charcoal-950 text-xs font-bold transition">
               View Syllabus
             </a>
           </div>
         </div>
 
-        <!-- Programme 3 -->
-        <div class="bg-white dark:bg-charcoal-800 rounded-3xl p-8 border border-gray-200 dark:border-charcoal-700 shadow-sm hover:shadow-xl transition relative flex flex-col justify-between">
+        <!-- Programme 3: Adult Repertoire -->
+        <div class="p-8 rounded-3xl bg-gray-50 dark:bg-charcoal-850 border border-gray-200 dark:border-charcoal-700 shadow-sm flex flex-col justify-between">
           <div class="space-y-4">
-            <span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-sage-100 text-sage-700 dark:bg-sage-950/60 dark:text-sage-300">
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-orange-100 text-[#FF9F43] dark:bg-orange-950/60 dark:text-[#FF9F43]">
               Adults &amp; Professionals
             </span>
             <h3 class="font-serif text-2xl font-bold text-gray-900 dark:text-white">
               Adult Repertoire &amp; Studio Lab
             </h3>
             <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
-              Created specifically for busy working adults who want to fulfill lifelong musical dreams. Flexible evening timings, relaxed atmosphere, and weekend ensemble jam sessions.
+              Designed specifically for working adults. Flexible evening timings, relaxed masterclass environment, and weekend chamber jam sessions.
             </p>
-            <ul class="space-y-2 text-xs text-gray-600 dark:text-gray-300 pt-3 border-t border-gray-100 dark:border-charcoal-700">
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-sage-600"></i> Evening weekday slots (6:30 PM &amp; 7:30 PM)</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-sage-600"></i> Chord charts, pop ballads &amp; blues improvisation</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-sage-600"></i> Unlimited practice studio room access</li>
+            <ul class="space-y-2 text-xs text-gray-600 dark:text-gray-300 pt-3 border-t border-gray-200/60 dark:border-charcoal-700">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-[#FF9F43]"></i> Evening weekday slots (6:30 PM &amp; 7:30 PM)</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-[#FF9F43]"></i> Chord charts, pop ballads &amp; blues improvisation</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-[#FF9F43]"></i> Practice pod access with acoustic isolation</li>
             </ul>
           </div>
-          <div class="mt-8 pt-4 border-t border-gray-100 dark:border-charcoal-700 flex items-center justify-between">
+          <div class="mt-8 pt-4 border-t border-gray-200/60 dark:border-charcoal-700 flex items-center justify-between">
             <span class="font-serif text-lg font-bold text-gray-900 dark:text-white">₹3,200<span class="text-xs font-normal text-gray-400">/mo</span></span>
-            <a href="course-details.html?course=course-vocals" class="px-4 py-2 rounded-full bg-sage-600 hover:bg-sage-700 text-white text-xs font-bold">
+            <a href="course-details.html?course=course-vocals" class="px-4 py-2 rounded-full bg-[#6C4CE3] hover:bg-[#5A38D4] text-white text-xs font-bold transition">
               View Syllabus
             </a>
           </div>
         </div>
 
       </div>
+
     </div>
   </section>
 
-  <!-- Interactive Audio Spotlight: Student Success Story -->
-  <section class="py-20 bg-gray-50 dark:bg-charcoal-850/60 border-y border-gray-200 dark:border-charcoal-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-4xl mx-auto bg-white dark:bg-charcoal-800 rounded-3xl p-8 sm:p-12 shadow-xl border border-gray-200 dark:border-charcoal-700">
-        
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-          <div class="md:col-span-5 text-center md:text-left">
-            <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=400&q=80" alt="Student Rohan Sen" class="w-28 h-28 sm:w-36 sm:h-36 rounded-full mx-auto md:mx-0 object-cover shadow-lg border-4 border-coral-500/20">
-            <h4 class="font-serif text-xl font-bold text-gray-900 dark:text-white mt-4">Rohan Sen</h4>
-            <p class="text-xs text-coral-600 font-semibold">Guitar Mastery &bull; Level 2 Student</p>
-            <p class="text-[11px] text-gray-400 mt-1">Enrolled 8 Months &bull; 6-Day Practice Streak</p>
-          </div>
-
-          <div class="md:col-span-7 space-y-4">
-            <div class="flex items-center gap-2 text-amberbrand-500 text-sm">
-              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-              <span class="text-xs font-bold text-gray-600 dark:text-gray-300 ml-1">Student Progress Spotlight</span>
-            </div>
-            <p class="text-sm text-gray-600 dark:text-gray-300 italic leading-relaxed">
-              "When I joined Harmony House, I struggled to even hold a barre chord. David taught me finger relaxation techniques that eliminated fatigue. Last month, I performed our first acoustic ensemble live at the Phoenix recital!"
-            </p>
-
-            <!-- Mock Interactive Audio Clip -->
-            <div class="p-4 rounded-2xl bg-coral-50 dark:bg-charcoal-900 border border-coral-200 dark:border-charcoal-700 flex items-center justify-between">
-              <div class="flex items-center gap-3">
-                <button data-audio-player class="w-10 h-10 rounded-full bg-coral-500 text-white flex items-center justify-center hover:bg-coral-600 transition" aria-label="Listen to Audio Clip">
-                  <i data-lucide="play" class="w-4 h-4 fill-current"></i>
-                </button>
-                <div>
-                  <div class="text-xs font-bold text-gray-900 dark:text-white">Rohan's Mid-Term Evaluation Take</div>
-                  <div class="text-[10px] text-gray-500">Acoustic Solo &bull; 0:48 duration</div>
-                </div>
-              </div>
-              <div class="flex items-center gap-1">
-                <span class="w-1 h-3 bg-coral-400 rounded-full"></span>
-                <span class="w-1 h-5 bg-coral-500 rounded-full"></span>
-                <span class="w-1 h-7 bg-coral-600 rounded-full"></span>
-                <span class="w-1 h-4 bg-coral-400 rounded-full"></span>
-                <span class="w-1 h-6 bg-coral-500 rounded-full"></span>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- VIP Membership Plans -->
-  <section class="py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-2xl mx-auto mb-14">
-        <span class="text-xs font-bold uppercase tracking-wider text-sage-600">Membership Options</span>
-        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mt-1">
-          Simple, Transparent Tuition
-        </h2>
-        <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
-          No hidden admission charges. All packages include sheet music, recital participation, and student portal access.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        
-        <!-- Starter Plan -->
-        <div class="p-8 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm flex flex-col justify-between">
-          <div class="space-y-4">
-            <span class="text-xs font-bold uppercase tracking-wider text-gray-500">Starter Tier</span>
-            <div class="flex items-baseline gap-1">
-              <span class="font-serif text-4xl font-bold text-gray-900 dark:text-white">₹1,800</span>
-              <span class="text-xs text-gray-500">/ month</span>
-            </div>
-            <p class="text-xs text-gray-500">Ideal for young starters beginning with weekly 45-minute lessons.</p>
-            <ul class="space-y-2.5 text-xs text-gray-600 dark:text-gray-300 pt-4 border-t border-gray-100 dark:border-charcoal-700">
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-coral-500"></i> 4 classes per month (1/week)</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-coral-500"></i> Sheet music &amp; audio track downloads</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-coral-500"></i> 1 hr/week studio practice room</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-coral-500"></i> Student portal dashboard access</li>
-            </ul>
-          </div>
-          <a href="fees-batches.html" class="mt-8 w-full py-3 text-center rounded-xl border border-coral-500 text-coral-600 dark:text-coral-400 font-bold text-xs hover:bg-coral-50 dark:hover:bg-coral-950/40 transition">
-            Select Starter Plan
-          </a>
-        </div>
-
-        <!-- Harmony Plus -->
-        <div class="p-8 rounded-3xl bg-white dark:bg-charcoal-800 border-2 border-coral-500 shadow-xl relative flex flex-col justify-between">
-          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 bg-coral-500 text-white rounded-full text-[10px] font-bold uppercase tracking-wider shadow-md">
-            Most Popular Choice
-          </div>
-          <div class="space-y-4">
-            <span class="text-xs font-bold uppercase tracking-wider text-coral-600">Harmony Plus</span>
-            <div class="flex items-baseline gap-1">
-              <span class="font-serif text-4xl font-bold text-gray-900 dark:text-white">₹3,200</span>
-              <span class="text-xs text-gray-500">/ month</span>
-            </div>
-            <p class="text-xs text-gray-500">Accelerated learning with 2 sessions per week for steady muscle memory.</p>
-            <ul class="space-y-2.5 text-xs text-gray-600 dark:text-gray-300 pt-4 border-t border-gray-100 dark:border-charcoal-700">
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-coral-500"></i> 8 classes per month (2/week)</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-coral-500"></i> Semi-private groups (Max 3 students)</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-coral-500"></i> Free 3 hrs/week studio practice rooms</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-coral-500"></i> Trinity exam preparation support</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-coral-500"></i> Personalized monthly teacher voice notes</li>
-            </ul>
-          </div>
-          <a href="fees-batches.html" class="mt-8 w-full py-3.5 text-center rounded-xl bg-coral-500 hover:bg-coral-600 text-white font-bold text-xs shadow-lg shadow-coral-500/30 transition">
-            Enroll in Harmony Plus
-          </a>
-        </div>
-
-        <!-- Ensemble Tier -->
-        <div class="p-8 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm flex flex-col justify-between">
-          <div class="space-y-4">
-            <span class="text-xs font-bold uppercase tracking-wider text-sage-600">Ensemble &amp; Master</span>
-            <div class="flex items-baseline gap-1">
-              <span class="font-serif text-4xl font-bold text-gray-900 dark:text-white">₹4,500</span>
-              <span class="text-xs text-gray-500">/ month</span>
-            </div>
-            <p class="text-xs text-gray-500">Private 1-on-1 coaching combined with weekend band jamming.</p>
-            <ul class="space-y-2.5 text-xs text-gray-600 dark:text-gray-300 pt-4 border-t border-gray-100 dark:border-charcoal-700">
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sage-600"></i> 12 classes per month (1-on-1 + Band)</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sage-600"></i> Unlimited practice studio access</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sage-600"></i> Studio recording session (1 full track)</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sage-600"></i> Free instrument setup &amp; maintenance</li>
-            </ul>
-          </div>
-          <a href="fees-batches.html" class="mt-8 w-full py-3 text-center rounded-xl border border-sage-600 text-sage-700 dark:text-sage-300 font-bold text-xs hover:bg-sage-50 dark:hover:bg-sage-950/40 transition">
-            Select Ensemble Plan
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- VIP Audition & Concierge Form -->
-  <section class="py-20 bg-charcoal-900 text-white">
+  <!-- ==========================================
+       SECTION 6: AUDITION & STUDIO TOUR BOOKING
+       ========================================== -->
+  <section class="py-20 bg-charcoal-950 text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
         <div class="lg:col-span-5 space-y-4">
-          <span class="text-xs font-bold uppercase tracking-wider text-amberbrand-500">Personalized Placement</span>
+          <span class="text-xs font-mono font-bold uppercase tracking-wider text-[#FF9F43]">
+            Personalized Evaluation
+          </span>
           <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white">
-            Schedule an Audition &amp; Studio Tour
+            Schedule a Conservatory Audition &amp; Tour
           </h2>
           <p class="text-sm text-gray-300 leading-relaxed">
-            Our Senior Academic Dean personally consults with prospective students and families. We assess your musical background, recommend optimal course levels, and provide private tours of our acoustic rehearsal suites.
+            Our Senior Academic Dean consults with prospective students and families. We evaluate technical dexterity, recommend optimal batch levels, and provide private tours of our acoustic rehearsal suites.
           </p>
           <div class="pt-4 space-y-3 text-xs text-gray-300">
             <div class="flex items-center gap-3">
-              <div class="w-7 h-7 rounded-full bg-coral-500/20 text-coral-400 flex items-center justify-center shrink-0">
+              <div class="w-7 h-7 rounded-full bg-[#6C4CE3]/20 text-[#6C4CE3] flex items-center justify-center shrink-0">
                 <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
               </div>
               <span>42 Melodic Grove, Kalyani Nagar, Pune 411006</span>
             </div>
             <div class="flex items-center gap-3">
-              <div class="w-7 h-7 rounded-full bg-sage-500/20 text-sage-400 flex items-center justify-center shrink-0">
+              <div class="w-7 h-7 rounded-full bg-[#FF9F43]/20 text-[#FF9F43] flex items-center justify-center shrink-0">
                 <i data-lucide="phone" class="w-3.5 h-3.5"></i>
               </div>
-              <span>+91 98765 43210 &bull; Direct Dean's Office</span>
+              <span>+91 98765 43210 &bull; Conservatory Dean's Office</span>
             </div>
           </div>
         </div>
 
         <div class="lg:col-span-7">
-          <div class="p-8 rounded-3xl bg-charcoal-850 border border-charcoal-700 shadow-2xl">
-            <form data-ajax-form data-success-msg="VIP consultation request sent! Our academic coordinator will contact you shortly." class="space-y-4">
+          <div class="p-8 rounded-3xl bg-charcoal-900 border border-charcoal-800 shadow-2xl">
+            <form data-ajax-form data-success-msg="Audition request sent! Our academic coordinator will contact you within 24 hours." class="space-y-4">
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label class="block text-xs font-bold text-gray-300 mb-1">Your Name *</label>
-                  <input type="text" required placeholder="Full Name" class="w-full px-4 py-2.5 rounded-xl border border-charcoal-700 bg-charcoal-900 text-sm text-white focus:outline-none focus:border-coral-500">
+                  <input type="text" required placeholder="Full Name" class="w-full px-4 py-2.5 rounded-xl border border-charcoal-700 bg-charcoal-950 text-sm text-white focus:outline-none focus:border-[#6C4CE3]">
                 </div>
                 <div>
                   <label class="block text-xs font-bold text-gray-300 mb-1">Contact Phone *</label>
-                  <input type="tel" required placeholder="+91 98765 43210" class="w-full px-4 py-2.5 rounded-xl border border-charcoal-700 bg-charcoal-900 text-sm text-white focus:outline-none focus:border-coral-500">
+                  <input type="tel" required placeholder="+91 98765 43210" class="w-full px-4 py-2.5 rounded-xl border border-charcoal-700 bg-charcoal-950 text-sm text-white focus:outline-none focus:border-[#6C4CE3]">
                 </div>
               </div>
 
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label class="block text-xs font-bold text-gray-300 mb-1">Instrument of Interest *</label>
-                  <select required class="w-full px-4 py-2.5 rounded-xl border border-charcoal-700 bg-charcoal-900 text-sm text-white focus:outline-none focus:border-coral-500">
-                    <option value="piano">Classical / Jazz Piano</option>
-                    <option value="guitar">Acoustic &amp; Classical Guitar</option>
+                  <select required class="w-full px-4 py-2.5 rounded-xl border border-charcoal-700 bg-charcoal-950 text-sm text-white focus:outline-none focus:border-[#6C4CE3]">
+                    <option value="piano">Concert Grand Piano</option>
+                    <option value="guitar">Archtop &amp; Classical Guitar</option>
                     <option value="vocals">Western Vocals &amp; Choir</option>
-                    <option value="drums">Drums &amp; Percussion</option>
-                    <option value="violin">Violin &amp; Strings</option>
+                    <option value="drums">Percussion &amp; Drumkit</option>
+                    <option value="violin">Concert Violin &amp; Strings</option>
                   </select>
                 </div>
                 <div>
-                  <label class="block text-xs font-bold text-gray-300 mb-1">Skill Experience Level</label>
-                  <select class="w-full px-4 py-2.5 rounded-xl border border-charcoal-700 bg-charcoal-900 text-sm text-white focus:outline-none focus:border-coral-500">
-                    <option value="beginner">Complete Beginner (0-6 months)</option>
-                    <option value="intermediate">Intermediate (1-3 years)</option>
-                    <option value="advanced">Advanced (Exam / Diploma Prep)</option>
+                  <label class="block text-xs font-bold text-gray-300 mb-1">Current Skill Level</label>
+                  <select class="w-full px-4 py-2.5 rounded-xl border border-charcoal-700 bg-charcoal-950 text-sm text-white focus:outline-none focus:border-[#6C4CE3]">
+                    <option value="beginner">Beginner (Foundation Grade 1–2)</option>
+                    <option value="intermediate">Intermediate (Grade 3–5)</option>
+                    <option value="advanced">Advanced (Diploma Grade 6–8)</option>
                   </select>
                 </div>
               </div>
 
               <div>
-                <label class="block text-xs font-bold text-gray-300 mb-1">Special Aspirations or Questions</label>
-                <textarea rows="3" placeholder="Tell us about musical goals, preferred audition days, or prior training..." class="w-full px-4 py-2.5 rounded-xl border border-charcoal-700 bg-charcoal-900 text-sm text-white focus:outline-none focus:border-coral-500"></textarea>
+                <label class="block text-xs font-bold text-gray-300 mb-1">Musical Background &amp; Aspirations</label>
+                <textarea rows="3" placeholder="Tell us about musical goals, preferred audition days, or prior training..." class="w-full px-4 py-2.5 rounded-xl border border-charcoal-700 bg-charcoal-950 text-sm text-white focus:outline-none focus:border-[#6C4CE3]"></textarea>
               </div>
 
-              <button type="submit" class="w-full py-3.5 rounded-xl bg-coral-500 hover:bg-coral-600 text-white font-bold text-sm tracking-wide shadow-lg shadow-coral-500/20 transition">
-                Request VIP Audition &amp; Tour
+              <button type="submit" class="w-full py-3.5 rounded-xl bg-[#6C4CE3] hover:bg-[#5A38D4] text-white font-bold text-sm tracking-wide shadow-lg shadow-[#6C4CE3]/20 transition cursor-pointer">
+                Request Conservatory Audition &amp; Tour
               </button>
             </form>
           </div>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- ==========================================
+       CONSERVATORY FOOTER
+       ========================================== -->
   <footer class="bg-charcoal-950 text-gray-400 py-12 border-t border-charcoal-800 text-xs">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
       <div class="flex items-center gap-2">
@@ -586,34 +1009,33 @@
       </div>
       <div>&copy; 2026 Harmony House Music Academy. All rights reserved.</div>
       <div class="flex items-center gap-4">
-        <a href="index.html" class="hover:text-white">Home 1 (Classic)</a>
-        <a href="auth/login.html" class="text-coral-400 hover:underline">Student Login</a>
-        <a href="admin/index.html" class="text-sage-400 hover:underline">Admin Portal</a>
+        <a href="index.html" class="hover:text-white transition">Home 1 (Classic)</a>
+        <a href="auth/login.html" class="text-[#6C4CE3] dark:text-[#987AF0] hover:underline">Student Login</a>
+        <a href="fees-batches.html" class="text-[#FF9F43] hover:underline">Fees &amp; Batches</a>
       </div>
     </div>
   </footer>
 
-  <!-- Modal -->
+  <!-- Modal for Free Trial -->
   <div id="trial-modal" class="harmony-modal fixed inset-0 z-50 hidden flex items-center justify-center p-4">
     <div class="fixed inset-0 bg-black/60 backdrop-blur-sm" data-modal-close></div>
     <div class="relative bg-white dark:bg-charcoal-850 rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl z-10 border border-gray-100 dark:border-charcoal-700">
       <div class="flex items-center justify-between pb-4 border-b border-gray-100 dark:border-charcoal-700">
         <h3 class="font-serif text-2xl font-bold text-gray-900 dark:text-white">Book VIP Consultation</h3>
-        <button data-modal-close class="p-2 text-gray-400 hover:text-gray-600"><i data-lucide="x" class="w-5 h-5"></i></button>
+        <button data-modal-close class="p-2 text-gray-400 hover:text-gray-600 cursor-pointer"><i data-lucide="x" class="w-5 h-5"></i></button>
       </div>
-      <form data-ajax-form data-success-msg="Trial booked successfully!" class="space-y-4 mt-6">
+      <form data-ajax-form data-success-msg="Trial booked successfully! We will contact you within 24 hours." class="space-y-4 mt-6">
         <input type="text" placeholder="Full Name" required class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-charcoal-700 bg-gray-50 dark:bg-charcoal-800 text-sm">
-        <input type="email" placeholder="Email" required class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-charcoal-700 bg-gray-50 dark:bg-charcoal-800 text-sm">
-        <input type="tel" placeholder="Phone" required class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-charcoal-700 bg-gray-50 dark:bg-charcoal-800 text-sm">
-        <button type="submit" class="w-full py-3 rounded-xl bg-coral-500 text-white font-bold text-sm">Submit Booking</button>
+        <input type="email" placeholder="Email Address" required class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-charcoal-700 bg-gray-50 dark:bg-charcoal-800 text-sm">
+        <input type="tel" placeholder="Phone Number" required class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-charcoal-700 bg-gray-50 dark:bg-charcoal-800 text-sm">
+        <button type="submit" class="btn-3d-purple w-full py-3 rounded-xl font-bold text-sm cursor-pointer">Submit Booking</button>
       </form>
     </div>
   </div>
 
   <script src="assets/js/data.js"></script>
   <script src="assets/js/audio-engine.js"></script>
-  <script src="assets/js/3d-engine.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/home2-engine.js"></script>
 </body>
 </html>
-
