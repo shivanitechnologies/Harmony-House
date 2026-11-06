@@ -89,8 +89,7 @@ if (window.tailwind) {
 const HarmonyApp = {
   init() {
     this.initTheme();
-    document.documentElement.setAttribute('dir', 'ltr');
-    try { localStorage.removeItem('harmony_dir'); } catch(e) {}
+    this.initDirection();
     this.initGlobalModals();
     this.initLucide();
     this.initMobileNav();
@@ -134,6 +133,38 @@ const HarmonyApp = {
     const isDark = document.documentElement.classList.toggle('dark');
     localStorage.setItem('harmony_theme', isDark ? 'dark' : 'light');
     this.initLucide();
+  },
+
+  initDirection() {
+    const savedDir = localStorage.getItem('harmony_dir') || 'ltr';
+    document.documentElement.setAttribute('dir', savedDir);
+
+    document.querySelectorAll('[data-action="toggle-rtl"]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.toggleDirection();
+      });
+    });
+  },
+
+  toggleDirection() {
+    const current = document.documentElement.getAttribute('dir') || 'ltr';
+    const newDir = current === 'ltr' ? 'rtl' : 'ltr';
+    document.documentElement.setAttribute('dir', newDir);
+    localStorage.setItem('harmony_dir', newDir);
+
+    // Synchronize mobile drawer position classes across state changes
+    const sidebars = [document.getElementById('sidebar'), document.getElementById('dashboard-sidebar'), document.getElementById('admin-sidebar')];
+    sidebars.forEach(sb => {
+      if (sb && !sb.classList.contains('drawer-open') && !sb.classList.contains('translate-x-0')) {
+        sb.classList.remove('-translate-x-full', 'translate-x-full');
+        sb.classList.add(newDir === 'rtl' ? 'translate-x-full' : '-translate-x-full');
+      }
+    });
+
+    if (window.lucide && typeof window.lucide.createIcons === 'function') {
+      window.lucide.createIcons();
+    }
   },
 
   initLucide() {

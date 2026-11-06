@@ -1292,3 +1292,12 @@ a[class*="bg-[#F0EAFF]"] svg {
   border-top-left-radius: 4px !important;
   border-bottom-left-radius: 4px !important;
 }
+
+[dir="rtl"] #mobile-menu-drawer {
+  right: auto !important;
+  left: 0 !important;
+  transform: translateX(-100%);
+}
+[dir="rtl"] #mobile-menu-drawer.translate-x-0 {
+  transform: translateX(0) !important;
+}
