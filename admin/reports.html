@@ -33,7 +33,7 @@
   <script src="https://unpkg.com/lucide@latest"></script>
   <link rel="stylesheet" href="../assets/css/custom.css">
 </head>
-<body class="bg-[#F8F9FA] dark:bg-charcoal-900 text-gray-800 dark:text-gray-100 font-sans antialiased min-h-screen flex">
+<body class="dashboard-bg-ambient text-gray-800 dark:text-gray-100 font-sans antialiased min-h-screen flex">
 
   <!-- Admin Sidebar Navigation (Exact Match to Reference) -->
   <aside id="admin-sidebar" class="w-64 bg-[#0B0A12] border-r border-gray-800/80 flex flex-col justify-between shrink-0 fixed inset-y-0 left-0 z-50 transition-transform duration-300 -translate-x-full lg:translate-x-0 text-white select-none">
@@ -248,17 +248,17 @@
       
       <!-- Growth Cards -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="p-6 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm">
+        <div class="card-interactive p-6 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm">
           <span class="text-[11px] font-bold uppercase tracking-wider text-gray-400">Student Retention Rate</span>
           <div class="font-serif text-3xl font-bold text-coral-600 mt-1">91.8%</div>
           <p class="text-[10px] text-gray-400 mt-1">Average enrolment duration: 14.2 months</p>
         </div>
-        <div class="p-6 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm">
+        <div class="card-interactive p-6 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm">
           <span class="text-[11px] font-bold uppercase tracking-wider text-gray-400">Trial to Admission Conversion</span>
           <div class="font-serif text-3xl font-bold text-sage-600 mt-1">78.4%</div>
           <p class="text-[10px] text-gray-400 mt-1">4 out of 5 trial participants enroll</p>
         </div>
-        <div class="p-6 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm">
+        <div class="card-interactive p-6 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm">
           <span class="text-[11px] font-bold uppercase tracking-wider text-gray-400">Trinity Board Distinction</span>
           <div class="font-serif text-3xl font-bold text-amberbrand-500 mt-1">99.4%</div>
           <p class="text-[10px] text-gray-400 mt-1">92 distinction certificates issued</p>
@@ -266,7 +266,7 @@
       </div>
 
       <!-- Historical Growth Visualization -->
-      <div class="p-8 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm space-y-6">
+      <div class="card-interactive p-8 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm space-y-6">
         <div class="flex items-center justify-between">
           <h3 class="font-serif text-xl font-bold text-gray-900 dark:text-white">Annual Student Enrolment Trend</h3>
           <span class="text-xs text-coral-600 font-bold">+28% YoY Growth</span>

@@ -30,7 +30,7 @@
   <script src="https://unpkg.com/lucide@latest"></script>
   <link rel="stylesheet" href="../assets/css/custom.css">
 </head>
-<body class="bg-[#F8F9FA] dark:bg-charcoal-900 text-gray-800 dark:text-gray-100 font-sans antialiased min-h-screen flex">
+<body class="dashboard-bg-ambient text-gray-800 dark:text-gray-100 font-sans antialiased min-h-screen flex">
 
   <!-- Sidebar Navigation: Strictly 4 Student Modules -->
   <aside id="dashboard-sidebar" class="w-64 bg-[#0B0A12] border-r border-gray-800/80 flex flex-col justify-between shrink-0 fixed inset-y-0 left-0 z-50 transition-transform duration-300 -translate-x-full lg:translate-x-0 text-white select-none">
@@ -199,10 +199,10 @@
     </header>
 
     <!-- Main Content Body -->
-    <main class="p-3 sm:p-8 space-y-6 sm:space-y-8 flex-1">
+    <main class="p-3 sm:p-8 space-y-6 sm:space-y-8 flex-1 animate-fade-in-up">
       
       <!-- Top Section: Current Enrolled Batches -->
-      <div class="p-5 sm:p-7 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm space-y-5">
+      <div class="card-interactive p-5 sm:p-7 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm space-y-5">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
             <span class="text-xs font-bold uppercase tracking-wider text-[#6C4CE3]">Active Enrollments</span>
@@ -220,7 +220,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <!-- Enrolled Batch 1 -->
-          <div class="p-4 sm:p-5 rounded-2xl bg-gradient-to-br from-purple-50/70 to-white dark:from-charcoal-750 dark:to-charcoal-800 border border-purple-200/70 dark:border-purple-900/40 relative">
+          <div class="card-interactive p-4 sm:p-5 rounded-2xl bg-gradient-to-br from-purple-50/70 to-white dark:from-charcoal-750 dark:to-charcoal-800 border border-purple-200/70 dark:border-purple-900/40 relative">
             <div class="flex items-start justify-between gap-3">
               <div class="flex items-center gap-3">
                 <div class="w-11 h-11 rounded-2xl bg-[#6C4CE3] text-white flex items-center justify-center font-bold text-lg shadow-md shadow-[#6C4CE3]/30">
@@ -255,7 +255,7 @@
           </div>
 
           <!-- Enrolled Batch 2 -->
-          <div class="p-4 sm:p-5 rounded-2xl bg-gradient-to-br from-amber-50/70 to-white dark:from-charcoal-750 dark:to-charcoal-800 border border-amber-200/70 dark:border-amber-900/40 relative">
+          <div class="card-interactive p-4 sm:p-5 rounded-2xl bg-gradient-to-br from-amber-50/70 to-white dark:from-charcoal-750 dark:to-charcoal-800 border border-amber-200/70 dark:border-amber-900/40 relative">
             <div class="flex items-start justify-between gap-3">
               <div class="flex items-center gap-3">
                 <div class="w-11 h-11 rounded-2xl bg-[#FF9F43] text-gray-950 flex items-center justify-center font-bold text-lg shadow-md shadow-[#FF9F43]/30">
@@ -301,11 +301,11 @@
 
           <!-- Instrument Filter Pills -->
           <div class="flex flex-wrap items-center gap-1.5 sm:gap-2">
-            <button class="batch-filter active-filter px-3 py-1.5 rounded-full text-xs font-bold bg-[#6C4CE3] text-white shadow-sm" data-filter="all">All</button>
-            <button class="batch-filter px-3 py-1.5 rounded-full text-xs font-semibold bg-white dark:bg-charcoal-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-charcoal-700 hover:border-[#6C4CE3]" data-filter="piano">🎹 Piano</button>
-            <button class="batch-filter px-3 py-1.5 rounded-full text-xs font-semibold bg-white dark:bg-charcoal-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-charcoal-700 hover:border-[#6C4CE3]" data-filter="guitar">🎸 Guitar</button>
-            <button class="batch-filter px-3 py-1.5 rounded-full text-xs font-semibold bg-white dark:bg-charcoal-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-charcoal-700 hover:border-[#6C4CE3]" data-filter="drums">🥁 Drums</button>
-            <button class="batch-filter px-3 py-1.5 rounded-full text-xs font-semibold bg-white dark:bg-charcoal-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-charcoal-700 hover:border-[#6C4CE3]" data-filter="violin">🎻 Violin</button>
+            <button class="batch-filter btn-interactive active-filter px-3 py-1.5 rounded-full text-xs font-bold bg-[#6C4CE3] text-white shadow-sm" data-filter="all">All</button>
+            <button class="batch-filter btn-interactive px-3 py-1.5 rounded-full text-xs font-semibold bg-white dark:bg-charcoal-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-charcoal-700 hover:border-[#6C4CE3]" data-filter="piano">🎹 Piano</button>
+            <button class="batch-filter btn-interactive px-3 py-1.5 rounded-full text-xs font-semibold bg-white dark:bg-charcoal-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-charcoal-700 hover:border-[#6C4CE3]" data-filter="guitar">🎸 Guitar</button>
+            <button class="batch-filter btn-interactive px-3 py-1.5 rounded-full text-xs font-semibold bg-white dark:bg-charcoal-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-charcoal-700 hover:border-[#6C4CE3]" data-filter="drums">🥁 Drums</button>
+            <button class="batch-filter btn-interactive px-3 py-1.5 rounded-full text-xs font-semibold bg-white dark:bg-charcoal-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-charcoal-700 hover:border-[#6C4CE3]" data-filter="violin">🎻 Violin</button>
           </div>
         </div>
 
@@ -313,7 +313,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="batches-grid">
           
           <!-- Batch Card 1: Piano -->
-          <div class="batch-card p-5 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-instrument="piano">
+          <div class="batch-card card-interactive p-5 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm flex flex-col justify-between" data-instrument="piano">
             <div class="space-y-3">
               <div class="flex items-center justify-between">
                 <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-purple-100 dark:bg-purple-950/60 text-[#6C4CE3]">🎹 Grand Piano</span>
@@ -355,7 +355,7 @@
           </div>
 
           <!-- Batch Card 2: Drums -->
-          <div class="batch-card p-5 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-instrument="drums">
+          <div class="batch-card card-interactive p-5 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm flex flex-col justify-between" data-instrument="drums">
             <div class="space-y-3">
               <div class="flex items-center justify-between">
                 <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-amber-100 text-amber-800">🥁 Stage Drumkit</span>
@@ -397,7 +397,7 @@
           </div>
 
           <!-- Batch Card 3: Violin -->
-          <div class="batch-card p-5 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-instrument="violin">
+          <div class="batch-card card-interactive p-5 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm flex flex-col justify-between" data-instrument="violin">
             <div class="space-y-3">
               <div class="flex items-center justify-between">
                 <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-purple-100 dark:bg-purple-950/60 text-[#6C4CE3]">🎻 Concert Violin</span>
@@ -439,7 +439,7 @@
           </div>
 
           <!-- Batch Card 4: Guitar Weekend -->
-          <div class="batch-card p-5 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-instrument="guitar">
+          <div class="batch-card card-interactive p-5 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm flex flex-col justify-between" data-instrument="guitar">
             <div class="space-y-3">
               <div class="flex items-center justify-between">
                 <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-purple-100 dark:bg-purple-950/60 text-[#6C4CE3]">🎸 Acoustic Guitar</span>

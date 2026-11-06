@@ -30,7 +30,7 @@
   <script src="https://unpkg.com/lucide@latest"></script>
   <link rel="stylesheet" href="../assets/css/custom.css">
 </head>
-<body class="bg-[#F8F9FA] dark:bg-charcoal-900 text-gray-800 dark:text-gray-100 font-sans antialiased min-h-screen flex">
+<body class="dashboard-bg-ambient text-gray-800 dark:text-gray-100 font-sans antialiased min-h-screen flex">
 
   <!-- Sidebar Navigation -->
   <aside id="dashboard-sidebar" class="w-64 bg-[#0B0A12] border-r border-gray-800/80 flex flex-col justify-between shrink-0 fixed inset-y-0 left-0 z-50 transition-transform duration-300 -translate-x-full lg:translate-x-0 text-white select-none">
@@ -194,13 +194,13 @@
       </div>
     </header>
 
-    <main class="p-4 sm:p-8 space-y-8 flex-1">
+    <main class="p-4 sm:p-8 space-y-8 flex-1 animate-fade-in-up">
       
       <!-- Top Metrics -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
         
-        <div class="p-5 rounded-2xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm flex items-center gap-4">
-          <div class="relative w-14 h-14 rounded-full border-4 border-[#6C4CE3] flex items-center justify-center font-serif text-base font-bold text-[#6C4CE3] shrink-0">
+        <div class="card-interactive p-5 rounded-2xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm flex items-center gap-4">
+          <div class="relative w-14 h-14 rounded-full border-4 border-[#6C4CE3] shadow-md shadow-[#6C4CE3]/30 flex items-center justify-center font-serif text-base font-bold text-[#6C4CE3] shrink-0">
             94%
           </div>
           <div>
@@ -210,7 +210,7 @@
           </div>
         </div>
 
-        <div class="p-5 rounded-2xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm flex items-center gap-4">
+        <div class="card-interactive p-5 rounded-2xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm flex items-center gap-4">
           <div class="w-12 h-12 rounded-xl bg-purple-50 dark:bg-purple-950/50 text-[#6C4CE3] flex items-center justify-center font-serif text-xl font-bold shrink-0">
             18
           </div>
@@ -221,7 +221,7 @@
           </div>
         </div>
 
-        <div class="p-5 rounded-2xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm flex items-center gap-4">
+        <div class="card-interactive p-5 rounded-2xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm flex items-center gap-4">
           <div class="w-12 h-12 rounded-xl bg-orange-50 dark:bg-orange-950/50 text-[#FF9F43] flex items-center justify-center font-serif text-xl font-bold shrink-0">
             0
           </div>
@@ -232,7 +232,7 @@
           </div>
         </div>
 
-        <div class="p-5 rounded-2xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm flex items-center gap-4">
+        <div class="card-interactive p-5 rounded-2xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm flex items-center gap-4">
           <div class="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 flex items-center justify-center shrink-0">
             <i data-lucide="award" class="w-6 h-6"></i>
           </div>
@@ -246,7 +246,7 @@
       </div>
 
       <!-- Roll Call History Table -->
-      <div class="bg-white dark:bg-charcoal-800 rounded-3xl border border-gray-200 dark:border-charcoal-700 shadow-sm overflow-hidden">
+      <div class="card-interactive bg-white dark:bg-charcoal-800 rounded-3xl border border-gray-200 dark:border-charcoal-700 shadow-sm overflow-hidden">
         <div class="p-6 border-b border-gray-100 dark:border-charcoal-700 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
             <span class="text-xs font-bold uppercase tracking-wider text-[#6C4CE3]">Roll Call History</span>

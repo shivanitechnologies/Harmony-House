@@ -965,3 +965,208 @@ select option {
   user-select: none;
 }
 
+
+/* ==========================================================================
+   2027 MODERN DASHBOARD & SIDEBAR ANIMATIONS (STUDENT & ADMIN)
+   ========================================================================== */
+
+/* Ambient Dashboard Canvas Background */
+.dashboard-bg-ambient {
+  background-color: #F8F9FD !important;
+  background-image: 
+    radial-gradient(circle at 10% 12%, rgba(108, 76, 227, 0.06) 0%, transparent 45%),
+    radial-gradient(circle at 90% 88%, rgba(255, 159, 67, 0.06) 0%, transparent 45%) !important;
+  background-attachment: fixed !important;
+}
+.dark .dashboard-bg-ambient {
+  background-color: #0B0A12 !important;
+  background-image: 
+    radial-gradient(circle at 10% 12%, rgba(108, 76, 227, 0.15) 0%, transparent 45%),
+    radial-gradient(circle at 90% 88%, rgba(255, 159, 67, 0.10) 0%, transparent 45%) !important;
+  background-attachment: fixed !important;
+}
+
+/* Universal Sidebar Link Interactive Animations (Student & Admin) */
+aside nav a,
+.sidebar-nav-link {
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  position: relative;
+  border-radius: 14px !important;
+}
+
+aside nav a:hover:not([class*="bg-[#F0EAFF]"]):not(.active):not(.sidebar-nav-link-active),
+.sidebar-nav-link:hover:not(.active):not(.sidebar-nav-link-active) {
+  transform: translateX(4px) !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  color: #FFFFFF !important;
+}
+
+aside nav a:hover:not([class*="bg-[#F0EAFF]"]):not(.active):not(.sidebar-nav-link-active) i,
+aside nav a:hover:not([class*="bg-[#F0EAFF]"]):not(.active):not(.sidebar-nav-link-active) svg,
+.sidebar-nav-link:hover i,
+.sidebar-nav-link:hover svg {
+  color: #FFFFFF !important;
+  transform: scale(1.12);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Sidebar Active Item: Glowing Purple Gradient with Warm Orange Notch */
+aside nav a[class*="bg-[#F0EAFF]"],
+aside nav a.active,
+aside nav a.sidebar-nav-link-active,
+.sidebar-nav-link.active,
+.sidebar-nav-link-active,
+a[class*="bg-[#F0EAFF]"] {
+  background: linear-gradient(135deg, #6C4CE3 0%, #5231D1 100%) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 8px 24px -4px rgba(108, 76, 227, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+  font-weight: 700 !important;
+  transform: translateX(2px) !important;
+}
+
+aside nav a[class*="bg-[#F0EAFF]"]::before,
+aside nav a.active::before,
+.sidebar-nav-link.active::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 22px;
+  border-radius: 4px;
+  background: #FF9F43;
+  box-shadow: 0 0 10px rgba(255, 159, 67, 0.9);
+}
+
+aside nav a[class*="bg-[#F0EAFF]"] i,
+aside nav a[class*="bg-[#F0EAFF]"] svg,
+aside nav a.active i,
+aside nav a.active svg,
+.sidebar-nav-link.active i,
+.sidebar-nav-link.active svg,
+a[class*="bg-[#F0EAFF]"] i,
+a[class*="bg-[#F0EAFF]"] svg {
+  color: #FFFFFF !important;
+  stroke: #FFFFFF !important;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)) !important;
+}
+
+/* Card Interactive Hover Lift & Ambient Glow */
+.card-interactive {
+  transition: transform 0.26s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.26s ease, border-color 0.26s ease !important;
+}
+.card-interactive:hover {
+  transform: translateY(-4px) scale(1.008) !important;
+  box-shadow: 0 18px 36px -10px rgba(108, 76, 227, 0.16), 0 0 0 1px rgba(108, 76, 227, 0.2) !important;
+}
+.dark .card-interactive:hover {
+  box-shadow: 0 22px 45px -12px rgba(0, 0, 0, 0.8), 0 0 25px rgba(108, 76, 227, 0.25) !important;
+}
+
+/* Staggered Entrance Animations */
+@keyframes fadeInUpSmooth {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in-up {
+  animation: fadeInUpSmooth 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.animate-delay-1 {
+  animation: fadeInUpSmooth 0.45s 0.08s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.animate-delay-2 {
+  animation: fadeInUpSmooth 0.45s 0.16s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.animate-delay-3 {
+  animation: fadeInUpSmooth 0.45s 0.24s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Hero Spotlight Card (Guaranteed High Contrast & Vibrant 3D Glow) */
+.hero-spotlight-card {
+  background: linear-gradient(135deg, #6C4CE3 0%, #5231D1 50%, #3B1B9E 100%) !important;
+  background-color: #6C4CE3 !important;
+  color: #FFFFFF !important;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  box-shadow: 0 20px 45px -10px rgba(108, 76, 227, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.1) inset !important;
+  border-radius: 28px !important;
+}
+.hero-spotlight-card::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(255, 159, 67, 0.35) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: floatAmbientPulse 5s ease-in-out infinite alternate;
+}
+.hero-spotlight-card::after {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  left: 15%;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: floatAmbientPulse 7s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes floatAmbientPulse {
+  0% { transform: scale(1) translate(0, 0); opacity: 0.6; }
+  100% { transform: scale(1.15) translate(10px, -10px); opacity: 0.9; }
+}
+
+/* Subtle Shimmer Sheen */
+.sheen-glow {
+  position: relative;
+  overflow: hidden;
+}
+.sheen-glow::after {
+  content: '';
+  position: absolute;
+  top: -70%;
+  left: -80%;
+  width: 240%;
+  height: 240%;
+  background: linear-gradient(55deg, transparent 40%, rgba(255, 255, 255, 0.18) 50%, transparent 60%);
+  transform: rotate(25deg);
+  transition: transform 0.8s ease;
+  pointer-events: none;
+}
+.sheen-glow:hover::after {
+  transform: translateX(110%) rotate(25deg);
+}
+
+/* Breathing Pulse Dots */
+.pulse-glow-orange {
+  animation: pulseGlowOrange 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+@keyframes pulseGlowOrange {
+  0%, 100% { opacity: 1; transform: scale(1); filter: drop-shadow(0 0 3px rgba(255, 159, 67, 0.8)); }
+  50% { opacity: 0.65; transform: scale(1.15); filter: drop-shadow(0 0 7px rgba(255, 159, 67, 1)); }
+}
+
+/* Quick interactive button scale feedback */
+.btn-interactive {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.btn-interactive:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+.btn-interactive:active {
+  transform: scale(0.96);
+}
