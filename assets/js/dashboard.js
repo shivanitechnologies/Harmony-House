@@ -38,14 +38,24 @@ const HarmonyDashboard = {
     sidebars.forEach(({ toggle, sidebar, backdrop }) => {
       if (!sidebar) return;
 
+      const isRtl = () => document.documentElement.getAttribute('dir') === 'rtl';
+
       const openDrawer = () => {
-        sidebar.classList.remove('-translate-x-full');
+        sidebar.classList.remove('-translate-x-full', 'translate-x-full');
+        sidebar.classList.add('translate-x-0', 'drawer-open');
         if (backdrop) backdrop.classList.remove('hidden');
         document.body.classList.add('overflow-hidden');
       };
 
       const closeDrawer = () => {
-        sidebar.classList.add('-translate-x-full');
+        sidebar.classList.remove('translate-x-0', 'drawer-open');
+        if (isRtl()) {
+          sidebar.classList.add('translate-x-full');
+          sidebar.classList.remove('-translate-x-full');
+        } else {
+          sidebar.classList.add('-translate-x-full');
+          sidebar.classList.remove('translate-x-full');
+        }
         if (backdrop) backdrop.classList.add('hidden');
         document.body.classList.remove('overflow-hidden');
       };
@@ -55,7 +65,7 @@ const HarmonyDashboard = {
           e.preventDefault();
           e.stopPropagation();
           if (e.stopImmediatePropagation) e.stopImmediatePropagation();
-          const isOpen = !sidebar.classList.contains('-translate-x-full');
+          const isOpen = sidebar.classList.contains('translate-x-0') || sidebar.classList.contains('drawer-open');
           if (isOpen) closeDrawer();
           else openDrawer();
         });
@@ -85,7 +95,7 @@ const HarmonyDashboard = {
 
       // Close on Escape key
       window.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && !sidebar.classList.contains('-translate-x-full') && window.innerWidth < 1024) {
+        if (e.key === 'Escape' && window.innerWidth < 1024) {
           closeDrawer();
         }
       });
@@ -95,6 +105,7 @@ const HarmonyDashboard = {
         if (window.innerWidth >= 1024) {
           document.body.classList.remove('overflow-hidden');
           if (backdrop) backdrop.classList.add('hidden');
+          sidebar.classList.remove('drawer-open', 'translate-x-0');
         }
       });
     });

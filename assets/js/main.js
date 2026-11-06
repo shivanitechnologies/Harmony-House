@@ -158,6 +158,14 @@ const HarmonyApp = {
     if (this.showToast) {
       this.showToast(`Layout switched to ${newDir.toUpperCase()} view`, 'info');
     }
+    // Synchronize mobile drawer position classes across state changes
+    const sidebars = [document.getElementById('sidebar'), document.getElementById('dashboard-sidebar'), document.getElementById('admin-sidebar')];
+    sidebars.forEach(sb => {
+      if (sb && !sb.classList.contains('drawer-open') && !sb.classList.contains('translate-x-0')) {
+        sb.classList.remove('-translate-x-full', 'translate-x-full');
+        sb.classList.add(newDir === 'rtl' ? 'translate-x-full' : '-translate-x-full');
+      }
+    });
   },
 
   updateRtlButtons(dir) {
