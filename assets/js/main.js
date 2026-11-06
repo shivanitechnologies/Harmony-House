@@ -89,7 +89,8 @@ if (window.tailwind) {
 const HarmonyApp = {
   init() {
     this.initTheme();
-    this.initDirection();
+    document.documentElement.setAttribute('dir', 'ltr');
+    try { localStorage.removeItem('harmony_dir'); } catch(e) {}
     this.initGlobalModals();
     this.initLucide();
     this.initMobileNav();
@@ -103,7 +104,6 @@ const HarmonyApp = {
     this.initContactForms();
     this.initPremiumSelect();
     this.initUniversalCustomSelects();
-    this.initPortalSwitcher();
     this.initSoundboard();
     this.initPlayablePiano();
     this.initInstrumentTestLab();
@@ -134,44 +134,6 @@ const HarmonyApp = {
     const isDark = document.documentElement.classList.toggle('dark');
     localStorage.setItem('harmony_theme', isDark ? 'dark' : 'light');
     this.initLucide();
-  },
-
-  initDirection() {
-    const savedDir = localStorage.getItem('harmony_dir') || 'ltr';
-    document.documentElement.setAttribute('dir', savedDir);
-    this.updateRtlButtons(savedDir);
-
-    document.querySelectorAll('[data-action="toggle-rtl"]').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        this.toggleDirection();
-      });
-    });
-  },
-
-  toggleDirection() {
-    const current = document.documentElement.getAttribute('dir') || 'ltr';
-    const newDir = current === 'ltr' ? 'rtl' : 'ltr';
-    document.documentElement.setAttribute('dir', newDir);
-    localStorage.setItem('harmony_dir', newDir);
-    this.updateRtlButtons(newDir);
-    if (this.showToast) {
-      this.showToast(`Layout switched to ${newDir.toUpperCase()} view`, 'info');
-    }
-    // Synchronize mobile drawer position classes across state changes
-    const sidebars = [document.getElementById('sidebar'), document.getElementById('dashboard-sidebar'), document.getElementById('admin-sidebar')];
-    sidebars.forEach(sb => {
-      if (sb && !sb.classList.contains('drawer-open') && !sb.classList.contains('translate-x-0')) {
-        sb.classList.remove('-translate-x-full', 'translate-x-full');
-        sb.classList.add(newDir === 'rtl' ? 'translate-x-full' : '-translate-x-full');
-      }
-    });
-  },
-
-  updateRtlButtons(dir) {
-    document.querySelectorAll('[data-rtl-label]').forEach(label => {
-      label.textContent = dir === 'rtl' ? 'LTR' : 'RTL';
-    });
   },
 
   initLucide() {
@@ -1486,121 +1448,7 @@ const HarmonyApp = {
     }
   },
 
-  // Interactive Portal Switcher Dropdown (Student Login Page & Admin Login Page)
-  initPortalSwitcher() {
-    const switchers = document.querySelectorAll('[data-portal-switcher]');
-    if (!switchers.length) return;
 
-    const path = window.location.pathname.toLowerCase();
-    const isAdmin = path.includes('/admin/');
-    const isStudent = path.includes('/student/');
-
-    const portalConfig = {
-      student: {
-        label: isStudent ? 'Student' : 'Login',
-        icon: 'graduation-cap',
-        activeClass: 'bg-purple-50 dark:bg-purple-950/50 text-[#6C4CE3] dark:text-purple-300 font-semibold',
-        activeIconColor: 'text-[#6C4CE3]'
-      },
-      admin: {
-        label: isAdmin ? 'Admin' : 'Login',
-        icon: 'shield',
-        activeClass: 'bg-purple-50 dark:bg-purple-950/50 text-[#6C4CE3] dark:text-purple-300 font-semibold',
-        activeIconColor: 'text-[#6C4CE3]'
-      }
-    };
-
-    let activeKey = isStudent ? 'student' : (isAdmin ? 'admin' : 'student');
-
-    switchers.forEach(switcher => {
-      const btn = switcher.querySelector('[data-portal-btn]');
-      const menu = switcher.querySelector('[data-portal-menu]');
-      const label = switcher.querySelector('[data-portal-current-label]');
-      const icon = switcher.querySelector('[data-portal-current-icon]');
-      const chevron = switcher.querySelector('[data-portal-chevron]');
-      const items = switcher.querySelectorAll('[data-portal-item]');
-
-      if (!btn || !menu) return;
-
-      // On public pages, label is "Login" as explicitly requested
-      if (!isAdmin && !isStudent && label) {
-        label.textContent = 'Login';
-      } else if (label && portalConfig[activeKey]) {
-        label.textContent = portalConfig[activeKey].label;
-      }
-
-      // Highlight active portal in dropdown
-      items.forEach(item => {
-        const key = item.getAttribute('data-portal-item');
-        if (key === activeKey) {
-          item.className = 'portal-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs sm:text-sm transition ' + portalConfig[key].activeClass;
-        } else {
-          item.className = 'portal-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition text-gray-700 dark:text-gray-200 hover:bg-purple-50 dark:hover:bg-purple-950/30 hover:text-[#6C4CE3]';
-        }
-
-        item.addEventListener('click', () => {
-          localStorage.setItem('harmony_active_portal', key);
-        });
-      });
-
-      // Toggle dropdown on button click
-      const toggle = (force) => {
-        const isHidden = menu.classList.contains('hidden');
-        const show = force !== undefined ? force : isHidden;
-
-        if (show) {
-          document.querySelectorAll('[data-portal-menu]').forEach(m => {
-            if (m !== menu) m.classList.add('hidden');
-          });
-          document.querySelectorAll('[data-portal-chevron]').forEach(c => {
-            if (c !== chevron) c.classList.remove('rotate-180');
-          });
-          document.querySelectorAll('[data-portal-btn]').forEach(b => {
-            if (b !== btn) b.setAttribute('aria-expanded', 'false');
-          });
-
-          menu.classList.remove('hidden');
-          if (chevron) chevron.classList.add('rotate-180');
-          btn.setAttribute('aria-expanded', 'true');
-        } else {
-          menu.classList.add('hidden');
-          if (chevron) chevron.classList.remove('rotate-180');
-          btn.setAttribute('aria-expanded', 'false');
-        }
-      };
-
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        toggle();
-      });
-
-      menu.addEventListener('click', (e) => {
-        e.stopPropagation();
-      });
-    });
-
-    // Close on click outside
-    document.addEventListener('click', (e) => {
-      if (!e.target.closest('[data-portal-switcher]')) {
-        document.querySelectorAll('[data-portal-menu]').forEach(m => m.classList.add('hidden'));
-        document.querySelectorAll('[data-portal-chevron]').forEach(c => c.classList.remove('rotate-180'));
-        document.querySelectorAll('[data-portal-btn]').forEach(b => b.setAttribute('aria-expanded', 'false'));
-      }
-    });
-
-    // Close on Escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        document.querySelectorAll('[data-portal-menu]').forEach(m => m.classList.add('hidden'));
-        document.querySelectorAll('[data-portal-chevron]').forEach(c => c.classList.remove('rotate-180'));
-        document.querySelectorAll('[data-portal-btn]').forEach(b => b.setAttribute('aria-expanded', 'false'));
-      }
-    });
-
-    if (window.lucide && typeof window.lucide.createIcons === 'function') {
-      window.lucide.createIcons();
-    }
-  },
 
   initRecitalCards() {
     const recitalCards = document.querySelectorAll('.recital-card');
