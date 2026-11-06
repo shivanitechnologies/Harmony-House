@@ -591,3 +591,11 @@ const HarmonyData = {
   }
 };
 
+// Ensure HarmonyData is accessible globally across all modules and scripts
+if (typeof window !== 'undefined') {
+  window.HarmonyData = HarmonyData;
+}
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = HarmonyData;
+}
+

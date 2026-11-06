@@ -94,6 +94,10 @@ const HarmonyApp = {
     this.initLucide();
     this.initMobileNav();
     this.initModals();
+    this.initFacultyFilters();
+    this.initFeeCycleToggle();
+    this.initBlogSearch();
+    this.initBlogCommentForm();
     this.initQuickSearch();
     this.initAccordions();
     this.initContactForms();
@@ -917,23 +921,24 @@ const HarmonyApp = {
   },
 
   initModals() {
-    document.querySelectorAll('[data-modal-target]').forEach(trigger => {
-      trigger.addEventListener('click', (e) => {
+    document.addEventListener('click', (e) => {
+      const trigger = e.target.closest('[data-modal-target]');
+      if (trigger) {
         e.preventDefault();
         const targetId = trigger.getAttribute('data-modal-target');
         this.openModal(targetId);
-      });
-    });
+        return;
+      }
 
-    document.querySelectorAll('[data-modal-close]').forEach(closeBtn => {
-      closeBtn.addEventListener('click', (e) => {
+      const closeBtn = e.target.closest('[data-modal-close]');
+      if (closeBtn) {
         e.preventDefault();
         const modal = closeBtn.closest('.harmony-modal');
         if (modal) {
           modal.classList.add('hidden');
           document.body.classList.remove('overflow-hidden');
         }
-      });
+      }
     });
   },
 
@@ -1272,6 +1277,145 @@ const HarmonyApp = {
         }
       });
     }
+  },
+
+  // Interactive Faculty Filter Pills & Modal Prefill
+  initFacultyFilters() {
+    const filterBtns = document.querySelectorAll('.instructor-filter-btn');
+    const cards = document.querySelectorAll('.id-card-3d');
+    if (!filterBtns.length || !cards.length) return;
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const filter = (btn.getAttribute('data-filter') || 'all').toLowerCase();
+
+        // Update active button state
+        filterBtns.forEach(b => {
+          const isActive = b === btn;
+          if (isActive) {
+            b.className = 'instructor-filter-btn px-4 py-2 rounded-full text-xs font-bold bg-[#6C4CE3] text-white shadow-md transition cursor-pointer';
+          } else {
+            b.className = 'instructor-filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white/10 hover:bg-white/20 text-purple-200 hover:text-white border border-white/10 transition cursor-pointer';
+          }
+        });
+
+        // Filter faculty cards
+        let visibleCount = 0;
+        cards.forEach(card => {
+          const cat = (card.getAttribute('data-category') || '').toLowerCase();
+          const matches = filter === 'all' || cat.includes(filter);
+          if (matches) {
+            card.style.display = '';
+            card.classList.remove('hidden');
+            visibleCount++;
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(10px)';
+            setTimeout(() => {
+              card.style.transition = 'opacity 0.25s ease, transform 0.25s ease';
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0)';
+            }, 30);
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Auto pre-select mentor in modal when 'Book Trial' is clicked on any mentor card
+    document.querySelectorAll('[data-modal-target="mentor-trial-modal"]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const card = btn.closest('.id-card-3d');
+        if (!card) return;
+        const nameEl = card.querySelector('h3');
+        const mentorName = nameEl ? nameEl.textContent.trim().toLowerCase() : '';
+        const modal = document.getElementById('mentor-trial-modal');
+        if (!modal) return;
+        const select = modal.querySelector('#mentor-select-dropdown') || modal.querySelector('select');
+        if (select) {
+          for (let opt of select.options) {
+            const optVal = opt.value.toLowerCase();
+            const optText = opt.text.toLowerCase();
+            if (mentorName.includes(optVal) || optText.includes(mentorName.split(' ')[0])) {
+              select.value = opt.value;
+              break;
+            }
+          }
+        }
+      });
+    });
+  },
+
+  // Fees Monthly vs Annual Enrolment Toggle
+  initFeeCycleToggle() {
+    const btnMonthly = document.getElementById('btn-monthly');
+    const btnAnnual = document.getElementById('btn-annual');
+    const prices = document.querySelectorAll('.fee-price');
+    const calcCycle = document.getElementById('calc-cycle');
+    if (!btnMonthly || !btnAnnual) return;
+
+    btnMonthly.addEventListener('click', (e) => {
+      e.preventDefault();
+      btnMonthly.className = 'px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl sm:rounded-full bg-[#6C4CE3] text-white shadow-lg shadow-[#6C4CE3]/40 transition cursor-pointer font-bold';
+      btnAnnual.className = 'px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl sm:rounded-full text-purple-200 hover:text-white transition flex items-center gap-1.5 cursor-pointer font-bold';
+      prices.forEach(p => {
+        const val = p.getAttribute('data-monthly');
+        if (val) p.textContent = val;
+      });
+      if (calcCycle) {
+        calcCycle.value = '1';
+        calcCycle.dispatchEvent(new Event('change'));
+      }
+    });
+
+    btnAnnual.addEventListener('click', (e) => {
+      e.preventDefault();
+      btnAnnual.className = 'px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl sm:rounded-full bg-[#6C4CE3] text-white shadow-lg shadow-[#6C4CE3]/40 transition flex items-center gap-1.5 cursor-pointer font-bold';
+      btnMonthly.className = 'px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl sm:rounded-full text-purple-200 hover:text-white transition cursor-pointer font-bold';
+      prices.forEach(p => {
+        const val = p.getAttribute('data-annual');
+        if (val) p.textContent = val;
+      });
+      if (calcCycle) {
+        calcCycle.value = '0.9';
+        calcCycle.dispatchEvent(new Event('change'));
+      }
+    });
+  },
+
+  // Live Blog Article Search Filter
+  initBlogSearch() {
+    const searchInput = document.getElementById('blog-search');
+    const container = document.getElementById('blog-articles-container');
+    if (!searchInput || !container) return;
+
+    const cards = container.querySelectorAll('.music-card');
+    searchInput.addEventListener('input', (e) => {
+      const q = e.target.value.toLowerCase().trim();
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        if (!q || text.includes(q)) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  },
+
+  // Blog Details Comment Form
+  initBlogCommentForm() {
+    document.querySelectorAll('form').forEach(form => {
+      const submitBtn = form.querySelector('button[type="submit"]');
+      if (submitBtn && submitBtn.textContent.toLowerCase().includes('post comment')) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          HarmonyApp.showToast('Thank you! Your comment has been submitted.', 'success');
+          form.reset();
+        });
+      }
+    });
   },
 
   showToast(message, type = 'info') {

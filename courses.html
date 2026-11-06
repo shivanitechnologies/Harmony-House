@@ -248,6 +248,16 @@
           <i data-lucide="chevron-down" class="w-4 h-4 text-purple-300 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none"></i>
         </div>
       </div>
+
+      <!-- Category Filter Pills -->
+      <div class="mt-4 flex flex-wrap items-center justify-center gap-2">
+        <button data-cat="all" class="cat-pill px-4 py-2 rounded-full text-xs font-bold bg-[#6C4CE3] text-white shadow-md transition cursor-pointer">All Programs (6)</button>
+        <button data-cat="guitar" class="cat-pill px-4 py-2 rounded-full text-xs font-semibold bg-white/10 hover:bg-white/20 text-purple-200 hover:text-white border border-white/10 transition cursor-pointer">Guitar</button>
+        <button data-cat="piano" class="cat-pill px-4 py-2 rounded-full text-xs font-semibold bg-white/10 hover:bg-white/20 text-purple-200 hover:text-white border border-white/10 transition cursor-pointer">Piano</button>
+        <button data-cat="drums" class="cat-pill px-4 py-2 rounded-full text-xs font-semibold bg-white/10 hover:bg-white/20 text-purple-200 hover:text-white border border-white/10 transition cursor-pointer">Drums</button>
+        <button data-cat="violin" class="cat-pill px-4 py-2 rounded-full text-xs font-semibold bg-white/10 hover:bg-white/20 text-purple-200 hover:text-white border border-white/10 transition cursor-pointer">Violin</button>
+        <button data-cat="vocals" class="cat-pill px-4 py-2 rounded-full text-xs font-semibold bg-white/10 hover:bg-white/20 text-purple-200 hover:text-white border border-white/10 transition cursor-pointer">Vocals</button>
+      </div>
     </div>
   </section>
 
@@ -472,27 +482,27 @@
   <section class="py-16 bg-white dark:bg-charcoal-850 border-t border-gray-100 dark:border-charcoal-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-xl mx-auto mb-10">
-        <span class="text-xs font-bold uppercase tracking-wider text-sage-600">The Student Experience</span>
+        <span class="text-xs font-bold uppercase tracking-wider text-[#FF9F43]">The Student Experience</span>
         <h3 class="font-serif text-2xl font-bold text-gray-900 dark:text-white mt-1">Included in Every Course Enrolment</h3>
       </div>
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
         <div class="p-6 rounded-2xl bg-gray-50 dark:bg-charcoal-800 border border-gray-100 dark:border-charcoal-700">
-          <i data-lucide="headphones" class="w-7 h-7 text-coral-500 mx-auto mb-3"></i>
+          <i data-lucide="headphones" class="w-7 h-7 text-[#6C4CE3] mx-auto mb-3"></i>
           <h4 class="text-xs font-bold text-gray-900 dark:text-white">Studio Practice Rooms</h4>
           <p class="text-[11px] text-gray-500 mt-1">Complimentary acoustic rooms with Yamaha &amp; Roland gear.</p>
         </div>
         <div class="p-6 rounded-2xl bg-gray-50 dark:bg-charcoal-800 border border-gray-100 dark:border-charcoal-700">
-          <i data-lucide="book-marked" class="w-7 h-7 text-sage-600 mx-auto mb-3"></i>
+          <i data-lucide="book-marked" class="w-7 h-7 text-[#FF9F43] mx-auto mb-3"></i>
           <h4 class="text-xs font-bold text-gray-900 dark:text-white">Full Sheet Library</h4>
           <p class="text-[11px] text-gray-500 mt-1">Digital chords, tablature, and backing track stems.</p>
         </div>
         <div class="p-6 rounded-2xl bg-gray-50 dark:bg-charcoal-800 border border-gray-100 dark:border-charcoal-700">
-          <i data-lucide="mic" class="w-7 h-7 text-amberbrand-500 mx-auto mb-3"></i>
+          <i data-lucide="mic" class="w-7 h-7 text-[#6C4CE3] mx-auto mb-3"></i>
           <h4 class="text-xs font-bold text-gray-900 dark:text-white">Quarterly Recitals</h4>
           <p class="text-[11px] text-gray-500 mt-1">Live stage performances in our acoustic hall.</p>
         </div>
         <div class="p-6 rounded-2xl bg-gray-50 dark:bg-charcoal-800 border border-gray-100 dark:border-charcoal-700">
-          <i data-lucide="smartphone" class="w-7 h-7 text-coral-600 mx-auto mb-3"></i>
+          <i data-lucide="smartphone" class="w-7 h-7 text-[#FF9F43] mx-auto mb-3"></i>
           <h4 class="text-xs font-bold text-gray-900 dark:text-white">Student Portal</h4>
           <p class="text-[11px] text-gray-500 mt-1">Attendance records, practice log, and voice note feedback.</p>
         </div>
@@ -506,13 +516,13 @@
     <div class="relative bg-white dark:bg-charcoal-850 rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl z-10 border border-gray-100 dark:border-charcoal-700">
       <div class="flex items-center justify-between pb-4 border-b border-gray-100 dark:border-charcoal-700">
         <h3 class="font-serif text-2xl font-bold text-gray-900 dark:text-white">Book Free 30-Min Trial</h3>
-        <button data-modal-close class="p-2 text-gray-400"><i data-lucide="x" class="w-5 h-5"></i></button>
+        <button data-modal-close class="p-2 text-gray-400 hover:text-white"><i data-lucide="x" class="w-5 h-5"></i></button>
       </div>
       <form data-ajax-form data-success-msg="Trial booked successfully! We will contact you with batch timings." class="space-y-4 mt-6">
-        <input type="text" placeholder="Student Name" required class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-charcoal-700 bg-gray-50 dark:bg-charcoal-800 text-sm">
-        <input type="email" placeholder="Email Address" required class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-charcoal-700 bg-gray-50 dark:bg-charcoal-800 text-sm">
-        <input type="tel" placeholder="Phone Number" required class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-charcoal-700 bg-gray-50 dark:bg-charcoal-800 text-sm">
-        <button type="submit" class="w-full py-3 rounded-xl bg-coral-500 text-white font-bold text-sm">Confirm Booking</button>
+        <input type="text" placeholder="Student Name" required class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-charcoal-700 bg-gray-50 dark:bg-charcoal-800 text-sm text-gray-900 dark:text-white">
+        <input type="email" placeholder="Email Address" required class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-charcoal-700 bg-gray-50 dark:bg-charcoal-800 text-sm text-gray-900 dark:text-white">
+        <input type="tel" placeholder="Phone Number" required class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-charcoal-700 bg-gray-50 dark:bg-charcoal-800 text-sm text-gray-900 dark:text-white">
+        <button type="submit" class="btn-3d-purple w-full py-3 rounded-xl font-bold text-sm shadow-md cursor-pointer">Confirm Booking</button>
       </form>
     </div>
   </div>
@@ -528,8 +538,8 @@
         </p>
       </div>
       <div class="flex flex-col sm:flex-row items-center gap-4 shrink-0">
-        <button data-modal-target="trial-modal" class="px-8 py-4 rounded-full bg-white text-coral-600 hover:bg-gray-100 font-bold text-sm shadow-2xl transition hover:scale-105 flex items-center gap-2">
-          <i data-lucide="sparkles" class="w-4 h-4 text-amberbrand-500"></i>
+        <button data-modal-target="trial-modal" class="px-8 py-4 rounded-full bg-white text-[#6C4CE3] hover:bg-gray-100 font-bold text-sm shadow-2xl transition hover:scale-105 flex items-center gap-2 cursor-pointer">
+          <i data-lucide="sparkles" class="w-4 h-4 text-[#FF9F43]"></i>
           <span>Book Free Trial Slot</span>
         </button>
         <a href="contact.html" class="px-6 py-4 rounded-full border border-white/40 hover:bg-white/10 text-white font-semibold text-sm transition">
@@ -551,7 +561,7 @@
       <div class="flex items-center gap-4">
         <a href="index.html" class="hover:text-white">Home</a>
         <a href="fees-batches.html" class="hover:text-white">Fees &amp; Batches</a>
-        <a href="auth/login.html" class="text-coral-400 hover:underline">Student Portal</a>
+        <a href="auth/login.html" class="text-[#6C4CE3] dark:text-[#987AF0] hover:underline">Student Portal</a>
       </div>
     </div>
   </footer>
@@ -576,8 +586,10 @@
         activeCategory = urlCat.toLowerCase();
         catPills.forEach(pill => {
           if (pill.getAttribute('data-cat') === activeCategory) {
-            catPills.forEach(p => p.classList.remove('bg-coral-500', 'text-white'));
-            pill.classList.add('bg-coral-500', 'text-white');
+            catPills.forEach(p => {
+              p.className = 'cat-pill px-4 py-2 rounded-full text-xs font-semibold bg-white/10 hover:bg-white/20 text-purple-200 hover:text-white border border-white/10 transition cursor-pointer';
+            });
+            pill.className = 'cat-pill px-4 py-2 rounded-full text-xs font-bold bg-[#6C4CE3] text-white shadow-md transition cursor-pointer';
           }
         });
       }
@@ -679,11 +691,9 @@
       catPills.forEach(pill => {
         pill.addEventListener('click', () => {
           catPills.forEach(p => {
-            p.classList.remove('bg-[#6C4CE3]', 'text-white');
-            p.classList.add('bg-white', 'dark:bg-charcoal-800');
+            p.className = 'cat-pill px-4 py-2 rounded-full text-xs font-semibold bg-white/10 hover:bg-white/20 text-purple-200 hover:text-white border border-white/10 transition cursor-pointer';
           });
-          pill.classList.remove('bg-white', 'dark:bg-charcoal-800');
-          pill.classList.add('bg-[#6C4CE3]', 'text-white');
+          pill.className = 'cat-pill px-4 py-2 rounded-full text-xs font-bold bg-[#6C4CE3] text-white shadow-md transition cursor-pointer';
           activeCategory = pill.getAttribute('data-cat');
           renderCourses();
         });

@@ -428,11 +428,11 @@ const HarmonyDashboard = {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
         filterButtons.forEach(b => {
-          b.classList.remove('text-[#6C4CE3]', 'border-b-2', 'border-[#6C4CE3]', 'font-bold');
-          b.classList.add('text-gray-500');
+          b.classList.remove('bg-[#6C4CE3]', 'bg-coral-500', 'text-white', 'font-bold');
+          b.classList.add('text-gray-600', 'dark:text-gray-300', 'hover:bg-gray-100', 'dark:hover:bg-charcoal-800');
         });
-        btn.classList.add('text-[#6C4CE3]', 'border-b-2', 'border-[#6C4CE3]', 'font-bold');
-        btn.classList.remove('text-gray-500');
+        btn.classList.add('bg-[#6C4CE3]', 'text-white', 'font-bold');
+        btn.classList.remove('text-gray-600', 'dark:text-gray-300', 'hover:bg-gray-100', 'dark:hover:bg-charcoal-800');
 
         const filter = btn.getAttribute('data-inquiry-filter');
         document.querySelectorAll('[data-inquiry-type]').forEach(card => {
@@ -470,11 +470,11 @@ const HarmonyDashboard = {
         const category = btn.getAttribute('data-notif-tab');
 
         tabBtns.forEach(b => {
-          b.classList.remove('bg-coral-500', 'text-white', 'font-bold');
+          b.classList.remove('bg-coral-500', 'bg-[#6C4CE3]', 'text-white', 'font-bold');
           b.classList.add('text-gray-600', 'dark:text-gray-300', 'hover:bg-gray-100', 'dark:hover:bg-charcoal-800');
         });
 
-        btn.classList.add('bg-coral-500', 'text-white', 'font-bold');
+        btn.classList.add('bg-[#6C4CE3]', 'text-white', 'font-bold');
         btn.classList.remove('text-gray-600', 'dark:text-gray-300', 'hover:bg-gray-100', 'dark:hover:bg-charcoal-800');
 
         cards.forEach(card => {

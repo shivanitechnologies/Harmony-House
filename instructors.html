@@ -233,13 +233,13 @@
       </p>
 
       <!-- Interactive Controls / Pills -->
-      <div class="mt-8 flex flex-wrap items-center justify-center gap-2">
-        <button data-filter="all" class="instructor-filter-btn px-4 py-2 rounded-full text-xs font-bold bg-[#6C4CE3] text-white shadow-md transition">All Faculty (6)</button>
-        <button data-filter="piano" class="instructor-filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white/10 hover:bg-white/20 text-purple-200 hover:text-white border border-white/10 transition">Piano</button>
-        <button data-filter="guitar" class="instructor-filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white/10 hover:bg-white/20 text-purple-200 hover:text-white border border-white/10 transition">Guitar &amp; Bass</button>
-        <button data-filter="drums" class="instructor-filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white/10 hover:bg-white/20 text-purple-200 hover:text-white border border-white/10 transition">Drums &amp; Rhythm</button>
-        <button data-filter="violin" class="instructor-filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white/10 hover:bg-white/20 text-purple-200 hover:text-white border border-white/10 transition">Violin &amp; Strings</button>
-        <button data-filter="vocals" class="instructor-filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white/10 hover:bg-white/20 text-purple-200 hover:text-white border border-white/10 transition">Vocals</button>
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
+        <button data-filter="all" class="instructor-filter-btn px-4 py-2 rounded-full text-xs font-bold bg-[#6C4CE3] text-white shadow-md transition cursor-pointer">All Faculty (6)</button>
+        <button data-filter="piano" class="instructor-filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white/10 hover:bg-white/20 text-purple-200 hover:text-white border border-white/10 transition cursor-pointer">Piano</button>
+        <button data-filter="guitar" class="instructor-filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white/10 hover:bg-white/20 text-purple-200 hover:text-white border border-white/10 transition cursor-pointer">Guitar &amp; Bass</button>
+        <button data-filter="drums" class="instructor-filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white/10 hover:bg-white/20 text-purple-200 hover:text-white border border-white/10 transition cursor-pointer">Drums &amp; Rhythm</button>
+        <button data-filter="violin" class="instructor-filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white/10 hover:bg-white/20 text-purple-200 hover:text-white border border-white/10 transition cursor-pointer">Violin &amp; Strings</button>
+        <button data-filter="vocals" class="instructor-filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white/10 hover:bg-white/20 text-purple-200 hover:text-white border border-white/10 transition cursor-pointer">Vocals</button>
       </div>
     </div>
   </section>
@@ -247,9 +247,9 @@
   <!-- Faculty Grid -->
   <section class="py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="faculty-cards-grid">
         <!-- 3D ID Card: David Miller -->
-        <div data-tilt class="id-card-3d p-5 sm:p-7 flex flex-col justify-between group overflow-hidden cursor-pointer">
+        <div data-tilt data-category="guitar" class="id-card-3d p-5 sm:p-7 flex flex-col justify-between group overflow-hidden cursor-pointer">
           <!-- Holographic Sheen Overlay -->
           <div class="id-card-hologram-sheen"></div>
 
@@ -334,7 +334,7 @@
         </div>
 
         <!-- 3D ID Card: Elena Rostova -->
-        <div data-tilt class="id-card-3d p-5 sm:p-7 flex flex-col justify-between group overflow-hidden cursor-pointer">
+        <div data-tilt data-category="piano" class="id-card-3d p-5 sm:p-7 flex flex-col justify-between group overflow-hidden cursor-pointer">
           <!-- Holographic Sheen Overlay -->
           <div class="id-card-hologram-sheen"></div>
 
@@ -419,7 +419,7 @@
         </div>
 
         <!-- 3D ID Card: Aarav Sharma -->
-        <div data-tilt class="id-card-3d p-5 sm:p-7 flex flex-col justify-between group overflow-hidden cursor-pointer">
+        <div data-tilt data-category="vocals" class="id-card-3d p-5 sm:p-7 flex flex-col justify-between group overflow-hidden cursor-pointer">
           <!-- Holographic Sheen Overlay -->
           <div class="id-card-hologram-sheen"></div>
 
@@ -504,7 +504,7 @@
         </div>
 
         <!-- 3D ID Card: Marcus Vance -->
-        <div data-tilt class="id-card-3d p-5 sm:p-7 flex flex-col justify-between group overflow-hidden cursor-pointer">
+        <div data-tilt data-category="drums" class="id-card-3d p-5 sm:p-7 flex flex-col justify-between group overflow-hidden cursor-pointer">
           <!-- Holographic Sheen Overlay -->
           <div class="id-card-hologram-sheen"></div>
 
@@ -589,7 +589,7 @@
         </div>
 
         <!-- 3D ID Card: Clara Dupont -->
-        <div data-tilt class="id-card-3d p-5 sm:p-7 flex flex-col justify-between group overflow-hidden cursor-pointer">
+        <div data-tilt data-category="violin strings" class="id-card-3d p-5 sm:p-7 flex flex-col justify-between group overflow-hidden cursor-pointer">
           <!-- Holographic Sheen Overlay -->
           <div class="id-card-hologram-sheen"></div>
 
@@ -674,7 +674,7 @@
         </div>
 
         <!-- 3D ID Card: Sophia Chen -->
-        <div data-tilt class="id-card-3d p-5 sm:p-7 flex flex-col justify-between group overflow-hidden cursor-pointer">
+        <div data-tilt data-category="violin strings piano" class="id-card-3d p-5 sm:p-7 flex flex-col justify-between group overflow-hidden cursor-pointer">
           <!-- Holographic Sheen Overlay -->
           <div class="id-card-hologram-sheen"></div>
 
@@ -775,14 +775,15 @@
         <input type="text" placeholder="Student Full Name" required class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-charcoal-700 bg-gray-50 dark:bg-charcoal-800 text-sm">
         <input type="email" placeholder="Email Address" required class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-charcoal-700 bg-gray-50 dark:bg-charcoal-800 text-sm">
         <input type="tel" placeholder="Phone Number" required class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-charcoal-700 bg-gray-50 dark:bg-charcoal-800 text-sm">
-        <select required class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-charcoal-700 bg-gray-50 dark:bg-charcoal-800 text-sm">
-          <option value="david">David Miller (Guitar)</option>
-          <option value="elena">Elena Rostova (Piano)</option>
-          <option value="aarav">Aarav Sharma (Vocals)</option>
-          <option value="marcus">Marcus Vance (Drums)</option>
-          <option value="clara">Clara Dupont (Violin)</option>
+        <select id="mentor-select-dropdown" required class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-charcoal-700 bg-gray-50 dark:bg-charcoal-800 text-sm text-gray-900 dark:text-white">
+          <option value="david">David Miller (Guitar &amp; Bass)</option>
+          <option value="elena">Elena Rostova (Classical &amp; Concert Piano)</option>
+          <option value="aarav">Aarav Sharma (Contemporary Vocals)</option>
+          <option value="marcus">Marcus Vance (Drums &amp; Percussion)</option>
+          <option value="clara">Clara Dupont (Violin &amp; Strings)</option>
+          <option value="sophia">Sophia Chen (Cello &amp; Chamber Theory)</option>
         </select>
-        <button type="submit" class="w-full py-3 rounded-xl bg-coral-500 text-white font-bold text-sm">Submit Request</button>
+        <button type="submit" class="btn-3d-purple w-full py-3 rounded-xl font-bold text-sm shadow-md cursor-pointer">Submit Request</button>
       </form>
     </div>
   </div>

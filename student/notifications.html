@@ -173,7 +173,7 @@
           <h2 class="font-serif text-base sm:text-xl font-bold text-gray-900 dark:text-white truncate">Notification Center</h2>
         </div>
       </div>
-      <button onclick="HarmonyApp.showToast('All notifications marked as read', 'success')" class="text-xs text-coral-600 font-bold hover:underline shrink-0">
+      <button onclick="HarmonyApp.showToast('All notifications marked as read', 'success')" class="text-xs text-[#6C4CE3] dark:text-purple-400 font-bold hover:underline shrink-0">
         Mark all as read
       </button>
     </header>
@@ -182,7 +182,7 @@
       
       <!-- Tab filters -->
       <div class="flex items-center gap-2 border-b border-gray-200 dark:border-charcoal-700 pb-3 text-xs font-semibold overflow-x-auto whitespace-nowrap">
-        <button data-notif-tab="all" class="px-3 py-1.5 rounded-full bg-coral-500 text-white font-bold shrink-0">All (4)</button>
+        <button data-notif-tab="all" class="px-3 py-1.5 rounded-full bg-[#6C4CE3] text-white font-bold shrink-0">All (4)</button>
         <button data-notif-tab="class" class="px-3 py-1.5 rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-charcoal-800 shrink-0">Class Reminders (2)</button>
         <button data-notif-tab="fee" class="px-3 py-1.5 rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-charcoal-800 shrink-0">Fee Notices (1)</button>
         <button data-notif-tab="events" class="px-3 py-1.5 rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-charcoal-800 shrink-0">Academy Events (1)</button>
@@ -191,9 +191,9 @@
       <!-- Notifications List -->
       <div class="space-y-3">
         
-        <div data-notif-category="class" class="p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-white dark:bg-charcoal-800 border-l-4 border-coral-500 shadow-sm border border-gray-200 dark:border-charcoal-700 flex items-start justify-between gap-4">
+        <div data-notif-category="class" class="p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-white dark:bg-charcoal-800 border-l-4 border-[#6C4CE3] shadow-sm border border-gray-200 dark:border-charcoal-700 flex items-start justify-between gap-4">
           <div class="flex items-start gap-3">
-            <div class="w-9 h-9 rounded-xl bg-coral-100 text-coral-600 flex items-center justify-center shrink-0 mt-0.5">
+            <div class="w-9 h-9 rounded-xl bg-purple-100 dark:bg-purple-900/40 text-[#6C4CE3] flex items-center justify-center shrink-0 mt-0.5">
               <i data-lucide="calendar" class="w-4 h-4"></i>
             </div>
             <div>
@@ -202,12 +202,12 @@
               <span class="text-[10px] text-gray-400 mt-1 block">2 hours ago</span>
             </div>
           </div>
-          <span class="w-2 h-2 rounded-full bg-coral-500 shrink-0 mt-2"></span>
+          <span class="w-2 h-2 rounded-full bg-[#6C4CE3] shrink-0 mt-2"></span>
         </div>
 
-        <div data-notif-category="fee" class="p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-white dark:bg-charcoal-800 border-l-4 border-amberbrand-500 shadow-sm border border-gray-200 dark:border-charcoal-700 flex items-start justify-between gap-4">
+        <div data-notif-category="fee" class="p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-white dark:bg-charcoal-800 border-l-4 border-[#FF9F43] shadow-sm border border-gray-200 dark:border-charcoal-700 flex items-start justify-between gap-4">
           <div class="flex items-start gap-3">
-            <div class="w-9 h-9 rounded-xl bg-amber-100 text-amberbrand-600 flex items-center justify-center shrink-0 mt-0.5">
+            <div class="w-9 h-9 rounded-xl bg-orange-100 dark:bg-orange-950/40 text-[#FF9F43] flex items-center justify-center shrink-0 mt-0.5">
               <i data-lucide="credit-card" class="w-4 h-4"></i>
             </div>
             <div>
@@ -216,12 +216,12 @@
               <span class="text-[10px] text-gray-400 mt-1 block">1 day ago</span>
             </div>
           </div>
-          <span class="w-2 h-2 rounded-full bg-amberbrand-500 shrink-0 mt-2"></span>
+          <span class="w-2 h-2 rounded-full bg-[#FF9F43] shrink-0 mt-2"></span>
         </div>
 
-        <div data-notif-category="class" class="p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-white dark:bg-charcoal-800 border-l-4 border-sage-500 shadow-sm border border-gray-200 dark:border-charcoal-700 flex items-start justify-between gap-4">
+        <div data-notif-category="class" class="p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-white dark:bg-charcoal-800 border-l-4 border-purple-400 shadow-sm border border-gray-200 dark:border-charcoal-700 flex items-start justify-between gap-4">
           <div class="flex items-start gap-3">
-            <div class="w-9 h-9 rounded-xl bg-sage-100 text-sage-600 flex items-center justify-center shrink-0 mt-0.5">
+            <div class="w-9 h-9 rounded-xl bg-purple-100 dark:bg-purple-900/40 text-[#6C4CE3] flex items-center justify-center shrink-0 mt-0.5">
               <i data-lucide="message-square" class="w-4 h-4"></i>
             </div>
             <div>

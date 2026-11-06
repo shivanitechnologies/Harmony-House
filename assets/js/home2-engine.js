@@ -68,6 +68,18 @@ class HarmonyHome2Engine {
       if (tempoNameDisplay) tempoNameDisplay.textContent = getTempoName(bpm);
       if (bpmSlider) bpmSlider.value = bpm;
 
+      // Update active highlight on tempo presets
+      tempoPresets.forEach(p => {
+        const pBpm = parseInt(p.getAttribute('data-tempo-preset'), 10);
+        if (pBpm === bpm) {
+          p.classList.add('border-[#6C4CE3]', 'text-[#6C4CE3]', 'font-bold');
+          p.classList.remove('border-charcoal-700', 'text-gray-300');
+        } else {
+          p.classList.remove('border-[#6C4CE3]', 'text-[#6C4CE3]', 'font-bold');
+          p.classList.add('border-charcoal-700', 'text-gray-300');
+        }
+      });
+
       // Adjust physical weight position on pendulum (lower weight = faster tempo)
       if (pendulumWeight) {
         const weightY = 120 - ((bpm - 40) / (220 - 40)) * 80;
@@ -237,13 +249,13 @@ class HarmonyHome2Engine {
 
         tabBtns.forEach(b => {
           const isActive = b.getAttribute('data-grade-tab') === target;
-          b.classList.toggle('bg-[#6C4CE3]', isActive);
-          b.classList.toggle('text-white', isActive);
-          b.classList.toggle('shadow-md', isActive);
-          b.classList.toggle('text-gray-600', !isActive);
-          b.classList.toggle('dark:text-gray-300', !isActive);
-          b.classList.toggle('bg-white', !isActive);
-          b.classList.toggle('dark:bg-charcoal-800', !isActive);
+          if (isActive) {
+            b.classList.add('bg-[#6C4CE3]', 'text-white', 'shadow-md');
+            b.classList.remove('text-gray-600', 'dark:text-gray-300');
+          } else {
+            b.classList.remove('bg-[#6C4CE3]', 'text-white', 'shadow-md');
+            b.classList.add('text-gray-600', 'dark:text-gray-300');
+          }
         });
 
         tabPanels.forEach(panel => {
