@@ -1319,7 +1319,7 @@ const HarmonyApp = {
     }
   },
 
-  // Interactive Portal Switcher Dropdown (Admin, Employer, Seeker)
+  // Interactive Portal Switcher Dropdown (Admin Dashboard & Student Dashboard)
   initPortalSwitcher() {
     const switchers = document.querySelectorAll('[data-portal-switcher]');
     if (!switchers.length) return;
@@ -1335,15 +1335,15 @@ const HarmonyApp = {
         activeClass: 'bg-purple-50 dark:bg-purple-950/50 text-[#6C4CE3] dark:text-purple-300 font-semibold',
         activeIconColor: 'text-[#6C4CE3]'
       },
-      employer: {
-        label: 'Employer',
-        icon: 'briefcase',
-        activeClass: 'bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-300 font-semibold',
-        activeIconColor: 'text-blue-500'
+      student: {
+        label: isStudent ? 'Student' : 'Login',
+        icon: 'graduation-cap',
+        activeClass: 'bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-300 font-semibold',
+        activeIconColor: 'text-emerald-500'
       },
       seeker: {
-        label: isStudent ? 'Seeker' : 'Login',
-        icon: 'user',
+        label: isStudent ? 'Student' : 'Login',
+        icon: 'graduation-cap',
         activeClass: 'bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-300 font-semibold',
         activeIconColor: 'text-emerald-500'
       }
@@ -1353,7 +1353,7 @@ const HarmonyApp = {
     if (isAdmin) {
       activeKey = 'admin';
     } else if (isStudent) {
-      activeKey = 'seeker';
+      activeKey = 'student';
     } else {
       activeKey = 'admin';
     }
@@ -1378,14 +1378,17 @@ const HarmonyApp = {
       // Highlight active portal in dropdown
       items.forEach(item => {
         const key = item.getAttribute('data-portal-item');
-        if (key === activeKey) {
-          item.className = 'portal-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs sm:text-sm transition ' + portalConfig[key].activeClass;
+        const resolvedKey = key === 'seeker' ? 'student' : key;
+        const resolvedActive = activeKey === 'seeker' ? 'student' : activeKey;
+
+        if (resolvedKey === resolvedActive) {
+          item.className = 'portal-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs sm:text-sm transition ' + portalConfig[resolvedKey].activeClass;
         } else {
           item.className = 'portal-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-charcoal-800';
         }
 
         item.addEventListener('click', () => {
-          localStorage.setItem('harmony_active_portal', key);
+          localStorage.setItem('harmony_active_portal', resolvedKey);
         });
       });
 
