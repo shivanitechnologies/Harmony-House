@@ -201,42 +201,43 @@
     </div>
   </aside>
 
-    <!-- Unified Hero Section with Atmospheric Conservatory Stage Background -->
-  <section class="relative bg-charcoal-950 text-white py-16 sm:py-20 lg:py-24 min-h-[380px] sm:min-h-[420px] flex items-center justify-center overflow-hidden border-b border-charcoal-800">
-    <!-- Real Cinematic Background Image with Gradient Overlay -->
-    <div class="absolute inset-0 z-0">
-      <img src="assets/images/hero-bg.jpg" alt="Concert Stage Background" class="w-full h-full object-cover object-center opacity-30 select-none pointer-events-none">
-      <div class="absolute inset-0 bg-gradient-to-b from-[#0C0A18]/85 via-[#120E24]/75 to-[#0A0815]/95"></div>
-      <div class="absolute inset-0 bg-[radial-gradient(#6C4CE3_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none"></div>
-    </div>
+    <!-- Hero Section Matching Home Page Proportions & Design Style -->
+  <section class="relative overflow-hidden pt-10 pb-16 lg:pt-14 lg:pb-20 border-b border-gray-100 dark:border-charcoal-800">
+    <!-- Ambient Background Glows in Deep Purple & Warm Orange (Matching Home Page) -->
+    <div class="absolute -top-32 -left-32 w-96 h-96 bg-[#6C4CE3]/15 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute top-1/2 -right-32 w-96 h-96 bg-[#FF9F43]/15 rounded-full blur-3xl pointer-events-none"></div>
 
-    <!-- Ambient Glowing Light Orbs in Deep Purple & Warm Amber -->
-    <div class="absolute top-0 left-1/4 -translate-x-1/2 w-[550px] h-[320px] bg-[#6C4CE3]/25 rounded-full blur-[110px] pointer-events-none z-0"></div>
-    <div class="absolute bottom-0 right-1/4 translate-x-1/2 w-[500px] h-[280px] bg-[#FF9F43]/20 rounded-full blur-[100px] pointer-events-none z-0"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center w-full">
+      <div class="max-w-3xl mx-auto space-y-4 sm:space-y-5">
+        <!-- Status Pill -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-50 dark:bg-purple-950/50 border border-purple-200 dark:border-purple-800/40 text-[#6C4CE3] dark:text-[#987AF0] text-xs font-semibold">
+          <span class="flex h-2 w-2 relative">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#6C4CE3] opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-[#6C4CE3]"></span>
+          </span>
+          <span>Transparent Pricing &amp; Flexible Timing</span>
+          <span class="opacity-30">|</span>
+          <span class="text-[#FF9F43] font-bold">Zero Hidden Fees</span>
+        </div>
 
-    <!-- Musical Notation Ambient Decorative Watermark Icons in Corners -->
-    <div class="absolute top-8 left-8 text-3xl font-serif text-[#987AF0]/30 select-none pointer-events-none z-0">𝄞</div>
-    <div class="absolute bottom-8 right-12 text-3xl font-serif text-[#FF9F43]/30 select-none pointer-events-none z-0">♫</div>
-    <div class="absolute top-12 right-20 text-2xl font-serif text-[#987AF0]/25 select-none pointer-events-none z-0">♩</div>
+        <!-- Master Heading -->
+        <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white tracking-tight leading-[1.15]">
+          Tuition Fees &amp; <span class="text-[#6C4CE3] dark:text-[#987AF0]">Batch Schedules</span>
+        </h1>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center max-w-3xl">
-      <!-- Master Heading -->
-      <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.15] drop-shadow-md">
-        Tuition Fees &amp; Batch Schedules
-      </h1>
+        <!-- Lead Description -->
+        <p class="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl mx-auto">
+          Simple monthly fee tiers with zero hidden charges. Choose a convenient weekday evening or weekend batch that fits your lifestyle.
+        </p>
 
-      <!-- Lead Description -->
-      <p class="text-base sm:text-lg text-gray-200 mt-4 leading-relaxed max-w-2xl mx-auto font-normal">
-        Simple monthly fee tiers with zero hidden charges. Choose a convenient weekday evening or weekend batch that fits your lifestyle.
-      </p>
-
-      <!-- Interactive Controls / Pills -->
-      <div class="mt-8 inline-flex flex-wrap items-center justify-center gap-2 sm:gap-3 p-1.5 rounded-2xl sm:rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl text-xs font-bold max-w-full">
-        <button id="btn-monthly" class="px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl sm:rounded-full bg-[#6C4CE3] text-white shadow-lg shadow-[#6C4CE3]/40 transition cursor-pointer">Monthly Tuition</button>
-        <button id="btn-annual" class="px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl sm:rounded-full text-purple-200 hover:text-white transition flex items-center gap-1.5 cursor-pointer">
-          <span>Annual Enrolment</span>
-          <span class="px-2 py-0.5 rounded-full bg-[#FF9F43] text-charcoal-950 text-[10px] font-bold">Save 10%</span>
-        </button>
+        <!-- Interactive Fee Cycle Toggle Buttons -->
+        <div class="pt-2 inline-flex flex-wrap items-center justify-center gap-2 sm:gap-3 p-1.5 rounded-2xl sm:rounded-full bg-gray-100 dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-inner text-xs font-bold max-w-full">
+          <button id="btn-monthly" class="px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl sm:rounded-full bg-[#6C4CE3] text-white shadow-md shadow-[#6C4CE3]/30 transition cursor-pointer">Monthly Tuition</button>
+          <button id="btn-annual" class="px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl sm:rounded-full text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition flex items-center gap-1.5 cursor-pointer">
+            <span>Annual Enrolment</span>
+            <span class="px-2 py-0.5 rounded-full bg-[#FF9F43] text-charcoal-950 text-[10px] font-bold">Save 10%</span>
+          </button>
+        </div>
       </div>
     </div>
   </section>
