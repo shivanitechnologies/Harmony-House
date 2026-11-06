@@ -101,6 +101,7 @@ const HarmonyApp = {
     this.initQuickSearch();
     this.initAccordions();
     this.initContactForms();
+    this.initPremiumSelect();
     this.initSoundboard();
     this.initPlayablePiano();
     this.initInstrumentTestLab();
@@ -1192,9 +1193,129 @@ const HarmonyApp = {
         HarmonyApp.showToast(successMessage, 'success');
         if (!form.hasAttribute('data-no-reset') && !form.closest('main')?.querySelector('h2')?.textContent?.includes('Profile') && !form.closest('main')?.querySelector('h2')?.textContent?.includes('Settings')) {
           form.reset();
+          // Reset premium select if present
+          const labelSpan = document.getElementById('premium-select-label');
+          const iconSpan = document.getElementById('premium-select-icon');
+          if (labelSpan) {
+            labelSpan.textContent = 'Select Instrument / Program';
+            labelSpan.className = 'text-gray-500 dark:text-gray-400 truncate text-sm';
+          }
+          if (iconSpan) {
+            iconSpan.className = 'w-6 h-6 rounded-lg bg-purple-100 dark:bg-purple-950/60 text-[#6C4CE3] dark:text-[#987AF0] flex items-center justify-center text-xs shrink-0';
+            iconSpan.innerHTML = '<i data-lucide="music" class="w-3.5 h-3.5"></i>';
+            HarmonyApp.initLucide();
+          }
+          document.querySelectorAll('.premium-option .opt-check').forEach(c => c.classList.add('opacity-0'));
+          document.querySelectorAll('.premium-option').forEach(o => o.classList.remove('bg-purple-50/80', 'dark:bg-charcoal-750', 'border-purple-300', 'dark:border-purple-800'));
         }
       });
     });
+  },
+
+  initPremiumSelect() {
+    const wrap = document.getElementById('premium-course-select-wrap');
+    if (!wrap) return;
+
+    const trigger = document.getElementById('premium-select-trigger');
+    const menu = document.getElementById('premium-select-menu');
+    const hiddenSelect = document.getElementById('contact-course-select');
+    const labelSpan = document.getElementById('premium-select-label');
+    const iconSpan = document.getElementById('premium-select-icon');
+    const chevron = document.getElementById('premium-select-chevron');
+    const options = wrap.querySelectorAll('.premium-option');
+
+    const iconMap = {
+      guitar: { icon: 'guitar', bg: 'bg-purple-100 dark:bg-purple-950/60 text-[#6C4CE3] dark:text-[#987AF0]' },
+      piano: { icon: 'music-2', bg: 'bg-orange-100 dark:bg-orange-950/60 text-[#FF9F43]' },
+      vocals: { icon: 'mic-2', bg: 'bg-purple-100 dark:bg-purple-950/60 text-[#6C4CE3] dark:text-[#987AF0]' },
+      drums: { icon: 'disc', bg: 'bg-orange-100 dark:bg-orange-950/60 text-[#FF9F43]' },
+      violin: { icon: 'sparkles', bg: 'bg-purple-100 dark:bg-purple-950/60 text-[#6C4CE3] dark:text-[#987AF0]' },
+      production: { icon: 'sliders', bg: 'bg-orange-100 dark:bg-orange-950/60 text-[#FF9F43]' },
+    };
+
+    const toggleMenu = (open) => {
+      const isOpen = open !== undefined ? open : menu.classList.contains('hidden');
+      if (isOpen) {
+        menu.classList.remove('hidden');
+        trigger.setAttribute('aria-expanded', 'true');
+        if (chevron) chevron.classList.add('rotate-180');
+      } else {
+        menu.classList.add('hidden');
+        trigger.setAttribute('aria-expanded', 'false');
+        if (chevron) chevron.classList.remove('rotate-180');
+      }
+    };
+
+    trigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleMenu();
+    });
+
+    const selectOption = (val) => {
+      const opt = Array.from(options).find(o => o.dataset.val === val);
+      if (!opt) return;
+
+      const title = opt.querySelector('.font-bold')?.textContent || opt.textContent.trim();
+      if (labelSpan) {
+        labelSpan.textContent = title;
+        labelSpan.classList.remove('text-gray-500', 'dark:text-gray-400');
+        labelSpan.classList.add('text-gray-900', 'dark:text-white', 'font-semibold');
+      }
+
+      if (iconSpan && iconMap[val]) {
+        iconSpan.className = `w-6 h-6 rounded-lg flex items-center justify-center text-xs shrink-0 shadow-xs ${iconMap[val].bg}`;
+        iconSpan.innerHTML = `<i data-lucide="${iconMap[val].icon}" class="w-3.5 h-3.5"></i>`;
+        this.initLucide();
+      }
+
+      // Update checkmark visibility & active pill outline
+      options.forEach(o => {
+        const check = o.querySelector('.opt-check');
+        if (o === opt) {
+          o.classList.add('bg-purple-50/80', 'dark:bg-charcoal-750', 'border-purple-300', 'dark:border-purple-800');
+          if (check) check.classList.remove('opacity-0');
+        } else {
+          o.classList.remove('bg-purple-50/80', 'dark:bg-charcoal-750', 'border-purple-300', 'dark:border-purple-800');
+          if (check) check.classList.add('opacity-0');
+        }
+      });
+
+      if (hiddenSelect) {
+        hiddenSelect.value = val;
+        hiddenSelect.dispatchEvent(new Event('change', { bubbles: true }));
+      }
+
+      toggleMenu(false);
+    };
+
+    options.forEach(opt => {
+      opt.addEventListener('click', (e) => {
+        e.stopPropagation();
+        selectOption(opt.dataset.val);
+      });
+    });
+
+    // Close on click outside
+    document.addEventListener('click', (e) => {
+      if (!wrap.contains(e.target)) {
+        toggleMenu(false);
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') toggleMenu(false);
+    });
+
+    // Support query param auto-selection (e.g. ?course=guitar or ?batch=piano)
+    const params = new URLSearchParams(window.location.search);
+    const courseParam = params.get('course') || params.get('batch') || params.get('instrument');
+    if (courseParam) {
+      const match = courseParam.replace('course-', '').split('-')[0].toLowerCase();
+      if (iconMap[match]) {
+        selectOption(match);
+      }
+    }
   },
 
   initRecitalCards() {
