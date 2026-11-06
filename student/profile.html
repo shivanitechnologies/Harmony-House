@@ -55,96 +55,46 @@
         </button>
       </div>
 
-      <!-- Navigation Links (Exact Menu from Reference Image) -->
-      <nav class="p-3 space-y-1 text-xs font-medium flex-1 overflow-y-auto">
+      <!-- Navigation Links: Strictly 4 Student Modules -->
+      <nav class="p-3 space-y-1.5 text-xs font-medium flex-1 overflow-y-auto">
         <!-- 1. Overview -->
         <a href="index.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
           <i data-lucide="layout-grid" class="w-4 h-4 text-gray-400 group-hover:text-white"></i>
           <span>Overview</span>
         </a>
 
-        <!-- 2. My Courses -->
-        <a href="courses.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
-          <i data-lucide="book-open" class="w-4 h-4 text-gray-400 group-hover:text-white"></i>
-          <span>My Courses</span>
+        <!-- 2. Enrolling in Batches -->
+        <a href="batches.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
+          <i data-lucide="users" class="w-4 h-4 text-gray-400 group-hover:text-white"></i>
+          <span>Batch Enrollment</span>
         </a>
 
-        <!-- 3. My Music Lessons -->
-        <a href="courses.html#lessons" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
-          <i data-lucide="music" class="w-4 h-4 text-gray-400 group-hover:text-white"></i>
-          <span>My Music Lessons</span>
-        </a>
-
-        <!-- 4. Class Schedule -->
+        <!-- 3. Class Schedule -->
         <a href="schedule.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
           <i data-lucide="calendar" class="w-4 h-4 text-gray-400 group-hover:text-white"></i>
           <span>Class Schedule</span>
         </a>
 
-        <!-- 5. Attendance -->
+        <!-- 4. Attendance & Progress Notes -->
         <a href="attendance.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
           <i data-lucide="clipboard-check" class="w-4 h-4 text-gray-400 group-hover:text-white"></i>
-          <span>Attendance</span>
+          <span>Attendance &amp; Notes</span>
         </a>
 
-        <!-- 6. Progress Notes -->
-        <a href="progress.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
-          <i data-lucide="file-text" class="w-4 h-4 text-gray-400 group-hover:text-white"></i>
-          <span>Progress Notes</span>
-        </a>
-
-        <!-- 7. My Performance -->
-        <a href="progress.html#performance" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
-          <i data-lucide="bar-chart-2" class="w-4 h-4 text-gray-400 group-hover:text-white"></i>
-          <span>My Performance</span>
-        </a>
-
-        <!-- 8. Practice & Recordings -->
-        <a href="progress.html#practice" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
-          <i data-lucide="mic" class="w-4 h-4 text-gray-400 group-hover:text-white"></i>
-          <span>Practice &amp; Recordings</span>
-        </a>
-
-        <!-- 9. Fee Payments -->
+        <!-- 5. Fee Payments -->
         <a href="fees.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
           <i data-lucide="credit-card" class="w-4 h-4 text-gray-400 group-hover:text-white"></i>
           <span>Fee Payments</span>
         </a>
 
-        <!-- 10. Notifications -->
-        <a href="notifications.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
-          <i data-lucide="bell" class="w-4 h-4 text-gray-400 group-hover:text-white"></i>
-          <span>Notifications</span>
-          <span class="ml-auto w-2 h-2 rounded-full bg-[#FF9F43]"></span>
-        </a>
-
-        <!-- 11. My Profile (Active) -->
-        <a href="profile.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-[#F0EAFF] text-[#6C4CE3] font-bold shadow-sm transition">
-          <i data-lucide="user" class="w-4 h-4 text-[#6C4CE3]"></i>
-          <span>My Profile</span>
-        </a>
-
         <!-- Divider Line -->
-        <div class="pt-2 my-2 border-t border-gray-800/80"></div>
+        <div class="pt-3 my-2 border-t border-gray-800/80"></div>
 
-        <!-- 12. Settings -->
-        <a href="profile.html#settings" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
-          <i data-lucide="settings" class="w-4 h-4 text-gray-400 group-hover:text-white"></i>
-          <span>Settings</span>
-        </a>
-
-        <!-- 13. Logout -->
-        <a href="../auth/login.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-[#FF9F43] transition group">
+        <!-- Logout -->
+        <a href="../auth/login.html?role=student" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-300 hover:bg-white/5 hover:text-[#FF9F43] transition group">
           <i data-lucide="log-out" class="w-4 h-4 text-gray-400 group-hover:text-[#FF9F43]"></i>
           <span>Logout</span>
         </a>
-
-        <!-- Down Arrow Button (as shown in reference image) -->
-        <div class="pt-3 pb-1 flex justify-center">
-          <button type="button" onclick="this.closest('nav').scrollBy({ top: 120, behavior: 'smooth' })" class="w-6 h-6 rounded-full border border-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:border-gray-600 transition cursor-pointer" title="Scroll Navigation">
-            <i data-lucide="arrow-down" class="w-3.5 h-3.5"></i>
-          </button>
-        </div>
       </nav>
     </div>
 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Student Portal Overview – Harmony House</title>
+  <title>Student Dashboard – Harmony House</title>
   <link rel="icon" type="image/svg+xml" href="../assets/images/logo.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,7 +35,7 @@
 </head>
 <body class="bg-[#F8F9FA] dark:bg-charcoal-900 text-gray-800 dark:text-gray-100 font-sans antialiased min-h-screen flex">
 
-  <!-- Sidebar Navigation (Exact Match to Reference) -->
+  <!-- Sidebar Navigation: Strictly 4 Student Modules -->
   <aside id="dashboard-sidebar" class="w-64 bg-[#0B0A12] border-r border-gray-800/80 flex flex-col justify-between shrink-0 fixed inset-y-0 left-0 z-50 transition-transform duration-300 -translate-x-full lg:translate-x-0 text-white select-none">
     <div class="flex flex-col h-full overflow-hidden">
       <!-- Brand Header -->
@@ -55,96 +55,46 @@
         </button>
       </div>
 
-      <!-- Navigation Links (Exact Menu from Reference Image) -->
-      <nav class="p-3 space-y-1 text-xs font-medium flex-1 overflow-y-auto">
+      <!-- Navigation Links: Strictly 4 Student Modules -->
+      <nav class="p-3 space-y-1.5 text-xs font-medium flex-1 overflow-y-auto">
         <!-- 1. Overview (Active) -->
         <a href="index.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-[#F0EAFF] text-[#6C4CE3] font-bold shadow-sm transition">
           <i data-lucide="layout-grid" class="w-4 h-4 text-[#6C4CE3]"></i>
           <span>Overview</span>
         </a>
 
-        <!-- 2. My Courses -->
-        <a href="courses.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
-          <i data-lucide="book-open" class="w-4 h-4 text-gray-400 group-hover:text-white"></i>
-          <span>My Courses</span>
+        <!-- 2. Enrolling in Batches -->
+        <a href="batches.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
+          <i data-lucide="users" class="w-4 h-4 text-gray-400 group-hover:text-white"></i>
+          <span>Batch Enrollment</span>
         </a>
 
-        <!-- 3. My Music Lessons -->
-        <a href="courses.html#lessons" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
-          <i data-lucide="music" class="w-4 h-4 text-gray-400 group-hover:text-white"></i>
-          <span>My Music Lessons</span>
-        </a>
-
-        <!-- 4. Class Schedule -->
+        <!-- 3. Class Schedule -->
         <a href="schedule.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
           <i data-lucide="calendar" class="w-4 h-4 text-gray-400 group-hover:text-white"></i>
           <span>Class Schedule</span>
         </a>
 
-        <!-- 5. Attendance -->
+        <!-- 4. Attendance & Progress Notes -->
         <a href="attendance.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
           <i data-lucide="clipboard-check" class="w-4 h-4 text-gray-400 group-hover:text-white"></i>
-          <span>Attendance</span>
+          <span>Attendance &amp; Notes</span>
         </a>
 
-        <!-- 6. Progress Notes -->
-        <a href="progress.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
-          <i data-lucide="file-text" class="w-4 h-4 text-gray-400 group-hover:text-white"></i>
-          <span>Progress Notes</span>
-        </a>
-
-        <!-- 7. My Performance -->
-        <a href="progress.html#performance" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
-          <i data-lucide="bar-chart-2" class="w-4 h-4 text-gray-400 group-hover:text-white"></i>
-          <span>My Performance</span>
-        </a>
-
-        <!-- 8. Practice & Recordings -->
-        <a href="progress.html#practice" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
-          <i data-lucide="mic" class="w-4 h-4 text-gray-400 group-hover:text-white"></i>
-          <span>Practice &amp; Recordings</span>
-        </a>
-
-        <!-- 9. Fee Payments -->
+        <!-- 5. Fee Payments -->
         <a href="fees.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
           <i data-lucide="credit-card" class="w-4 h-4 text-gray-400 group-hover:text-white"></i>
           <span>Fee Payments</span>
         </a>
 
-        <!-- 10. Notifications -->
-        <a href="notifications.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
-          <i data-lucide="bell" class="w-4 h-4 text-gray-400 group-hover:text-white"></i>
-          <span>Notifications</span>
-          <span class="ml-auto w-2 h-2 rounded-full bg-[#FF9F43]"></span>
-        </a>
-
-        <!-- 11. My Profile -->
-        <a href="profile.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
-          <i data-lucide="user" class="w-4 h-4 text-gray-400 group-hover:text-white"></i>
-          <span>My Profile</span>
-        </a>
-
         <!-- Divider Line -->
-        <div class="pt-2 my-2 border-t border-gray-800/80"></div>
+        <div class="pt-3 my-2 border-t border-gray-800/80"></div>
 
-        <!-- 12. Settings -->
-        <a href="profile.html#settings" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
-          <i data-lucide="settings" class="w-4 h-4 text-gray-400 group-hover:text-white"></i>
-          <span>Settings</span>
-        </a>
-
-        <!-- 13. Logout -->
-        <a href="../auth/login.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-[#FF9F43] transition group">
+        <!-- Logout -->
+        <a href="../auth/login.html?role=student" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-300 hover:bg-white/5 hover:text-[#FF9F43] transition group">
           <i data-lucide="log-out" class="w-4 h-4 text-gray-400 group-hover:text-[#FF9F43]"></i>
           <span>Logout</span>
         </a>
-
-        <!-- Down Arrow Button (as shown in reference image) -->
-        <div class="pt-3 pb-1 flex justify-center">
-          <button type="button" onclick="this.closest('nav').scrollBy({ top: 120, behavior: 'smooth' })" class="w-6 h-6 rounded-full border border-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:border-gray-600 transition cursor-pointer" title="Scroll Navigation">
-            <i data-lucide="arrow-down" class="w-3.5 h-3.5"></i>
-          </button>
-        </div>
       </nav>
     </div>
 
@@ -170,23 +120,20 @@
     <header class="h-16 sm:h-20 bg-white/90 dark:bg-charcoal-850/90 backdrop-blur-md border-b border-gray-200 dark:border-charcoal-800 px-3 sm:px-8 flex items-center justify-between sticky top-0 z-20">
       
       <div class="flex items-center gap-2 sm:gap-3 min-w-0">
-        <button id="sidebar-toggle" class="p-2 -ml-1 rounded-lg text-gray-600 dark:text-gray-300 lg:hidden hover:bg-gray-100 dark:hover:bg-charcoal-800 shrink-0">
+        <button id="sidebar-toggle" class="p-2 -ml-1 rounded-lg text-gray-600 dark:text-gray-300 lg:hidden hover:bg-gray-100 dark:hover:bg-charcoal-800 shrink-0" aria-label="Toggle menu">
           <i data-lucide="menu" class="w-5 h-5 sm:w-6 sm:h-6"></i>
         </button>
         <div class="min-w-0">
           <h2 class="font-serif text-base sm:text-xl font-bold text-gray-900 dark:text-white truncate">Student Dashboard</h2>
-          <p class="text-[11px] text-gray-500 hidden sm:block truncate">Welcome back, Rohan! Let's keep your 6-day practice streak alive.</p>
+          <p class="text-[11px] text-gray-500 hidden sm:block truncate">Enrolling in batches, class schedules, attendance & notes, and fee payments.</p>
         </div>
       </div>
 
       <!-- Right controls -->
       <div class="flex items-center gap-1.5 sm:gap-3 shrink-0">
-        <button data-action="toggle-theme" class="p-2 rounded-full text-gray-500 hover:bg-gray-100 dark:hover:bg-charcoal-800 transition">
+        <button data-action="toggle-theme" class="p-2 rounded-full text-gray-500 hover:bg-gray-100 dark:hover:bg-charcoal-800 transition" title="Toggle Theme">
           <i data-lucide="sun" class="w-4 h-4 dark:hidden"></i>
           <i data-lucide="moon" class="w-4 h-4 hidden dark:inline"></i>
-        </button>
-        <button data-action="toggle-rtl" class="hidden sm:inline-flex px-2 py-1 text-xs font-mono rounded-full border border-gray-200 dark:border-charcoal-700">
-          ⇄ RTL
         </button>
 
         <!-- Portal Switcher Dropdown (Student Dashboard) -->
@@ -226,264 +173,714 @@
             </div>
           </div>
         </div>
-        <a href="notifications.html" class="p-2 rounded-full text-gray-500 hover:bg-gray-100 dark:hover:bg-charcoal-800 relative">
-          <i data-lucide="bell" class="w-4 h-4"></i>
-          <span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-coral-500"></span>
-        </a>
-        <a href="profile.html" class="flex items-center gap-2 pl-1 sm:pl-2 sm:border-l border-gray-200 dark:border-charcoal-700">
-          <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=120&q=80" alt="Rohan Sen" class="w-7 h-7 sm:w-8 sm:h-8 rounded-full object-cover">
-        </a>
+
+        <div class="flex items-center gap-2 pl-1 sm:pl-2 sm:border-l border-gray-200 dark:border-charcoal-700">
+          <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=120&q=80" alt="Rohan Sen" class="w-7 h-7 sm:w-8 sm:h-8 rounded-full object-cover border border-purple-500/40">
+        </div>
       </div>
 
     </header>
 
     <!-- Main Body Container -->
-    <main class="p-3 sm:p-8 space-y-6 sm:space-y-8 flex-1">
+    <main class="p-3 sm:p-8 space-y-8 flex-1">
       
-      <!-- Top Metrics Grid (as per blueprint Section 6) -->
+      <!-- Top Metrics Row: Strictly 4 Core Areas -->
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
         
-        <!-- Metric 1: Enrolled Courses -->
-        <div class="p-3.5 sm:p-5 rounded-2xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm flex items-center justify-between">
-          <div>
-            <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-gray-400">Enrolled Courses</span>
-            <div class="font-serif text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mt-1">2</div>
-            <span class="text-[10px] text-coral-600 font-semibold truncate block">Guitar &bull; Vocals</span>
+        <!-- Metric 1: Enrolling in Batches -->
+        <a href="batches.html" class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm hover:border-[#6C4CE3] transition group block">
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-gray-400 group-hover:text-[#6C4CE3] transition">Enrolled Batches</span>
+            <div class="w-8 h-8 rounded-xl bg-purple-50 dark:bg-purple-950/50 text-[#6C4CE3] flex items-center justify-center shrink-0">
+              <i data-lucide="users" class="w-4 h-4"></i>
+            </div>
           </div>
-          <div class="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-coral-50 dark:bg-coral-950/50 text-coral-600 flex items-center justify-center shrink-0">
-            <i data-lucide="book-open" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+          <div class="font-serif text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mt-2">2 <span class="text-xs font-normal text-gray-400">Batches</span></div>
+          <div class="flex items-center justify-between mt-1 text-[11px] text-[#6C4CE3] font-semibold">
+            <span class="truncate">Guitar &bull; Vocals</span>
+            <span class="group-hover:translate-x-1 transition">&rarr;</span>
           </div>
-        </div>
+        </a>
 
-        <!-- Metric 2: Classes Attended -->
-        <div class="p-3.5 sm:p-5 rounded-2xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm flex items-center justify-between">
-          <div>
-            <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-gray-400">Attended</span>
-            <div class="font-serif text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mt-1">18</div>
-            <span class="text-[10px] text-sage-600 font-semibold truncate block">94% Rate</span>
+        <!-- Metric 2: Viewing Class Schedules -->
+        <a href="schedule.html" class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm hover:border-[#6C4CE3] transition group block">
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-gray-400 group-hover:text-[#6C4CE3] transition">Next Scheduled Class</span>
+            <div class="w-8 h-8 rounded-xl bg-purple-50 dark:bg-purple-950/50 text-[#6C4CE3] flex items-center justify-center shrink-0">
+              <i data-lucide="calendar" class="w-4 h-4"></i>
+            </div>
           </div>
-          <div class="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-sage-50 dark:bg-sage-950/50 text-sage-600 flex items-center justify-center shrink-0">
-            <i data-lucide="check-circle" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+          <div class="font-serif text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mt-2">Tomorrow</div>
+          <div class="flex items-center justify-between mt-1 text-[11px] text-[#6C4CE3] font-semibold">
+            <span class="truncate">6:30 PM &bull; Room 2A</span>
+            <span class="group-hover:translate-x-1 transition">&rarr;</span>
           </div>
-        </div>
+        </a>
 
-        <!-- Metric 3: Practice Streak -->
-        <div class="p-3.5 sm:p-5 rounded-2xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm flex items-center justify-between">
-          <div>
-            <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-gray-400">Streak</span>
-            <div class="font-serif text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mt-1">6 <span class="text-xs font-normal text-gray-400">days</span></div>
-            <span class="text-[10px] text-amberbrand-500 font-semibold truncate block">🔥 Best</span>
+        <!-- Metric 3: Tracking Attendance & Progress Notes -->
+        <a href="attendance.html" class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm hover:border-[#6C4CE3] transition group block">
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-gray-400 group-hover:text-[#6C4CE3] transition">Attendance &amp; Notes</span>
+            <div class="w-8 h-8 rounded-xl bg-purple-50 dark:bg-purple-950/50 text-[#6C4CE3] flex items-center justify-center shrink-0">
+              <i data-lucide="clipboard-check" class="w-4 h-4"></i>
+            </div>
           </div>
-          <div class="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-amber-50 dark:bg-amber-950/50 text-amberbrand-500 flex items-center justify-center shrink-0">
-            <i data-lucide="flame" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+          <div class="font-serif text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mt-2">94% <span class="text-xs font-normal text-gray-400">Presence</span></div>
+          <div class="flex items-center justify-between mt-1 text-[11px] text-[#6C4CE3] font-semibold">
+            <span class="truncate">18/19 &bull; Note from David</span>
+            <span class="group-hover:translate-x-1 transition">&rarr;</span>
           </div>
-        </div>
+        </a>
 
-        <!-- Metric 4: Next Fee Due -->
-        <div class="p-3.5 sm:p-5 rounded-2xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm flex items-center justify-between">
-          <div>
-            <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-gray-400">Fee Due</span>
-            <div class="font-serif text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mt-1">₹3,200</div>
-            <span class="text-[10px] text-gray-400 truncate block">Due Nov 15</span>
+        <!-- Metric 4: Managing Fee Payments -->
+        <a href="fees.html" class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm hover:border-[#FF9F43] transition group block">
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-gray-400 group-hover:text-[#FF9F43] transition">Fee Payments</span>
+            <div class="w-8 h-8 rounded-xl bg-orange-50 dark:bg-orange-950/50 text-[#FF9F43] flex items-center justify-center shrink-0">
+              <i data-lucide="credit-card" class="w-4 h-4"></i>
+            </div>
           </div>
-          <a href="fees.html" class="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-coral-500 text-white flex items-center justify-center shadow-md shadow-coral-500/20 hover:scale-105 transition shrink-0" title="Pay Fees">
-            <i data-lucide="arrow-right" class="w-4 h-4 sm:w-5 sm:h-5 rtl-mirror"></i>
-          </a>
-        </div>
+          <div class="font-serif text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mt-2">₹3,200</div>
+          <div class="flex items-center justify-between mt-1 text-[11px] text-[#FF9F43] font-semibold">
+            <span class="truncate">Due Nov 15 &bull; Pay Now</span>
+            <span class="group-hover:translate-x-1 transition">&rarr;</span>
+          </div>
+        </a>
 
       </div>
 
-      <!-- Main Columns: Upcoming Lessons & Audio Practice Widget -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-        
-        <!-- Left: Upcoming Schedule & Enrolled Courses -->
-        <div class="lg:col-span-8 space-y-8">
+      <!-- Module 1: Class Schedules Spotlight & Weekly Timetable -->
+      <section class="space-y-4">
+        <div class="flex items-center justify-between">
+          <div>
+            <h3 class="font-serif text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">1. Class Schedules</h3>
+            <p class="text-xs text-gray-500">Live timetable, check-in pass, and scheduled studio slots.</p>
+          </div>
+          <a href="schedule.html" class="text-xs text-[#6C4CE3] font-bold hover:underline flex items-center gap-1">
+            <span>Full Schedule Calendar</span> &rarr;
+          </a>
+        </div>
+
+        <!-- Next Session Spotlight Card -->
+        <div class="p-6 sm:p-7 rounded-3xl bg-gradient-to-r from-[#6C4CE3] to-[#5A38D4] text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="space-y-2.5 text-center md:text-left">
+            <div class="flex flex-wrap items-center justify-center md:justify-start gap-2">
+              <span class="px-3 py-0.5 rounded-full bg-white/20 text-[10px] font-bold uppercase tracking-wider">Next Live Session</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-[#FF9F43] text-white text-[10px] font-bold">Studio Pass Active</span>
+            </div>
+            <h4 class="font-serif text-2xl sm:text-3xl font-bold">Acoustic Guitar: Barre Chords &amp; Minor Pentatonics</h4>
+            <p class="text-xs sm:text-sm text-purple-100">Tomorrow, Nov 2 &bull; 6:30 PM – 7:30 PM &bull; Acoustic Studio Room 2A</p>
+            <div class="flex flex-wrap items-center justify-center md:justify-start gap-3 pt-1 text-xs text-purple-100">
+              <span class="flex items-center gap-1.5"><i data-lucide="user" class="w-3.5 h-3.5"></i> Mentor: David Miller</span>
+              <span>&bull;</span>
+              <span class="flex items-center gap-1.5"><i data-lucide="users" class="w-3.5 h-3.5"></i> Batch: Adult Evening #B1</span>
+            </div>
+          </div>
+          <div class="shrink-0 flex flex-col sm:flex-row md:flex-col gap-2.5 w-full sm:w-auto">
+            <button onclick="HarmonyApp.showToast('Studio Room 2A pass loaded! Check-in confirmed.', 'success')" class="px-6 py-3 rounded-xl bg-white text-[#6C4CE3] font-bold text-xs shadow-md hover:bg-gray-100 transition cursor-pointer flex items-center justify-center gap-2">
+              <i data-lucide="check-circle" class="w-4 h-4 text-[#6C4CE3]"></i> Check-in to Class
+            </button>
+            <a href="schedule.html" class="px-6 py-2.5 text-center rounded-xl bg-white/15 hover:bg-white/25 text-white font-medium text-xs transition">
+              Reschedule Slot
+            </a>
+          </div>
+        </div>
+
+        <!-- Mini Weekly Schedule List -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <!-- Class 1 -->
+          <div class="p-4 rounded-2xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm flex items-start gap-3">
+            <div class="w-10 h-10 rounded-xl bg-purple-100 text-[#6C4CE3] flex flex-col items-center justify-center shrink-0">
+              <span class="text-[9px] font-bold uppercase">Wed</span>
+              <span class="text-xs font-extrabold leading-none">Nov 2</span>
+            </div>
+            <div class="min-w-0 flex-1">
+              <div class="text-xs font-bold text-gray-900 dark:text-white truncate">Acoustic Guitar Mastery</div>
+              <div class="text-[11px] text-gray-500">6:30 PM &bull; Room 2A</div>
+              <div class="text-[10px] text-[#6C4CE3] font-semibold mt-1">Mentor: David Miller</div>
+            </div>
+            <span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 text-[10px] font-bold">Confirmed</span>
+          </div>
+
+          <!-- Class 2 -->
+          <div class="p-4 rounded-2xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm flex items-start gap-3">
+            <div class="w-10 h-10 rounded-xl bg-orange-100 text-[#FF9F43] flex flex-col items-center justify-center shrink-0">
+              <span class="text-[9px] font-bold uppercase">Sat</span>
+              <span class="text-xs font-extrabold leading-none">Nov 5</span>
+            </div>
+            <div class="min-w-0 flex-1">
+              <div class="text-xs font-bold text-gray-900 dark:text-white truncate">Western Vocals &amp; Breathwork</div>
+              <div class="text-[11px] text-gray-500">10:00 AM &bull; Vocal Booth 1</div>
+              <div class="text-[10px] text-[#FF9F43] font-semibold mt-1">Mentor: Aarav Sharma</div>
+            </div>
+            <span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 text-[10px] font-bold">Confirmed</span>
+          </div>
+
+          <!-- Class 3 -->
+          <div class="p-4 rounded-2xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm flex items-start gap-3">
+            <div class="w-10 h-10 rounded-xl bg-purple-100 text-[#6C4CE3] flex flex-col items-center justify-center shrink-0">
+              <span class="text-[9px] font-bold uppercase">Tue</span>
+              <span class="text-xs font-extrabold leading-none">Nov 8</span>
+            </div>
+            <div class="min-w-0 flex-1">
+              <div class="text-xs font-bold text-gray-900 dark:text-white truncate">Music Theory &amp; Scales</div>
+              <div class="text-[11px] text-gray-500">5:30 PM &bull; Theory Lab 3</div>
+              <div class="text-[10px] text-[#6C4CE3] font-semibold mt-1">Mentor: Priya Verma</div>
+            </div>
+            <span class="px-2 py-0.5 rounded-full bg-purple-100 text-[#6C4CE3] text-[10px] font-bold">Upcoming</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Module 2: Enrolling in Batches -->
+      <section class="space-y-4">
+        <div class="flex items-center justify-between">
+          <div>
+            <h3 class="font-serif text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">2. Batch Enrollment</h3>
+            <p class="text-xs text-gray-500">Your enrolled instrument batches, seat availability, and batch transfers.</p>
+          </div>
+          <a href="batches.html" class="text-xs text-[#6C4CE3] font-bold hover:underline flex items-center gap-1">
+            <span>Browse All Batches</span> &rarr;
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
           
-          <!-- Upcoming Class Spotlight -->
-          <div class="p-6 rounded-3xl bg-[#6C4CE3] text-white shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6">
-            <div class="space-y-2 text-center sm:text-left">
-              <span class="px-2.5 py-0.5 rounded-full bg-white/20 text-[10px] font-bold uppercase tracking-wider">Next Live Session</span>
-              <h3 class="font-serif text-2xl font-bold">Acoustic Guitar: Barre Chords &amp; Minor Pentatonics</h3>
-              <p class="text-xs text-white/90">Tomorrow, Nov 2 &bull; 6:30 PM – 7:30 PM &bull; Acoustic Studio Room 2A</p>
-              <div class="flex items-center justify-center sm:justify-start gap-2 pt-1 text-xs">
-                <span class="flex items-center gap-1"><i data-lucide="user" class="w-3.5 h-3.5"></i> Mentor: David Miller</span>
-                <span>&bull;</span>
-                <span>Batch: Adult Evening</span>
+          <!-- Enrolled Batch 1 -->
+          <div class="p-5 sm:p-6 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm space-y-4">
+            <div class="flex items-start justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-purple-100 text-[#6C4CE3] flex items-center justify-center text-xl shrink-0">
+                  🎸
+                </div>
+                <div>
+                  <span class="px-2 py-0.5 rounded-full bg-purple-100 text-[#6C4CE3] text-[10px] font-bold uppercase">Active Enrolled Batch</span>
+                  <h4 class="font-serif text-base sm:text-lg font-bold text-gray-900 dark:text-white mt-0.5">Acoustic &amp; Electric Guitar Mastery</h4>
+                </div>
+              </div>
+              <span class="text-xs font-extrabold text-[#6C4CE3]">68% Done</span>
+            </div>
+
+            <div class="p-3.5 rounded-2xl bg-gray-50 dark:bg-charcoal-750 text-xs space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="text-gray-500">Class Timings:</span>
+                <span class="font-bold text-gray-800 dark:text-gray-200">Tue &amp; Thu &bull; 6:30 PM – 7:30 PM</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-gray-500">Mentor &amp; Room:</span>
+                <span class="font-bold text-gray-800 dark:text-gray-200">David Miller &bull; Studio Room 2A</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-gray-500">Batch Size:</span>
+                <span class="font-bold text-emerald-600">8 / 8 Students (Full)</span>
               </div>
             </div>
-            <div class="shrink-0 flex flex-col gap-2 w-full sm:w-auto">
-              <button onclick="HarmonyApp.showToast('Studio Room 2A directions loaded in your pass!', 'success')" class="px-5 py-2.5 rounded-xl bg-white text-coral-600 font-bold text-xs shadow hover:bg-gray-100 transition">
-                Check-in to Class
+
+            <!-- Progress bar -->
+            <div class="space-y-1.5">
+              <div class="flex justify-between text-[11px] text-gray-500">
+                <span>Progress: 22 of 32 sessions completed</span>
+                <span class="font-bold text-[#6C4CE3]">10 sessions left</span>
+              </div>
+              <div class="w-full bg-gray-200 dark:bg-charcoal-700 rounded-full h-2 overflow-hidden">
+                <div class="bg-[#6C4CE3] h-2 rounded-full" style="width: 68%"></div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3 pt-1">
+              <button onclick="openTransferModal('Acoustic & Electric Guitar Mastery')" class="flex-1 py-2 rounded-xl border border-gray-300 dark:border-charcoal-700 text-xs font-bold text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-charcoal-750 transition cursor-pointer">
+                Request Transfer
               </button>
-              <a href="schedule.html" class="px-5 py-2 text-center rounded-xl bg-white/20 hover:bg-white/30 text-white font-medium text-xs transition">
-                Reschedule Slot
+              <a href="schedule.html" class="flex-1 py-2 text-center rounded-xl bg-purple-50 dark:bg-purple-950/40 text-[#6C4CE3] text-xs font-bold hover:bg-purple-100 transition">
+                View Schedule
               </a>
             </div>
           </div>
 
-          <!-- My Enrolled Courses Progress -->
-          <div class="p-6 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm space-y-6">
-            <div class="flex items-center justify-between">
-              <h3 class="font-serif text-xl font-bold text-gray-900 dark:text-white">Active Courses Curriculum</h3>
-              <a href="courses.html" class="text-xs text-coral-600 font-bold hover:underline">View All Courses &rarr;</a>
-            </div>
-
-            <div class="space-y-4">
-              <!-- Course 1 -->
-              <div class="p-4 rounded-2xl bg-gray-50 dark:bg-charcoal-750 border border-gray-100 dark:border-charcoal-700 space-y-3">
-                <div class="flex items-center justify-between gap-3">
-                  <div class="flex items-center gap-3 min-w-0">
-                    <div class="w-10 h-10 rounded-xl bg-coral-100 text-coral-600 flex items-center justify-center shrink-0">
-                      <i data-lucide="guitar" class="w-5 h-5"></i>
-                    </div>
-                    <div class="min-w-0">
-                      <h4 class="text-xs font-bold text-gray-900 dark:text-white truncate">Acoustic &amp; Electric Guitar Mastery</h4>
-                      <p class="text-[11px] text-gray-500 truncate">Mentor: David Miller &bull; Level 2 Intermediate</p>
-                    </div>
-                  </div>
-                  <span class="text-xs font-bold text-coral-600 shrink-0">68% Done</span>
+          <!-- Enrolled Batch 2 -->
+          <div class="p-5 sm:p-6 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm space-y-4">
+            <div class="flex items-start justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-orange-100 text-[#FF9F43] flex items-center justify-center text-xl shrink-0">
+                  🎤
                 </div>
-                <!-- Progress bar -->
-                <div class="w-full bg-gray-200 dark:bg-charcoal-700 rounded-full h-2 overflow-hidden">
-                  <div class="bg-coral-500 h-2 rounded-full" style="width: 68%"></div>
-                </div>
-                <div class="flex flex-wrap items-center justify-between gap-2 text-[11px] text-gray-400">
-                  <span>22 of 32 sessions completed</span>
-                  <a href="courses.html" class="text-coral-600 hover:underline">Download Sheet PDFs</a>
+                <div>
+                  <span class="px-2 py-0.5 rounded-full bg-orange-100 text-[#FF9F43] text-[10px] font-bold uppercase">Active Enrolled Batch</span>
+                  <h4 class="font-serif text-base sm:text-lg font-bold text-gray-900 dark:text-white mt-0.5">Contemporary &amp; Western Vocals</h4>
                 </div>
               </div>
-
-              <!-- Course 2 -->
-              <div class="p-4 rounded-2xl bg-gray-50 dark:bg-charcoal-750 border border-gray-100 dark:border-charcoal-700 space-y-3">
-                <div class="flex items-center justify-between gap-3">
-                  <div class="flex items-center gap-3 min-w-0">
-                    <div class="w-10 h-10 rounded-xl bg-sage-100 text-sage-600 flex items-center justify-center shrink-0">
-                      <i data-lucide="mic" class="w-5 h-5"></i>
-                    </div>
-                    <div class="min-w-0">
-                      <h4 class="text-xs font-bold text-gray-900 dark:text-white truncate">Contemporary &amp; Western Vocals</h4>
-                      <p class="text-[11px] text-gray-500 truncate">Mentor: Aarav Sharma &bull; Level 1 Breath &amp; Pitch</p>
-                    </div>
-                  </div>
-                  <span class="text-xs font-bold text-sage-600 shrink-0">45% Done</span>
-                </div>
-                <!-- Progress bar -->
-                <div class="w-full bg-gray-200 dark:bg-charcoal-700 rounded-full h-2 overflow-hidden">
-                  <div class="bg-sage-600 h-2 rounded-full" style="width: 45%"></div>
-                </div>
-                <div class="flex flex-wrap items-center justify-between gap-2 text-[11px] text-gray-400">
-                  <span>11 of 24 sessions completed</span>
-                  <a href="courses.html" class="text-sage-600 hover:underline">Download Scales Audio</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Recent Instructor Feedback Log -->
-          <div class="p-6 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm space-y-4">
-            <div class="flex items-center justify-between">
-              <h3 class="font-serif text-xl font-bold text-gray-900 dark:text-white">Recent Teacher Notes</h3>
-              <a href="progress.html" class="text-xs text-coral-600 font-bold hover:underline">Full Feedback History &rarr;</a>
+              <span class="text-xs font-extrabold text-[#FF9F43]">45% Done</span>
             </div>
 
-            <div class="p-4 rounded-2xl bg-coral-50/60 dark:bg-charcoal-750 border border-coral-200/50 dark:border-charcoal-700 space-y-3">
+            <div class="p-3.5 rounded-2xl bg-gray-50 dark:bg-charcoal-750 text-xs space-y-2">
               <div class="flex items-center justify-between">
-                <div class="flex items-center gap-2">
-                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="David Miller" class="w-7 h-7 rounded-full object-cover">
-                  <span class="text-xs font-bold text-gray-900 dark:text-white">David Miller (Guitar)</span>
-                </div>
-                <span class="text-[10px] text-gray-400">Oct 29, 2026</span>
+                <span class="text-gray-500">Class Timings:</span>
+                <span class="font-bold text-gray-800 dark:text-gray-200">Saturday &bull; 10:00 AM – 11:30 AM</span>
               </div>
-              <p class="text-xs text-gray-600 dark:text-gray-300 leading-relaxed italic">
-                "Rohan's transition to the F major barre chord is noticeably cleaner this week! Hand tension has reduced by 80%. Keep practicing with the 75 BPM metronome groove."
-              </p>
-              <div class="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
-                <button data-audio-player class="px-3 py-1.5 rounded-lg bg-coral-500 text-white font-bold text-[11px] flex items-center justify-center sm:justify-start gap-1.5 hover:bg-coral-600 transition w-full sm:w-auto">
-                  <i data-lucide="play" class="w-3.5 h-3.5"></i> Play Voice Note (0:48)
+              <div class="flex items-center justify-between">
+                <span class="text-gray-500">Mentor &amp; Room:</span>
+                <span class="font-bold text-gray-800 dark:text-gray-200">Aarav Sharma &bull; Vocal Booth 1</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-gray-500">Batch Size:</span>
+                <span class="font-bold text-emerald-600">6 / 6 Students (Full)</span>
+              </div>
+            </div>
+
+            <!-- Progress bar -->
+            <div class="space-y-1.5">
+              <div class="flex justify-between text-[11px] text-gray-500">
+                <span>Progress: 11 of 24 sessions completed</span>
+                <span class="font-bold text-[#FF9F43]">13 sessions left</span>
+              </div>
+              <div class="w-full bg-gray-200 dark:bg-charcoal-700 rounded-full h-2 overflow-hidden">
+                <div class="bg-[#FF9F43] h-2 rounded-full" style="width: 45%"></div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3 pt-1">
+              <button onclick="openTransferModal('Contemporary & Western Vocals')" class="flex-1 py-2 rounded-xl border border-gray-300 dark:border-charcoal-700 text-xs font-bold text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-charcoal-750 transition cursor-pointer">
+                Request Transfer
+              </button>
+              <a href="schedule.html" class="flex-1 py-2 text-center rounded-xl bg-orange-50 dark:bg-orange-950/40 text-[#FF9F43] text-xs font-bold hover:bg-orange-100 transition">
+                View Schedule
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Open Batches for Fast Enrollment -->
+        <div class="p-5 sm:p-6 rounded-3xl bg-purple-50/50 dark:bg-charcoal-800 border border-purple-100 dark:border-charcoal-700 space-y-4">
+          <div class="flex items-center justify-between">
+            <div>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-[#6C4CE3]">Fast Enrollment</span>
+              <h4 class="font-serif text-lg font-bold text-gray-900 dark:text-white">Open Batches Available Now</h4>
+            </div>
+            <a href="batches.html" class="text-xs text-[#6C4CE3] font-bold hover:underline">View 12 More &rarr;</a>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Open Batch 1 -->
+            <div class="p-4 rounded-2xl bg-white dark:bg-charcoal-750 border border-gray-200 dark:border-charcoal-700 shadow-sm flex flex-col justify-between gap-3">
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-lg">🥁</span>
+                    <h5 class="text-xs font-bold text-gray-900 dark:text-white">Stage &amp; Studio Drumkit</h5>
+                  </div>
+                  <p class="text-[11px] text-gray-500 mt-1">Sat &bull; 4:00 PM – 5:30 PM &bull; Mentor: Marcus Thorne</p>
+                </div>
+                <span class="px-2 py-0.5 rounded-full bg-rose-100 text-rose-700 text-[10px] font-extrabold shrink-0">2 Seats Left</span>
+              </div>
+              <div class="flex items-center justify-between pt-2 border-t border-gray-100 dark:border-charcoal-700">
+                <div class="font-serif text-sm font-bold text-gray-900 dark:text-white">₹3,800 <span class="text-[10px] font-sans font-normal text-gray-400">/mo</span></div>
+                <button onclick="enrollBatchModal('Stage & Studio Drumkit', 'Sat 4:00 PM – 5:30 PM', 'Marcus Thorne')" class="px-4 py-1.5 rounded-xl bg-[#6C4CE3] hover:bg-[#5A38D4] text-white text-xs font-bold shadow-md shadow-[#6C4CE3]/20 transition cursor-pointer">
+                  Enroll in Batch
                 </button>
-                <span class="text-[11px] font-semibold text-gray-500">Homework: Hotel California Intro</span>
               </div>
             </div>
-          </div>
 
-        </div>
-
-        <!-- Right: Audio Practice Recorder & Tools Widget -->
-        <div class="lg:col-span-4 space-y-6">
-          
-          <!-- Interactive Practice Recorder Widget -->
-          <div class="p-6 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm space-y-4">
-            <div class="flex items-center justify-between">
-              <h3 class="font-serif text-lg font-bold text-gray-900 dark:text-white">Practice Audio Recorder</h3>
-              <span class="w-2 h-2 rounded-full bg-[#FF9F43] animate-pulse" title="Microphone Ready"></span>
-            </div>
-            <p class="text-xs text-gray-500 leading-relaxed">
-              Record a 60-second snippet of your guitar or vocal exercise to submit directly to your mentor for weekly review.
-            </p>
-
-            <div class="p-4 rounded-2xl bg-gray-50 dark:bg-charcoal-750 text-center space-y-3">
-              <div class="font-mono text-2xl font-bold text-[#6C4CE3]" id="record-timer-text">00:00</div>
-              <p class="text-[11px] text-gray-400" id="record-status-text">Click below to record your take</p>
-              <button id="btn-record-practice" class="w-full py-2.5 rounded-xl bg-[#6C4CE3] hover:bg-[#5A38D4] text-white font-bold text-xs flex items-center justify-center gap-2 shadow transition cursor-pointer">
-                <i data-lucide="mic" class="w-4 h-4"></i> Start Recording
-              </button>
-            </div>
-          </div>
-
-          <!-- Interactive Practice Metronome Tool -->
-          <div data-metronome class="p-6 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm space-y-4">
-            <div class="flex items-center justify-between">
-              <div class="flex items-center gap-2">
-                <div class="w-7 h-7 rounded-lg bg-purple-100 dark:bg-purple-950/60 text-[#6C4CE3] flex items-center justify-center">
-                  <i data-lucide="activity" class="w-4 h-4"></i>
+            <!-- Open Batch 2 -->
+            <div class="p-4 rounded-2xl bg-white dark:bg-charcoal-750 border border-gray-200 dark:border-charcoal-700 shadow-sm flex flex-col justify-between gap-3">
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-lg">🎻</span>
+                    <h5 class="text-xs font-bold text-gray-900 dark:text-white">Classical Violin Virtuoso</h5>
+                  </div>
+                  <p class="text-[11px] text-gray-500 mt-1">Tue &amp; Thu &bull; 6:00 PM – 7:00 PM &bull; Mentor: Evelyn Vance</p>
                 </div>
-                <h3 class="font-serif text-lg font-bold text-gray-900 dark:text-white">Studio Metronome</h3>
+                <span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 text-[10px] font-extrabold shrink-0">3 Seats Left</span>
               </div>
-              <span class="font-mono text-xl font-bold text-[#6C4CE3]"><span data-bpm-display>100</span> <span class="text-xs font-normal text-gray-400">BPM</span></span>
+              <div class="flex items-center justify-between pt-2 border-t border-gray-100 dark:border-charcoal-700">
+                <div class="font-serif text-sm font-bold text-gray-900 dark:text-white">₹4,200 <span class="text-[10px] font-sans font-normal text-gray-400">/mo</span></div>
+                <button onclick="enrollBatchModal('Classical Violin Virtuoso', 'Tue & Thu 6:00 PM – 7:00 PM', 'Evelyn Vance')" class="px-4 py-1.5 rounded-xl bg-[#6C4CE3] hover:bg-[#5A38D4] text-white text-xs font-bold shadow-md shadow-[#6C4CE3]/20 transition cursor-pointer">
+                  Enroll in Batch
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Module 3: Tracking Attendance and Progress Notes -->
+      <section class="space-y-4">
+        <div class="flex items-center justify-between">
+          <div>
+            <h3 class="font-serif text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">3. Attendance &amp; Progress Notes</h3>
+            <p class="text-xs text-gray-500">Official roll-call presence records and mentor written/voice evaluations.</p>
+          </div>
+          <a href="attendance.html" class="text-xs text-[#6C4CE3] font-bold hover:underline flex items-center gap-1">
+            <span>All Attendance &amp; Notes</span> &rarr;
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          
+          <!-- Attendance Log Summary (5 cols) -->
+          <div class="lg:col-span-5 p-5 sm:p-6 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm space-y-4">
+            <div class="flex items-center justify-between">
+              <h4 class="font-serif text-base sm:text-lg font-bold text-gray-900 dark:text-white">Attendance Roll Call</h4>
+              <span class="px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-700 text-xs font-extrabold">94% Present</span>
             </div>
 
-            <!-- 4-Beat Visual Dots -->
-            <div class="flex items-center justify-center gap-3 py-2 bg-gray-50 dark:bg-charcoal-750 rounded-2xl">
-              <span data-beat-dot class="w-3.5 h-3.5 rounded-full bg-gray-300 dark:bg-charcoal-700 transition-all duration-75"></span>
-              <span data-beat-dot class="w-3.5 h-3.5 rounded-full bg-gray-300 dark:bg-charcoal-700 transition-all duration-75"></span>
-              <span data-beat-dot class="w-3.5 h-3.5 rounded-full bg-gray-300 dark:bg-charcoal-700 transition-all duration-75"></span>
-              <span data-beat-dot class="w-3.5 h-3.5 rounded-full bg-gray-300 dark:bg-charcoal-700 transition-all duration-75"></span>
+            <!-- Stats Bar -->
+            <div class="grid grid-cols-3 gap-2 text-center">
+              <div class="p-2.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-100 dark:border-emerald-900/50">
+                <div class="font-serif text-lg font-bold text-emerald-600">18</div>
+                <div class="text-[10px] text-gray-500">Attended</div>
+              </div>
+              <div class="p-2.5 rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-100 dark:border-amber-900/50">
+                <div class="font-serif text-lg font-bold text-amber-600">1</div>
+                <div class="text-[10px] text-gray-500">Excused</div>
+              </div>
+              <div class="p-2.5 rounded-xl bg-rose-50 dark:bg-rose-950/40 border border-rose-100 dark:border-rose-900/50">
+                <div class="font-serif text-lg font-bold text-rose-600">0</div>
+                <div class="text-[10px] text-gray-500">Unexcused</div>
+              </div>
             </div>
 
-            <!-- Tempo Slider -->
-            <input type="range" data-bpm-slider min="40" max="220" value="100" class="w-full accent-[#6C4CE3] cursor-pointer">
+            <!-- Recent Sessions List -->
+            <div class="space-y-2 pt-1">
+              <div class="flex items-center justify-between text-xs p-2.5 rounded-xl bg-gray-50 dark:bg-charcoal-750">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0"></i>
+                  <div>
+                    <span class="font-bold text-gray-800 dark:text-gray-200 block">Oct 31 &bull; Guitar Session #22</span>
+                    <span class="text-[10px] text-gray-400">6:30 PM &bull; Room 2A</span>
+                  </div>
+                </div>
+                <span class="text-[10px] font-bold text-emerald-600">Present</span>
+              </div>
 
-            <div class="grid grid-cols-2 gap-2">
-              <button data-metronome-toggle class="py-2.5 px-3 rounded-xl bg-[#6C4CE3] hover:bg-[#5A38D4] text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-md shadow-[#6C4CE3]/20 transition cursor-pointer">
-                <i data-lucide="play" class="w-4 h-4"></i> Start Metronome
-              </button>
-              <button data-metronome-tap class="py-2.5 px-3 rounded-xl border border-gray-200 dark:border-charcoal-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-charcoal-700 font-bold text-xs transition cursor-pointer">
-                Tap Tempo
-              </button>
+              <div class="flex items-center justify-between text-xs p-2.5 rounded-xl bg-gray-50 dark:bg-charcoal-750">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0"></i>
+                  <div>
+                    <span class="font-bold text-gray-800 dark:text-gray-200 block">Oct 28 &bull; Vocal Training #11</span>
+                    <span class="text-[10px] text-gray-400">10:00 AM &bull; Booth 1</span>
+                  </div>
+                </div>
+                <span class="text-[10px] font-bold text-emerald-600">Present</span>
+              </div>
+
+              <div class="flex items-center justify-between text-xs p-2.5 rounded-xl bg-gray-50 dark:bg-charcoal-750">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0"></i>
+                  <div>
+                    <span class="font-bold text-gray-800 dark:text-gray-200 block">Oct 24 &bull; Guitar Session #21</span>
+                    <span class="text-[10px] text-gray-400">6:30 PM &bull; Room 2A</span>
+                  </div>
+                </div>
+                <span class="text-[10px] font-bold text-emerald-600">Present</span>
+              </div>
+
+              <div class="flex items-center justify-between text-xs p-2.5 rounded-xl bg-gray-50 dark:bg-charcoal-750">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="clock" class="w-4 h-4 text-amber-500 shrink-0"></i>
+                  <div>
+                    <span class="font-bold text-gray-800 dark:text-gray-200 block">Oct 17 &bull; Vocal Training #10</span>
+                    <span class="text-[10px] text-gray-400">College exam notice</span>
+                  </div>
+                </div>
+                <span class="text-[10px] font-bold text-amber-600">Excused</span>
+              </div>
             </div>
           </div>
 
-          <!-- Academy Announcements Card -->
-          <div class="p-6 rounded-3xl bg-[#FF9F43]/10 dark:bg-charcoal-800 border border-[#FF9F43]/30 dark:border-charcoal-700 space-y-3">
-            <span class="text-[10px] font-bold uppercase tracking-wider text-[#FF9F43]">Academy Bulletin</span>
-            <h4 class="font-serif font-bold text-sm text-gray-900 dark:text-white">Quarterly Winter Recital Auditions</h4>
-            <p class="text-xs text-gray-600 dark:text-gray-300 leading-relaxed">
-              Audition slots for the Dec 19 concert hall showcase are now open. Speak to your mentor David or Aarav to nominate your piece.
-            </p>
+          <!-- Progress Notes & Evaluation (7 cols) -->
+          <div class="lg:col-span-7 p-5 sm:p-6 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm space-y-4">
+            <div class="flex items-center justify-between">
+              <h4 class="font-serif text-base sm:text-lg font-bold text-gray-900 dark:text-white">Latest Mentor Progress Notes</h4>
+              <span class="text-xs text-gray-400">Evaluated Oct 29, 2026</span>
+            </div>
+
+            <!-- Mentor Info -->
+            <div class="flex items-center gap-3 p-3 rounded-2xl bg-purple-50/60 dark:bg-charcoal-750 border border-purple-100 dark:border-charcoal-700">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="David Miller" class="w-10 h-10 rounded-full object-cover border border-purple-300">
+              <div class="min-w-0">
+                <div class="text-xs font-bold text-gray-900 dark:text-white">David Miller &bull; Lead Guitar Mentor</div>
+                <div class="text-[11px] text-gray-500">Trinity College Grade 5 Prep &bull; Batch #B1</div>
+              </div>
+            </div>
+
+            <!-- Technique Scores -->
+            <div class="grid grid-cols-3 gap-2 text-center text-xs">
+              <div class="p-2 rounded-xl bg-gray-50 dark:bg-charcoal-750 border border-gray-100 dark:border-charcoal-700">
+                <span class="text-[10px] text-gray-400 block uppercase font-bold">Barre Chords</span>
+                <span class="font-serif text-base font-bold text-[#6C4CE3]">9.0 / 10</span>
+              </div>
+              <div class="p-2 rounded-xl bg-gray-50 dark:bg-charcoal-750 border border-gray-100 dark:border-charcoal-700">
+                <span class="text-[10px] text-gray-400 block uppercase font-bold">Rhythm &amp; Metronome</span>
+                <span class="font-serif text-base font-bold text-[#6C4CE3]">8.5 / 10</span>
+              </div>
+              <div class="p-2 rounded-xl bg-gray-50 dark:bg-charcoal-750 border border-gray-100 dark:border-charcoal-700">
+                <span class="text-[10px] text-gray-400 block uppercase font-bold">Posture &amp; Wrist</span>
+                <span class="font-serif text-base font-bold text-emerald-600">9.5 / 10</span>
+              </div>
+            </div>
+
+            <!-- Written Note -->
+            <div class="p-4 rounded-2xl bg-gray-50 dark:bg-charcoal-750 border border-gray-100 dark:border-charcoal-700 space-y-2">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-purple-600 dark:text-purple-400">Written Teacher Feedback:</span>
+              <p class="text-xs text-gray-700 dark:text-gray-300 leading-relaxed italic">
+                "Rohan's transition to the F major barre chord is noticeably cleaner this week! Hand tension has reduced by 80%. Keep practicing with the 75 BPM metronome groove, focusing on smooth index finger barre pressure."
+              </p>
+            </div>
+
+            <!-- Homework & Voice Note -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-1">
+              <button onclick="HarmonyApp.showToast('Playing David Miller\'s voice feedback note (0:48)...', 'info')" class="px-4 py-2 rounded-xl bg-[#6C4CE3] text-white font-bold text-xs flex items-center justify-center gap-2 hover:bg-[#5A38D4] transition cursor-pointer">
+                <i data-lucide="play" class="w-3.5 h-3.5"></i> Play Mentor Audio Note (0:48)
+              </button>
+              <div class="text-[11px] text-gray-500">
+                <strong class="text-gray-800 dark:text-white">Homework:</strong> Hotel California Intro + Scale Drill #3
+              </div>
+            </div>
+
           </div>
 
         </div>
+      </section>
 
-      </div>
+      <!-- Module 4: Managing Fee Payments -->
+      <section class="space-y-4">
+        <div class="flex items-center justify-between">
+          <div>
+            <h3 class="font-serif text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">4. Fee Payments</h3>
+            <p class="text-xs text-gray-500">Upcoming tuition installments, payment receipts, and automated billing.</p>
+          </div>
+          <a href="fees.html" class="text-xs text-[#FF9F43] font-bold hover:underline flex items-center gap-1">
+            <span>View All Invoices</span> &rarr;
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          
+          <!-- Pending Due Card (5 cols) -->
+          <div class="lg:col-span-5 p-5 sm:p-6 rounded-3xl bg-gradient-to-br from-amber-500/10 via-orange-500/5 to-transparent dark:bg-charcoal-800 border border-[#FF9F43]/30 dark:border-charcoal-700 shadow-sm space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-0.5 rounded-full bg-[#FF9F43] text-white text-[10px] font-bold uppercase tracking-wider">Tuition Pending</span>
+              <span class="text-xs text-gray-500">Due Nov 15, 2026</span>
+            </div>
+
+            <div>
+              <span class="text-xs text-gray-500 block">Term 2 Instrumental &amp; Vocal Tuition</span>
+              <div class="font-serif text-3xl font-bold text-gray-900 dark:text-white mt-1">₹3,200</div>
+              <p class="text-[11px] text-gray-500 mt-1">Includes 8 Acoustic Guitar sessions + 4 Vocal Masterclasses.</p>
+            </div>
+
+            <div class="p-3 rounded-2xl bg-white dark:bg-charcoal-750 text-xs text-gray-600 dark:text-gray-300 space-y-1">
+              <div class="flex justify-between">
+                <span>Invoice ID:</span>
+                <span class="font-mono font-bold text-gray-800 dark:text-gray-200">#INV-2026-118</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Student:</span>
+                <span class="font-semibold text-gray-800 dark:text-gray-200">Rohan Sen (STU-2026-084)</span>
+              </div>
+            </div>
+
+            <button onclick="openPaymentModal('Term 2 Tuition', '3,200')" class="w-full py-3 rounded-xl bg-[#FF9F43] hover:bg-[#F58022] text-white font-bold text-xs shadow-md shadow-[#FF9F43]/30 transition cursor-pointer flex items-center justify-center gap-2">
+              <i data-lucide="credit-card" class="w-4 h-4"></i> Pay Now (₹3,200) &rarr;
+            </button>
+          </div>
+
+          <!-- Paid Receipts History (7 cols) -->
+          <div class="lg:col-span-7 p-5 sm:p-6 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm space-y-4">
+            <div class="flex items-center justify-between">
+              <h4 class="font-serif text-base sm:text-lg font-bold text-gray-900 dark:text-white">Recent Payment Receipts</h4>
+              <span class="text-xs text-emerald-600 font-bold">All Previous Paid in Full ✓</span>
+            </div>
+
+            <div class="space-y-3">
+              <!-- Receipt 1 -->
+              <div class="p-4 rounded-2xl bg-gray-50 dark:bg-charcoal-750 border border-gray-100 dark:border-charcoal-700 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div class="space-y-1">
+                  <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 text-[10px] font-bold">Paid</span>
+                    <h5 class="text-xs font-bold text-gray-900 dark:text-white">Term 1 Studio Tuition</h5>
+                  </div>
+                  <p class="text-[11px] text-gray-500">Paid on Oct 1, 2026 &bull; UPI Ref: #UPI-982144</p>
+                </div>
+                <div class="flex items-center justify-between sm:justify-end gap-3 shrink-0">
+                  <span class="font-serif text-sm font-bold text-gray-900 dark:text-white">₹3,200</span>
+                  <button onclick="HarmonyApp.showToast('Downloading official PDF receipt #HH-2026-8902...', 'info')" class="px-3 py-1.5 rounded-lg border border-gray-300 dark:border-charcoal-600 text-[11px] font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-charcoal-700 transition cursor-pointer flex items-center gap-1.5">
+                    <i data-lucide="download" class="w-3.5 h-3.5"></i> Receipt PDF
+                  </button>
+                </div>
+              </div>
+
+              <!-- Receipt 2 -->
+              <div class="p-4 rounded-2xl bg-gray-50 dark:bg-charcoal-750 border border-gray-100 dark:border-charcoal-700 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div class="space-y-1">
+                  <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 text-[10px] font-bold">Paid</span>
+                    <h5 class="text-xs font-bold text-gray-900 dark:text-white">Annual Studio Registration &amp; Kit</h5>
+                  </div>
+                  <p class="text-[11px] text-gray-500">Paid on Aug 15, 2026 &bull; Card Ref: #MC-4401</p>
+                </div>
+                <div class="flex items-center justify-between sm:justify-end gap-3 shrink-0">
+                  <span class="font-serif text-sm font-bold text-gray-900 dark:text-white">₹1,500</span>
+                  <button onclick="HarmonyApp.showToast('Downloading official PDF receipt #HH-2026-6140...', 'info')" class="px-3 py-1.5 rounded-lg border border-gray-300 dark:border-charcoal-600 text-[11px] font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-charcoal-700 transition cursor-pointer flex items-center gap-1.5">
+                    <i data-lucide="download" class="w-3.5 h-3.5"></i> Receipt PDF
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-2">
+              <a href="fees.html" class="block w-full py-2.5 text-center rounded-xl bg-gray-100 dark:bg-charcoal-750 hover:bg-gray-200 dark:hover:bg-charcoal-700 text-xs font-bold text-gray-700 dark:text-gray-200 transition">
+                Manage Saved Payment Cards &amp; UPI &rarr;
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </section>
 
     </main>
   </div>
 
+  <!-- Enrollment Confirmation Modal -->
+  <div id="enroll-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white dark:bg-charcoal-800 rounded-3xl p-6 sm:p-8 max-w-md w-full border border-gray-200 dark:border-charcoal-700 shadow-2xl space-y-5">
+      <div class="w-12 h-12 rounded-2xl bg-purple-100 text-[#6C4CE3] flex items-center justify-center text-xl font-bold">
+        ✨
+      </div>
+      <div>
+        <span class="text-xs font-bold uppercase tracking-wider text-[#6C4CE3]">Confirm Enrollment</span>
+        <h3 class="font-serif text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mt-1" id="modal-batch-title">Batch Title</h3>
+        <p class="text-xs text-gray-500 mt-1" id="modal-batch-details">Schedule &amp; Mentor details</p>
+      </div>
+
+      <div class="p-3.5 rounded-2xl bg-purple-50/70 dark:bg-purple-950/40 text-xs text-purple-900 dark:text-purple-200 space-y-1">
+        <p class="font-bold">✓ Seat will be immediately reserved under Rohan Sen (STU-2026-084).</p>
+        <p class="text-[11px] opacity-80">Tuition will be prorated into your regular monthly billing cycle.</p>
+      </div>
+
+      <div class="flex items-center gap-3 pt-2">
+        <button type="button" onclick="document.getElementById('enroll-modal').classList.add('hidden')" class="flex-1 py-2.5 rounded-xl border border-gray-300 dark:border-charcoal-700 text-xs font-bold text-gray-700 dark:text-gray-300 hover:bg-gray-100 transition cursor-pointer">
+          Cancel
+        </button>
+        <button type="button" id="modal-confirm-btn" class="flex-1 py-2.5 rounded-xl bg-[#6C4CE3] hover:bg-[#5A38D4] text-white text-xs font-bold shadow-md shadow-[#6C4CE3]/30 transition cursor-pointer">
+          Confirm Enrollment &rarr;
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Transfer Modal -->
+  <div id="transfer-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white dark:bg-charcoal-800 rounded-3xl p-6 sm:p-8 max-w-md w-full border border-gray-200 dark:border-charcoal-700 shadow-2xl space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="font-serif text-xl font-bold text-gray-900 dark:text-white">Request Batch Transfer</h3>
+        <button type="button" onclick="document.getElementById('transfer-modal').classList.add('hidden')" class="p-1 rounded-lg text-gray-400 hover:text-gray-600"><i data-lucide="x" class="w-5 h-5"></i></button>
+      </div>
+      <p class="text-xs text-gray-500">Switch timings or transfer between weekday evening and weekend batches without penalty.</p>
+
+      <form onsubmit="event.preventDefault(); document.getElementById('transfer-modal').classList.add('hidden'); HarmonyApp.showToast('Batch transfer request submitted to academic office!', 'success');" class="space-y-3 pt-2">
+        <div>
+          <label class="text-xs font-semibold text-gray-700 dark:text-gray-300 block mb-1">Current Batch</label>
+          <input type="text" id="transfer-current-batch" readonly class="w-full text-xs p-2.5 rounded-xl bg-gray-100 dark:bg-charcoal-750 border border-gray-200 dark:border-charcoal-700 text-gray-800 dark:text-white font-semibold">
+        </div>
+        <div>
+          <label class="text-xs font-semibold text-gray-700 dark:text-gray-300 block mb-1">Desired Timing / Batch</label>
+          <select class="w-full text-xs p-2.5 rounded-xl bg-gray-50 dark:bg-charcoal-750 border border-gray-200 dark:border-charcoal-700 text-gray-800 dark:text-white">
+            <option>Weekend Morning (Sun 9:30 AM – 11:00 AM)</option>
+            <option>Weekday Early Evening (Mon &amp; Wed 5:00 PM – 6:00 PM)</option>
+            <option>Saturday Afternoon (Sat 2:00 PM – 3:30 PM)</option>
+          </select>
+        </div>
+        <div>
+          <label class="text-xs font-semibold text-gray-700 dark:text-gray-300 block mb-1">Reason for Transfer</label>
+          <textarea rows="2" placeholder="e.g. Schedule clash with college..." class="w-full text-xs p-2.5 rounded-xl bg-gray-50 dark:bg-charcoal-750 border border-gray-200 dark:border-charcoal-700 text-gray-800 dark:text-white"></textarea>
+        </div>
+        <button type="submit" class="w-full py-2.5 rounded-xl bg-[#6C4CE3] text-white font-bold text-xs shadow-md shadow-[#6C4CE3]/30 transition cursor-pointer mt-2">
+          Submit Transfer Request &rarr;
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Quick Fee Payment Modal -->
+  <div id="payment-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white dark:bg-charcoal-800 rounded-3xl p-6 sm:p-8 max-w-md w-full border border-gray-200 dark:border-charcoal-700 shadow-2xl space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="font-serif text-xl font-bold text-gray-900 dark:text-white">Instant Fee Payment</h3>
+        <button type="button" onclick="document.getElementById('payment-modal').classList.add('hidden')" class="p-1 rounded-lg text-gray-400 hover:text-gray-600"><i data-lucide="x" class="w-5 h-5"></i></button>
+      </div>
+
+      <div class="p-3.5 rounded-2xl bg-orange-50 dark:bg-orange-950/40 border border-orange-200/50 dark:border-charcoal-700 flex justify-between items-center">
+        <div>
+          <span class="text-[11px] text-gray-500 block" id="pay-item-title">Term 2 Tuition</span>
+          <span class="font-serif text-2xl font-bold text-[#FF9F43]">₹<span id="pay-item-amount">3,200</span></span>
+        </div>
+        <span class="px-2 py-0.5 rounded-full bg-orange-100 text-[#FF9F43] text-[10px] font-bold">Due Nov 15</span>
+      </div>
+
+      <div class="space-y-2 pt-1 text-xs">
+        <label class="font-semibold text-gray-700 dark:text-gray-300 block">Select Payment Mode</label>
+        <div class="grid grid-cols-2 gap-2">
+          <label class="p-3 rounded-xl border-2 border-[#6C4CE3] bg-purple-50/50 dark:bg-purple-950/40 flex items-center gap-2 cursor-pointer font-bold text-[#6C4CE3]">
+            <input type="radio" name="pay-method" checked class="accent-[#6C4CE3]"> UPI / QR
+          </label>
+          <label class="p-3 rounded-xl border border-gray-200 dark:border-charcoal-700 flex items-center gap-2 cursor-pointer font-medium text-gray-700 dark:text-gray-300">
+            <input type="radio" name="pay-method" class="accent-[#6C4CE3]"> Net Banking / Card
+          </label>
+        </div>
+      </div>
+
+      <div class="pt-2">
+        <button type="button" onclick="confirmPayment()" class="w-full py-3 rounded-xl bg-[#6C4CE3] hover:bg-[#5A38D4] text-white font-bold text-xs shadow-md shadow-[#6C4CE3]/30 transition cursor-pointer">
+          Authorize ₹<span id="pay-btn-amount">3,200</span> &amp; Download Receipt &rarr;
+        </button>
+      </div>
+    </div>
+  </div>
+
   <script src="../assets/js/data.js"></script>
-  <script src="../assets/js/audio-engine.js"></script>
   <script src="../assets/js/3d-engine.js"></script>
   <script src="../assets/js/main.js"></script>
   <script src="../assets/js/dashboard.js"></script>
+  <script>
+    // Fast Enrollment modal trigger
+    function enrollBatchModal(title, schedule, mentor) {
+      document.getElementById('modal-batch-title').textContent = title;
+      document.getElementById('modal-batch-details').textContent = `${schedule} • Mentor: ${mentor}`;
+      const modal = document.getElementById('enroll-modal');
+      modal.classList.remove('hidden');
+
+      const confirmBtn = document.getElementById('modal-confirm-btn');
+      confirmBtn.onclick = function() {
+        modal.classList.add('hidden');
+        if (window.HarmonyApp) {
+          HarmonyApp.showToast(`🎉 Enrolled in ${title}! Seat confirmed for Rohan Sen.`, 'success');
+        }
+      };
+    }
+
+    // Transfer Modal trigger
+    function openTransferModal(batchName) {
+      document.getElementById('transfer-current-batch').value = batchName;
+      document.getElementById('transfer-modal').classList.remove('hidden');
+    }
+
+    // Fee Payment Modal trigger
+    function openPaymentModal(title, amount) {
+      document.getElementById('pay-item-title').textContent = title;
+      document.getElementById('pay-item-amount').textContent = amount;
+      document.getElementById('pay-btn-amount').textContent = amount;
+      document.getElementById('payment-modal').classList.remove('hidden');
+    }
+
+    function confirmPayment() {
+      document.getElementById('payment-modal').classList.add('hidden');
+      if (window.HarmonyApp) {
+        HarmonyApp.showToast('✅ Payment of ₹3,200 successful! Receipt #HH-2026-9041 issued.', 'success');
+      }
+    }
+  </script>
 </body>
 </html>
-
