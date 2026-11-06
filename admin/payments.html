@@ -241,6 +241,20 @@
         <span class="hidden sm:inline">Send Bulk Dues Alert</span>
         <span class="sm:hidden">Send Alert</span>
       </button>
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+
+        <!-- Theme Toggle Button -->
+        <button data-action="toggle-theme" class="p-2 rounded-full text-gray-500 hover:bg-gray-100 dark:hover:bg-charcoal-800 transition cursor-pointer" title="Toggle Theme">
+          <i data-lucide="sun" class="w-4 h-4 dark:hidden"></i>
+          <i data-lucide="moon" class="w-4 h-4 hidden dark:inline"></i>
+        </button>
+
+        <!-- RTL / LTR Toggle Button -->
+        <button data-action="toggle-rtl" class="px-2.5 py-1 text-xs font-mono font-bold rounded-full border border-gray-200 dark:border-charcoal-700 hover:border-[#6C4CE3] text-gray-700 dark:text-gray-300 hover:text-[#6C4CE3] transition flex items-center gap-1 cursor-pointer" title="Toggle Text Direction (RTL / LTR)">
+          <i data-lucide="languages" class="w-3.5 h-3.5 text-[#6C4CE3]"></i>
+          <span data-rtl-label>RTL</span>
+        </button>
+  </div>
     </header>
 
     <main class="p-4 sm:p-8 space-y-6 flex-1">

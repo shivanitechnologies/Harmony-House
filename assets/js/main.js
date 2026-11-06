@@ -102,6 +102,7 @@ const HarmonyApp = {
     this.initAccordions();
     this.initContactForms();
     this.initPremiumSelect();
+    this.initUniversalCustomSelects();
     this.initPortalSwitcher();
     this.initSoundboard();
     this.initPlayablePiano();
@@ -138,6 +139,7 @@ const HarmonyApp = {
   initDirection() {
     const savedDir = localStorage.getItem('harmony_dir') || 'ltr';
     document.documentElement.setAttribute('dir', savedDir);
+    this.updateRtlButtons(savedDir);
 
     document.querySelectorAll('[data-action="toggle-rtl"]').forEach(btn => {
       btn.addEventListener('click', (e) => {
@@ -152,6 +154,16 @@ const HarmonyApp = {
     const newDir = current === 'ltr' ? 'rtl' : 'ltr';
     document.documentElement.setAttribute('dir', newDir);
     localStorage.setItem('harmony_dir', newDir);
+    this.updateRtlButtons(newDir);
+    if (this.showToast) {
+      this.showToast(`Layout switched to ${newDir.toUpperCase()} view`, 'info');
+    }
+  },
+
+  updateRtlButtons(dir) {
+    document.querySelectorAll('[data-rtl-label]').forEach(label => {
+      label.textContent = dir === 'rtl' ? 'LTR' : 'RTL';
+    });
   },
 
   initLucide() {
@@ -356,6 +368,153 @@ const HarmonyApp = {
   },
 
   // Interactive Playable Mini Piano Keyboard
+
+  initUniversalCustomSelects() {
+    const selects = document.querySelectorAll('select:not([data-custom-ready]):not(#contact-course-select)');
+    selects.forEach(select => {
+      select.setAttribute('data-custom-ready', 'true');
+
+      // Create container wrapper
+      const wrapper = document.createElement('div');
+      wrapper.className = 'harmony-select-custom relative w-full text-xs select-none';
+      if (select.className.includes('inline') || select.style.display === 'inline-block') {
+        wrapper.classList.add('inline-block');
+      }
+
+      // Read current options
+      const trigger = document.createElement('button');
+      trigger.type = 'button';
+      trigger.className = 'harmony-select-trigger w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 text-gray-900 dark:text-gray-100 flex items-center justify-between text-xs font-medium shadow-sm transition hover:border-[#6C4CE3] cursor-pointer';
+      
+      const textSpan = document.createElement('span');
+      textSpan.className = 'truncate text-left flex-1';
+      const curOpt = select.options[select.selectedIndex] || select.options[0];
+      textSpan.textContent = curOpt ? curOpt.text : 'Select...';
+
+      const chevron = document.createElement('span');
+      chevron.className = 'harmony-select-chevron text-gray-400 shrink-0 ml-2 transition-transform duration-200';
+      chevron.innerHTML = `<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>`;
+
+      trigger.appendChild(textSpan);
+      trigger.appendChild(chevron);
+
+      // Custom dropdown menu card
+      const menu = document.createElement('div');
+      menu.className = 'harmony-select-menu hidden absolute top-full left-0 right-0 mt-1.5 z-50 rounded-2xl bg-white dark:bg-[#161426] border border-gray-200 dark:border-charcoal-700 shadow-2xl p-1.5 max-h-60 overflow-y-auto space-y-0.5';
+
+      function renderOptions() {
+        menu.innerHTML = '';
+        Array.from(select.options).forEach((opt, idx) => {
+          if (opt.disabled) return;
+          const isSelected = select.selectedIndex === idx;
+          const item = document.createElement('div');
+          item.className = `harmony-select-option px-3 py-2 rounded-xl text-xs font-medium cursor-pointer transition flex items-center justify-between ${
+            isSelected 
+              ? 'bg-purple-50 dark:bg-purple-950/60 text-[#6C4CE3] dark:text-purple-300 font-bold' 
+              : 'text-gray-700 dark:text-gray-200 hover:bg-purple-50/70 dark:hover:bg-purple-950/30 hover:text-[#6C4CE3]'
+          }`;
+
+          const label = document.createElement('span');
+          label.className = 'truncate';
+          label.textContent = opt.text;
+          item.appendChild(label);
+
+          if (isSelected) {
+            const check = document.createElement('span');
+            check.className = 'text-[#6C4CE3] dark:text-purple-300 shrink-0 ml-2';
+            check.innerHTML = `<svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
+            item.appendChild(check);
+          }
+
+          item.addEventListener('click', (e) => {
+            e.stopPropagation();
+            select.selectedIndex = idx;
+            select.value = opt.value;
+            textSpan.textContent = opt.text;
+            renderOptions();
+            closeDropdown();
+            select.dispatchEvent(new Event('change', { bubbles: true }));
+            select.dispatchEvent(new Event('input', { bubbles: true }));
+          });
+
+          menu.appendChild(item);
+        });
+      }
+
+      renderOptions();
+
+      function toggleDropdown() {
+        const isOpen = !menu.classList.contains('hidden');
+        if (isOpen) {
+          closeDropdown();
+        } else {
+          document.querySelectorAll('.harmony-select-menu').forEach(m => m.classList.add('hidden'));
+          document.querySelectorAll('.harmony-select-chevron').forEach(c => c.style.transform = 'rotate(0deg)');
+          renderOptions();
+          menu.classList.remove('hidden');
+          chevron.style.transform = 'rotate(180deg)';
+          trigger.classList.add('border-[#6C4CE3]', 'ring-2', 'ring-[#6C4CE3]/20');
+        }
+      }
+
+      function closeDropdown() {
+        menu.classList.add('hidden');
+        chevron.style.transform = 'rotate(0deg)';
+        trigger.classList.remove('border-[#6C4CE3]', 'ring-2', 'ring-[#6C4CE3]/20');
+      }
+
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleDropdown();
+      });
+
+      // Synchronize if select is updated externally
+      select.addEventListener('change', () => {
+        const cur = select.options[select.selectedIndex];
+        if (cur) {
+          textSpan.textContent = cur.text;
+          renderOptions();
+        }
+      });
+
+      // Hide parent chevron icon if present in relative container (e.g., courses.html)
+      const siblingChevron = select.parentNode.querySelector(':scope > i[data-lucide="chevron-down"], :scope > svg.lucide-chevron-down');
+      if (siblingChevron) {
+        siblingChevron.style.display = 'none';
+      }
+
+      // Insert wrapper in place of select
+      select.parentNode.insertBefore(wrapper, select);
+      wrapper.appendChild(select);
+      wrapper.appendChild(trigger);
+      wrapper.appendChild(menu);
+
+      // Hide native select visually while keeping it in the form
+      select.style.position = 'absolute';
+      select.style.opacity = '0';
+      select.style.pointerEvents = 'none';
+      select.style.width = '1px';
+      select.style.height = '1px';
+      select.style.margin = '-1px';
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.harmony-select-custom')) {
+        document.querySelectorAll('.harmony-select-menu').forEach(m => m.classList.add('hidden'));
+        document.querySelectorAll('.harmony-select-chevron').forEach(c => c.style.transform = 'rotate(0deg)');
+        document.querySelectorAll('.harmony-select-trigger').forEach(t => t.classList.remove('border-[#6C4CE3]', 'ring-2', 'ring-[#6C4CE3]/20'));
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.harmony-select-menu').forEach(m => m.classList.add('hidden'));
+        document.querySelectorAll('.harmony-select-chevron').forEach(c => c.style.transform = 'rotate(0deg)');
+      }
+    });
+  },
+
   initPlayablePiano() {
     document.querySelectorAll('[data-piano-key]').forEach(key => {
       const playKey = () => {
