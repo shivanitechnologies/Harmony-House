@@ -117,10 +117,49 @@
           <button data-action="toggle-rtl" class="hidden xl:inline-flex px-2.5 py-1.5 text-xs font-mono font-medium rounded-full border border-gray-200 dark:border-charcoal-700 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-charcoal-800 transition" title="Toggle RTL">
             ⇄ RTL
           </button>
-          <a href="auth/login.html" class="hidden sm:flex items-center gap-1.5 px-4 py-2 rounded-full bg-purple-50 dark:bg-charcoal-800 border border-purple-200 dark:border-charcoal-700 text-[#6C4CE3] dark:text-[#987AF0] hover:border-[#6C4CE3] hover:text-[#6C4CE3] text-xs font-semibold shadow-sm transition">
-            <i data-lucide="graduation-cap" class="w-4 h-4 text-[#6C4CE3]"></i>
-            <span>Student Portal</span>
-          </a>
+          <!-- Portal Switcher Dropdown (Login) -->
+          <div class="relative hidden sm:inline-block text-left" data-portal-switcher>
+            <button 
+              type="button" 
+              data-portal-btn
+              class="flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-xl bg-[#6C4CE3] hover:bg-[#5A38D4] text-white text-xs sm:text-sm font-bold shadow-md shadow-[#6C4CE3]/25 transition cursor-pointer select-none"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <i data-lucide="shield" class="w-4 h-4 text-white" data-portal-current-icon></i>
+              <span data-portal-current-label>Login</span>
+              <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-white/90 transition-transform duration-200" data-portal-chevron></i>
+            </button>
+
+            <!-- Floating Switch Portal Card -->
+            <div 
+              data-portal-menu
+              class="hidden absolute right-0 mt-2 w-56 bg-white dark:bg-charcoal-850 rounded-2xl shadow-2xl border border-gray-100 dark:border-charcoal-700 p-2 z-50 transform origin-top-right transition-all"
+            >
+              <div class="px-3 pt-2 pb-1.5 text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-gray-400 select-none">
+                SWITCH PORTAL
+              </div>
+              <div class="space-y-1">
+                <!-- 1. Admin Dashboard -->
+                <a href="admin/index.html" data-portal-item="admin" class="portal-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition bg-purple-50 dark:bg-purple-950/50 text-[#6C4CE3] dark:text-purple-300">
+                  <i data-lucide="shield" class="w-4 h-4 text-[#6C4CE3] shrink-0"></i>
+                  <span class="flex-1">Admin Dashboard</span>
+                </a>
+
+                <!-- 2. Employer Dashboard -->
+                <a href="admin/students.html" data-portal-item="employer" class="portal-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-blue-950/30 hover:text-blue-600 dark:hover:text-blue-400">
+                  <i data-lucide="briefcase" class="w-4 h-4 text-blue-500 shrink-0"></i>
+                  <span class="flex-1">Employer Dashboard</span>
+                </a>
+
+                <!-- 3. Seeker Dashboard -->
+                <a href="student/index.html" data-portal-item="seeker" class="portal-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition text-gray-700 dark:text-gray-200 hover:bg-emerald-50 dark:hover:bg-emerald-950/30 hover:text-emerald-600 dark:hover:text-emerald-400">
+                  <i data-lucide="user" class="w-4 h-4 text-emerald-500 shrink-0"></i>
+                  <span class="flex-1">Seeker Dashboard</span>
+                </a>
+              </div>
+            </div>
+          </div>
           <button id="mobile-menu-btn" class="p-2 sm:p-2.5 rounded-xl text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-charcoal-800 xl:hidden focus:outline-none cursor-pointer" aria-label="Open Mobile Menu">
             <i data-lucide="menu" class="w-6 h-6"></i>
           </button>
@@ -188,10 +227,24 @@
           <span>⇄ RTL / LTR</span>
         </button>
       </div>
-      <a href="auth/login.html" class="flex items-center justify-center gap-2 px-3 py-2.5 rounded-xl bg-purple-50 dark:bg-purple-950/40 text-[#6C4CE3] dark:text-[#987AF0] font-bold text-xs border border-purple-200 dark:border-charcoal-700 hover:bg-purple-100 transition">
-        <i data-lucide="graduation-cap" class="w-4 h-4"></i>
-        <span>Student Dashboard Login</span>
-      </a>
+      <!-- Mobile Switch Portal Options -->
+      <div class="space-y-1.5">
+        <div class="text-[10px] font-bold uppercase tracking-wider text-gray-400 px-1">Switch Portal</div>
+        <div class="grid grid-cols-3 gap-1.5">
+          <a href="admin/index.html" class="flex flex-col items-center justify-center gap-1 p-2 rounded-xl bg-purple-50 dark:bg-purple-950/40 border border-purple-200 dark:border-charcoal-700 text-[#6C4CE3] dark:text-purple-300 font-bold text-[11px] text-center">
+            <i data-lucide="shield" class="w-4 h-4 text-[#6C4CE3]"></i>
+            <span>Admin</span>
+          </a>
+          <a href="admin/students.html" class="flex flex-col items-center justify-center gap-1 p-2 rounded-xl bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-charcoal-700 text-blue-600 dark:text-blue-300 font-bold text-[11px] text-center">
+            <i data-lucide="briefcase" class="w-4 h-4 text-blue-500"></i>
+            <span>Employer</span>
+          </a>
+          <a href="student/index.html" class="flex flex-col items-center justify-center gap-1 p-2 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-charcoal-700 text-emerald-600 dark:text-emerald-300 font-bold text-[11px] text-center">
+            <i data-lucide="user" class="w-4 h-4 text-emerald-500"></i>
+            <span>Seeker</span>
+          </a>
+        </div>
+      </div>
     </div>
 
     <!-- Mobile CTA -->

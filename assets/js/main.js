@@ -102,6 +102,7 @@ const HarmonyApp = {
     this.initAccordions();
     this.initContactForms();
     this.initPremiumSelect();
+    this.initPortalSwitcher();
     this.initSoundboard();
     this.initPlayablePiano();
     this.initInstrumentTestLab();
@@ -1315,6 +1316,135 @@ const HarmonyApp = {
       if (iconMap[match]) {
         selectOption(match);
       }
+    }
+  },
+
+  // Interactive Portal Switcher Dropdown (Admin, Employer, Seeker)
+  initPortalSwitcher() {
+    const switchers = document.querySelectorAll('[data-portal-switcher]');
+    if (!switchers.length) return;
+
+    const path = window.location.pathname.toLowerCase();
+    const isAdmin = path.includes('/admin/');
+    const isStudent = path.includes('/student/');
+
+    const portalConfig = {
+      admin: {
+        label: isAdmin ? 'Admin' : 'Login',
+        icon: 'shield',
+        activeClass: 'bg-purple-50 dark:bg-purple-950/50 text-[#6C4CE3] dark:text-purple-300 font-semibold',
+        activeIconColor: 'text-[#6C4CE3]'
+      },
+      employer: {
+        label: 'Employer',
+        icon: 'briefcase',
+        activeClass: 'bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-300 font-semibold',
+        activeIconColor: 'text-blue-500'
+      },
+      seeker: {
+        label: isStudent ? 'Seeker' : 'Login',
+        icon: 'user',
+        activeClass: 'bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-300 font-semibold',
+        activeIconColor: 'text-emerald-500'
+      }
+    };
+
+    let activeKey = 'admin';
+    if (isAdmin) {
+      activeKey = 'admin';
+    } else if (isStudent) {
+      activeKey = 'seeker';
+    } else {
+      activeKey = 'admin';
+    }
+
+    switchers.forEach(switcher => {
+      const btn = switcher.querySelector('[data-portal-btn]');
+      const menu = switcher.querySelector('[data-portal-menu]');
+      const label = switcher.querySelector('[data-portal-current-label]');
+      const icon = switcher.querySelector('[data-portal-current-icon]');
+      const chevron = switcher.querySelector('[data-portal-chevron]');
+      const items = switcher.querySelectorAll('[data-portal-item]');
+
+      if (!btn || !menu) return;
+
+      // On public pages, label is "Login" as explicitly requested
+      if (!isAdmin && !isStudent && label) {
+        label.textContent = 'Login';
+      } else if (label && portalConfig[activeKey]) {
+        label.textContent = portalConfig[activeKey].label;
+      }
+
+      // Highlight active portal in dropdown
+      items.forEach(item => {
+        const key = item.getAttribute('data-portal-item');
+        if (key === activeKey) {
+          item.className = 'portal-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs sm:text-sm transition ' + portalConfig[key].activeClass;
+        } else {
+          item.className = 'portal-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-charcoal-800';
+        }
+
+        item.addEventListener('click', () => {
+          localStorage.setItem('harmony_active_portal', key);
+        });
+      });
+
+      // Toggle dropdown on button click
+      const toggle = (force) => {
+        const isHidden = menu.classList.contains('hidden');
+        const show = force !== undefined ? force : isHidden;
+
+        if (show) {
+          document.querySelectorAll('[data-portal-menu]').forEach(m => {
+            if (m !== menu) m.classList.add('hidden');
+          });
+          document.querySelectorAll('[data-portal-chevron]').forEach(c => {
+            if (c !== chevron) c.classList.remove('rotate-180');
+          });
+          document.querySelectorAll('[data-portal-btn]').forEach(b => {
+            if (b !== btn) b.setAttribute('aria-expanded', 'false');
+          });
+
+          menu.classList.remove('hidden');
+          if (chevron) chevron.classList.add('rotate-180');
+          btn.setAttribute('aria-expanded', 'true');
+        } else {
+          menu.classList.add('hidden');
+          if (chevron) chevron.classList.remove('rotate-180');
+          btn.setAttribute('aria-expanded', 'false');
+        }
+      };
+
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggle();
+      });
+
+      menu.addEventListener('click', (e) => {
+        e.stopPropagation();
+      });
+    });
+
+    // Close on click outside
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('[data-portal-switcher]')) {
+        document.querySelectorAll('[data-portal-menu]').forEach(m => m.classList.add('hidden'));
+        document.querySelectorAll('[data-portal-chevron]').forEach(c => c.classList.remove('rotate-180'));
+        document.querySelectorAll('[data-portal-btn]').forEach(b => b.setAttribute('aria-expanded', 'false'));
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('[data-portal-menu]').forEach(m => m.classList.add('hidden'));
+        document.querySelectorAll('[data-portal-chevron]').forEach(c => c.classList.remove('rotate-180'));
+        document.querySelectorAll('[data-portal-btn]').forEach(b => b.setAttribute('aria-expanded', 'false'));
+      }
+    });
+
+    if (window.lucide && typeof window.lucide.createIcons === 'function') {
+      window.lucide.createIcons();
     }
   },
 

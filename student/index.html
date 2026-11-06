@@ -188,6 +188,50 @@
         <button data-action="toggle-rtl" class="hidden sm:inline-flex px-2 py-1 text-xs font-mono rounded-full border border-gray-200 dark:border-charcoal-700">
           ⇄ RTL
         </button>
+
+        <!-- Portal Switcher Dropdown (Seeker / Student) -->
+        <div class="relative hidden sm:inline-block text-left" data-portal-switcher>
+          <button 
+            type="button" 
+            data-portal-btn
+            class="flex items-center gap-2 px-3.5 py-1.5 sm:py-2 rounded-xl bg-[#6C4CE3] hover:bg-[#5A38D4] text-white text-xs font-bold shadow-md shadow-[#6C4CE3]/25 transition cursor-pointer select-none"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <i data-lucide="user" class="w-4 h-4 text-white" data-portal-current-icon></i>
+            <span data-portal-current-label>Seeker</span>
+            <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-white/90 transition-transform duration-200" data-portal-chevron></i>
+          </button>
+
+          <!-- Floating Switch Portal Card -->
+          <div 
+            data-portal-menu
+            class="hidden absolute right-0 mt-2 w-56 bg-white dark:bg-charcoal-850 rounded-2xl shadow-2xl border border-gray-100 dark:border-charcoal-700 p-2 z-50 transform origin-top-right transition-all"
+          >
+            <div class="px-3 pt-2 pb-1.5 text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-gray-400 select-none">
+              SWITCH PORTAL
+            </div>
+            <div class="space-y-1">
+              <!-- 1. Admin Dashboard -->
+              <a href="../admin/index.html" data-portal-item="admin" class="portal-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition text-gray-700 dark:text-gray-200 hover:bg-purple-50 dark:hover:bg-purple-950/30 hover:text-[#6C4CE3]">
+                <i data-lucide="shield" class="w-4 h-4 text-[#6C4CE3] shrink-0"></i>
+                <span class="flex-1">Admin Dashboard</span>
+              </a>
+
+              <!-- 2. Employer Dashboard -->
+              <a href="../admin/students.html" data-portal-item="employer" class="portal-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-blue-950/30 hover:text-blue-600 dark:hover:text-blue-400">
+                <i data-lucide="briefcase" class="w-4 h-4 text-blue-500 shrink-0"></i>
+                <span class="flex-1">Employer Dashboard</span>
+              </a>
+
+              <!-- 3. Seeker Dashboard (Active) -->
+              <a href="index.html" data-portal-item="seeker" class="portal-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-300">
+                <i data-lucide="user" class="w-4 h-4 text-emerald-500 shrink-0"></i>
+                <span class="flex-1">Seeker Dashboard</span>
+              </a>
+            </div>
+          </div>
+        </div>
         <a href="notifications.html" class="p-2 rounded-full text-gray-500 hover:bg-gray-100 dark:hover:bg-charcoal-800 relative">
           <i data-lucide="bell" class="w-4 h-4"></i>
           <span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-coral-500"></span>
