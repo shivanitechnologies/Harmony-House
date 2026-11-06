@@ -594,6 +594,15 @@
     if (btnStudent) btnStudent.addEventListener('click', () => setRole('student'));
     if (btnAdmin) btnAdmin.addEventListener('click', () => setRole('admin'));
 
+    // Auto-select role based on URL parameter (?role=admin or ?role=student)
+    const urlParams = new URLSearchParams(window.location.search);
+    const initialRole = urlParams.get('role');
+    if (initialRole === 'admin' || initialRole === 'director') {
+      setRole('admin');
+    } else {
+      setRole('student');
+    }
+
     // Form Submit Handler
     const loginForm = document.getElementById('login-form');
     if (loginForm) {
