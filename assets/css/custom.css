@@ -384,14 +384,7 @@ body {
 }
 
 /* Strict Zero Gradients - Solid Colors Only */
-[class*="bg-gradient-"] {
-  background-image: none !important;
-}
-.bg-clip-text {
-  -webkit-text-fill-color: currentColor !important;
-  -webkit-background-clip: border-box !important;
-  background-clip: border-box !important;
-}
+/* Gradients supported */
 
 /* Mobile Drawer & Responsive Alignment */
 @media (max-width: 1023px) {
