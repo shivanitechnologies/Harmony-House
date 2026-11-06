@@ -55,7 +55,7 @@
         </button>
       </div>
 
-      <!-- Navigation Links: Strictly 4 Student Modules -->
+      <!-- Navigation Links -->
       <nav class="p-3 space-y-1.5 text-xs font-medium flex-1 overflow-y-auto">
         <!-- 1. Overview (Active) -->
         <a href="index.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-[#F0EAFF] text-[#6C4CE3] font-bold shadow-sm transition">
@@ -63,7 +63,7 @@
           <span>Overview</span>
         </a>
 
-        <!-- 2. Enrolling in Batches -->
+        <!-- 2. Batch Enrollment -->
         <a href="batches.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
           <i data-lucide="users" class="w-4 h-4 text-gray-400 group-hover:text-white"></i>
           <span>Batch Enrollment</span>
@@ -75,16 +75,41 @@
           <span>Class Schedule</span>
         </a>
 
-        <!-- 4. Attendance & Progress Notes -->
+        <!-- 4. Attendance (Separate) -->
         <a href="attendance.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
           <i data-lucide="clipboard-check" class="w-4 h-4 text-gray-400 group-hover:text-white"></i>
-          <span>Attendance &amp; Notes</span>
+          <span>Attendance</span>
         </a>
 
-        <!-- 5. Fee Payments -->
+        <!-- 5. Progress Notes (Separate) -->
+        <a href="progress.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
+          <i data-lucide="file-text" class="w-4 h-4 text-gray-400 group-hover:text-white"></i>
+          <span>Progress Notes</span>
+        </a>
+
+        <!-- 6. Practices & Recordings -->
+        <a href="practice.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
+          <i data-lucide="mic" class="w-4 h-4 text-gray-400 group-hover:text-white"></i>
+          <span>Practices &amp; Recordings</span>
+        </a>
+
+        <!-- 7. Fee Payments -->
         <a href="fees.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
           <i data-lucide="credit-card" class="w-4 h-4 text-gray-400 group-hover:text-white"></i>
           <span>Fee Payments</span>
+        </a>
+
+        <!-- 8. Notifications -->
+        <a href="notifications.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
+          <i data-lucide="bell" class="w-4 h-4 text-gray-400 group-hover:text-white"></i>
+          <span>Notifications</span>
+          <span class="ml-auto w-2 h-2 rounded-full bg-[#FF9F43]"></span>
+        </a>
+
+        <!-- 9. My Profile -->
+        <a href="profile.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
+          <i data-lucide="user" class="w-4 h-4 text-gray-400 group-hover:text-white"></i>
+          <span>My Profile</span>
         </a>
 
         <!-- Divider Line -->
@@ -174,9 +199,14 @@
           </div>
         </div>
 
-        <div class="flex items-center gap-2 pl-1 sm:pl-2 sm:border-l border-gray-200 dark:border-charcoal-700">
+        <a href="notifications.html" class="p-2 rounded-full text-gray-500 hover:bg-gray-100 dark:hover:bg-charcoal-800 relative" title="Notifications">
+          <i data-lucide="bell" class="w-4 h-4"></i>
+          <span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-[#FF9F43]"></span>
+        </a>
+
+        <a href="profile.html" class="flex items-center gap-2 pl-1 sm:pl-2 sm:border-l border-gray-200 dark:border-charcoal-700" title="My Profile">
           <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=120&q=80" alt="Rohan Sen" class="w-7 h-7 sm:w-8 sm:h-8 rounded-full object-cover border border-purple-500/40">
-        </div>
+        </a>
       </div>
 
     </header>
@@ -637,6 +667,12 @@
               <div class="text-[11px] text-gray-500">
                 <strong class="text-gray-800 dark:text-white">Homework:</strong> Hotel California Intro + Scale Drill #3
               </div>
+            </div>
+
+            <div class="pt-2 border-t border-gray-100 dark:border-charcoal-700">
+              <a href="progress.html" class="text-xs text-[#6C4CE3] font-bold hover:underline flex items-center justify-end gap-1">
+                <span>View Full Mentor Evaluation History &amp; Milestone Goals</span> &rarr;
+              </a>
             </div>
 
           </div>

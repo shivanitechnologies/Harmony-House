@@ -17,9 +17,6 @@
           colors: {
             brandpurple: { 50: '#F5F3FF', 100: '#EDE9FE', 200: '#DDD6FE', 300: '#C4B5FD', 400: '#987AF0', 500: '#6C4CE3', 600: '#5A38D4', 700: '#4B29B8', 800: '#3D2094', 900: '#2E1771', 950: '#1A0B45' },
             brandorange: { 50: '#FFF7ED', 100: '#FFEDD5', 200: '#FED7AA', 300: '#FDBA74', 400: '#FB923C', 500: '#FF9F43', 600: '#F58022', 700: '#D6620E', 800: '#AA4A0A', 900: '#7C3408' },
-            coral: { 50: '#F5F3FF', 100: '#EDE9FE', 200: '#DDD6FE', 300: '#C4B5FD', 400: '#987AF0', 500: '#6C4CE3', 600: '#5A38D4', 700: '#4B29B8', 800: '#3D2094', 900: '#2E1771' },
-            sage: { 50: '#FFF7ED', 100: '#FFEDD5', 200: '#FED7AA', 300: '#FDBA74', 400: '#FB923C', 500: '#FF9F43', 600: '#F58022', 700: '#D6620E', 800: '#AA4A0A', 900: '#7C3408' },
-            amberbrand: { 400: '#FDBA74', 500: '#FF9F43', 600: '#F58022' },
             charcoal: { 700: '#22242B', 750: '#1B1C22', 800: '#16171B', 850: '#111215', 900: '#0C0D0F', 950: '#08080A' }
           },
           fontFamily: {
@@ -35,7 +32,7 @@
 </head>
 <body class="bg-[#F8F9FA] dark:bg-charcoal-900 text-gray-800 dark:text-gray-100 font-sans antialiased min-h-screen flex">
 
-  <!-- Sidebar Navigation (Exact Match to Reference) -->
+  <!-- Sidebar Navigation -->
   <aside id="dashboard-sidebar" class="w-64 bg-[#0B0A12] border-r border-gray-800/80 flex flex-col justify-between shrink-0 fixed inset-y-0 left-0 z-50 transition-transform duration-300 -translate-x-full lg:translate-x-0 text-white select-none">
     <div class="flex flex-col h-full overflow-hidden">
       <!-- Brand Header -->
@@ -49,13 +46,12 @@
             <span class="block text-[8.5px] font-bold tracking-widest uppercase text-purple-400">Student Portal</span>
           </div>
         </div>
-        <!-- Mobile Close Button -->
         <button type="button" class="sidebar-close-btn lg:hidden p-1.5 rounded-lg text-gray-400 hover:text-white hover:bg-white/10 transition" aria-label="Close menu">
           <i data-lucide="x" class="w-5 h-5"></i>
         </button>
       </div>
 
-      <!-- Navigation Links: Strictly 4 Student Modules -->
+      <!-- Navigation Links -->
       <nav class="p-3 space-y-1.5 text-xs font-medium flex-1 overflow-y-auto">
         <!-- 1. Overview -->
         <a href="index.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
@@ -63,7 +59,7 @@
           <span>Overview</span>
         </a>
 
-        <!-- 2. Enrolling in Batches -->
+        <!-- 2. Batch Enrollment -->
         <a href="batches.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
           <i data-lucide="users" class="w-4 h-4 text-gray-400 group-hover:text-white"></i>
           <span>Batch Enrollment</span>
@@ -75,16 +71,41 @@
           <span>Class Schedule</span>
         </a>
 
-        <!-- 4. Attendance & Progress Notes (Active) -->
+        <!-- 4. Attendance (Active, Separate) -->
         <a href="attendance.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-[#F0EAFF] text-[#6C4CE3] font-bold shadow-sm transition">
           <i data-lucide="clipboard-check" class="w-4 h-4 text-[#6C4CE3]"></i>
-          <span>Attendance &amp; Notes</span>
+          <span>Attendance</span>
         </a>
 
-        <!-- 5. Fee Payments -->
+        <!-- 5. Progress Notes (Separate) -->
+        <a href="progress.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
+          <i data-lucide="file-text" class="w-4 h-4 text-gray-400 group-hover:text-white"></i>
+          <span>Progress Notes</span>
+        </a>
+
+        <!-- 6. Practices & Recordings -->
+        <a href="practice.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
+          <i data-lucide="mic" class="w-4 h-4 text-gray-400 group-hover:text-white"></i>
+          <span>Practices &amp; Recordings</span>
+        </a>
+
+        <!-- 7. Fee Payments -->
         <a href="fees.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
           <i data-lucide="credit-card" class="w-4 h-4 text-gray-400 group-hover:text-white"></i>
           <span>Fee Payments</span>
+        </a>
+
+        <!-- 8. Notifications -->
+        <a href="notifications.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
+          <i data-lucide="bell" class="w-4 h-4 text-gray-400 group-hover:text-white"></i>
+          <span>Notifications</span>
+          <span class="ml-auto w-2 h-2 rounded-full bg-[#FF9F43]"></span>
+        </a>
+
+        <!-- 9. My Profile -->
+        <a href="profile.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
+          <i data-lucide="user" class="w-4 h-4 text-gray-400 group-hover:text-white"></i>
+          <span>My Profile</span>
         </a>
 
         <!-- Divider Line -->
@@ -114,65 +135,128 @@
   <div id="sidebar-backdrop" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 hidden lg:hidden"></div>
 
   <div class="flex-1 flex flex-col min-w-0 lg:pl-64">
+    <!-- Header -->
     <header class="h-16 sm:h-20 bg-white/90 dark:bg-charcoal-850/90 backdrop-blur-md border-b border-gray-200 dark:border-charcoal-800 px-3 sm:px-8 flex items-center justify-between sticky top-0 z-20">
       <div class="flex items-center gap-2 sm:gap-3 min-w-0">
         <button id="sidebar-toggle" class="p-2 -ml-1 rounded-lg text-gray-600 dark:text-gray-300 lg:hidden hover:bg-gray-100 dark:hover:bg-charcoal-800 shrink-0" aria-label="Toggle menu">
           <i data-lucide="menu" class="w-5 h-5 sm:w-6 sm:h-6"></i>
         </button>
         <div class="min-w-0">
-          <h2 class="font-serif text-base sm:text-xl font-bold text-gray-900 dark:text-white truncate">Attendance &amp; Progress Notes</h2>
-          <p class="text-[11px] text-gray-500 hidden sm:block truncate">Track your class attendance records, teacher evaluations, and practice notes.</p>
+          <h2 class="font-serif text-base sm:text-xl font-bold text-gray-900 dark:text-white truncate">Attendance Tracking</h2>
+          <p class="text-[11px] text-gray-500 hidden sm:block truncate">Track your session roll call presence records and leave eligibility.</p>
         </div>
+      </div>
+
+      <!-- Right controls -->
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+        <button data-action="toggle-theme" class="p-2 rounded-full text-gray-500 hover:bg-gray-100 dark:hover:bg-charcoal-800 transition" title="Toggle Theme">
+          <i data-lucide="sun" class="w-4 h-4 dark:hidden"></i>
+          <i data-lucide="moon" class="w-4 h-4 hidden dark:inline"></i>
+        </button>
+
+        <!-- Portal Switcher Dropdown -->
+        <div class="relative hidden sm:inline-block text-left" data-portal-switcher>
+          <button 
+            type="button" 
+            data-portal-btn
+            class="flex items-center gap-2 px-3.5 py-1.5 sm:py-2 rounded-xl bg-[#6C4CE3] hover:bg-[#5A38D4] text-white text-xs font-bold shadow-md shadow-[#6C4CE3]/25 transition cursor-pointer select-none"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <i data-lucide="graduation-cap" class="w-4 h-4 text-white" data-portal-current-icon></i>
+            <span data-portal-current-label>Student</span>
+            <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-white/90 transition-transform duration-200" data-portal-chevron></i>
+          </button>
+
+          <div 
+            data-portal-menu
+            class="hidden absolute right-0 mt-2 w-56 bg-white dark:bg-charcoal-850 rounded-2xl shadow-2xl border border-gray-100 dark:border-charcoal-700 p-2 z-50 transform origin-top-right transition-all"
+          >
+            <div class="px-3 pt-2 pb-1.5 text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-gray-400 select-none">
+              SWITCH PORTAL
+            </div>
+            <div class="space-y-1">
+              <a href="../auth/login.html?role=student" data-portal-item="student" class="portal-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition bg-purple-50 dark:bg-purple-950/50 text-[#6C4CE3] dark:text-purple-300">
+                <i data-lucide="graduation-cap" class="w-4 h-4 text-[#6C4CE3] shrink-0"></i>
+                <span class="flex-1">Student Login Page</span>
+              </a>
+              <a href="../auth/login.html?role=admin" data-portal-item="admin" class="portal-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition text-gray-700 dark:text-gray-200 hover:bg-purple-50 dark:hover:bg-purple-950/30 hover:text-[#6C4CE3]">
+                <i data-lucide="shield" class="w-4 h-4 text-[#6C4CE3] shrink-0"></i>
+                <span class="flex-1">Admin Login Page</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <a href="profile.html" class="flex items-center gap-2 pl-1 sm:pl-2 sm:border-l border-gray-200 dark:border-charcoal-700">
+          <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=120&q=80" alt="Rohan Sen" class="w-7 h-7 sm:w-8 sm:h-8 rounded-full object-cover border border-purple-500/40">
+        </a>
       </div>
     </header>
 
     <main class="p-4 sm:p-8 space-y-8 flex-1">
       
       <!-- Top Metrics -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm flex items-center gap-4 sm:gap-5">
-          <div class="relative w-16 h-16 rounded-full border-4 border-coral-500 flex items-center justify-center font-serif text-lg font-bold text-coral-600">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        
+        <div class="p-5 rounded-2xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm flex items-center gap-4">
+          <div class="relative w-14 h-14 rounded-full border-4 border-[#6C4CE3] flex items-center justify-center font-serif text-base font-bold text-[#6C4CE3] shrink-0">
             94%
           </div>
           <div>
-            <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Overall Rate</span>
-            <h4 class="font-serif text-xl font-bold text-gray-900 dark:text-white mt-0.5">High Diligence</h4>
-            <span class="text-[11px] text-green-600 font-semibold">&bull; Recital Eligible</span>
+            <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Overall Rate</span>
+            <h4 class="font-serif text-lg font-bold text-gray-900 dark:text-white mt-0.5">High Presence</h4>
+            <span class="text-[11px] text-emerald-600 font-semibold">&bull; Recital Eligible</span>
           </div>
         </div>
 
-        <div class="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm flex items-center gap-4 sm:gap-5">
-          <div class="w-14 h-14 rounded-2xl bg-sage-50 text-sage-600 flex items-center justify-center font-serif text-2xl font-bold">
+        <div class="p-5 rounded-2xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-purple-50 dark:bg-purple-950/50 text-[#6C4CE3] flex items-center justify-center font-serif text-xl font-bold shrink-0">
             18
           </div>
           <div>
-            <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Classes Attended</span>
-            <h4 class="font-serif text-xl font-bold text-gray-900 dark:text-white mt-0.5">18 of 20 Total</h4>
-            <span class="text-[11px] text-gray-500">2 Excused / Make-up</span>
+            <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Attended Sessions</span>
+            <h4 class="font-serif text-lg font-bold text-gray-900 dark:text-white mt-0.5">18 of 20</h4>
+            <span class="text-[11px] text-gray-500">2 Excused Absences</span>
           </div>
         </div>
 
-        <div class="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm flex items-center gap-4 sm:gap-5">
-          <div class="w-14 h-14 rounded-2xl bg-amber-50 text-amberbrand-500 flex items-center justify-center">
-            <i data-lucide="award" class="w-7 h-7"></i>
+        <div class="p-5 rounded-2xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-orange-50 dark:bg-orange-950/50 text-[#FF9F43] flex items-center justify-center font-serif text-xl font-bold shrink-0">
+            0
           </div>
           <div>
-            <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Trinity Exam Pass</span>
-            <h4 class="font-serif text-xl font-bold text-gray-900 dark:text-white mt-0.5">Eligibility Met</h4>
-            <span class="text-[11px] text-sage-600 font-semibold">&gt; 85% requirement fulfilled</span>
+            <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Unexcused Misses</span>
+            <h4 class="font-serif text-lg font-bold text-gray-900 dark:text-white mt-0.5">Zero Infractions</h4>
+            <span class="text-[11px] text-emerald-600 font-semibold">Clean record</span>
           </div>
         </div>
+
+        <div class="p-5 rounded-2xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 flex items-center justify-center shrink-0">
+            <i data-lucide="award" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Trinity Exam</span>
+            <h4 class="font-serif text-lg font-bold text-gray-900 dark:text-white mt-0.5">Qualified</h4>
+            <span class="text-[11px] text-emerald-600 font-semibold">&gt; 85% requirement met</span>
+          </div>
+        </div>
+
       </div>
 
-      <!-- Attendance History Table -->
+      <!-- Roll Call History Table -->
       <div class="bg-white dark:bg-charcoal-800 rounded-3xl border border-gray-200 dark:border-charcoal-700 shadow-sm overflow-hidden">
-        <div class="p-6 border-b border-gray-100 dark:border-charcoal-700 flex justify-between items-center">
+        <div class="p-6 border-b border-gray-100 dark:border-charcoal-700 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
             <span class="text-xs font-bold uppercase tracking-wider text-[#6C4CE3]">Roll Call History</span>
-            <h3 class="font-serif text-lg font-bold text-gray-900 dark:text-white">Recent Attendance Logs</h3>
+            <h3 class="font-serif text-lg sm:text-xl font-bold text-gray-900 dark:text-white">Recent Attendance Logs</h3>
           </div>
-          <span class="text-xs text-gray-400">October &bull; November 2026</span>
+          <button onclick="document.getElementById('absence-modal').classList.remove('hidden')" class="px-4 py-2 rounded-xl bg-[#6C4CE3] hover:bg-[#5A38D4] text-white text-xs font-bold shadow-md shadow-[#6C4CE3]/20 transition cursor-pointer flex items-center gap-1.5 w-fit">
+            <i data-lucide="plus-circle" class="w-3.5 h-3.5"></i> Request Excused Leave
+          </button>
         </div>
+
         <div class="overflow-x-auto">
           <table class="w-full text-left text-xs text-gray-600 dark:text-gray-300">
             <thead class="bg-gray-50 dark:bg-charcoal-750 text-gray-400 font-bold uppercase text-[10px]">
@@ -181,166 +265,107 @@
                 <th class="p-4">Batch / Course</th>
                 <th class="p-4">Time Slot</th>
                 <th class="p-4">Mentor</th>
-                <th class="p-4 text-center">Attendance</th>
+                <th class="p-4 text-center">Status</th>
               </tr>
             </thead>
             <tbody class="divide-y divide-gray-100 dark:divide-charcoal-700">
               <tr>
-                <td class="p-4 font-bold text-gray-900 dark:text-white">29 Oct 2026</td>
+                <td class="p-4 font-bold text-gray-900 dark:text-white">31 Oct 2026</td>
                 <td class="p-4">Acoustic Guitar Mastery</td>
-                <td class="p-4">6:30 PM - 7:30 PM</td>
+                <td class="p-4">6:30 PM – 7:30 PM</td>
                 <td class="p-4">David Miller</td>
-                <td class="p-4 text-center"><span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-purple-100 dark:bg-purple-950/60 text-[#6C4CE3]">Present</span></td>
+                <td class="p-4 text-center"><span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-700">Present (On Time)</span></td>
               </tr>
               <tr>
-                <td class="p-4 font-bold text-gray-900 dark:text-white">27 Oct 2026</td>
-                <td class="p-4">Acoustic Guitar Mastery</td>
-                <td class="p-4">6:30 PM - 7:30 PM</td>
-                <td class="p-4">David Miller</td>
-                <td class="p-4 text-center"><span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-purple-100 dark:bg-purple-950/60 text-[#6C4CE3]">Present</span></td>
-              </tr>
-              <tr>
-                <td class="p-4 font-bold text-gray-900 dark:text-white">22 Oct 2026</td>
-                <td class="p-4">Western Vocals</td>
-                <td class="p-4">7:00 PM - 8:00 PM</td>
+                <td class="p-4 font-bold text-gray-900 dark:text-white">28 Oct 2026</td>
+                <td class="p-4">Western Vocals &amp; Breathwork</td>
+                <td class="p-4">10:00 AM – 11:30 AM</td>
                 <td class="p-4">Aarav Sharma</td>
-                <td class="p-4 text-center"><span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-orange-100 dark:bg-orange-950/60 text-[#FF9F43]">Excused</span></td>
+                <td class="p-4 text-center"><span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-700">Present (On Time)</span></td>
               </tr>
               <tr>
-                <td class="p-4 font-bold text-gray-900 dark:text-white">20 Oct 2026</td>
+                <td class="p-4 font-bold text-gray-900 dark:text-white">24 Oct 2026</td>
                 <td class="p-4">Acoustic Guitar Mastery</td>
-                <td class="p-4">6:30 PM - 7:30 PM</td>
+                <td class="p-4">6:30 PM – 7:30 PM</td>
                 <td class="p-4">David Miller</td>
-                <td class="p-4 text-center"><span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-purple-100 dark:bg-purple-950/60 text-[#6C4CE3]">Present</span></td>
+                <td class="p-4 text-center"><span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-700">Present (On Time)</span></td>
+              </tr>
+              <tr>
+                <td class="p-4 font-bold text-gray-900 dark:text-white">21 Oct 2026</td>
+                <td class="p-4">Music Theory Lab #4</td>
+                <td class="p-4">5:30 PM – 6:30 PM</td>
+                <td class="p-4">Priya Verma</td>
+                <td class="p-4 text-center"><span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-700">Present (On Time)</span></td>
+              </tr>
+              <tr>
+                <td class="p-4 font-bold text-gray-900 dark:text-white">17 Oct 2026</td>
+                <td class="p-4">Western Vocals</td>
+                <td class="p-4">10:00 AM – 11:30 AM</td>
+                <td class="p-4">Aarav Sharma</td>
+                <td class="p-4 text-center"><span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-amber-100 text-amber-800">Excused (College Exam)</span></td>
+              </tr>
+              <tr>
+                <td class="p-4 font-bold text-gray-900 dark:text-white">14 Oct 2026</td>
+                <td class="p-4">Acoustic Guitar Mastery</td>
+                <td class="p-4">6:30 PM – 7:30 PM</td>
+                <td class="p-4">David Miller</td>
+                <td class="p-4 text-center"><span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-700">Present (On Time)</span></td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
 
-      <!-- Section: Mentor Progress Notes & Technical Evaluations -->
-      <div id="notes" class="space-y-6 pt-4">
+      <!-- Quick Switch to Progress Notes Card -->
+      <div class="p-6 rounded-3xl bg-purple-50 dark:bg-charcoal-800 border border-purple-100 dark:border-charcoal-700 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <span class="text-xs font-bold uppercase tracking-wider text-[#FF9F43]">Evaluation Notes</span>
-          <h3 class="font-serif text-2xl font-bold text-gray-900 dark:text-white">Teacher Progress Notes &amp; Evaluations</h3>
+          <span class="text-[10px] font-bold uppercase tracking-wider text-[#6C4CE3]">Mentor Evaluations</span>
+          <h4 class="font-serif text-lg font-bold text-gray-900 dark:text-white mt-0.5">Looking for your Teacher Progress Notes &amp; Scores?</h4>
+          <p class="text-xs text-gray-500 mt-1">Review written teacher evaluations, homework assignments, and audio feedback notes in the dedicated Progress Notes section.</p>
         </div>
-
-        <!-- Technical Metrics Grid -->
-        <div class="p-6 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm space-y-4">
-          <div class="flex items-center justify-between">
-            <h4 class="font-bold text-sm text-gray-900 dark:text-white">Quarterly Technical Dexterity Breakdown</h4>
-            <span class="text-xs text-purple-600 dark:text-purple-400 font-bold">Evaluated by David Miller</span>
-          </div>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div class="p-4 rounded-2xl bg-gray-50 dark:bg-charcoal-750">
-              <div class="flex justify-between text-xs font-bold mb-1.5">
-                <span>Rhythm &amp; Timing</span>
-                <span class="text-[#6C4CE3]">88%</span>
-              </div>
-              <div class="w-full bg-gray-200 dark:bg-charcoal-700 rounded-full h-2">
-                <div class="bg-[#6C4CE3] h-2 rounded-full" style="width: 88%"></div>
-              </div>
-              <span class="text-[10px] text-gray-400 mt-2 block">Strong metronome stability</span>
-            </div>
-
-            <div class="p-4 rounded-2xl bg-gray-50 dark:bg-charcoal-750">
-              <div class="flex justify-between text-xs font-bold mb-1.5">
-                <span>Finger Dexterity</span>
-                <span class="text-[#FF9F43]">82%</span>
-              </div>
-              <div class="w-full bg-gray-200 dark:bg-charcoal-700 rounded-full h-2">
-                <div class="bg-[#FF9F43] h-2 rounded-full" style="width: 82%"></div>
-              </div>
-              <span class="text-[10px] text-gray-400 mt-2 block">Barre chords mastering stage</span>
-            </div>
-
-            <div class="p-4 rounded-2xl bg-gray-50 dark:bg-charcoal-750">
-              <div class="flex justify-between text-xs font-bold mb-1.5">
-                <span>Pitch &amp; Intonation</span>
-                <span class="text-amber-500">79%</span>
-              </div>
-              <div class="w-full bg-gray-200 dark:bg-charcoal-700 rounded-full h-2">
-                <div class="bg-amber-500 h-2 rounded-full" style="width: 79%"></div>
-              </div>
-              <span class="text-[10px] text-gray-400 mt-2 block">Vocal pitch accuracy improving</span>
-            </div>
-
-            <div class="p-4 rounded-2xl bg-gray-50 dark:bg-charcoal-750">
-              <div class="flex justify-between text-xs font-bold mb-1.5">
-                <span>Ergonomic Posture</span>
-                <span class="text-[#6C4CE3]">92%</span>
-              </div>
-              <div class="w-full bg-gray-200 dark:bg-charcoal-700 rounded-full h-2">
-                <div class="bg-[#6C4CE3] h-2 rounded-full" style="width: 92%"></div>
-              </div>
-              <span class="text-[10px] text-gray-400 mt-2 block">Relaxed shoulders &amp; wrist curve</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Teacher Written Evaluation Cards -->
-        <div class="space-y-4">
-          <!-- Note 1 -->
-          <div class="p-6 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm space-y-3">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-              <div class="flex items-center gap-3">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="David Miller" class="w-9 h-9 rounded-full object-cover">
-                <div>
-                  <h4 class="text-sm font-bold text-gray-900 dark:text-white">David Miller (Guitar Mentor)</h4>
-                  <p class="text-[11px] text-gray-400">Oct 29, 2026 &bull; Topic: F Major Barre Chord &amp; 16th Note Strumming</p>
-                </div>
-              </div>
-              <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-purple-100 dark:bg-purple-950/60 text-[#6C4CE3]">Weekly Class Note</span>
-            </div>
-
-            <p class="text-xs text-gray-600 dark:text-gray-300 leading-relaxed italic bg-purple-50/50 dark:bg-charcoal-750 p-3.5 rounded-2xl border border-purple-100 dark:border-charcoal-700">
-              "Rohan's transition to the F major barre chord is noticeably cleaner this week! Hand tension has reduced by 80%. Keep practicing with the 75 BPM metronome groove for another 3 days before moving to 85 BPM."
-            </p>
-
-            <div class="flex flex-wrap items-center justify-between gap-2 pt-1 text-xs">
-              <span class="text-gray-500 font-medium">Homework: Complete Hotel California intro fingerpicking bar 1–8</span>
-              <button onclick="HarmonyApp.showToast('Playing teacher audio note...', 'info')" class="text-xs font-bold text-[#6C4CE3] hover:underline flex items-center gap-1">
-                <i data-lucide="volume-2" class="w-3.5 h-3.5"></i> Play Voice Clip (0:48)
-              </button>
-            </div>
-          </div>
-
-          <!-- Note 2 -->
-          <div class="p-6 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm space-y-3">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-              <div class="flex items-center gap-3">
-                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt="Aarav Sharma" class="w-9 h-9 rounded-full object-cover">
-                <div>
-                  <h4 class="text-sm font-bold text-gray-900 dark:text-white">Aarav Sharma (Vocals Mentor)</h4>
-                  <p class="text-[11px] text-gray-400">Oct 22, 2026 &bull; Topic: Diaphragmatic Breath &amp; Mixed Resonance</p>
-                </div>
-              </div>
-              <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-amber-100 dark:bg-amber-950/60 text-[#D6620E] dark:text-[#FF9F43]">Bi-Weekly Evaluation</span>
-            </div>
-
-            <p class="text-xs text-gray-600 dark:text-gray-300 leading-relaxed italic bg-amber-50/50 dark:bg-charcoal-750 p-3.5 rounded-2xl border border-amber-100 dark:border-charcoal-700">
-              "Great breath support during the high sustained notes. Ensure your jaw stays loose and avoid tightening the throat when ascending through the passagio."
-            </p>
-
-            <div class="flex flex-wrap items-center justify-between gap-2 pt-1 text-xs">
-              <span class="text-gray-500 font-medium">Homework: 10 mins daily lip trills on pentatonic scale</span>
-              <button onclick="HarmonyApp.showToast('Playing vocal coach feedback note...', 'info')" class="text-xs font-bold text-[#FF9F43] hover:underline flex items-center gap-1">
-                <i data-lucide="volume-2" class="w-3.5 h-3.5"></i> Play Voice Clip (1:12)
-              </button>
-            </div>
-          </div>
-        </div>
+        <a href="progress.html" class="px-5 py-2.5 rounded-xl bg-[#6C4CE3] text-white text-xs font-bold hover:bg-[#5A38D4] transition shrink-0 flex items-center justify-center gap-1.5 shadow-md shadow-[#6C4CE3]/20">
+          <span>Open Progress Notes</span> &rarr;
+        </a>
       </div>
 
     </main>
   </div>
 
+  <!-- Leave Request Modal -->
+  <div id="absence-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white dark:bg-charcoal-800 rounded-3xl p-6 sm:p-8 max-w-md w-full border border-gray-200 dark:border-charcoal-700 shadow-2xl space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="font-serif text-xl font-bold text-gray-900 dark:text-white">Request Excused Leave</h3>
+        <button type="button" onclick="document.getElementById('absence-modal').classList.add('hidden')" class="p-1 rounded-lg text-gray-400 hover:text-gray-600"><i data-lucide="x" class="w-5 h-5"></i></button>
+      </div>
+      <p class="text-xs text-gray-500">Submit planned absences in advance to receive makeup class eligibility.</p>
+
+      <form onsubmit="event.preventDefault(); document.getElementById('absence-modal').classList.add('hidden'); HarmonyApp.showToast('Leave request submitted to academic coordinator!', 'success');" class="space-y-3 pt-2">
+        <div>
+          <label class="text-xs font-semibold text-gray-700 dark:text-gray-300 block mb-1">Select Batch</label>
+          <select class="w-full text-xs p-2.5 rounded-xl bg-gray-50 dark:bg-charcoal-750 border border-gray-200 dark:border-charcoal-700 text-gray-800 dark:text-white">
+            <option>Acoustic Guitar Mastery (Tue/Thu 6:30 PM)</option>
+            <option>Western Vocals (Sat 10:00 AM)</option>
+          </select>
+        </div>
+        <div>
+          <label class="text-xs font-semibold text-gray-700 dark:text-gray-300 block mb-1">Date of Absence</label>
+          <input type="date" value="2026-11-05" class="w-full text-xs p-2.5 rounded-xl bg-gray-50 dark:bg-charcoal-750 border border-gray-200 dark:border-charcoal-700 text-gray-800 dark:text-white">
+        </div>
+        <div>
+          <label class="text-xs font-semibold text-gray-700 dark:text-gray-300 block mb-1">Reason for Leave</label>
+          <textarea rows="2" placeholder="e.g. College exam, illness..." class="w-full text-xs p-2.5 rounded-xl bg-gray-50 dark:bg-charcoal-750 border border-gray-200 dark:border-charcoal-700 text-gray-800 dark:text-white"></textarea>
+        </div>
+        <button type="submit" class="w-full py-2.5 rounded-xl bg-[#6C4CE3] text-white font-bold text-xs shadow-md shadow-[#6C4CE3]/30 transition cursor-pointer mt-2">
+          Submit Leave Request &rarr;
+        </button>
+      </form>
+    </div>
+  </div>
+
   <script src="../assets/js/data.js"></script>
-  <script src="../assets/js/audio-engine.js"></script>
   <script src="../assets/js/3d-engine.js"></script>
   <script src="../assets/js/main.js"></script>
   <script src="../assets/js/dashboard.js"></script>
 </body>
 </html>
-

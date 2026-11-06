@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practices &amp; Recordings – Student Portal | Harmony House</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/images/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brandpurple: { 50: '#F5F3FF', 100: '#EDE9FE', 200: '#DDD6FE', 300: '#C4B5FD', 400: '#987AF0', 500: '#6C4CE3', 600: '#5A38D4', 700: '#4B29B8', 800: '#3D2094', 900: '#2E1771', 950: '#1A0B45' },
+            brandorange: { 50: '#FFF7ED', 100: '#FFEDD5', 200: '#FED7AA', 300: '#FDBA74', 400: '#FB923C', 500: '#FF9F43', 600: '#F58022', 700: '#D6620E', 800: '#AA4A0A', 900: '#7C3408' },
+            charcoal: { 700: '#22242B', 750: '#1B1C22', 800: '#16171B', 850: '#111215', 900: '#0C0D0F', 950: '#08080A' }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    };
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="../assets/css/custom.css">
+</head>
+<body class="bg-[#F8F9FA] dark:bg-charcoal-900 text-gray-800 dark:text-gray-100 font-sans antialiased min-h-screen flex">
+
+  <!-- Sidebar Navigation -->
+  <aside id="dashboard-sidebar" class="w-64 bg-[#0B0A12] border-r border-gray-800/80 flex flex-col justify-between shrink-0 fixed inset-y-0 left-0 z-50 transition-transform duration-300 -translate-x-full lg:translate-x-0 text-white select-none">
+    <div class="flex flex-col h-full overflow-hidden">
+      <!-- Brand Header -->
+      <div class="h-16 flex items-center justify-between px-5 border-b border-gray-800/80 shrink-0">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-xl bg-[#6C4CE3] flex items-center justify-center text-white shadow-md shadow-[#6C4CE3]/30">
+            <i data-lucide="music" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <span class="font-serif font-bold text-base tracking-tight"><span class="text-white">Harmony</span><span class="text-[#FF9F43]">House</span></span>
+            <span class="block text-[8.5px] font-bold tracking-widest uppercase text-purple-400">Student Portal</span>
+          </div>
+        </div>
+        <button type="button" class="sidebar-close-btn lg:hidden p-1.5 rounded-lg text-gray-400 hover:text-white hover:bg-white/10 transition" aria-label="Close menu">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="p-3 space-y-1.5 text-xs font-medium flex-1 overflow-y-auto">
+        <!-- 1. Overview -->
+        <a href="index.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
+          <i data-lucide="layout-grid" class="w-4 h-4 text-gray-400 group-hover:text-white"></i>
+          <span>Overview</span>
+        </a>
+
+        <!-- 2. Batch Enrollment -->
+        <a href="batches.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
+          <i data-lucide="users" class="w-4 h-4 text-gray-400 group-hover:text-white"></i>
+          <span>Batch Enrollment</span>
+        </a>
+
+        <!-- 3. Class Schedule -->
+        <a href="schedule.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
+          <i data-lucide="calendar" class="w-4 h-4 text-gray-400 group-hover:text-white"></i>
+          <span>Class Schedule</span>
+        </a>
+
+        <!-- 4. Attendance (Separate) -->
+        <a href="attendance.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
+          <i data-lucide="clipboard-check" class="w-4 h-4 text-gray-400 group-hover:text-white"></i>
+          <span>Attendance</span>
+        </a>
+
+        <!-- 5. Progress Notes (Separate) -->
+        <a href="progress.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
+          <i data-lucide="file-text" class="w-4 h-4 text-gray-400 group-hover:text-white"></i>
+          <span>Progress Notes</span>
+        </a>
+
+        <!-- 6. Practices & Recordings (Active) -->
+        <a href="practice.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-[#F0EAFF] text-[#6C4CE3] font-bold shadow-sm transition">
+          <i data-lucide="mic" class="w-4 h-4 text-[#6C4CE3]"></i>
+          <span>Practices &amp; Recordings</span>
+        </a>
+
+        <!-- 7. Fee Payments -->
+        <a href="fees.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
+          <i data-lucide="credit-card" class="w-4 h-4 text-gray-400 group-hover:text-white"></i>
+          <span>Fee Payments</span>
+        </a>
+
+        <!-- 8. Notifications -->
+        <a href="notifications.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
+          <i data-lucide="bell" class="w-4 h-4 text-gray-400 group-hover:text-white"></i>
+          <span>Notifications</span>
+          <span class="ml-auto w-2 h-2 rounded-full bg-[#FF9F43]"></span>
+        </a>
+
+        <!-- 9. My Profile -->
+        <a href="profile.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition group">
+          <i data-lucide="user" class="w-4 h-4 text-gray-400 group-hover:text-white"></i>
+          <span>My Profile</span>
+        </a>
+
+        <!-- Divider Line -->
+        <div class="pt-3 my-2 border-t border-gray-800/80"></div>
+
+        <!-- Logout -->
+        <a href="../auth/login.html?role=student" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-gray-300 hover:bg-white/5 hover:text-[#FF9F43] transition group">
+          <i data-lucide="log-out" class="w-4 h-4 text-gray-400 group-hover:text-[#FF9F43]"></i>
+          <span>Logout</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Bottom User Status -->
+    <div class="p-3 border-t border-gray-800/80 shrink-0 bg-[#07060D]">
+      <div class="flex items-center gap-3 px-2">
+        <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=120&q=80" alt="Rohan Sen" class="w-8 h-8 rounded-full object-cover border border-purple-500/40">
+        <div class="overflow-hidden">
+          <div class="text-xs font-bold text-white truncate">Rohan Sen</div>
+          <div class="text-[10px] text-gray-400 font-mono">STU-2026-084</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Mobile Backdrop -->
+  <div id="sidebar-backdrop" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 hidden lg:hidden"></div>
+
+  <!-- Main Content Wrap -->
+  <div class="flex-1 flex flex-col min-w-0 lg:pl-64">
+    
+    <!-- Top Bar -->
+    <header class="h-16 sm:h-20 bg-white/90 dark:bg-charcoal-850/90 backdrop-blur-md border-b border-gray-200 dark:border-charcoal-800 px-3 sm:px-8 flex items-center justify-between sticky top-0 z-20">
+      <div class="flex items-center gap-2 sm:gap-3 min-w-0">
+        <button id="sidebar-toggle" class="p-2 -ml-1 rounded-lg text-gray-600 dark:text-gray-300 lg:hidden hover:bg-gray-100 dark:hover:bg-charcoal-800 shrink-0" aria-label="Toggle menu">
+          <i data-lucide="menu" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+        </button>
+        <div class="min-w-0">
+          <h2 class="font-serif text-base sm:text-xl font-bold text-gray-900 dark:text-white truncate">Practices &amp; Recordings</h2>
+          <p class="text-[11px] text-gray-500 hidden sm:block truncate">Record instrument exercises, use the studio metronome, and submit takes to mentors.</p>
+        </div>
+      </div>
+
+      <!-- Right controls -->
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+        <button data-action="toggle-theme" class="p-2 rounded-full text-gray-500 hover:bg-gray-100 dark:hover:bg-charcoal-800 transition" title="Toggle Theme">
+          <i data-lucide="sun" class="w-4 h-4 dark:hidden"></i>
+          <i data-lucide="moon" class="w-4 h-4 hidden dark:inline"></i>
+        </button>
+
+        <!-- Portal Switcher Dropdown -->
+        <div class="relative hidden sm:inline-block text-left" data-portal-switcher>
+          <button 
+            type="button" 
+            data-portal-btn
+            class="flex items-center gap-2 px-3.5 py-1.5 sm:py-2 rounded-xl bg-[#6C4CE3] hover:bg-[#5A38D4] text-white text-xs font-bold shadow-md shadow-[#6C4CE3]/25 transition cursor-pointer select-none"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <i data-lucide="graduation-cap" class="w-4 h-4 text-white" data-portal-current-icon></i>
+            <span data-portal-current-label>Student</span>
+            <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-white/90 transition-transform duration-200" data-portal-chevron></i>
+          </button>
+
+          <div 
+            data-portal-menu
+            class="hidden absolute right-0 mt-2 w-56 bg-white dark:bg-charcoal-850 rounded-2xl shadow-2xl border border-gray-100 dark:border-charcoal-700 p-2 z-50 transform origin-top-right transition-all"
+          >
+            <div class="px-3 pt-2 pb-1.5 text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-gray-400 select-none">
+              SWITCH PORTAL
+            </div>
+            <div class="space-y-1">
+              <a href="../auth/login.html?role=student" data-portal-item="student" class="portal-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition bg-purple-50 dark:bg-purple-950/50 text-[#6C4CE3] dark:text-purple-300">
+                <i data-lucide="graduation-cap" class="w-4 h-4 text-[#6C4CE3] shrink-0"></i>
+                <span class="flex-1">Student Login Page</span>
+              </a>
+              <a href="../auth/login.html?role=admin" data-portal-item="admin" class="portal-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition text-gray-700 dark:text-gray-200 hover:bg-purple-50 dark:hover:bg-purple-950/30 hover:text-[#6C4CE3]">
+                <i data-lucide="shield" class="w-4 h-4 text-[#6C4CE3] shrink-0"></i>
+                <span class="flex-1">Admin Login Page</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <a href="profile.html" class="flex items-center gap-2 pl-1 sm:pl-2 sm:border-l border-gray-200 dark:border-charcoal-700">
+          <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=120&q=80" alt="Rohan Sen" class="w-7 h-7 sm:w-8 sm:h-8 rounded-full object-cover border border-purple-500/40">
+        </a>
+      </div>
+    </header>
+
+    <main class="p-3 sm:p-8 space-y-8 flex-1">
+      
+      <!-- Top Metrics Row -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
+        
+        <div class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm">
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-gray-400">Practice Streak</span>
+            <div class="w-8 h-8 rounded-xl bg-orange-50 dark:bg-orange-950/50 text-[#FF9F43] flex items-center justify-center shrink-0">
+              <i data-lucide="flame" class="w-4 h-4"></i>
+            </div>
+          </div>
+          <div class="font-serif text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mt-2">6 <span class="text-xs font-normal text-gray-400">Days</span></div>
+          <span class="text-[11px] text-[#FF9F43] font-semibold mt-1 block">🔥 Personal Best</span>
+        </div>
+
+        <div class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm">
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-gray-400">Monthly Time</span>
+            <div class="w-8 h-8 rounded-xl bg-purple-50 dark:bg-purple-950/50 text-[#6C4CE3] flex items-center justify-center shrink-0">
+              <i data-lucide="clock" class="w-4 h-4"></i>
+            </div>
+          </div>
+          <div class="font-serif text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mt-2">14.5 <span class="text-xs font-normal text-gray-400">Hours</span></div>
+          <span class="text-[11px] text-emerald-600 font-semibold mt-1 block">✓ Target 15h exceeded</span>
+        </div>
+
+        <div class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm">
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-gray-400">Audio Takes</span>
+            <div class="w-8 h-8 rounded-xl bg-purple-50 dark:bg-purple-950/50 text-[#6C4CE3] flex items-center justify-center shrink-0">
+              <i data-lucide="mic" class="w-4 h-4"></i>
+            </div>
+          </div>
+          <div class="font-serif text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mt-2">8 <span class="text-xs font-normal text-gray-400">Takes</span></div>
+          <span class="text-[11px] text-[#6C4CE3] font-semibold mt-1 block">5 Reviewed by Mentors</span>
+        </div>
+
+        <div class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm">
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-gray-400">Metronome Goal</span>
+            <div class="w-8 h-8 rounded-xl bg-purple-50 dark:bg-purple-950/50 text-[#6C4CE3] flex items-center justify-center shrink-0">
+              <i data-lucide="activity" class="w-4 h-4"></i>
+            </div>
+          </div>
+          <div class="font-serif text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mt-2">100 <span class="text-xs font-normal text-gray-400">BPM</span></div>
+          <span class="text-[11px] text-[#6C4CE3] font-semibold mt-1 block">Working to 120 BPM</span>
+        </div>
+
+      </div>
+
+      <!-- Main Two Columns: Audio Recorder & Studio Metronome -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        
+        <!-- Interactive Audio Recorder (7 cols) -->
+        <div class="lg:col-span-7 p-6 sm:p-8 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm space-y-6">
+          <div class="flex items-center justify-between">
+            <div>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-[#6C4CE3]">Studio Take Console</span>
+              <h3 class="font-serif text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mt-0.5">Practice Audio Recorder</h3>
+            </div>
+            <span class="w-2.5 h-2.5 rounded-full bg-[#FF9F43] animate-pulse" title="Microphone Active"></span>
+          </div>
+
+          <p class="text-xs text-gray-500 leading-relaxed">
+            Record clean audio takes of your weekly homework exercises. Once saved, submit your take directly to mentor David Miller or Aarav Sharma for feedback.
+          </p>
+
+          <!-- Recording Visualizer Box -->
+          <div class="p-6 rounded-2xl bg-gradient-to-b from-purple-50/70 to-purple-100/30 dark:from-charcoal-750 dark:to-charcoal-800 border border-purple-100 dark:border-charcoal-700 text-center space-y-4">
+            
+            <div class="w-20 h-20 mx-auto rounded-full bg-[#6C4CE3] text-white flex items-center justify-center shadow-lg shadow-[#6C4CE3]/30" id="mic-icon-wrap">
+              <i data-lucide="mic" class="w-8 h-8"></i>
+            </div>
+
+            <div>
+              <div class="font-mono text-4xl font-extrabold text-[#6C4CE3]" id="record-timer-text">00:00</div>
+              <p class="text-xs text-gray-500 mt-1" id="record-status-text">Ready to record take (Max 3:00)</p>
+            </div>
+
+            <!-- Waveform bars animation placeholder -->
+            <div class="flex items-center justify-center gap-1.5 h-8">
+              <span class="w-1 bg-[#6C4CE3]/40 rounded-full h-2 transition-all duration-150"></span>
+              <span class="w-1 bg-[#6C4CE3]/60 rounded-full h-4 transition-all duration-150"></span>
+              <span class="w-1 bg-[#6C4CE3] rounded-full h-6 transition-all duration-150"></span>
+              <span class="w-1 bg-[#6C4CE3] rounded-full h-8 transition-all duration-150"></span>
+              <span class="w-1 bg-[#6C4CE3] rounded-full h-5 transition-all duration-150"></span>
+              <span class="w-1 bg-[#6C4CE3]/60 rounded-full h-3 transition-all duration-150"></span>
+              <span class="w-1 bg-[#6C4CE3]/40 rounded-full h-2 transition-all duration-150"></span>
+            </div>
+
+            <!-- Controls -->
+            <div class="flex items-center justify-center gap-3 pt-2">
+              <button id="btn-record-practice" class="px-6 py-2.5 rounded-xl bg-[#6C4CE3] hover:bg-[#5A38D4] text-white font-bold text-xs shadow-md shadow-[#6C4CE3]/25 transition cursor-pointer flex items-center gap-2">
+                <i data-lucide="circle" class="w-3.5 h-3.5 fill-current"></i> Start Recording
+              </button>
+              <button onclick="HarmonyApp.showToast('Audio take reset', 'info')" class="px-4 py-2.5 rounded-xl border border-gray-300 dark:border-charcoal-600 text-xs font-bold text-gray-700 dark:text-gray-300 hover:bg-gray-100 transition cursor-pointer">
+                Reset
+              </button>
+            </div>
+          </div>
+
+          <!-- Quick Submission Form -->
+          <div class="p-4 rounded-2xl bg-gray-50 dark:bg-charcoal-750 space-y-3">
+            <h4 class="text-xs font-bold text-gray-900 dark:text-white">Submit Latest Take to Mentor:</h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label class="text-[11px] text-gray-500 block mb-1">Select Mentor</label>
+                <select class="w-full text-xs p-2 rounded-xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 text-gray-800 dark:text-white">
+                  <option>David Miller (Acoustic Guitar)</option>
+                  <option>Aarav Sharma (Western Vocals)</option>
+                </select>
+              </div>
+              <div>
+                <label class="text-[11px] text-gray-500 block mb-1">Take Title / Exercise</label>
+                <input type="text" value="Barre Chords 75 BPM Take #3" class="w-full text-xs p-2 rounded-xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 text-gray-800 dark:text-white">
+              </div>
+            </div>
+            <button onclick="HarmonyApp.showToast('Audio take successfully uploaded and sent to mentor!', 'success')" class="w-full py-2.5 rounded-xl bg-[#6C4CE3] text-white font-bold text-xs shadow transition cursor-pointer flex items-center justify-center gap-1.5">
+              <i data-lucide="send" class="w-3.5 h-3.5"></i> Submit Take for Weekly Evaluation &rarr;
+            </button>
+          </div>
+        </div>
+
+        <!-- Studio Metronome Tool (5 cols) -->
+        <div class="lg:col-span-5 p-6 sm:p-8 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm space-y-6">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2.5">
+              <div class="w-9 h-9 rounded-xl bg-purple-100 dark:bg-purple-950/60 text-[#6C4CE3] flex items-center justify-center">
+                <i data-lucide="activity" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h3 class="font-serif text-lg font-bold text-gray-900 dark:text-white">Studio Metronome</h3>
+                <span class="text-[10px] text-gray-400">Precision Web Audio Engine</span>
+              </div>
+            </div>
+            <span class="font-mono text-2xl font-bold text-[#6C4CE3]"><span data-bpm-display>100</span> <span class="text-xs font-normal text-gray-400">BPM</span></span>
+          </div>
+
+          <!-- Visual Beat LED Dots -->
+          <div class="flex items-center justify-center gap-4 py-4 bg-gray-50 dark:bg-charcoal-750 rounded-2xl">
+            <span data-beat-dot class="w-4 h-4 rounded-full bg-gray-300 dark:bg-charcoal-700 transition-all duration-75"></span>
+            <span data-beat-dot class="w-4 h-4 rounded-full bg-gray-300 dark:bg-charcoal-700 transition-all duration-75"></span>
+            <span data-beat-dot class="w-4 h-4 rounded-full bg-gray-300 dark:bg-charcoal-700 transition-all duration-75"></span>
+            <span data-beat-dot class="w-4 h-4 rounded-full bg-gray-300 dark:bg-charcoal-700 transition-all duration-75"></span>
+          </div>
+
+          <!-- Tempo Slider -->
+          <div class="space-y-2">
+            <div class="flex justify-between text-xs text-gray-500 font-semibold">
+              <span>Largo (40)</span>
+              <span>Andante (100)</span>
+              <span>Presto (220)</span>
+            </div>
+            <input type="range" data-bpm-slider min="40" max="220" value="100" class="w-full accent-[#6C4CE3] cursor-pointer">
+          </div>
+
+          <div class="grid grid-cols-2 gap-3 pt-2">
+            <button data-metronome-toggle class="py-3 px-4 rounded-xl bg-[#6C4CE3] hover:bg-[#5A38D4] text-white font-bold text-xs flex items-center justify-center gap-2 shadow-md shadow-[#6C4CE3]/20 transition cursor-pointer">
+              <i data-lucide="play" class="w-4 h-4"></i> Start Metronome
+            </button>
+            <button data-metronome-tap class="py-3 px-4 rounded-xl border border-gray-200 dark:border-charcoal-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-charcoal-700 font-bold text-xs transition cursor-pointer">
+              Tap Tempo
+            </button>
+          </div>
+
+          <!-- Preset Tempos -->
+          <div class="pt-2 border-t border-gray-100 dark:border-charcoal-700 space-y-2">
+            <span class="text-[11px] font-bold uppercase text-gray-400 block">Class Preset Tempos:</span>
+            <div class="flex flex-wrap gap-2">
+              <button onclick="setPresetBpm(60)" class="px-2.5 py-1 rounded-lg bg-gray-100 dark:bg-charcoal-750 text-xs font-semibold hover:bg-purple-100 dark:hover:bg-purple-950/40 hover:text-[#6C4CE3] transition">60 Slow</button>
+              <button onclick="setPresetBpm(75)" class="px-2.5 py-1 rounded-lg bg-purple-100 text-[#6C4CE3] text-xs font-bold">75 Barre Drill</button>
+              <button onclick="setPresetBpm(92)" class="px-2.5 py-1 rounded-lg bg-gray-100 dark:bg-charcoal-750 text-xs font-semibold hover:bg-purple-100 dark:hover:bg-purple-950/40 hover:text-[#6C4CE3] transition">92 Moderato</button>
+              <button onclick="setPresetBpm(120)" class="px-2.5 py-1 rounded-lg bg-gray-100 dark:bg-charcoal-750 text-xs font-semibold hover:bg-purple-100 dark:hover:bg-purple-950/40 hover:text-[#6C4CE3] transition">120 Allegro</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Section: My Audio Takes Library -->
+      <div class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 shadow-sm space-y-6">
+        <div class="flex items-center justify-between">
+          <div>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-[#6C4CE3]">Audio Takes Archive</span>
+            <h3 class="font-serif text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mt-0.5">My Recorded Practice Takes</h3>
+          </div>
+          <span class="text-xs text-gray-400">Total 8 Recordings Saved</span>
+        </div>
+
+        <div class="space-y-3">
+          <!-- Take 1 -->
+          <div class="p-4 rounded-2xl bg-gray-50 dark:bg-charcoal-750 border border-gray-100 dark:border-charcoal-700 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div class="flex items-start gap-3.5">
+              <button onclick="HarmonyApp.showToast('Playing Barre Chords Practice take (0:48)...', 'info')" class="w-10 h-10 rounded-xl bg-purple-100 text-[#6C4CE3] flex items-center justify-center hover:scale-105 transition shrink-0 mt-0.5 cursor-pointer">
+                <i data-lucide="play" class="w-5 h-5 ml-0.5"></i>
+              </button>
+              <div>
+                <div class="flex items-center gap-2">
+                  <h4 class="text-xs sm:text-sm font-bold text-gray-900 dark:text-white">F Major Barre Chord Clean Run</h4>
+                  <span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 text-[10px] font-bold">Reviewed ✓</span>
+                </div>
+                <p class="text-xs text-gray-500 mt-0.5">Recorded Oct 31, 2026 &bull; Duration 0:48 &bull; Acoustic Guitar</p>
+                <p class="text-[11px] text-purple-700 dark:text-purple-300 font-semibold mt-1">David Miller Note: "Barre tension reduced by 80%. Excellent index placement!"</p>
+              </div>
+            </div>
+            <div class="flex items-center justify-between sm:justify-end gap-2 shrink-0">
+              <span class="font-mono text-xs font-bold text-gray-500">0:48</span>
+              <button onclick="HarmonyApp.showToast('Downloading take-barre-fmaj.wav', 'info')" class="px-3 py-1.5 rounded-lg border border-gray-300 dark:border-charcoal-600 text-[11px] font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-100 transition cursor-pointer flex items-center gap-1.5">
+                <i data-lucide="download" class="w-3.5 h-3.5"></i> WAV
+              </button>
+            </div>
+          </div>
+
+          <!-- Take 2 -->
+          <div class="p-4 rounded-2xl bg-gray-50 dark:bg-charcoal-750 border border-gray-100 dark:border-charcoal-700 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div class="flex items-start gap-3.5">
+              <button onclick="HarmonyApp.showToast('Playing Vocal Scale Warmup take (1:12)...', 'info')" class="w-10 h-10 rounded-xl bg-orange-100 text-[#FF9F43] flex items-center justify-center hover:scale-105 transition shrink-0 mt-0.5 cursor-pointer">
+                <i data-lucide="play" class="w-5 h-5 ml-0.5"></i>
+              </button>
+              <div>
+                <div class="flex items-center gap-2">
+                  <h4 class="text-xs sm:text-sm font-bold text-gray-900 dark:text-white">5-Tone Ascending Vowels on 'Nay'</h4>
+                  <span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 text-[10px] font-bold">Reviewed ✓</span>
+                </div>
+                <p class="text-xs text-gray-500 mt-0.5">Recorded Oct 28, 2026 &bull; Duration 1:12 &bull; Western Vocals</p>
+                <p class="text-[11px] text-orange-700 dark:text-orange-300 font-semibold mt-1">Aarav Sharma Note: "Great breath support on top G notes."</p>
+              </div>
+            </div>
+            <div class="flex items-center justify-between sm:justify-end gap-2 shrink-0">
+              <span class="font-mono text-xs font-bold text-gray-500">1:12</span>
+              <button onclick="HarmonyApp.showToast('Downloading take-vocal-scales.wav', 'info')" class="px-3 py-1.5 rounded-lg border border-gray-300 dark:border-charcoal-600 text-[11px] font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-100 transition cursor-pointer flex items-center gap-1.5">
+                <i data-lucide="download" class="w-3.5 h-3.5"></i> WAV
+              </button>
+            </div>
+          </div>
+
+          <!-- Take 3 -->
+          <div class="p-4 rounded-2xl bg-gray-50 dark:bg-charcoal-750 border border-gray-100 dark:border-charcoal-700 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div class="flex items-start gap-3.5">
+              <button onclick="HarmonyApp.showToast('Playing Hotel California take (2:05)...', 'info')" class="w-10 h-10 rounded-xl bg-purple-100 text-[#6C4CE3] flex items-center justify-center hover:scale-105 transition shrink-0 mt-0.5 cursor-pointer">
+                <i data-lucide="play" class="w-5 h-5 ml-0.5"></i>
+              </button>
+              <div>
+                <div class="flex items-center gap-2">
+                  <h4 class="text-xs sm:text-sm font-bold text-gray-900 dark:text-white">Hotel California Intro (B Minor Fingerpicking)</h4>
+                  <span class="px-2 py-0.5 rounded-full bg-purple-100 text-[#6C4CE3] text-[10px] font-bold">Pending Review</span>
+                </div>
+                <p class="text-xs text-gray-500 mt-0.5">Recorded Oct 25, 2026 &bull; Duration 2:05 &bull; Submitted to David Miller</p>
+              </div>
+            </div>
+            <div class="flex items-center justify-between sm:justify-end gap-2 shrink-0">
+              <span class="font-mono text-xs font-bold text-gray-500">2:05</span>
+              <button onclick="HarmonyApp.showToast('Downloading take-hotel-california.wav', 'info')" class="px-3 py-1.5 rounded-lg border border-gray-300 dark:border-charcoal-600 text-[11px] font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-100 transition cursor-pointer flex items-center gap-1.5">
+                <i data-lucide="download" class="w-3.5 h-3.5"></i> WAV
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="../assets/js/data.js"></script>
+  <script src="../assets/js/audio-engine.js"></script>
+  <script src="../assets/js/3d-engine.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+  <script>
+    function setPresetBpm(val) {
+      const slider = document.querySelector('[data-bpm-slider]');
+      const display = document.querySelector('[data-bpm-display]');
+      if (slider) {
+        slider.value = val;
+        slider.dispatchEvent(new Event('input'));
+      }
+      if (display) display.textContent = val;
+    }
+  </script>
+</body>
+</html>
