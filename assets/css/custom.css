@@ -1365,13 +1365,13 @@ select option {
 }
 
 .harmony-select-option {
-  transition: all 0.15s ease !important;
+  transition: background-color 0.15s ease, color 0.15s ease !important;
 }
 .harmony-select-option:hover {
-  transform: translateX(3px);
+  transform: none !important;
 }
 [dir="rtl"] .harmony-select-option:hover {
-  transform: translateX(-3px);
+  transform: none !important;
 }
 
 /* Custom scrollbar for dropdown menu */

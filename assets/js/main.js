@@ -398,17 +398,18 @@ const HarmonyApp = {
       }
 
       // Read current options
+      const heightClass = select.className.match(/\bh-\S+/)?.[0] || 'h-11';
       const trigger = document.createElement('button');
       trigger.type = 'button';
-      trigger.className = 'harmony-select-trigger w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 text-gray-900 dark:text-gray-100 flex items-center justify-between text-xs font-medium shadow-sm transition hover:border-[#6C4CE3] cursor-pointer';
+      trigger.className = `harmony-select-trigger w-full ${heightClass} px-4 rounded-xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 text-gray-900 dark:text-gray-100 flex items-center justify-between text-xs font-medium shadow-sm transition hover:border-[#6C4CE3] cursor-pointer`;
       
       const textSpan = document.createElement('span');
-      textSpan.className = 'truncate text-left flex-1';
+      textSpan.className = 'truncate text-left rtl:text-right flex-1 leading-normal';
       const curOpt = select.options[select.selectedIndex] || select.options[0];
       textSpan.textContent = curOpt ? curOpt.text : 'Select...';
 
       const chevron = document.createElement('span');
-      chevron.className = 'harmony-select-chevron text-gray-400 shrink-0 ml-2 transition-transform duration-200';
+      chevron.className = 'harmony-select-chevron text-gray-400 shrink-0 ml-2 rtl:ml-0 rtl:mr-2 transition-transform duration-200';
       chevron.innerHTML = `<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>`;
 
       trigger.appendChild(textSpan);
@@ -424,20 +425,20 @@ const HarmonyApp = {
           if (opt.disabled) return;
           const isSelected = select.selectedIndex === idx;
           const item = document.createElement('div');
-          item.className = `harmony-select-option px-3 py-2 rounded-xl text-xs font-medium cursor-pointer transition flex items-center justify-between ${
+          item.className = `harmony-select-option px-2.5 py-2 rounded-xl text-xs font-medium cursor-pointer transition flex items-center justify-between ${
             isSelected 
               ? 'bg-purple-50 dark:bg-purple-950/60 text-[#6C4CE3] dark:text-purple-300 font-bold' 
               : 'text-gray-700 dark:text-gray-200 hover:bg-purple-50/70 dark:hover:bg-purple-950/30 hover:text-[#6C4CE3]'
           }`;
 
           const label = document.createElement('span');
-          label.className = 'truncate';
+          label.className = 'truncate text-left rtl:text-right flex-1';
           label.textContent = opt.text;
           item.appendChild(label);
 
           if (isSelected) {
             const check = document.createElement('span');
-            check.className = 'text-[#6C4CE3] dark:text-purple-300 shrink-0 ml-2';
+            check.className = 'text-[#6C4CE3] dark:text-purple-300 shrink-0 ml-2 rtl:ml-0 rtl:mr-2';
             check.innerHTML = `<svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
             item.appendChild(check);
           }
@@ -494,10 +495,11 @@ const HarmonyApp = {
         }
       });
 
-      // Hide parent chevron icon if present in relative container (e.g., courses.html)
-      const siblingChevron = select.parentNode.querySelector(':scope > i[data-lucide="chevron-down"], :scope > svg.lucide-chevron-down');
+      // Remove parent chevron icon if present in relative container (e.g., courses.html)
+      const parentEl = select.parentNode;
+      const siblingChevron = parentEl ? parentEl.querySelector(':scope > i[data-lucide="chevron-down"], :scope > svg.lucide-chevron-down') : null;
       if (siblingChevron) {
-        siblingChevron.style.display = 'none';
+        siblingChevron.remove();
       }
 
       // Insert wrapper in place of select

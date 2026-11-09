@@ -280,17 +280,16 @@
         <!-- Interactive Controls / Search & Age Filter -->
         <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3 max-w-xl mx-auto w-full">
           <div class="relative w-full sm:w-80">
-            <i data-lucide="search" class="w-4 h-4 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2"></i>
-            <input type="text" id="course-search-input" placeholder="Search guitar, piano, drums, vocals..." class="w-full pl-11 pr-4 py-2.5 rounded-xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 text-gray-900 dark:text-white placeholder-gray-400 text-xs focus:outline-none focus:border-[#6C4CE3] shadow-xs">
+            <i data-lucide="search" class="w-4 h-4 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+            <input type="text" id="course-search-input" placeholder="Search guitar, piano, drums, vocals..." class="w-full h-11 pl-11 pr-4 rounded-xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 text-gray-900 dark:text-white placeholder-gray-400 text-xs focus:outline-none focus:border-[#6C4CE3] shadow-xs">
           </div>
           <div class="relative w-full sm:w-48">
-            <select id="course-age-filter" class="w-full pl-4 pr-8 py-2.5 rounded-xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 text-gray-900 dark:text-white text-xs focus:outline-none focus:border-[#6C4CE3] shadow-xs appearance-none cursor-pointer">
+            <select id="course-age-filter" class="w-full h-11 pl-4 pr-8 rounded-xl bg-white dark:bg-charcoal-800 border border-gray-200 dark:border-charcoal-700 text-gray-900 dark:text-white text-xs focus:outline-none focus:border-[#6C4CE3] shadow-xs appearance-none cursor-pointer">
               <option value="all">All Ages</option>
               <option value="kids">Kids (4-12 yrs)</option>
               <option value="teens">Teens (13-17 yrs)</option>
               <option value="adults">Adults (18+ yrs)</option>
             </select>
-            <i data-lucide="chevron-down" class="w-4 h-4 text-gray-400 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none"></i>
           </div>
         </div>
 
