@@ -248,7 +248,7 @@ const HarmonyApp = {
 
     // Auto-close on resize if viewport expands to desktop
     window.addEventListener('resize', () => {
-      if (window.innerWidth >= 1280 && mobileMenu.classList.contains('translate-x-0')) {
+      if (window.innerWidth >= 1024 && mobileMenu.classList.contains('translate-x-0')) {
         closeMenu();
       }
     });
