@@ -448,7 +448,7 @@
       </span>
 
       <div class="flex items-center gap-1.5 sm:gap-2">
-        <a href="../index.html" class="inline-flex items-center gap-1 sm:gap-1.5 text-xs font-bold text-gray-800 dark:text-gray-200 hover:text-[#6C4CE3] bg-white/80 dark:bg-charcoal-800/80 backdrop-blur-md px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-gray-200/80 dark:border-charcoal-700 shadow-sm transition hover:scale-105">
+        <a href="../index.html" class="hidden sm:inline-flex items-center gap-1 sm:gap-1.5 text-xs font-bold text-gray-800 dark:text-gray-200 hover:text-[#6C4CE3] bg-white/80 dark:bg-charcoal-800/80 backdrop-blur-md px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-gray-200/80 dark:border-charcoal-700 shadow-sm transition hover:scale-105">
           <i data-lucide="arrow-left" class="w-3.5 h-3.5 rtl-mirror"></i>
           <span>Academy</span>
         </a>
@@ -817,11 +817,19 @@
             </button>
           </div>
 
-          <!-- Card Footer (Don't have an account? Sign Up) -->
-          <div class="text-center pt-3.5 mt-3.5 sm:pt-5 sm:mt-5 border-t border-gray-200/80 dark:border-charcoal-700 text-xs text-gray-600 dark:text-gray-300 font-medium relative z-10">
-            <span>Don't have an account?</span>
-            <a href="register.html" class="text-[#6C4CE3] dark:text-[#FF9F43] font-bold ml-1 hover:underline">
-              Sign Up
+          <!-- Card Footer (Don't have an account? Sign Up & Academy Button) -->
+          <div class="text-center pt-3.5 mt-3.5 sm:pt-5 sm:mt-5 border-t border-gray-200/80 dark:border-charcoal-700 text-xs text-gray-600 dark:text-gray-300 font-medium relative z-10 flex flex-col items-center gap-3">
+            <div>
+              <span>Don't have an account?</span>
+              <a href="register.html" class="text-[#6C4CE3] dark:text-[#FF9F43] font-bold ml-1 hover:underline">
+                Sign Up
+              </a>
+            </div>
+
+            <!-- Academy Button -->
+            <a href="../index.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-gray-800 dark:text-gray-200 hover:text-[#6C4CE3] dark:hover:text-[#FF9F43] bg-white/80 dark:bg-charcoal-800/80 backdrop-blur-md px-4 py-2 rounded-full border border-gray-200/80 dark:border-charcoal-700 shadow-sm transition hover:scale-105 active:scale-95">
+              <i data-lucide="arrow-left" class="w-3.5 h-3.5 rtl-mirror"></i>
+              <span>Academy</span>
             </a>
           </div>
 

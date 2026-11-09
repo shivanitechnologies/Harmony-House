@@ -131,7 +131,7 @@
     </a>
 
     <div class="flex items-center gap-2">
-      <a href="login.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-gray-700 dark:text-gray-200 hover:text-[#6C4CE3] bg-white/80 dark:bg-charcoal-800/80 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-purple-200/60 dark:border-charcoal-700 shadow-sm transition">
+      <a href="login.html" class="hidden sm:inline-flex items-center gap-1.5 text-xs font-bold text-gray-700 dark:text-gray-200 hover:text-[#6C4CE3] bg-white/80 dark:bg-charcoal-800/80 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-purple-200/60 dark:border-charcoal-700 shadow-sm transition">
         <i data-lucide="arrow-left" class="w-3.5 h-3.5 rtl-mirror"></i>
         <span>Sign In</span>
       </a>
@@ -261,10 +261,18 @@
             </button>
           </form>
 
-          <div class="text-center pt-5 mt-5 border-t border-gray-100 dark:border-charcoal-700 text-xs text-gray-600 dark:text-gray-400 font-medium">
-            <span>Already have an account?</span>
-            <a href="login.html" class="text-[#6C4CE3] dark:text-[#987AF0] font-bold ml-1 hover:underline">
-              Sign In
+          <div class="text-center pt-5 mt-5 border-t border-gray-100 dark:border-charcoal-700 text-xs text-gray-600 dark:text-gray-400 font-medium flex flex-col items-center gap-3">
+            <div>
+              <span>Already have an account?</span>
+              <a href="login.html" class="text-[#6C4CE3] dark:text-[#987AF0] font-bold ml-1 hover:underline">
+                Sign In
+              </a>
+            </div>
+
+            <!-- Academy Button -->
+            <a href="../index.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-gray-800 dark:text-gray-200 hover:text-[#6C4CE3] dark:hover:text-[#FF9F43] bg-white/80 dark:bg-charcoal-800/80 backdrop-blur-md px-4 py-2 rounded-full border border-gray-200/80 dark:border-charcoal-700 shadow-sm transition hover:scale-105 active:scale-95">
+              <i data-lucide="arrow-left" class="w-3.5 h-3.5 rtl-mirror"></i>
+              <span>Academy</span>
             </a>
           </div>
 
