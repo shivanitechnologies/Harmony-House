@@ -88,6 +88,7 @@ if (window.tailwind) {
 // State Management: Theme & Direction & Interactive Elements
 const HarmonyApp = {
   init() {
+    this.initImageFallbacks();
     this.initTheme();
     this.initDirection();
     this.initGlobalModals();
@@ -171,6 +172,20 @@ const HarmonyApp = {
     if (window.lucide) {
       window.lucide.createIcons();
     }
+  },
+
+  initImageFallbacks() {
+    const fallbackSvg = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400' width='100%25' height='100%25'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%236C4CE3'/%3E%3Cstop offset='100%25' stop-color='%235231D1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23g)'/%3E%3Ccircle cx='300' cy='180' r='54' fill='rgba(255,255,255,0.15)'/%3E%3Cpath d='M290 152v56l42-28z' fill='%23FF9F43'/%3E%3Ctext x='300' y='275' text-anchor='middle' fill='%23FFFFFF' font-family='sans-serif' font-size='16' font-weight='bold' letter-spacing='2'%3EHARMONY HOUSE MUSIC%3C/text%3E%3C/svg%3E";
+
+    // Global listener for image loading errors (capturing phase)
+    window.addEventListener('error', (e) => {
+      const target = e.target;
+      if (target && target.tagName === 'IMG' && !target.dataset.fallbackApplied) {
+        target.dataset.fallbackApplied = 'true';
+        target.src = fallbackSvg;
+        target.classList.add('object-cover');
+      }
+    }, true);
   },
 
   initMobileNav() {
