@@ -986,23 +986,27 @@ select option {
   background-attachment: fixed !important;
 }
 
-/* Universal Sidebar Link Interactive Animations (Student & Admin) */
-aside nav a,
+/* Universal Portal Sidebar Link Interactive Animations (Student & Admin) */
+#dashboard-sidebar nav a,
+#admin-sidebar nav a,
 .sidebar-nav-link {
   transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
   position: relative;
   border-radius: 14px !important;
 }
 
-aside nav a:hover:not([class*="bg-[#F0EAFF]"]):not(.active):not(.sidebar-nav-link-active),
+#dashboard-sidebar nav a:hover:not([class*="bg-[#F0EAFF]"]):not(.active):not(.sidebar-nav-link-active),
+#admin-sidebar nav a:hover:not([class*="bg-[#F0EAFF]"]):not(.active):not(.sidebar-nav-link-active),
 .sidebar-nav-link:hover:not(.active):not(.sidebar-nav-link-active) {
   transform: translateX(4px) !important;
   background-color: rgba(255, 255, 255, 0.08) !important;
   color: #FFFFFF !important;
 }
 
-aside nav a:hover:not([class*="bg-[#F0EAFF]"]):not(.active):not(.sidebar-nav-link-active) i,
-aside nav a:hover:not([class*="bg-[#F0EAFF]"]):not(.active):not(.sidebar-nav-link-active) svg,
+#dashboard-sidebar nav a:hover:not([class*="bg-[#F0EAFF]"]):not(.active):not(.sidebar-nav-link-active) i,
+#dashboard-sidebar nav a:hover:not([class*="bg-[#F0EAFF]"]):not(.active):not(.sidebar-nav-link-active) svg,
+#admin-sidebar nav a:hover:not([class*="bg-[#F0EAFF]"]):not(.active):not(.sidebar-nav-link-active) i,
+#admin-sidebar nav a:hover:not([class*="bg-[#F0EAFF]"]):not(.active):not(.sidebar-nav-link-active) svg,
 .sidebar-nav-link:hover i,
 .sidebar-nav-link:hover svg {
   color: #FFFFFF !important;
@@ -1011,12 +1015,16 @@ aside nav a:hover:not([class*="bg-[#F0EAFF]"]):not(.active):not(.sidebar-nav-lin
 }
 
 /* Sidebar Active Item: Glowing Purple Gradient with Warm Orange Notch */
-aside nav a[class*="bg-[#F0EAFF]"],
-aside nav a.active,
-aside nav a.sidebar-nav-link-active,
+#dashboard-sidebar nav a[class*="bg-[#F0EAFF]"],
+#admin-sidebar nav a[class*="bg-[#F0EAFF]"],
+#dashboard-sidebar nav a.active,
+#admin-sidebar nav a.active,
+#dashboard-sidebar nav a.sidebar-nav-link-active,
+#admin-sidebar nav a.sidebar-nav-link-active,
 .sidebar-nav-link.active,
 .sidebar-nav-link-active,
-a[class*="bg-[#F0EAFF]"] {
+#dashboard-sidebar a[class*="bg-[#F0EAFF]"],
+#admin-sidebar a[class*="bg-[#F0EAFF]"] {
   background: linear-gradient(135deg, #6C4CE3 0%, #5231D1 100%) !important;
   color: #FFFFFF !important;
   box-shadow: 0 8px 24px -4px rgba(108, 76, 227, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
@@ -1024,8 +1032,10 @@ a[class*="bg-[#F0EAFF]"] {
   transform: translateX(2px) !important;
 }
 
-aside nav a[class*="bg-[#F0EAFF]"]::before,
-aside nav a.active::before,
+#dashboard-sidebar nav a[class*="bg-[#F0EAFF]"]::before,
+#admin-sidebar nav a[class*="bg-[#F0EAFF]"]::before,
+#dashboard-sidebar nav a.active::before,
+#admin-sidebar nav a.active::before,
 .sidebar-nav-link.active::before {
   content: '';
   position: absolute;
@@ -1040,17 +1050,116 @@ aside nav a.active::before,
   box-shadow: 0 0 10px rgba(255, 159, 67, 0.9);
 }
 
-aside nav a[class*="bg-[#F0EAFF]"] i,
-aside nav a[class*="bg-[#F0EAFF]"] svg,
-aside nav a.active i,
-aside nav a.active svg,
+#dashboard-sidebar nav a[class*="bg-[#F0EAFF]"] i,
+#dashboard-sidebar nav a[class*="bg-[#F0EAFF]"] svg,
+#admin-sidebar nav a[class*="bg-[#F0EAFF]"] i,
+#admin-sidebar nav a[class*="bg-[#F0EAFF]"] svg,
+#dashboard-sidebar nav a.active i,
+#dashboard-sidebar nav a.active svg,
+#admin-sidebar nav a.active i,
+#admin-sidebar nav a.active svg,
 .sidebar-nav-link.active i,
-.sidebar-nav-link.active svg,
-a[class*="bg-[#F0EAFF]"] i,
-a[class*="bg-[#F0EAFF]"] svg {
+.sidebar-nav-link.active svg {
   color: #FFFFFF !important;
   stroke: #FFFFFF !important;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)) !important;
+}
+
+/* Public Website Mobile Menu Drawer Links (Guaranteed Crisp Visibility) */
+#mobile-menu-drawer nav a {
+  border-radius: 12px;
+  transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+  position: relative;
+}
+
+/* Inactive Mobile Drawer Link Hover */
+#mobile-menu-drawer nav a:not([class*="bg-purple-50"]):not([class*="bg-orange-50"]):hover {
+  background-color: rgba(108, 76, 227, 0.07) !important;
+  color: #6C4CE3 !important;
+  transform: none !important;
+}
+.dark #mobile-menu-drawer nav a:not([class*="bg-purple-50"]):not([class*="bg-orange-50"]):hover {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  color: #FFFFFF !important;
+  transform: none !important;
+}
+#mobile-menu-drawer nav a:not([class*="bg-purple-50"]):not([class*="bg-orange-50"]):hover i,
+#mobile-menu-drawer nav a:not([class*="bg-purple-50"]):not([class*="bg-orange-50"]):hover svg {
+  color: #6C4CE3 !important;
+  transform: none !important;
+}
+.dark #mobile-menu-drawer nav a:not([class*="bg-purple-50"]):not([class*="bg-orange-50"]):hover i,
+.dark #mobile-menu-drawer nav a:not([class*="bg-purple-50"]):not([class*="bg-orange-50"]):hover svg {
+  color: #FFFFFF !important;
+  transform: none !important;
+}
+
+/* Active Purple Link in Mobile Drawer (Home 1, Courses, Instructors, About, etc.) */
+#mobile-menu-drawer nav a[class*="bg-purple-50"],
+#mobile-menu-drawer nav a[class*="border-[#6C4CE3]"] {
+  background-color: #F4F0FD !important;
+  color: #6C4CE3 !important;
+  font-weight: 700 !important;
+  border-left: 4px solid #6C4CE3 !important;
+  border-top-left-radius: 3px !important;
+  border-bottom-left-radius: 3px !important;
+  border-top-right-radius: 12px !important;
+  border-bottom-right-radius: 12px !important;
+  transform: none !important;
+}
+.dark #mobile-menu-drawer nav a[class*="bg-purple-50"],
+.dark #mobile-menu-drawer nav a[class*="border-[#6C4CE3]"] {
+  background-color: rgba(108, 76, 227, 0.22) !important;
+  color: #A78BFA !important;
+  border-left: 4px solid #A78BFA !important;
+}
+#mobile-menu-drawer nav a[class*="bg-purple-50"] i,
+#mobile-menu-drawer nav a[class*="bg-purple-50"] svg,
+#mobile-menu-drawer nav a[class*="border-[#6C4CE3]"] i,
+#mobile-menu-drawer nav a[class*="border-[#6C4CE3]"] svg {
+  color: #6C4CE3 !important;
+  stroke: #6C4CE3 !important;
+}
+.dark #mobile-menu-drawer nav a[class*="bg-purple-50"] i,
+.dark #mobile-menu-drawer nav a[class*="bg-purple-50"] svg,
+.dark #mobile-menu-drawer nav a[class*="border-[#6C4CE3]"] i,
+.dark #mobile-menu-drawer nav a[class*="border-[#6C4CE3]"] svg {
+  color: #A78BFA !important;
+  stroke: #A78BFA !important;
+}
+
+/* Active Orange Link in Mobile Drawer (Home 2 Premium) */
+#mobile-menu-drawer nav a[class*="bg-orange-50"],
+#mobile-menu-drawer nav a[class*="border-[#FF9F43]"] {
+  background-color: #FFF7ED !important;
+  color: #FF9F43 !important;
+  font-weight: 700 !important;
+  border-left: 4px solid #FF9F43 !important;
+  border-top-left-radius: 3px !important;
+  border-bottom-left-radius: 3px !important;
+  border-top-right-radius: 12px !important;
+  border-bottom-right-radius: 12px !important;
+  transform: none !important;
+}
+.dark #mobile-menu-drawer nav a[class*="bg-orange-50"],
+.dark #mobile-menu-drawer nav a[class*="border-[#FF9F43]"] {
+  background-color: rgba(255, 159, 67, 0.22) !important;
+  color: #FFB76B !important;
+  border-left: 4px solid #FFB76B !important;
+}
+#mobile-menu-drawer nav a[class*="bg-orange-50"] i,
+#mobile-menu-drawer nav a[class*="bg-orange-50"] svg,
+#mobile-menu-drawer nav a[class*="border-[#FF9F43]"] i,
+#mobile-menu-drawer nav a[class*="border-[#FF9F43]"] svg {
+  color: #FF9F43 !important;
+  stroke: #FF9F43 !important;
+}
+.dark #mobile-menu-drawer nav a[class*="bg-orange-50"] i,
+.dark #mobile-menu-drawer nav a[class*="bg-orange-50"] svg,
+.dark #mobile-menu-drawer nav a[class*="border-[#FF9F43]"] i,
+.dark #mobile-menu-drawer nav a[class*="border-[#FF9F43]"] svg {
+  color: #FFB76B !important;
+  stroke: #FFB76B !important;
 }
 
 /* Card Interactive Hover Lift & Ambient Glow */
@@ -1276,21 +1385,59 @@ a[class*="bg-[#F0EAFF]"] svg {
     padding-right: 16rem !important;
   }
 }
-[dir="rtl"] aside nav a:hover {
+[dir="rtl"] #dashboard-sidebar nav a:hover,
+[dir="rtl"] #admin-sidebar nav a:hover,
+[dir="rtl"] .sidebar-nav-link:hover {
   transform: translateX(-4px) !important;
 }
-[dir="rtl"] aside nav a[class*="bg-[#F0EAFF]"],
-[dir="rtl"] aside nav a.active {
+[dir="rtl"] #dashboard-sidebar nav a[class*="bg-[#F0EAFF]"],
+[dir="rtl"] #admin-sidebar nav a[class*="bg-[#F0EAFF]"],
+[dir="rtl"] #dashboard-sidebar nav a.active,
+[dir="rtl"] #admin-sidebar nav a.active,
+[dir="rtl"] .sidebar-nav-link.active {
   transform: translateX(-2px) !important;
 }
-[dir="rtl"] aside nav a[class*="bg-[#F0EAFF]"]::before,
-[dir="rtl"] aside nav a.active::before {
+[dir="rtl"] #dashboard-sidebar nav a[class*="bg-[#F0EAFF]"]::before,
+[dir="rtl"] #admin-sidebar nav a[class*="bg-[#F0EAFF]"]::before,
+[dir="rtl"] #dashboard-sidebar nav a.active::before,
+[dir="rtl"] #admin-sidebar nav a.active::before,
+[dir="rtl"] .sidebar-nav-link.active::before {
   left: auto !important;
   right: 0 !important;
   border-top-right-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
   border-top-left-radius: 4px !important;
   border-bottom-left-radius: 4px !important;
+}
+
+/* RTL Support for Mobile Drawer Links */
+[dir="rtl"] #mobile-menu-drawer nav a[class*="bg-purple-50"],
+[dir="rtl"] #mobile-menu-drawer nav a[class*="border-[#6C4CE3]"],
+[dir="rtl"] #mobile-menu-drawer nav a[class*="bg-orange-50"],
+[dir="rtl"] #mobile-menu-drawer nav a[class*="border-[#FF9F43]"] {
+  border-left: none !important;
+  border-right-width: 4px !important;
+  border-right-style: solid !important;
+  border-top-left-radius: 12px !important;
+  border-bottom-left-radius: 12px !important;
+  border-top-right-radius: 3px !important;
+  border-bottom-right-radius: 3px !important;
+}
+[dir="rtl"] #mobile-menu-drawer nav a[class*="bg-purple-50"],
+[dir="rtl"] #mobile-menu-drawer nav a[class*="border-[#6C4CE3]"] {
+  border-right-color: #6C4CE3 !important;
+}
+.dark [dir="rtl"] #mobile-menu-drawer nav a[class*="bg-purple-50"],
+.dark [dir="rtl"] #mobile-menu-drawer nav a[class*="border-[#6C4CE3]"] {
+  border-right-color: #A78BFA !important;
+}
+[dir="rtl"] #mobile-menu-drawer nav a[class*="bg-orange-50"],
+[dir="rtl"] #mobile-menu-drawer nav a[class*="border-[#FF9F43]"] {
+  border-right-color: #FF9F43 !important;
+}
+.dark [dir="rtl"] #mobile-menu-drawer nav a[class*="bg-orange-50"],
+.dark [dir="rtl"] #mobile-menu-drawer nav a[class*="border-[#FF9F43]"] {
+  border-right-color: #FFB76B !important;
 }
 
 [dir="rtl"] #mobile-menu-drawer {
