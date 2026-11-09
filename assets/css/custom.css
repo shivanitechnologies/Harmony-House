@@ -1078,6 +1078,36 @@ select option {
   left: 0 !important;
 }
 
+/* Mobile View Spacing Optimization (Eliminates excessive empty gaps on mobile) */
+@media (max-width: 639px) {
+  section.py-20,
+  .section-py-20 {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+  section.py-16,
+  .section-py-16 {
+    padding-top: 2.25rem !important;
+    padding-bottom: 2.25rem !important;
+  }
+  section .mb-14 {
+    margin-bottom: 1.75rem !important;
+  }
+  section .mb-12 {
+    margin-bottom: 1.5rem !important;
+  }
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  section.py-20 {
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+  section.py-16 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+}
+
 /* Public Website Mobile Menu Drawer Links (Guaranteed Crisp Visibility) */
 #mobile-menu-drawer nav a {
   border-radius: 12px;
