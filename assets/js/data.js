@@ -27,7 +27,7 @@ const HarmonyData = {
       priceMonthly: "₹3,200",
       featured: true,
       image: "assets/images/guitar-3d.jpg",
-      bannerImage: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=80",
+      bannerImage: "assets/images/conservatory-piano.jpg",
       description: "From first strum to fluid soloing. Learn fingerpicking, rhythm techniques, chord progressions, and modern pop/rock repertoire with certified Trinity College London mentors.",
       learningOutcomes: [
         "Fretboard navigation and ergonomic posture",
@@ -52,7 +52,7 @@ const HarmonyData = {
       priceMonthly: "₹3,500",
       featured: true,
       image: "assets/images/piano-3d.jpg",
-      bannerImage: "https://images.unsplash.com/photo-1552422535-c45813c61732?auto=format&fit=crop&w=1200&q=80",
+      bannerImage: "assets/images/conservatory-piano.jpg",
       description: "Master two-hand coordination, sight-reading, classical sonatinas, and jazz chords on premium Yamaha grand keyboards and upright pianos in acoustic studios.",
       learningOutcomes: [
         "Independent finger agility and hand independence",
@@ -127,7 +127,7 @@ const HarmonyData = {
       priceMonthly: "₹3,600",
       featured: false,
       image: "assets/images/violin-3d.jpg",
-      bannerImage: "https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=1200&q=80",
+      bannerImage: "assets/images/conservatory-violin.jpg",
       description: "Pure intonation, graceful bowing technique, and expressive classical & Celtic fiddle repertoire taught through tailored Suzuki and Western classical frameworks.",
       learningOutcomes: [
         "Proper bow hold, finger placement, and posture",
@@ -151,7 +151,7 @@ const HarmonyData = {
       priceMonthly: "₹3,800",
       featured: false,
       image: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=800&q=80",
-      bannerImage: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=80",
+      bannerImage: "https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&w=1200&q=80",
       description: "Learn Logic Pro, Ableton Live, beat making, vocal mixing, synth programming, and sound engineering in our cutting-edge iMac workstations.",
       learningOutcomes: [
         "DAW navigation, audio routing and MIDI editing",
@@ -362,14 +362,14 @@ const HarmonyData = {
       name: "Meera & Rajesh Kulkarni",
       role: "Parents of Ananya (Age 8)",
       course: "Junior Piano Prodigy",
-      avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80",
+      avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&crop=faces&w=200&h=200&q=80",
       content: "Harmony House made piano learning fun rather than a chore for our daughter. Ms. Elena's patience and the interactive student dashboard keep us updated on every weekly milestone!"
     },
     {
       name: "Vikram Malhotra",
       role: "Software Architect (Age 34)",
       course: "Adult Evening Guitar",
-      avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=200&q=80",
+      avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&crop=faces&w=200&h=200&q=80",
       content: "I started guitar at 33 with zero background. In 4 months, I can play Eric Clapton and Coldplay chords smoothly. The weekend jam sessions are the highlight of my week."
     },
     {
@@ -415,7 +415,7 @@ const HarmonyData = {
       readTime: "7 min read",
       author: "Aarav Sharma",
       authorRole: "Voice & Youth Director",
-      image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=800&q=80",
       excerpt: "Scientific insights into how rhythm, tempo, and pitch training enhance spatial-temporal reasoning, mathematical aptitude, and language skills."
     },
     {
@@ -427,7 +427,7 @@ const HarmonyData = {
       readTime: "4 min read",
       author: "Clara Dupont",
       authorRole: "Strings Faculty",
-      image: "https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=800&q=80",
       excerpt: "Transform performance anxiety into dynamic stage charisma with breath control, mental visualization, and centering techniques."
     }
   ],
@@ -437,7 +437,7 @@ const HarmonyData = {
     id: "STU-2026-084",
     name: "Rohan Sen",
     email: "rohan.sen@gmail.com",
-    avatar: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=200&q=80",
+    avatar: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&crop=faces&w=200&h=200&q=80",
     enrolledCoursesCount: 2,
     classesAttended: 18,
     practiceStreakDays: 6,
