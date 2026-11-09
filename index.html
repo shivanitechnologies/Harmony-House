@@ -46,12 +46,12 @@
 </head>
 <body class="bg-[#FAFAFA] dark:bg-charcoal-900 text-gray-800 dark:text-gray-100 font-sans antialiased transition-colors duration-300">
 
-        <!-- Main Navigation Header (Clean, Spacious & Collision-Free) -->
+          <!-- Main Navigation Header (Clean, Spacious & Collision-Free) -->
   <header class="sticky top-0 z-40 bg-white/95 dark:bg-charcoal-850/95 backdrop-blur-md border-b border-gray-100 dark:border-charcoal-800 transition-colors">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
         
-        <!-- Logo (Left-Aligned, shrink-0 with generous right spacing) -->
+        <!-- Logo (Left-Aligned) -->
         <a href="index.html" class="flex items-center gap-2.5 sm:gap-3 group focus:outline-none shrink-0 mr-2 sm:mr-4 lg:mr-8">
           <div class="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-[#6C4CE3] flex items-center justify-center text-[#FF9F43] shadow-md shadow-[#6C4CE3]/25 group-hover:scale-105 transition-transform">
             <i data-lucide="music" class="w-5 h-5 sm:w-6 sm:h-6"></i>
@@ -149,14 +149,14 @@
             <i data-lucide="moon" class="w-4 h-4 hidden dark:inline"></i>
           </button>
 
-          <!-- Direct Login Button -->
-          <a href="auth/login.html" class="inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl bg-[#6C4CE3] hover:bg-[#5A38D4] text-white text-xs sm:text-sm font-bold shadow-md shadow-[#6C4CE3]/25 transition cursor-pointer shrink-0">
+          <!-- Direct Login Button (Desktop View Only - removed on mobile view, kept in mobile sidebar) -->
+          <a href="auth/login.html" class="hidden lg:inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl bg-[#6C4CE3] hover:bg-[#5A38D4] text-white text-xs sm:text-sm font-bold shadow-md shadow-[#6C4CE3]/25 transition cursor-pointer shrink-0">
             <i data-lucide="log-in" class="w-4 h-4"></i>
             <span>Login</span>
           </a>
 
-          <!-- Mobile Menu Hamburger -->
-          <button id="mobile-menu-btn" class="p-2 sm:p-2.5 rounded-xl text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-charcoal-800 lg:hidden focus:outline-none cursor-pointer shrink-0" aria-label="Open Mobile Menu">
+          <!-- Mobile Menu Hamburger (Mobile View Only: Logo on left, Hamburger on right) -->
+          <button id="mobile-menu-btn" class="p-2 sm:p-2.5 rounded-xl text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-charcoal-800 lg:hidden focus:outline-none cursor-pointer shrink-0" aria-label="Open Mobile Menu">
             <i data-lucide="menu" class="w-6 h-6"></i>
           </button>
 
